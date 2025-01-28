@@ -1,25 +1,22 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHeartbeat,
-  faUserMd,
-  faHospital,
-  faMapMarkerAlt,
-} from "@fortawesome/free-solid-svg-icons";
 import CountUp from "react-countup";
 
 import bg from "../assets/home/stats-bg.jpg";
+import icuBeds from "../assets/home/icuBeds.png";
+import doctors from "../assets/home/medical-team.png";
+import happyClients from "../assets/home/healthy.png";
+import experience from "../assets/home/experience.png";
 
 const stats = [
-  { icon: faHeartbeat, number: 9632, label: "Happy Patients" },
-  { icon: faUserMd, number: 178, label: "Qualified Doctors" },
-  { icon: faHospital, number: 864, label: "Clinic Rooms" },
-  { icon: faMapMarkerAlt, number: 473, label: "Local Partners" },
+  { icon: happyClients, number: 9632, label: "Happy Patients" },
+  { icon: doctors, number: 178, label: "Qualified Doctors" },
+  { icon: experience, number: 864, label: "Years of Experience" },
+  { icon: icuBeds, number: 473, label: "ICU Beds" },
 ];
 
 const Stats = () => {
   return (
-    <div className="relative py-16">
+    <div className="relative lg:py-14 md:py-12 py-10">
       {/* Background image with overlay */}
       <div
         className="absolute inset-0 z-0"
@@ -34,16 +31,16 @@ const Stats = () => {
       </div>
 
       {/* Stats content */}
-      <div className="relative flex flex-wrap justify-center gap-8 z-10">
+      <div className="relative grid grid-cols-2 md:grid-cols-4 md:px-28 px-4 gap-8 z-10">
         {stats.map((stat, index) => (
           <div
             key={index}
-            className="bg-white/90 p-6 rounded-lg shadow-2xl w-60 text-center"
+            className="bg-white md:p-5 p-2 rounded-lg shadow-2xl w-60 text-center"
           >
-            <div className="text-blue-500 text-5xl mb-4">
-              <FontAwesomeIcon icon={stat.icon} />
+            <div className="mb-4">
+              <img src={stat.icon} alt={stat.label} className="mx-auto md:w-20 w-14" />
             </div>
-            <div className="text-3xl font-bold text-gray-800 mb-2">
+            <div className="md:text-3xl text-xl font-bold text-gray-800 mb-2">
               <CountUp end={stat.number} duration={2} enableScrollSpy />
             </div>
             <p className="text-gray-500">{stat.label}</p>

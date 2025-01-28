@@ -1,60 +1,74 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUserDoctor,
-  faPills,
-  faTooth,
-  faEye,
-  faHeartPulse,
-  faBaby
-} from "@fortawesome/free-solid-svg-icons";
+import pattern from "../assets/home/whywechoose.png";
+import pharmacy from "../assets/services/24-hours.webp";
+import doctor from "../assets/services/doctor.webp";
+import heart from "../assets/services/medical.webp";
+import gynaecological from "../assets/services/pediatrician.webp";
+import surgery from "../assets/services/surgery-room.webp";
+import tooth from "../assets/services/tooth.webp";
 
 const services = [
   {
-    icon: faUserDoctor,
+    icon: doctor,
     title: "Qualified Doctors",
-    description: "Lorem ipsum dolor sit amet, consectetur elit. Quis ipsa ullam dicta ipsum porro."
+    description: "Expert doctors providing care across multiple medical specialties.",
   },
   {
-    icon: faPills,
+    icon: pharmacy,
     title: "Pharmacy Support",
-    description: "Lorem ipsum dolor sit amet, consectetur elit. Quis ipsa ullam dicta ipsum porro."
+    description: "Comprehensive pharmacy services ensuring access to necessary medications.",
   },
   {
-    icon: faTooth,
-    title: "Dental Care & Service",
-    description: "Lorem ipsum dolor sit amet, consectetur elit. Quis ipsa ullam dicta ipsum porro."
-  },
-  {
-    icon: faEye,
-    title: "Eye Care",
-    description: "Lorem ipsum dolor sit amet, consectetur elit. Quis ipsa ullam dicta ipsum porro."
-  },
-  {
-    icon: faHeartPulse,
+    icon: heart,
     title: "Cardiology Service",
-    description: "Lorem ipsum dolor sit amet, consectetur elit. Quis ipsa ullam dicta ipsum porro."
+    description: "Specialized heart care, treatments, and cardiovascular disease management.",
   },
   {
-    icon: faBaby,
+    icon: gynaecological,
     title: "Gynaecological Clinic",
-    description: "Lorem ipsum dolor sit amet, consectetur elit. Quis ipsa ullam dicta ipsum porro."
-  }
+    description: "Complete women’s health, including prenatal and routine care.",
+  },
+  {
+    icon: surgery,
+    title: "Surgical Services",
+    description: "Advanced surgical care for various specialties and critical conditions.",
+  },
+  {
+    icon: tooth,
+    title: "Dental Care & Service",
+    description: "Routine check-ups, cleanings, and advanced oral health treatments.",
+  },
 ];
+
+
 
 const WhyChooseUs = () => {
   return (
-    <div className="bg-gray-100 py-12">
+    <div className="bg-gray-100 md:py-12 lg:py-14 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-8">Why Choose Us</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 messiri">Why Choose Us</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300"
+              className="bg-white relative p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="text-blue-500 text-4xl mb-4">
-                <FontAwesomeIcon icon={service.icon} />
+               <div
+                              className="absolute inset-0"
+                              style={{
+                                backgroundImage: `url(${pattern})`,
+                                backgroundSize: "contain",
+                                backgroundPosition: "center",
+                                opacity: 0.6,
+                                zIndex: 0,
+                              }}
+                            ></div>
+              <div className="mb-4">
+                <img
+                  src={service.icon}
+                  alt={service.title}
+                  className="mx-auto h-16 w-16 object-contain"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
@@ -70,4 +84,3 @@ const WhyChooseUs = () => {
 };
 
 export default WhyChooseUs;
-

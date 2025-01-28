@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-
+import pattern from '../assets/home/patter.jpg'
 const doctors = [
     { name: 'Dr. John Doe', specialty: 'Cardiologist', image: 'https://picsum.photos/300/300?random=1' },
     { name: 'Dr. Jane Smith', specialty: 'Neurologist', image: 'https://picsum.photos/300/300?random=2' },
@@ -35,7 +35,8 @@ const OurTeam = () => {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto lg:py-14 md:py-12 py-10 px-4 ">
+    <div className="max-w-screen-xl relative mx-auto lg:py-14 md:py-12 py-10 px-4 ">
+      
       <h2 className="text-3xl font-semibold text-center mb-6 messiri">Highly Qualified Doctors</h2>
       <Slider {...settings}  >
         {doctors.map((doctor, index) => (

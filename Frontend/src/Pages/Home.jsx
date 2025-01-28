@@ -17,9 +17,9 @@ function Home() {
     <Header/>
     <HeroSlider/>
     <AboutSection/>
+    <Stats/>
     <Specialties/>
     <OurTeam/>
-    <Stats/>
     <WhyChooseUs/>
     <Gallery/>
     <Footer/>

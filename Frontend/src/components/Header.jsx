@@ -18,8 +18,8 @@ export default function Header() {
         <div className="flex items-center">
           <Link to="/">
             <img
-              src="https://picsum.photos/150/50"
-              alt="Hope Hospital"
+              src="https://picum.photos/150/50"
+              alt="Hope Hospital Logo"
               className="h-12"
             />
           </Link>
@@ -46,13 +46,16 @@ export default function Header() {
           <li
             className="relative cursor-pointer"
             onMouseEnter={() => handleDropdown("about")}
-            onMouseLeave={() => handleDropdown(null)}
+            // onMouseLeave={() => handleDropdown(null)}
           >
-            <Link to="#">About Hope Hospital ▾</Link>
+            <Link to="#">About ▾</Link>
             {openDropdown === "about" && (
-              <ul className="absolute z-50 left-0 mt-2 bg-white shadow-md border rounded-md py-2 w-48">
+              <ul className="absolute z-50 left-0 mt-2 bg-white shadow-md border rounded-md py-2 w-48" onMouseLeave={() => handleDropdown(null)}>
                 <li className="px-4 py-2 hover:bg-blue-100">
                   <Link to="/our-team">Our Team</Link>
+                </li>
+                <li className="px-4 py-2 hover:bg-blue-100">
+                  <Link to="/our-team">About Hope Hospital</Link>
                 </li>
               </ul>
             )}
@@ -61,38 +64,43 @@ export default function Header() {
           <li
             className="relative cursor-pointer"
             onMouseEnter={() => handleDropdown("specialities")}
-            onMouseLeave={() => handleDropdown(null)}
+            // onMouseLeave={() => handleDropdown(null)}
           >
             <Link to="#">Specialities ▾</Link>
             {openDropdown === "specialities" && (
               <ul className="absolute z-50 left-0 mt-2 bg-white shadow-md border rounded-md py-2 w-48">
                 <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/cardiology">Cardiology</Link>
+                  <Link to="/cardiology">Gerneral Surgery</Link>
+                </li>
+                <li className="px-4 py-2 hover:bg-blue-100">
+                  <Link to="/neurology">Orthopedic Surgery</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-blue-100">
                   <Link to="/neurology">Neurology</Link>
                 </li>
+                <li className="px-4 py-2 hover:bg-blue-100">
+                  <Link to="/neurology">Gynecology</Link>
+                </li>
+                <li className="px-4 py-2 hover:bg-blue-100">
+                  <Link to="/neurology">Demotology</Link>
+                </li>
+                <li className="px-4 py-2 hover:bg-blue-100">
+                  <Link to="/neurology">Critical Care</Link>
+                </li>
+                <li className="px-4 py-2 hover:bg-blue-100">
+                  <Link to="/neurology">General Medicine</Link>
+                </li>
               </ul>
             )}
-          </li>
-
-          <li className="hover:text-blue-500">
-            <Link to="/facilities">Our Team</Link>
           </li>
 
           <li
             className="relative cursor-pointer"
             onMouseEnter={() => handleDropdown("cases")}
-            onMouseLeave={() => handleDropdown(null)}
+            // onMouseLeave={() => handleDropdown(null)}
           >
-            <Link to="#">Cases ▾</Link>
-            {openDropdown === "cases" && (
-              <ul className="absolute z-50 left-0 mt-2 bg-white shadow-md border rounded-md py-2 w-48">
-                <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/case-studies">Case Studies</Link>
-                </li>
-              </ul>
-            )}
+            <Link to="#">Cases </Link>
+            
           </li>
 
           <li className="hover:text-blue-500">

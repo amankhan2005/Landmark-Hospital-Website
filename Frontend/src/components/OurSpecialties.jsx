@@ -3,6 +3,7 @@ import nicu from '../assets/home/nicu.png'
 import icu from '../assets/home/icu.png'
 import privateRoom from '../assets/home/private-room.png'
 import genral from '../assets/home/genral.png'
+import pattern from '../assets/home/patter.jpg'
 const specialties = [
   {
     id: 1,
@@ -32,7 +33,17 @@ const specialties = [
 
 const Specialties = () => {
   return (
-    <div className="md:py-12 lg:py-14 py-10 bg-gray-50">
+    <div className="md:py-12 relative lg:py-14 py-10 bg-gray-50"  style={{
+      backgroundImage: `url(${pattern})`,
+      backgroundSize: "contain",
+      backgroundPosition: "center",
+      opacity: 1,
+      zIndex: 0,
+    }}>
+       <div
+                className="absolute inset-0"
+               
+              ></div>
       <div className="container mx-auto px-4">
         <h2 className="md:text-4xl text-2xl font-bold text-center mb-8 messiri">Our Specialties</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
