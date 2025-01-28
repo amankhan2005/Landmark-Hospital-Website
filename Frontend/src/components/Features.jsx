@@ -1,31 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Use Link for navigation
+import pattern from "../assets/home/whywechoose.png";
+import workingTime from "../assets/home/time-table.jpg";
+import bookAppointment from "../assets/home/book-appointment.png";
+import cases from "../assets/home/cases.png";
+import contactUs from "../assets/home/contactUs.png";
 
 const featureData = [
   {
-    title: "Working Time",
-    content: [
-      "Mon – Wed: 9:00 AM - 7:00 PM",
-      "Thursday: 9:00 AM - 6:30 PM",
-      "Friday: 9:00 AM - 6:00 PM",
-      "Sun – Sun: CLOSED",
-    ],
+    title: "Time Table",
+    description: `Mon-Sat: 9:00 AM - 7:00 PM Sun: CLOSED`,
+    link: "/",
+    icon: workingTime,
   },
   {
-    title: "Doctors Timetable",
-    content: "An example text goes here with details about the timetable.",
-    buttonText: "View Timetable",
-    buttonLink: "#",
+    title: "Book Appointment",
+    description: "Book an appointment with ease.",
+    link: "/appointments",
+    icon: bookAppointment,
   },
   {
-    title: "Appointments",
-    content: "An example text goes here with details about appointments.",
-    buttonText: "Make an Appointment",
-    buttonLink: "#",
+    title: "Cases",
+    description: "View emergency cases.",
+    link: "/emergency-cases",
+    icon: cases,
   },
   {
-    title: "Emergency Cases",
-    content: "An example text goes here with details about emergency cases.",
-    contactNumber: "1-800-123-4560",
+    title: "Contact Us",
+    description: "Reach out to us for assistance.",
+    link: "/contact-us",
+    icon: contactUs,
   },
 ];
 
@@ -33,42 +37,36 @@ const FeaturesOverlay = () => {
   return (
     <>
       {/* Features Overlay */}
-      <div className="absolute bottom-[-120px] flex justify-center items-center  bg-opacity-90">
-        <div className="grid grid-cols-1 md:grid-cols-4  w-full px-4 py-10">
+      <div className="md:absolute bottom-[-50px] flex justify-center items-center bg-opacity-90">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full px-10">
           {featureData.map((feature, index) => (
-            <div
+            <Link
+              to={feature.link}
               key={index}
-              className="bg-gray-200 text-black p-6 border rounded shadow-lg"
+              className="bg-white relative text-black p-4 flex items-center  rounded-xl shadow-2xl hover:shadow-lg hover:shadow-gray-100 transition-shadow duration-300"
             >
-              <h3 className="text-2xl font-bold">{feature.title}</h3>
-
-              {/* Render content dynamically */}
-              {Array.isArray(feature.content) ? (
-                <ul className="mt-4">
-                  {feature.content.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="mt-4">{feature.content}</p>
-              )}
-
-              {/* Conditional rendering for buttons or contact number */}
-              {feature.buttonText && feature.buttonLink && (
-                <a
-                  href={feature.buttonLink}
-                  className="mt-10 bg-white text-blue-600 px-4 py-2 rounded"
-                >
-                  {feature.buttonText}
-                </a>
-              )}
-
-              {feature.contactNumber && (
-                <div className="mt-4 flex items-center">
-                  <span className="font-bold">{feature.contactNumber}</span>
-                </div>
-              )}
-            </div>
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `url(${pattern})`,
+                  backgroundSize: "contain",
+                  backgroundPosition: "center",
+                  opacity: 0.6,
+                  zIndex: 0,
+                }}
+              ></div>
+              <div className="w-16 h-16 mr-4">
+                <img
+                  src={feature.icon}
+                  alt={feature.title}
+                  className="w-full h-full object-cover rounded"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold">{feature.title}</h3>
+                <p className="mt-1 text-sm">{feature.description}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

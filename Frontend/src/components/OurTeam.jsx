@@ -35,12 +35,12 @@ const OurTeam = () => {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto py-16 px-4">
-      <h2 className="text-3xl font-semibold text-center mb-8">Highly Qualified Doctors</h2>
-      <Slider {...settings}>
+    <div className="max-w-screen-xl mx-auto lg:py-14 md:py-12 py-10 px-4 ">
+      <h2 className="text-3xl font-semibold text-center mb-6 messiri">Highly Qualified Doctors</h2>
+      <Slider {...settings}  >
         {doctors.map((doctor, index) => (
-          <div key={index} className="p-4 bg-white rounded-lg shadow-lg">
-            <img src={doctor.image} alt={doctor.name} className="w-full h-48 object-cover rounded-lg mb-4" />
+          <div key={index} className="p-6 bg-white rounded-lg shadow-lg">
+            <img src={doctor.image} alt={doctor.name} className="w-full h-65 object-cover rounded-lg mb-4" />
             <div className="text-center">
               <h3 className="text-xl font-semibold">{doctor.name}</h3>
               <p className="text-gray-600">{doctor.specialty}</p>

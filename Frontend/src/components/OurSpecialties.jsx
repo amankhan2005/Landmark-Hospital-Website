@@ -1,40 +1,43 @@
 import React from "react";
-
+import nicu from '../assets/home/nicu.png'
+import icu from '../assets/home/icu.png'
+import privateRoom from '../assets/home/private-room.png'
+import genral from '../assets/home/genral.png'
 const specialties = [
   {
     id: 1,
     title: "NICU",
     description: "State-of-the-art neonatal care for premature and critically ill newborns.",
-    image: `https://picsum.photos/400/300?random=1`,
+    image: `${nicu}`,
   },
   {
     id: 2,
     title: "ICU",
     description: "Advanced intensive care unit for patients requiring critical care.",
-    image: `https://picsum.photos/400/300?random=2`,
+    image: `${icu}`,
   },
   {
     id: 3,
     title: "General Ward",
     description: "Affordable and comprehensive medical care in our general ward.",
-    image: `https://picsum.photos/400/300?random=3`,
+    image: `${genral}`,
   },
   {
     id: 4,
     title: "Private Rooms",
     description: "Spacious private rooms with personalized care and comfort.",
-    image: `https://picsum.photos/400/300?random=4`,
+    image: `${privateRoom}`,
   },
 ];
 
 const Specialties = () => {
   return (
-    <div className="py-10 bg-gray-100">
+    <div className="md:py-12 lg:py-14 py-10 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Our Specialties</h2>
+        <h2 className="md:text-4xl text-2xl font-bold text-center mb-8 messiri">Our Specialties</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {specialties.map((specialty) => (
-            <div key={specialty.id} className="rounded-2xl shadow-lg overflow-hidden bg-white">
+            <div key={specialty.id} className="rounded-xl shadow-lg overflow-hidden bg-white">
               <img
                 src={specialty.image}
                 alt={specialty.title}
@@ -44,11 +47,11 @@ const Specialties = () => {
                 <h3 className="text-xl font-semibold mb-2">
                   {specialty.title}
                 </h3>
-                <div className="border-b-2 border-gray-300 mb-2"></div>
+                <div className="border-b border-gray-300 mb-2"></div>
                 <p className="text-gray-600 text-sm mb-4">
                   {specialty.description}
                 </p>
-                <button className="w-full py-2 px-4 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100">
+                <button className="w-full py-2 px-4 border hover-bg-primary cursor-pointer border-gray-300 bg-primary rounded-lg text-white hover:bg-gray-100">
                   View More
                 </button>
               </div>

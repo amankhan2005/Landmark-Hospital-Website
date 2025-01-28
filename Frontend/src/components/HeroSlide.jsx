@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FeaturesOverlay from "./Features";
-
+import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 // Slider data
 const slides = [
   {
@@ -37,31 +37,45 @@ const slides = [
 ];
 
 export default function HeroSlider() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 800, // Smooth transition speed
-    cssEase: "ease-in-out", // Smooth transition effect
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: true, // Enable navigation arrows
-    appendDots: dots => (
-      <div className="absolute bottom-8 border-4 left-1/2 transform -translate-x-1/2">
-        <ul className="flex space-x-2 z-20">{dots}</ul>
-      </div>
-    ),
-    customPaging: () => (
-      <div className="w-3 h-3 bg-white rounded-full opacity-70 hover:opacity-100 transition-all"></div>
-    )
-  };
+ // Slider settings
+ const settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1024, // For tablets or small laptops
+      settings: {
+        arrows: false,
+      },
+    },
+    {
+      breakpoint: 600, // For small tablets and large phones
+      settings: {
+        arrows: false,
+      },
+    },
+    {
+      breakpoint: 480, // For phones
+      settings: {
+        dots: false,
+        arrows: false,
+      },
+    },
+  ],
+};
 
   return (
-    <div className="w-full h-fit relative ">
+    <div className="w-full h-full relative">
       <Slider {...settings}>
         {slides.map((slide,index) => (
-          <div key={slide.id} className={`relative w-full h-[82vh] ${index !== slide ? 'inert' : ''}`}>
+          <div key={slide.id} className={`relative w-full h-[70vh] ${index !== slide ? 'inert' : ''}`}>
             {/* Background Image */}
             <img
               src={slide.image}
@@ -71,10 +85,10 @@ export default function HeroSlider() {
 
             {/* Content Overlay */}
             <div
-              className={`absolute inset-0 flex ${slide.class} items-center h-full px-10 bg-blac bg-opacity-50`}
+              className={`absolute inset-0 flex ${slide.class} items-center h-full px-20 `}
             >
-              <div className="text-white max-w-2xl">
-                <h2 className="text-5xl font-bold mb-4">{slide.title}</h2>
+              <div className="text-white max-w-2xl text-center">
+                <h2 className="text-5xl font-bold mb-2">{slide.title}</h2>
                 <p className="text-lg mb-6">{slide.description}</p>
                 <Link
                   to={slide.link}
@@ -91,3 +105,28 @@ export default function HeroSlider() {
     </div>
   );
 }
+
+const SampleNextArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <div
+      className="absolute top-1/2 right-6 transform -translate-y-1/2 bg-primary text-white rounded-full p-3 hover-bg-primary cursor-pointer  z-10"
+      onClick={onClick}
+    >
+      <FaArrowRight size={20} />
+    </div>
+  );
+};
+
+// Custom previous arrow component
+const SamplePrevArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <div
+      className="absolute top-1/2 left-6 transform -translate-y-1/2 bg-primary text-white rounded-full p-3 hover-bg-primary cursor-pointer  z-10"
+      onClick={onClick}
+    >
+      <FaArrowLeft size={20} />
+    </div>
+  );
+};

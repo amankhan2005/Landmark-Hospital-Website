@@ -1,10 +1,10 @@
 export default function TopNavBar() {
     return (
-      <header className="bg-blue-500 text-white">
+      <header className="bg-primary text-white">
         <div className="container mx-auto flex justify-between items-center py-2 px-4">
           {/* Left side: Email and Address */}
           <div className="flex items-center space-x-6">
-            <span className="flex items-center space-x-2">
+            <span className="md:flex hidden items-center space-x-2">
               <i className="fas fa-envelope"></i>
               <span>info@yourmail.com</span>
             </span>

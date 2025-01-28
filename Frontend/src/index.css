@@ -1,2 +1,22 @@
 @import "tailwindcss";
 @import '@fortawesome/fontawesome-free/css/all.min.css';
+
+
+body{
+    font-family: "Poppins", serif;
+}
+.messiri{
+    font-family: "El Messiri", serif;
+}
+
+.bg-primary{
+    background-color: #1873fc !important;
+}
+.hover-bg-primary:hover{
+    background-color: #0066ff !important;
+}
+
+
+.text-primary{
+    color: #4848f8 !important;
+}
