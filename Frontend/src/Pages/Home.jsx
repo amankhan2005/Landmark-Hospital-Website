@@ -13,8 +13,7 @@ import Footer from '../components/Footer'
 function Home() {
   return (
     <>
-    <TopNavBar/>
-    <Header/>
+    
     <HeroSlider/>
     <AboutSection/>
     <Stats/>
@@ -22,7 +21,7 @@ function Home() {
     <OurTeam/>
     <WhyChooseUs/>
     <Gallery/>
-    <Footer/>
+    {/* <Footer/> */}
     </>
   )
 }
