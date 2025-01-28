@@ -12,6 +12,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { GiRotaryPhone } from "react-icons/gi";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
+import BreadCumb from "../components/Breadcumb";
 
 const ContactUs = () => {
   const [error, setError] = useState(null);
@@ -81,17 +82,13 @@ const ContactUs = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <h1 className="breadcrumb relative md:pt-32 pt-24 pb-12 font-bold text-center mb-12 text-white ">
-        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
-        <div className="relative z-10 md:text-5xl text-3xl">Contact Us</div>
-        <div className="relative z-10 text-lg mt-2 text-secondary">
-          <Link to={"/"}>           <span className="hover:text-gray-300 cursor-pointer text-white">Home / </span>
-          </Link>
-
-          Contact Us
-        </div>
-      </h1>
+       <BreadCumb
+        items={[
+          { label: 'Home', link: `/` },
+          { label: `Contact Us`, link:`/contact` },
+        ]}
+        title='Contact Us'
+      />
 
       {/* Form and Office Details Section */}
       <div className=" md:px-8  lg:px-4  gap-6 md:gap-0 lg:mb-12  ">
