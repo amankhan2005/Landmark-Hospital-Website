@@ -11,58 +11,64 @@ const services = [
   {
     icon: doctor,
     title: "Qualified Doctors",
-    description: "Expert doctors providing care across multiple medical specialties.",
+    description:
+      "Expert doctors providing care across multiple medical specialties.",
   },
   {
     icon: pharmacy,
     title: "Pharmacy Support",
-    description: "Comprehensive pharmacy services ensuring access to necessary medications.",
+    description:
+      "Comprehensive pharmacy services ensuring access to necessary medications.",
   },
   {
     icon: heart,
     title: "Cardiology Service",
-    description: "Specialized heart care, treatments, and cardiovascular disease management.",
+    description:
+      "Specialized heart care, treatments, and cardiovascular disease management.",
   },
   {
     icon: gynaecological,
     title: "Gynaecological Clinic",
-    description: "Complete women’s health, including prenatal and routine care.",
+    description:
+      "Complete women’s health, including prenatal and routine care.",
   },
   {
     icon: surgery,
     title: "Surgical Services",
-    description: "Advanced surgical care for various specialties and critical conditions.",
+    description:
+      "Advanced surgical care for various specialties and critical conditions.",
   },
   {
     icon: tooth,
     title: "Dental Care & Service",
-    description: "Routine check-ups, cleanings, and advanced oral health treatments.",
+    description:
+      "Routine check-ups, cleanings, and advanced oral health treatments.",
   },
 ];
-
-
 
 const WhyChooseUs = () => {
   return (
     <div className="bg-gray-100 md:py-12 lg:py-14 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-8 messiri">Why Choose Us</h2>
+        <h2 className="text-3xl text-blue-600 font-bold text-center mb-8 messiri">
+          Why Choose Us
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white relative p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300"
+              className="bg-white relative py-2 px-4 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300"
             >
-               <div
-                              className="absolute inset-0"
-                              style={{
-                                backgroundImage: `url(${pattern})`,
-                                backgroundSize: "contain",
-                                backgroundPosition: "center",
-                                opacity: 0.6,
-                                zIndex: 0,
-                              }}
-                            ></div>
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `url(${pattern})`,
+                  backgroundSize: "contain",
+                  backgroundPosition: "center",
+                  opacity: 0.2,
+                  zIndex: 0,
+                }}
+              ></div>
               <div className="mb-4">
                 <img
                   src={service.icon}
@@ -72,9 +78,9 @@ const WhyChooseUs = () => {
               </div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300">
+              {/* <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300">
                 Read More
-              </button>
+              </button> */}
             </div>
           ))}
         </div>

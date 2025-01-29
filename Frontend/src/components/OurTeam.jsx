@@ -1,54 +1,74 @@
-import React from 'react';
-import Slider from 'react-slick';
-import pattern from '../assets/home/patter.jpg'
+import React from "react";
+import { Link } from "react-router-dom";
+
 const doctors = [
-    { name: 'Dr. John Doe', specialty: 'Cardiologist', image: 'https://picsum.photos/300/300?random=1' },
-    { name: 'Dr. Jane Smith', specialty: 'Neurologist', image: 'https://picsum.photos/300/300?random=2' },
-    { name: 'Dr. Alice Brown', specialty: 'Pediatrician', image: 'https://picsum.photos/300/300?random=3' },
-    { name: 'Dr. Bob White', specialty: 'Orthopedic', image: 'https://picsum.photos/300/300?random=4' },
-    { name: 'Dr. Emily Green', specialty: 'Dermatologist', image: 'https://picsum.photos/300/300?random=5' },
-    // Add more doctors here
-  ];
-  
+  {
+    name: "Dr. Adam Jonson",
+    specialty: "Medical Director",
+    image: "https://picsum.photos/300/300?random=1",
+  },
+  {
+    name: "Dr. Marry Hudson",
+    specialty: "Hematologist",
+    image: "https://picsum.photos/300/300?random=2",
+  },
+  {
+    name: "Dr. Simon Larson",
+    specialty: "Family Doctor",
+    image: "https://picsum.photos/300/300?random=3",
+  },
+];
 
 const OurTeam = () => {
-  const settings = {
-    dots: true, // Pagination
-    infinite: true, // Infinite scrolling
-    speed: 500,
-    slidesToShow: 3, // Default number of slides visible
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024, // Tablet view
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768, // Mobile view
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
   return (
-    <div className="max-w-screen-xl relative mx-auto lg:py-14 md:py-12 py-10 px-4 ">
-      
-      <h2 className="text-3xl font-semibold text-center mb-6 messiri">Highly Qualified Doctors</h2>
-      <Slider {...settings}  >
+    <div className="md:py-12 lg:py-14 py-10 px-4 text-center">
+      {/* Section Heading */}
+      <h2 className="text-4xl font-semibold messiri text-blue-700">
+        Meet The Team
+      </h2>
+      <p className="text-gray-500 italic mt-2">
+        Sample text. Click to select the text box. Click again or double-click
+        to start editing the text.
+      </p>
+
+      {/* Doctors Container */}
+      <div className="mt-10 flex flex-col md:flex-row relative justify-center items-center gap-8">
+        <div className="absolute bg-primary w-full"></div>
         {doctors.map((doctor, index) => (
-          <div key={index} className="p-6 bg-white rounded-lg shadow-lg">
-            <img src={doctor.image} alt={doctor.name} className="w-full h-65 object-cover rounded-lg mb-4" />
-            <div className="text-center">
-              <h3 className="text-xl font-semibold">{doctor.name}</h3>
-              <p className="text-gray-600">{doctor.specialty}</p>
+          <div
+            key={index}
+            className="bg-gray-100 borde border-blue-400 rounded-lg p-6 w-full sm:w-[300px] relative z-10"
+          >
+            {/* Doctor Image */}
+            <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-blue-400 relative">
+              <img
+                src={doctor.image}
+                alt={doctor.name}
+                className="relative w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Doctor Info */}
+            <div className="mt-4">
+              <h3 className="text-lg font-bold">{doctor.name}</h3>
+              <p className="text-sm text-gray-600">{doctor.specialty}</p>
             </div>
           </div>
         ))}
-      </Slider>
+
+        {/* Background Effect */}
+        <div className="absolute w-full h-3/5 bg-blue-400 left-0 right-0 mx-auto z-0"></div>
+      </div>
+
+      {/* View More Button - Centered and Styled */}
+      <div className="mt-8 flex justify-center">
+        <Link
+          to="/our-team"
+          className="py-2 px-6 border hover:bg-white hover:text-blue-600 bg-blue-500 transition-all duration-500 ease-in-out cursor-pointer border-gray-300 rounded-lg text-white"
+        >
+          View More
+        </Link>
+      </div>
     </div>
   );
 };

@@ -5,11 +5,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FeaturesOverlay from "./Features";
 import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
+import Features from "./Features2";
+import banner1 from '../assets/home/banner1.jpg'
+import banner2 from '../assets/home/banner3.jpg'
+import banner3 from '../assets/home/banner3.jpg'
 // Slider data
 const slides = [
   {
     id: 1,
-    image: "https://picsum.photos/1920/1080?random=1",
+    image: `${banner1}`,
     title: "Explore the World",
     description: "Discover new places and experiences with us.",
     buttonText: "Learn More",
@@ -18,7 +22,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "https://picsum.photos/1920/1080?random=2",
+    image: `${banner2}`,
     title: "Adventure Awaits",
     description: "Plan your next adventure today!",
     buttonText: "Get Started",
@@ -27,7 +31,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "https://picsum.photos/1920/1080?random=3",
+    image:`${banner3}`,
     title: "Luxury Travel",
     description: "Experience the best in luxury travel.",
     buttonText: "View Packages",
@@ -72,7 +76,7 @@ export default function HeroSlider() {
 };
 
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-[66vh] relative">
       <Slider {...settings}>
         {slides.map((slide,index) => (
           <div key={slide.id} className={`relative w-full h-[70vh] ${index !== slide ? 'inert' : ''}`}>
@@ -83,7 +87,7 @@ export default function HeroSlider() {
               className="w-full h-full object-cover"
             />
 
-            {/* Content Overlay */}
+            {/* Content Overlay
             <div
               className={`absolute inset-0 flex ${slide.class} items-center h-full px-20 `}
             >
@@ -97,11 +101,12 @@ export default function HeroSlider() {
                   {slide.buttonText}
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         ))}
       </Slider>
-    <FeaturesOverlay/>
+    {/* <FeaturesOverlay/> */}
+    <Features/>
     </div>
   );
 }

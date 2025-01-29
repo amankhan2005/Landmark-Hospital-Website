@@ -10,7 +10,7 @@ export default function TopNavBar() {
             </span>
             <span className="flex items-center space-x-2">
               <i className="fas fa-map-marker-alt"></i>
-              <span>121 Road, Lucknow</span>
+              <span>Shiv nagar, Bahraich, Uttar Pradesh 271801</span>
             </span>
           </div>
   
