@@ -3,44 +3,49 @@ import { Link } from "react-router-dom";
 
 const doctors = [
   {
-    name: "Dr. Adam Jonson",
+    name: "Dr. O.P. Pandey",
     specialty: "Medical Director",
     image: "https://picsum.photos/300/300?random=1",
   },
   {
-    name: "Dr. Marry Hudson",
+    name: "Dr. Anil Srivastava",
     specialty: "Hematologist",
     image: "https://picsum.photos/300/300?random=2",
   },
   {
-    name: "Dr. Simon Larson",
+    name: "Dr. A.k. Mishra",
     specialty: "Family Doctor",
+    image: "https://picsum.photos/300/300?random=3",
+  },
+  {
+    name: "Dr. B.P. Singh",
+    specialty: "Skin Speciliest",
     image: "https://picsum.photos/300/300?random=3",
   },
 ];
 
 const OurTeam = () => {
   return (
-    <div className="md:py-12 lg:py-14 py-10 px-4 text-center">
+    <div className="md:py-12 lg:py-14 py-10  text-center">
       {/* Section Heading */}
       <h2 className="text-4xl font-semibold messiri text-blue-700">
         Meet The Team
       </h2>
-      <p className="text-gray-500 italic mt-2">
+      {/* <p className="text-gray-500 italic mt-2">
         Sample text. Click to select the text box. Click again or double-click
         to start editing the text.
-      </p>
+      </p> */}
 
       {/* Doctors Container */}
-      <div className="mt-10 flex flex-col md:flex-row relative justify-center items-center gap-8">
-        <div className="absolute bg-primary w-full"></div>
+      <div className="mt-24 flex flex-col md:flex-row relative justify-center px-10 items-center gap-8">
+        <div className="absolute  bg-primary w-full"></div>
         {doctors.map((doctor, index) => (
           <div
             key={index}
-            className="bg-gray-100 borde border-blue-400 rounded-lg p-6 w-full sm:w-[300px] relative z-10"
+            className="bg-white  border-y-2 border-blue-400 rounded-lg p-6 w-full sm:w-[300px] relative z-10"
           >
             {/* Doctor Image */}
-            <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-blue-400 relative">
+            <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-blue-400 absolute left-0 translate-x-1/2  top-[-80px]">
               <img
                 src={doctor.image}
                 alt={doctor.name}
@@ -49,7 +54,7 @@ const OurTeam = () => {
             </div>
 
             {/* Doctor Info */}
-            <div className="mt-4">
+            <div className="mt-14">
               <h3 className="text-lg font-bold">{doctor.name}</h3>
               <p className="text-sm text-gray-600">{doctor.specialty}</p>
             </div>
@@ -57,7 +62,7 @@ const OurTeam = () => {
         ))}
 
         {/* Background Effect */}
-        <div className="absolute w-full h-3/5 bg-blue-400 left-0 right-0 mx-auto z-0"></div>
+        <div className="absolute w-full h-1/2 bg-blue-400 left-0 right-0 mx-auto z-0"></div>
       </div>
 
       {/* View More Button - Centered and Styled */}

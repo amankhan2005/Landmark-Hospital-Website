@@ -36,7 +36,7 @@ const specialties = [
 
 const Specialties = () => {
   return (
-    <div className="md:py-12 lg:py-14 py-10 bg-gray-100 px-14">
+    <div className="md:py-12 lg:py-14 py-10 bg-gra0 px-14">
       {/* <div
         className="absolute inset-0"
         style={{

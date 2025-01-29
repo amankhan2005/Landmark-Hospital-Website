@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import Gallery from './components/Gallery'
 import GalleryPage from './Pages/GalleryPage'
 import ContactUs from './Pages/ContactUs'
+import Cases from './Pages/Cases'
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ function App() {
       <Route path='/our-team' element={<OurTeam/>}/>
       <Route path='/gallery' element={<GalleryPage/>}/>
       <Route path='/contact' element={<ContactUs/>}/>
+      <Route path='/cases' element={<Cases/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>

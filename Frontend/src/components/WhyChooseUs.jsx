@@ -65,7 +65,7 @@ const WhyChooseUs = () => {
                   backgroundImage: `url(${pattern})`,
                   backgroundSize: "contain",
                   backgroundPosition: "center",
-                  opacity: 0.2,
+                  opacity: 0.4,
                   zIndex: 0,
                 }}
               ></div>

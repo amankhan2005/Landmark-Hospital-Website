@@ -19,21 +19,21 @@ const Footer = () => {
             <h4 className="text-2xl font-semibold mb-4 messiri">Get In Touch With Us</h4>
             <ul>
               <li className="flex items-center mb-3">
-                <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-2xl" />
+                <FontAwesomeIcon icon={faEnvelope} className="mr-2 " />
                 <a href="mailto:saumya.751983@gmail.com" className="hover:underline">
                   hope-hospital@gmail.com
                 </a>
               </li>
               <li className="flex items-center mb-3">
-                <FontAwesomeIcon icon={faPhone} className="mr-2 text-2xl" />
+                <FontAwesomeIcon icon={faPhone} className="mr-2 " />
                 <a href="tel:+917570018529" className="hover:underline">
                   +91-9519838720
                 </a>
               </li>
               <li className="flex items-cente">
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 text-2xl" />
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 " />
                 <p className="text-left">
-                Shiv nagar, Gonda Rd, beside Balaji Hundai Showroom, Nawagarhi, Bakshi Pura, Bahraich, Uttar Pradesh 271801
+                Gonda Road, Near Vinayak Resorts, Bharaich - 271801 (U.P.)
                 </p>
               </li>
             </ul>

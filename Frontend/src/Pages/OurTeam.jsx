@@ -26,7 +26,7 @@ function OurTeam() {
       />
       <div className="flex flex-wrap justify-evenly mt-10 items-center gap-8 p-4">
         {teamMembers.map((member, index) => (
-          <div key={index} className=" w-full md:w-1/2 lg:w-1/4 bg-white rounded-lg shadow-lg overflow-hidden">
+          <div key={index} className=" w-full md:w-1/2 lg:w-1/6 bg-white rounded-lg shadow-lg overflow-hidden">
             <img className="w-full h-48 object-cover" src={member.image} alt={member.name} />
             <div className="p-4">
               <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>

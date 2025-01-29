@@ -34,7 +34,7 @@ const Gallery = () => {
   }));
 
   return (
-    <div className=" md:py-12 lg:py-14 py-10">
+    <div className=" md:py-12 lg:py-14 py-10 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="md:text-4xl text-2xl font-bold text-center mb-8 messiri">Our Recent Photos</h2>
         <Slider {...settings}>

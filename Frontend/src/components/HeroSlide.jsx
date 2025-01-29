@@ -7,7 +7,7 @@ import FeaturesOverlay from "./Features";
 import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 import Features from "./Features2";
 import banner1 from '../assets/home/banner1.jpg'
-import banner2 from '../assets/home/banner3.jpg'
+import banner2 from '../assets/home/banner2.jpg'
 import banner3 from '../assets/home/banner3.jpg'
 // Slider data
 const slides = [
