@@ -10,6 +10,9 @@ import Gallery from './components/Gallery'
 import GalleryPage from './Pages/GalleryPage'
 import ContactUs from './Pages/ContactUs'
 import Cases from './Pages/Cases'
+import BlogPage from './Pages/BlogPage'
+import Specialities from './Pages/Specilities'
+import SpecialtyDetail from './components/SpecialitiesDetail'
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +24,9 @@ function App() {
       <Route path='/gallery' element={<GalleryPage/>}/>
       <Route path='/contact' element={<ContactUs/>}/>
       <Route path='/cases' element={<Cases/>}/>
+      <Route path='/blog' element={<BlogPage/>}/>
+      <Route path='/specialities' element={<Specialities/>}/>
+      <Route path='/specialities/:specialtyName' element={<SpecialtyDetail/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>

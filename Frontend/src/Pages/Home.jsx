@@ -11,6 +11,7 @@ import Gallery from '../components/Gallery'
 import Footer from '../components/Footer'
 import ContactUs from '../components/ContactUs'
 import HowWeWork from '../components/HowWeWork'
+import BlogComponent from '../components/BlogSection'
 
 function Home() {
   return (
@@ -26,6 +27,7 @@ function Home() {
     <WhyChooseUs/>
     <ContactUs/>
     <Gallery/>
+    <BlogComponent/>
     {/* <Footer/> */}
     </>
   )

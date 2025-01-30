@@ -16,12 +16,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
           {/* Contact Section */}
           <div>
-            <h4 className="text-2xl font-semibold mb-4 messiri">Get In Touch With Us</h4>
+            <h4 className="text-2xl  font-semibold mb-4 messiri">Get In Touch With Us</h4>
             <ul>
               <li className="flex items-center mb-3">
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2 " />
                 <a href="mailto:saumya.751983@gmail.com" className="hover:underline">
-                  hope-hospital@gmail.com
+                  hospital@gmail.com
                 </a>
               </li>
               <li className="flex items-center mb-3">
@@ -30,17 +30,25 @@ const Footer = () => {
                   +91-9519838720
                 </a>
               </li>
-              <li className="flex items-cente">
+              <li className="flex items-center">
                 <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 " />
                 <p className="text-left">
                 Gonda Road, Near Vinayak Resorts, Bharaich - 271801 (U.P.)
                 </p>
               </li>
+              <div className="flex space-x-4 justify-left mt-4 items-center">
+            <a href="#" className="hover:text-gray-200 text-xl"><i className="fab fa-facebook-f"></i></a>
+            <a href="#" className="hover:text-gray-200 text-xl"><i className="fab fa-twitter"></i></a>
+            <a href="#" className="hover:text-gray-200 text-xl"><i className="fab fa-instagram"></i></a>
+            <a href="#" className="hover:text-gray-200 text-xl"><i className="fab fa-youtube"></i></a>
+            <a href="#" className="hover:text-gray-200 text-xl"><i className="fab fa-linkedin-in"></i></a>
+            <a href="#" className="hover:text-gray-200 text-xl"><i className="fab fa-google-plus-g"></i></a>
+          </div>
             </ul>
           </div>
 
  {/* Our Facilities Section */}
- {/* <div>
+ {/* <div className="">
             <h4 className="text-2xl font-semibold mb-4 messiri">Our Facilities</h4>
             <ul className="space-y-2">
               <li>
@@ -131,6 +139,16 @@ const Footer = () => {
               <li>
                 <Link to="/testimonials" className="hover:underline">
                   Testimonials
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="hover:underline">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="hover:underline">
+                  Gallery
                 </Link>
               </li>
               <li>

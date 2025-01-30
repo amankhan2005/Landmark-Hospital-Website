@@ -42,7 +42,7 @@ export default function Header() {
             onMouseEnter={() => handleDropdown("about")}
             onMouseLeave={() => handleDropdown(null)}
           >
-            <span className="hover:text-blue-500">About ▾</span>
+            <span className="hover:text-blue-500">About Us ▾</span>
             {openDropdown === "about" && (
               <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-52 transition-all duration-300">
                 <li className="px-4 py-2 hover:bg-blue-100 ">
@@ -63,25 +63,25 @@ export default function Header() {
             {openDropdown === "specialities" && (
               <ul className="absolute z-50 left-0 bg-white shadow-md  rounded-md py-2 w-48 transition-all duration-300">
                 <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/general-surgery">General Surgery</Link>
+                  <Link to="/specialities/general-surgery">General Surgery</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/orthopedic">Orthopedic Surgery</Link>
+                  <Link to="/specialities/orthopedic-surgery">Orthopedic Surgery</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/neurology">Neurology</Link>
+                  <Link to="/specialities/neurology">Neurology</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/gynecology">Gynecology</Link>
+                  <Link to="/specialities/gynecology">Gynecology</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/dermatology">Dermatology</Link>
+                  <Link to="/specialities/dermatology">Dermatology</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/critical-care">Critical Care</Link>
+                  <Link to="/specialities/critical-care">Critical Care</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/general-medicine">General Medicine</Link>
+                  <Link to="/specialities/general-medicine">General Medicine</Link>
                 </li>
               </ul>
             )}
