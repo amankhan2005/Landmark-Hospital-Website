@@ -13,6 +13,9 @@ import Cases from './Pages/Cases'
 import BlogPage from './Pages/BlogPage'
 import Specialities from './Pages/Specilities'
 import SpecialtyDetail from './components/SpecialitiesDetail'
+import Specialties from './components/OurFacilities'
+import FacilitiesPage from './Pages/FacilitiesPage'
+import FacilitiesDetail from './components/FacilitiesDetail'
 function App() {
   return (
     <BrowserRouter>
@@ -27,6 +30,8 @@ function App() {
       <Route path='/blog' element={<BlogPage/>}/>
       <Route path='/specialities' element={<Specialities/>}/>
       <Route path='/specialities/:specialtyName' element={<SpecialtyDetail/>}/>
+      <Route path='/facilities' element={<FacilitiesPage/>}/>
+      <Route path='/facilities/:facilitiesName' element={<FacilitiesDetail/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>

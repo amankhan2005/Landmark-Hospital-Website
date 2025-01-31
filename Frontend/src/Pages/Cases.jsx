@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BreadCumb from '../components/Breadcumb';
 
 const casesData = Array.from({ length: 10 }, (_, index) => ({
   title: `Case ${index + 1}`,
@@ -30,6 +31,13 @@ const Cases = () => {
 
   return (
     <div>
+      <BreadCumb
+        items={[
+          { label: "Home", link: `/` },
+          { label: `Cases`, link: `/cases` },
+        ]}
+        title='Our Recent Cases'
+      />
       {/* Cases Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
         {casesData.map((caseItem, index) => (

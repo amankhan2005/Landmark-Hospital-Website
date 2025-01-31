@@ -44,14 +44,19 @@ export default function Header() {
           >
             <span className="hover:text-blue-500">About Us ▾</span>
             {openDropdown === "about" && (
-              <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-52 transition-all duration-300">
-                <li className="px-4 py-2 hover:bg-blue-100 ">
-                  <Link to="/our-team">Our Team</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/about-hospital">About Hope Hospital</Link>
-                </li>
-              </ul>
+             <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-52 transition-all duration-300 text-sm">
+             <li>
+               <Link to="/our-team" className="block px-4 py-2 hover:bg-blue-100">
+                 Our Team
+               </Link>
+             </li>
+             <li>
+               <Link to="/about-hospital" className="block px-4 py-2 hover:bg-blue-100">
+                 About Hope Hospital
+               </Link>
+             </li>
+           </ul>
+           
             )}
           </li>
           <li
@@ -59,31 +64,46 @@ export default function Header() {
             onMouseEnter={() => handleDropdown("specialities")}
             onMouseLeave={() => handleDropdown(null)}
           >
-            <span className="hover:text-blue-500">Specialities ▾</span>
+            <Link to='/specialities' className="hover:text-blue-500">Specialities ▾</Link>
             {openDropdown === "specialities" && (
-              <ul className="absolute z-50 left-0 bg-white shadow-md  rounded-md py-2 w-48 transition-all duration-300">
-                <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/specialities/general-surgery">General Surgery</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/specialities/orthopedic-surgery">Orthopedic Surgery</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/specialities/neurology">Neurology</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/specialities/gynecology">Gynecology</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/specialities/dermatology">Dermatology</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/specialities/critical-care">Critical Care</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/specialities/general-medicine">General Medicine</Link>
-                </li>
-              </ul>
+             <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-48 transition-all duration-300 text-sm">
+             <li>
+               <Link to="/specialities/general-surgery" className="block px-4 py-2 hover:bg-blue-100">
+                 General Surgery
+               </Link>
+             </li>
+             <li>
+               <Link to="/specialities/orthopedic-surgery" className="block px-4 py-2 hover:bg-blue-100">
+                 Orthopedic Surgery
+               </Link>
+             </li>
+             <li>
+               <Link to="/specialities/neurology" className="block px-4 py-2 hover:bg-blue-100">
+                 Neurology
+               </Link>
+             </li>
+             <li>
+               <Link to="/specialities/gynecology" className="block px-4 py-2 hover:bg-blue-100">
+                 Gynecology
+               </Link>
+             </li>
+             <li>
+               <Link to="/specialities/dermatology" className="block px-4 py-2 hover:bg-blue-100">
+                 Dermatology
+               </Link>
+             </li>
+             <li>
+               <Link to="/specialities/critical-care" className="block px-4 py-2 hover:bg-blue-100">
+                 Critical Care
+               </Link>
+             </li>
+             <li>
+               <Link to="/specialities/general-medicine" className="block px-4 py-2 hover:bg-blue-100">
+                 General Medicine
+               </Link>
+             </li>
+           </ul>
+           
             )}
           </li>
           <li
@@ -91,22 +111,31 @@ export default function Header() {
             onMouseEnter={() => handleDropdown("facilities")}
             onMouseLeave={() => handleDropdown(null)}
           >
-            <span className="hover:text-blue-500">Facilities ▾</span>
+            <Link to='/facilities' className="hover:text-blue-500">Facilities ▾</Link>
             {openDropdown === "facilities" && (
-              <ul className="absolute z-50 left-0 bg-white shadow-md  rounded-md py-2 w-48 transition-all duration-300">
-                <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/nicu">NICU</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/icu">ICU</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/general-care">General Care</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-blue-100">
-                  <Link to="/private-care">Private Care</Link>
-                </li>
-              </ul>
+             <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-48 transition-all duration-300 text-sm">
+             <li>
+               <Link to="/facilities/nicu" className="block px-4 py-2 hover:bg-blue-100">
+                 NICU
+               </Link>
+             </li>
+             <li>
+               <Link to="/facilities/icu" className="block px-4 py-2 hover:bg-blue-100">
+                 ICU
+               </Link>
+             </li>
+             <li>
+               <Link to="/facilities/general-care" className="block px-4 py-2 hover:bg-blue-100">
+                 General Care
+               </Link>
+             </li>
+             <li>
+               <Link to="/facilities/private-care" className="block px-4 py-2 hover:bg-blue-100">
+                 Private Care
+               </Link>
+             </li>
+           </ul>
+           
             )}
           </li>
           <li className={`hover:text-blue-500  ${location.pathname === "/cases" ? "border-b-2 border-blue-500" : ""}`}>

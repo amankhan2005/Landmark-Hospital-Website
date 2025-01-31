@@ -65,8 +65,8 @@ const BlogComponent = () => {
    <h2 className="text-4xl messiri font-bold text-blue-500 mt-2 text-center ">Our Recent Blog</h2>
     <div className="grid grid-cols-12 gap-4 p-4">
       {/* Blog Section */}
-      <div className="col-span-8 grid grid-cols-2 gap-2">
-        {filteredBlogs.slice(0,2).map((blog) => (
+      <div className="col-span-12 grid grid-cols-3 gap-2">
+        {filteredBlogs.slice(0,3).map((blog) => (
           <div
             key={blog.id}
             className="bordr rounded-lg p-4 mb-4 shado-2xl hover:shadow-2xl transition cursor-pointer"
@@ -87,7 +87,7 @@ const BlogComponent = () => {
         ))}
       </div>
 
-      {/* Tags Section */}
+      {/* Tags Section
       <div className="col-span-4">
         <h3 className="text-xl font-semibold mb-4 mt-2 messiri">By Specialities</h3>
         <div className="flex flex-wrap gap-2">
@@ -105,7 +105,7 @@ const BlogComponent = () => {
             </button>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
     </div>
   );

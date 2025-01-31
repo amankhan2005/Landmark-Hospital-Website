@@ -120,7 +120,7 @@ const ContactUs = () => {
         <div className="flex lg:mx-10  lg:flex-row flex-col  gap-4">
           <div className="flex-1 flex flex-col  gap-4 text-white">
             <div className=" bg-blue-500 rounded-4xl  py-8 px-4">
-              <div className="text-4xl messiri">
+              <div className="text-3xl messiri">
                 <FaLocationDot className="inline-block mr-2 text-3xl my-4 " />{" "}
                 Our Location
               </div>
@@ -129,7 +129,7 @@ const ContactUs = () => {
               </p>
             </div>
             <div className=" bg-blue-400 rounded-4xl py-8 px-4">
-              <div className="text-4xl messiri">
+              <div className="text-3xl messiri">
                 <FaPhone className="inline-block mr-2 text-3xl my-4 rotate-90" /> Connect
                 with Us
               </div>
@@ -138,7 +138,7 @@ const ContactUs = () => {
               </p>
             </div>
             <div className=" bg-blue-500 rounded-4xl py-8 px-4">
-              <div className="text-4xl messiri">
+              <div className="text-3xl messiri">
                 <FaClock className="inline-block mr-2 text-3xl my-4" /> Visiting Hours
               </div>
               <p className="text-gray-100">
