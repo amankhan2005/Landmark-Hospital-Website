@@ -120,7 +120,7 @@ const BlogPage = () => {
         {filteredBlogs.map((blog) => (
           <div
             key={blog.id}
-            className="bordr rounded-lg p-4 mb-4 shado-2xl hover:shadow-2xl transition cursor-pointer"
+            className="bordr rounded-lg p-4 mb-4 shadow-2xl hover:shadow-none transition cursor-pointer"
             onClick={() => navigate(`/blog/${blog.id}`)}
           >
             <img
@@ -128,11 +128,15 @@ const BlogPage = () => {
               alt={blog.title}
               className="w-full h-40 object-cover rounded-lg mb-4"
             />
+            <p className="text-sm text-gray-500 mb-1">
+              Published by <span className="text-gray-900 ">{blog.author}</span>
+            </p>
             <h2 className="text-xl font-bold line-clamp-1 mb-2">{blog.title}</h2>
             <p className="text-gray-700 mb-2 line-clamp-2">{blog.description}</p>
-            <p className="text-sm text-gray-500">
-              Published by <span className="text-gray-900">{blog.author}</span> on {blog.date}
-            <button className="text-blue-700 hover:text-blue-600 cursor-pointer ms-3 bg-gray-300 px-2 py-1 rounded-full">Read</button>
+            <p className="text-sm text-gray-500 flex justify-between px-2 items-center">
+              <span> on {blog.date}</span>
+            <button onClick={() => navigate(`/blog/${blog.id}`)}
+ className="text-blue-700 hover:text-blue-600 cursor-pointer ms-3 bg-gray-300 px-2 py-1 rounded-full">Read</button>
             </p>
           </div>
         ))}

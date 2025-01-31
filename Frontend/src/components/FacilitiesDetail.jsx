@@ -67,7 +67,7 @@ const FacilitiesDetail = () => {
             <img
               src={facilities.image}
               alt={facilities.title}
-              className="w-96 h-96 rounded-lg shadow-lg hover:shadow-2xl  bg-white p-10"
+              className="w-full h-96 mt-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-2xl  p-3"
             />
           </div>
         </div>
@@ -76,9 +76,6 @@ const FacilitiesDetail = () => {
         <ContactUs/>
       </div>
       <div className="bg-gray-100">
-        <h2 className="md:text-4xl text-2xl font-bold text-center p-4 messiri">
-        Other Specialities
-        </h2>
         <Facilities />
       </div>
     </>

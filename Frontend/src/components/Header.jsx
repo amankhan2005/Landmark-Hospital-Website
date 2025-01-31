@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from '../assets/hope-logo.png'
+
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -32,6 +33,131 @@ export default function Header() {
           {isMobileMenuOpen ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
         </div>
 
+        {/* Mobile Menu */}
+        <div className={`lg:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} w-full`}>
+          <ul className="text-gray-800 font-semibold space-y-4 p-4">
+            <li className={`hover:text-blue-500 ${location.pathname === "/" ? "border-b-2 border-blue-500" : ""}`}>
+              <Link to="/">Home</Link>
+            </li>
+            <li className="relative">
+              <button
+                onClick={() => handleDropdown("about")}
+                className="w-full text-left hover:text-blue-500"
+              >
+                About Us ▾
+              </button>
+              {openDropdown === "about" && (
+                <ul className="block bg-white shadow-md rounded-md py-2 w-full text-sm">
+                  <li>
+                    <Link to="/our-team" className="block px-4 py-2 hover:bg-blue-100">
+                      Our Team
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/about" className="block px-4 py-2 hover:bg-blue-100">
+                      About Hope Hospital
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li className="relative">
+              <button
+                onClick={() => handleDropdown("specialities")}
+                className="w-full text-left hover:text-blue-500"
+              >
+                Specialities ▾
+              </button>
+              {openDropdown === "specialities" && (
+                <ul className="block bg-white shadow-md rounded-md py-2 w-full text-sm">
+                  <li>
+                    <Link to="/specialities/general-surgery" className="block px-4 py-2 hover:bg-blue-100">
+                      General Surgery
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/specialities/orthopedic-surgery" className="block px-4 py-2 hover:bg-blue-100">
+                      Orthopedic Surgery
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/specialities/neurology" className="block px-4 py-2 hover:bg-blue-100">
+                      Neurology
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/specialities/gynecology" className="block px-4 py-2 hover:bg-blue-100">
+                      Gynecology
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/specialities/dermatology" className="block px-4 py-2 hover:bg-blue-100">
+                      Dermatology
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/specialities/critical-care" className="block px-4 py-2 hover:bg-blue-100">
+                      Critical Care
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/specialities/general-medicine" className="block px-4 py-2 hover:bg-blue-100">
+                      General Medicine
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li className="relative">
+              <button
+                onClick={() => handleDropdown("facilities")}
+                className="w-full text-left hover:text-blue-500"
+              >
+                Facilities ▾
+              </button>
+              {openDropdown === "facilities" && (
+                <ul className="block bg-white shadow-md rounded-md py-2 w-full text-sm">
+                  <li>
+                    <Link to="/facilities/nicu" className="block px-4 py-2 hover:bg-blue-100">
+                      NICU
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/facilities/icu" className="block px-4 py-2 hover:bg-blue-100">
+                      ICU
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/facilities/general-care" className="block px-4 py-2 hover:bg-blue-100">
+                      General Care
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/facilities/private-care" className="block px-4 py-2 hover:bg-blue-100">
+                      Private Care
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li className={`hover:text-blue-500 ${location.pathname === "/cases" ? "border-b-2 border-blue-500" : ""}`}>
+              <Link to="/cases">Cases</Link>
+            </li>
+            <li className={`hover:text-blue-500 ${location.pathname === "/testimonials" ? "border-b-2 border-blue-500" : ""}`}>
+              <Link to="/testimonials">Testimonials</Link>
+            </li>
+            <li className={`hover:text-blue-500 ${location.pathname === "/blog" ? "border-b-2 border-blue-500" : ""}`}>
+              <Link to="/blog">Blog</Link>
+            </li>
+            <li className={`hover:text-blue-500 ${location.pathname === "/gallery" ? "border-b-2 border-blue-500" : ""}`}>
+              <Link to="/gallery">Gallery</Link>
+            </li>
+            <li className={`hover:text-blue-500 ${location.pathname === "/contact" ? "border-b-2 border-blue-500" : ""}`}>
+              <Link to="/contact">Contact Us</Link>
+            </li>
+          </ul>
+        </div>
+
         {/* Navigation Items for Desktop */}
         <ul className="hidden lg:flex space-x-8 text-gray-800 font-semibold">
           <li className={`hover:text-blue-500  ${location.pathname === "/" ? "border-b-2 border-blue-500" : ""}`}>
@@ -42,7 +168,7 @@ export default function Header() {
             onMouseEnter={() => handleDropdown("about")}
             onMouseLeave={() => handleDropdown(null)}
           >
-            <span className="hover:text-blue-500">About Us ▾</span>
+            <Link to='/about' className="hover:text-blue-500">About Us ▾</Link>
             {openDropdown === "about" && (
              <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-52 transition-all duration-300 text-sm">
              <li>
@@ -51,7 +177,7 @@ export default function Header() {
                </Link>
              </li>
              <li>
-               <Link to="/about-hospital" className="block px-4 py-2 hover:bg-blue-100">
+               <Link to="/about" className="block px-4 py-2 hover:bg-blue-100">
                  About Hope Hospital
                </Link>
              </li>

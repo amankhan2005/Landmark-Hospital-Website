@@ -10,7 +10,7 @@ export default function TopNavBar() {
             </span>
             <span className="flex items-center space-x-2">
               <i className="fas fa-map-marker-alt"></i>
-              <span>Gonda Road, Near Vinayak Resorts, Bharaich - 271801 (U.P.)</span>
+              <span className="md:text-base text-xs line-clamp-1">Gonda Road, Near Vinayak Resorts, Bharaich - 271801 (U.P.)</span>
             </span>
           </div>
   

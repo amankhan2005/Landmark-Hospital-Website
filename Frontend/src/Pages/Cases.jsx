@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { FaPlus } from 'react-icons/fa';
 import BreadCumb from '../components/Breadcumb';
 
 const casesData = Array.from({ length: 10 }, (_, index) => ({
   title: `Case ${index + 1}`,
-  imageUrl: `https://picsum.photos/300/200?random=${index + 1}`, 
+  description: `This is a brief description of Case ${index + 1}.`,
+  imageUrl: `https://picsum.photos/600/400?random=${index + 1}`, 
 }));
 
 const Cases = () => {
@@ -38,13 +40,27 @@ const Cases = () => {
         ]}
         title='Our Recent Cases'
       />
+
       {/* Cases Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-10 container mx-auto">
         {casesData.map((caseItem, index) => (
-          <div key={index} className="rounded-lg overflow-hidden shadow-lg cursor-pointer" onClick={() => openModal(index)}>
-            <img src={caseItem.imageUrl} alt={caseItem.title} className="w-full h-48 object-cover" />
-            <div className="p-4">
+          <div 
+            key={index} 
+            className="relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
+            onClick={() => openModal(index)}
+          >
+            <img 
+              src={caseItem.imageUrl} 
+              alt={caseItem.title} 
+              className="w-full h-48 object-cover group-hover:opacity-80 transition" 
+            />
+            {/* Plus Icon on Hover */}
+            <div className="absolute inset-0 flex top-[-70px] justify-center items-center opacity-0 group-hover:opacity-100 transition">
+              <FaPlus className="text-white bg-black/50 rounded-full p-2 w-16 h-16" />
+            </div>
+            <div className="p-4 bg-white">
               <h3 className="text-xl font-semibold text-center">{caseItem.title}</h3>
+              <p className="text-gray-600 text-sm text-center">{caseItem.description}</p>
             </div>
           </div>
         ))}
@@ -52,38 +68,43 @@ const Cases = () => {
 
       {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/60 bg-opacity-75 flex justify-center items-center z-50">
-          <div className="relative bg-white p-6 rounded-lg max-w-lg w-full">
+        <div className="fixed inset-0 bg-black/70 flex justify-center items-center z-50">
+          <div className="relative bg-white py-4 px-1 pt-10 rounded-lg max-w-3xl w-full shadow-xl">
             <button
               onClick={closeModal}
-              className="absolute top-0 bg-gray-300 right-2 text-black rounded-full w-10 h-10 text-4xl"
+              className="absolute top-2 right-2 text-black bg-gray-300 hover:bg-gray-400 rounded-full w-10 h-10 text-2xl flex items-center justify-center"
             >
               ×
             </button>
 
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex justify-between items-center">
               <button
                 onClick={prevImage}
-                className="text-3xl text-gray-600  hover:text-gray-800"
+                className="text-3xl text-gray-900 hover:text-gray-800 rounded  h-10 w-10 mr-2 bg-gray-300 cursor-pointer hover:bg-gray-400"
               >
-                &#8592; {/* Left arrow */}
+                &#8592;
               </button>
 
               <img
                 src={casesData[currentImageIndex].imageUrl}
                 alt={`Case ${currentImageIndex + 1}`}
-                className="w-full max-h-96 object-cover rounded-lg"
+                className="w-full max-h-[500px] object-cover rounded"
               />
 
               <button
                 onClick={nextImage}
-                className="text-3xl text-gray-600 hover:text-gray-800"
+                className="text-3xl  text-gray-900 hover:text-gray-800 rounded  h-10 w-10 ml-2 bg-gray-300 cursor-pointer hover:bg-gray-400"
               >
-                &#8594; {/* Right arrow */}
+                &#8594;
               </button>
             </div>
 
-            <h3 className="text-center text-xl font-semibold">{casesData[currentImageIndex].title}</h3>
+            <h3 className="text-center text-2xl font-semibold mt-1">
+              {casesData[currentImageIndex].title}
+            </h3>
+            <p className="text-center text-gray-600">
+              {casesData[currentImageIndex].description}
+            </p>
           </div>
         </div>
       )}

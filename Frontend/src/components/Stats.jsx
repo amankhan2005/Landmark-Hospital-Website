@@ -35,7 +35,7 @@ const Stats = () => {
         {stats.map((stat, index) => (
           <div
             key={index}
-            className="bg-white md:p-5 p-2 rounded-lg shadow-2xl w-60 text-center"
+            className="bg-white md:p-5 p-2 rounded-lg shadow-2xl md:w-60 w-44 text-center"
           >
             <div className="mb-4">
               <img src={stat.icon} alt={stat.label} className="mx-auto md:w-20 w-14" />
