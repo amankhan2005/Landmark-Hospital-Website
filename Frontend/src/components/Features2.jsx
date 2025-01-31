@@ -3,7 +3,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 
 const Features = () => {
   return (
-    <section className="md:absolute hidden left-1/2 top-full -translate-x-1/2 -translate-y-1/2 w-11/12 max-w-6xl md:grid grid-cols-1 md:grid-cols-4 bg-white shadow-lg rounded-lg overflow-hidden">
+    <section className="md:absolute hidden left-1/2 top-full -translate-x-1/2 -translate-y-1/3 w-11/12 max-w-6xl md:grid grid-cols-1 md:grid-cols-4 bg-white shadow-lg rounded-lg overflow-hidden">
       {/* Working Time */}
       <div className="bg-blue-400 text-white p-6">
         <h3 className="text-lg font-semibold">Working Time</h3>
