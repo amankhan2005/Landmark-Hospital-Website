@@ -1,7 +1,7 @@
 import React from 'react';
 import BreadCumb from '../components/Breadcumb';
 import AppointmentForm from '../components/AppointmentForm';
-
+import pattern from "../assets/home/whywechoose.png";
 function AboutPage() {
     const teamMembers = [
         {
@@ -71,19 +71,49 @@ function AboutPage() {
       <section className="mt-6">
         {/* <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">Our Vision, Mission, and Values</h2> */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+          <div className=" p-6 rounded-lg shadow-md relative">
+          <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `url(${pattern})`,
+                  backgroundSize: "contain",
+                  backgroundPosition: "center",
+                  opacity: 0.4,
+                  zIndex: 0,
+                }}
+              ></div>
             <h3 className="text-xl font-semibold text-blue-700">Our Vision</h3>
             <p className="mt-4 text-gray-600">
               To be the leading healthcare institution known for innovation, excellence, and compassion in providing quality medical care.
             </p>
           </div>
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+          <div className=" p-6 rounded-lg shadow-md relative">
+          <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `url(${pattern})`,
+                  backgroundSize: "contain",
+                  backgroundPosition: "center",
+                  opacity: 0.4,
+                  zIndex: 0,
+                }}
+              ></div>
             <h3 className="text-xl font-semibold text-blue-700">Our Mission</h3>
             <p className="mt-4 text-gray-600">
               To deliver exceptional healthcare services with a focus on accessibility, affordability, and patient satisfaction, while advancing medical research and education.
             </p>
           </div>
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+          <div className=" p-6 rounded-lg shadow-md relative">
+          <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `url(${pattern})`,
+                  backgroundSize: "contain",
+                  backgroundPosition: "center",
+                  opacity: 0.4,
+                  zIndex: 0,
+                }}
+              ></div>
             <h3 className="text-xl font-semibold text-blue-700">Our Values</h3>
             <p className="mt-4 text-gray-600">
               Compassion, Integrity, Excellence, Innovation, and Collaboration form the core of our values.
