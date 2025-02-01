@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import FeaturesOverlay from "./Features";
 import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 import Features from "./Features2";
-import banner1 from '../assets/home/banner1.jpg'
+import banner1 from '../assets/home/banner4.jpg'
 import banner2 from '../assets/home/banner2.jpg'
 import banner3 from '../assets/home/banner3.jpg'
 // Slider data
@@ -76,7 +76,8 @@ export default function HeroSlider() {
 };
 
   return (
-    <div className="w-full md:h-[66vh] relative">
+    <>
+    <div className="w-full  relative">
       <Slider {...settings}>
         {slides.map((slide,index) => (
           <div key={slide.id} className={`relative w-full  md:h-[70vh] ${index !== slide ? 'inert' : ''}`}>
@@ -84,7 +85,7 @@ export default function HeroSlider() {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
             />
 
             {/* Content Overlay
@@ -106,8 +107,9 @@ export default function HeroSlider() {
         ))}
       </Slider>
     {/* <FeaturesOverlay/> */}
-    <Features/>
     </div>
+    <Features/>
+    </>
   );
 }
 

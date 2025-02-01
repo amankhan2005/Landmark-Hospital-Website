@@ -74,9 +74,9 @@ const FacilitiesDetail = () => {
             />
           </div>
         </div>
-        <div className="px-4">
+        {/* <div className="px-4">
             <OurTeam/>
-          </div>
+          </div> */}
           {/* <WhyChooseUs/> */}
         <ContactUs/>
       </div>

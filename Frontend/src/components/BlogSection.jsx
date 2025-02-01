@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
+import { MdArrowBack, MdArrowForward } from "react-icons/md"; // Import icons
 
 const BlogComponent = () => {
   const [selectedTag, setSelectedTag] = useState("All");
@@ -60,38 +62,78 @@ const BlogComponent = () => {
     },
   ];
 
-  const tags = [
-    "All",
-    "Emergency & Trauma",
-    "Neurosciences Neurology",
-    "Endocrinology",
-    "General Health",
-    "Cardiology",
-    "Surgery",
-    "Mental Health",
-    "Psychology",
-  ];
-
   const filteredBlogs =
     selectedTag === "All"
       ? blogs
       : blogs.filter((blog) => blog.tags.includes(selectedTag));
 
+  // Custom Previous Arrow
+  const PrevArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <button
+        className="absolute top-1/2 left-0 z-20 transform cursor-pointer -translate-y-1/2 bg-blue-800 text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
+        onClick={onClick}
+      >
+        <MdArrowBack size={16} />
+      </button>
+    );
+  };
+
+  // Custom Next Arrow
+  const NextArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <button
+        className="absolute top-1/2 z-20 right-0 transform cursor-pointer -translate-y-1/2 bg-blue-800 text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
+        onClick={onClick}
+      >
+        <MdArrowForward size={16} />
+      </button>
+    );
+  };
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="lg:py-14 md:py-12 py-10">
-      <h2 className="md:text-4xl text-2xl messiri font-bold text-blue-500 text-center ">
+    <div className="lg:py-14 md:py-12 py-10 relative">
+      <h2 className="md:text-4xl text-2xl messiri font-bold text-blue-500 text-center">
         Our Recent Blog
       </h2>
       <p className="text-gray-600 mb-6 text-center">
-    Latest updates, tips, and insights from our team.
-  </p>
-      <div className="grid grid-cols-12 gap-4 px-4">
-        {/* Blog Section */}
-        <div className="col-span-12 grid grid-cols-3 gap-2">
-          {filteredBlogs.slice(0, 3).map((blog) => (
+        Latest updates, tips, and insights from our team.
+      </p>
+
+      <div className="px-4 relative">
+        <Slider {...sliderSettings}>
+          {filteredBlogs.map((blog) => (
             <div
               key={blog.id}
-              className="bordr rounded-lg p-4 mb-4 shadow-2xl hover:shadow-none  transition cursor-pointer"
+              className="rounded-lg p-4 shadow-2xl hover:shadow-none transition cursor-pointer mx-4" // Added mx-4 for space
               onClick={() => navigate(`/blog/${blog.id}`)}
             >
               <img
@@ -99,52 +141,27 @@ const BlogComponent = () => {
                 alt={blog.title}
                 className="w-full h-40 object-cover rounded-lg mb-4"
               />
+              <p className="text-sm text-gray-500 mb-1 underline underline-offset-4">
+                Published by <span className="text-gray-900">{blog.author}</span> || 
+                <span> on {blog.date}</span>
+              </p>
               <h2 className="text-xl font-bold line-clamp-1 mb-2">
                 {blog.title}
               </h2>
               <p className="text-gray-700 mb-2 line-clamp-2">
                 {blog.description}
               </p>
-              <p className="text-sm text-gray-500">
-                Published by{" "}
-                <span className="text-gray-900">{blog.author}</span> on{" "}
-                {blog.date}
+              <p className="text-sm text-gray-500 flex justify-between items-center">
                 <button
                   onClick={() => navigate(`/blog/${blog.id}`)}
-                  className="text-blue-700 hover:text-blue-600 cursor-pointer ms-3 bg-gray-300 px-2 py-1 rounded-full"
+                  className="text-white bg-blue-800 hover:bg-blue-600 cursor-pointer px-3 py-1 rounded"
                 >
-                  Read
+                  Read More
                 </button>
               </p>
             </div>
           ))}
-        </div>
-
-        {/* Tags Section
-      <div className="col-span-4">
-        <h3 className="text-xl font-semibold mb-4 mt-2 messiri">By Specialities</h3>
-        <div className="flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <button
-              key={tag}
-              onClick={() => setSelectedTag(tag)}
-              className={`px-4 py-2 rounded-full bordr text-sm transition cursor-pointer ${
-                selectedTag === tag
-                  ? "bg-blue-500 text-white"
-                  : "bg-blue-100 hover:bg-gray-300"
-              }`}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
-      </div> */}
-      </div>
-      <div className="flex justify-center">
-      <Link to='/blog'
-      className="text-center border text-white bg-blue-500 border-white py-2 px-4 rounded hover:bg-white hover:text-blue-500 hover:border-blue-500 transition">
-        More Blogs
-      </Link>
+        </Slider>
       </div>
     </div>
   );

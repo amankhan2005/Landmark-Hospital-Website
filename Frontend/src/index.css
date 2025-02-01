@@ -20,3 +20,14 @@ body{
 .text-primary{
     color: #4848f8 !important;
 }
+
+:root{
+    --primary:#1b4d94;
+}
+
+.btn{
+    background-color: var(--primary);
+}
+.btn:hover{
+    background-color: white;
+}

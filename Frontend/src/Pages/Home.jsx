@@ -24,8 +24,8 @@ function Home() {
     <SpecialitiesSection/>
     <Stats/>
     <FacilitiesSection/>
-    <OurTeam/>
     <HowWeWork/>
+    <OurTeam/>
     {/* <OurTeam/> */}
     <WhyChooseUs/>
     <ContactUs/>
