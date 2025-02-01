@@ -6,7 +6,7 @@ export default function TopNavBar() {
           <div className="flex items-center space-x-6">
             <span className="md:flex hidden items-center space-x-2">
               <i className="fas fa-envelope"></i>
-              <span>info@yourmail.com</span>
+              <span>info@hopeHospital.com</span>
             </span>
             <span className="flex items-center space-x-2">
               <i className="fas fa-map-marker-alt"></i>
@@ -15,7 +15,7 @@ export default function TopNavBar() {
           </div>
   
           {/* Right side: Social media icons */}
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 text-lg">
             <a href="#" className="hover:text-gray-200"><i className="fab fa-facebook-f"></i></a>
             <a href="#" className="hover:text-gray-200"><i className="fab fa-twitter"></i></a>
             <a href="#" className="hover:text-gray-200"><i className="fab fa-instagram"></i></a>

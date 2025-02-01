@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom";
 import BreadCumb from "./Breadcumb.jsx";
 import ContactUs from "./ContactUs.jsx";
 import {facilities as facilitiesData} from '../FacilitiesData'
-import Facilities from "./OurFacilities.jsx";
+import FacilitiesComponent from "./FacilitiesComponent.jsx";
+
 
 const FacilitiesDetail = () => {
   const { facilitiesName } = useParams();
@@ -71,12 +72,13 @@ const FacilitiesDetail = () => {
             />
           </div>
         </div>
-     
-
         <ContactUs/>
       </div>
-      <div className="bg-gray-100">
-        <Facilities />
+      <div className="bg-gray-100 p-4 px-10">
+      <h2 className="md:text-4xl text-2xl font-bold text-center mb-12 messiri">
+        Our Other Facilities
+        </h2>
+        <FacilitiesComponent props={facilities} />
       </div>
     </>
   );

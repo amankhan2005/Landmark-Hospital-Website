@@ -1,5 +1,6 @@
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Features = () => {
   return (
@@ -30,15 +31,18 @@ const Features = () => {
       {/* Doctors Timetable */}
       <div className="bg-blue-500 text-white p-6 flex flex-col justify-between">
         <div>
-          <h3 className="text-lg font-semibold">Doctors Timetable</h3>
-          <p className="text-sm mt-2">
-            An magnis nulla dolor at sapien augue erat iaculis purus tempor
-            magna ipsum et vitae a purus primis ipsum magna ipsum
+          <h3 className="text-lg font-semibold">Expert Doctors</h3>
+          <p className="text-sm mt-2 ">
+            Our experienced doctors is dedicated to
+            providing exceptional medical care with compassion and expertise.
           </p>
         </div>
-        <button className="mt-4 border border-white py-2 px-4 rounded hover:bg-white hover:text-blue-500 transition">
-          View Timetable
-        </button>
+        <Link
+          to="/our-team"
+          className="mt-4 text-center border border-white py-2 px-4 rounded hover:bg-white hover:text-blue-500 transition"
+        >
+          View Doctors
+        </Link>
       </div>
 
       {/* Appointments */}
@@ -46,27 +50,31 @@ const Features = () => {
         <div>
           <h3 className="text-lg font-semibold">Appointments</h3>
           <p className="text-sm mt-2">
-            An magnis nulla dolor at sapien augue erat iaculis purus tempor
-            magna ipsum et vitae a purus primis ipsum magna ipsum
+            Schedule your appointment with our expert doctors easily and get the
+            best medical care at your convenience.
           </p>
         </div>
-        <button className="mt-4 border border-white py-2 px-4 rounded hover:bg-white hover:text-blue-600 transition">
+
+        <Link
+          to="/contact"
+          className="mt-4 text-center border border-white py-2 px-4 rounded hover:bg-white hover:text-blue-600 transition"
+        >
           Make an Appointment
-        </button>
+        </Link>
       </div>
 
       {/* Emergency Cases */}
-      <div className="bg-blue-700 text-white p-6">
-        <h3 className="text-lg font-semibold">Emergency Cases</h3>
-        <div className="mt-4 flex items-center gap-2 text-xl font-semibold">
-          <FaPhoneAlt />
-          <span>1-800-123-4560</span>
-        </div>
-        <p className="text-sm mt-2">
-          An magnis nulla dolor sapien augue erat iaculis purus tempor magna
-          ipsum et vitae a purus primis ipsum magna ipsum
-        </p>
-      </div>
+      <div className="bg-blue-500 text-white p-6">
+  <h3 className="text-lg font-semibold">Emergency Cases</h3>
+  <div className="mt-4 flex items-center gap-2 text-xl font-semibold">
+    <FaPhoneAlt />
+    <span>1-800-123-4560</span>
+  </div>
+  <p className="text-sm mt-2">
+    In case of a medical emergency, call us immediately. Our emergency team is available 24/7 to provide urgent care and assistance.
+  </p>
+</div>
+
     </section>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import BreadCumb from '../components/Breadcumb';
+import AppointmentForm from '../components/AppointmentForm';
 
 function AboutPage() {
     const teamMembers = [
@@ -92,11 +93,11 @@ function AboutPage() {
       </section>
 
       {/* Our Experts Section */}
-      <section className="mt-16">
-        <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">Meet Our Experts</h2>
+      <section className="lg:py-12 md:py-10 py-8 mt-6 bg-gray-100">
+        <h2 className="md:text-4xl text-2xl messiri text-blue-700 font-bold  text-center mb-8">Meet Our Experts</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {[...Array(8)].map((_, index) => (
-            <div key={index} className="bg-white p-2 rounded-lg shadow-md text-center">
+            <div key={index} className="bg-white py-2 px-0 rounded-lg shadow-md text-center">
               <img 
                 src={`https://picsum.photos/200/200?random=${index + 1}`} 
                 alt={`Doctor ${index + 1}`} 
@@ -112,7 +113,7 @@ function AboutPage() {
       {/* History Section */}
       <section className="mt-16 flex justify-between px-14 gap-6">
         <div>
-        <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">Our History</h2>
+        <h2 className="text-3xl font-bold text-gray-800 text-center mb-8 messiri">Our History</h2>
         <div className="relative border-l-2 border-blue-700 pl-8">
           {[
             { year: "2000", event: "Founded with the vision of providing quality healthcare." },
@@ -128,46 +129,8 @@ function AboutPage() {
           ))}
         </div>
         </div>
-        <div className="w-full md:w-full flex-1 bg-white p-8 pt-6 shadow-lg rounded-lg border border-gray-200">
-          <h3 className="text-2xl font-bold text-gray-800 messiri">
-            Book Appointment
-          </h3>
-          <form className="mt-4 flex flex-col gap-4">
-            <select className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500">
-              <option>Select Department</option>
-              <option>Cardiology</option>
-              <option>Dermatology</option>
-              <option>Neurology</option>
-            </select>
-            <select className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500">
-              <option>Select Doctor</option>
-              {teamMembers.map((doc, index) => (
-                <option key={index}>{doc.name}</option>
-              ))}
-            </select>
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="text"
-              placeholder="Phone Number"
-              className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="date"
-              className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500"
-            />
-            <button className="bg-blue-500 text-white font-semibold py-3 rounded-lg hover:bg-orange-600 transition duration-300">
-              Appointment Now
-            </button>
-          </form>
+        <div className='w-full flex-1'>
+          <AppointmentForm/>
         </div>
       </section>
     </div>

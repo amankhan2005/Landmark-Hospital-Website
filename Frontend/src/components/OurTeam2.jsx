@@ -1,3 +1,5 @@
+import AppointmentForm from "./AppointmentForm";
+
 const teamMembers = [
   {
     name: "Dr. O.P. Pandey",
@@ -33,15 +35,15 @@ const teamMembers = [
 
 export default function OurTeam() {
   return (
-    <div className="py-12 bg-gray-100 text-center">
-      <h2 className="text-4xl messiri font-bold text-blue-600">
+    <section className="lg:py-14 md:py-12 py-10 bg-gray-100 text-center">
+      <h1 className="md:text-4xl text-2xl  messiri font-bold text-blue-600">
         Meet Our Team
-      </h2>
-      <p className="text-gray-600 mt-2">
+      </h1>
+      <p className="text-gray-600 mb-7">
         Our dedicated professionals committed to your health.
       </p>
 
-      <div className="mt-8 flex flex-col md:flex-row items-start gap-6 px-6">
+      <div className=" flex flex-col md:flex-row items-start gap-6 px-6">
         {/* Left Column - Team Members */}
         <div className="w-full md:w-2/3 grid grid-cols-1  mt-2  sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {teamMembers.map((member, index) => (
@@ -50,7 +52,7 @@ export default function OurTeam() {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-44 object-cover "
+                  className="w-full h-52 object-cover "
                 />
               </div>
               <div className="p-4 text-center bg-white shadow-md">
@@ -64,48 +66,10 @@ export default function OurTeam() {
         </div>
 
         {/* Right Column - Appointment Form */}
-        <div className="w-full md:w-1/3 bg-white p-8 pt-6 shadow-lg rounded-lg border border-gray-200">
-          <h3 className="text-2xl font-bold text-gray-800 messiri">
-            Book Appointment
-          </h3>
-          <form className="mt-4 flex flex-col gap-4">
-            <select className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500">
-              <option>Select Department</option>
-              <option>Cardiology</option>
-              <option>Dermatology</option>
-              <option>Neurology</option>
-            </select>
-            <select className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500">
-              <option>Select Doctor</option>
-              {teamMembers.map((doc, index) => (
-                <option key={index}>{doc.name}</option>
-              ))}
-            </select>
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="text"
-              placeholder="Phone Number"
-              className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="date"
-              className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500"
-            />
-            <button className="bg-blue-500 text-white font-semibold py-3 rounded-lg hover:bg-orange-600 transition duration-300">
-              Appointment Now
-            </button>
-          </form>
+        <div className="w-full md:w-1/3">
+          <AppointmentForm/>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -45,7 +45,7 @@ export default function HeroSlider() {
  const settings = {
   dots: false,
   infinite: true,
-  speed: 500,
+  speed: 1000,
   autoplay: true,
   autoplaySpeed: 3000,
   slidesToShow: 1,
@@ -76,15 +76,15 @@ export default function HeroSlider() {
 };
 
   return (
-    <div className="w-full h-[66vh] relative">
+    <div className="w-full md:h-[66vh] relative">
       <Slider {...settings}>
         {slides.map((slide,index) => (
-          <div key={slide.id} className={`relative w-full h-[70vh] ${index !== slide ? 'inert' : ''}`}>
+          <div key={slide.id} className={`relative w-full  md:h-[70vh] ${index !== slide ? 'inert' : ''}`}>
             {/* Background Image */}
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
 
             {/* Content Overlay

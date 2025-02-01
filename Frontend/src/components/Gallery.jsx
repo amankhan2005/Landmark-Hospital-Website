@@ -36,7 +36,10 @@ const Gallery = () => {
   return (
     <div className=" md:py-12 lg:py-14 py-10 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="md:text-4xl text-2xl font-bold text-center mb-8 messiri">Our Recent Photos</h2>
+        <h1 className="md:text-4xl text-2xl font-bold text-center text-blue-500 messiri">Our Recent Photos</h1>
+        <p className="text-gray-600 mb-6 text-center">
+    A glimpse into our recent work and accomplishments.
+  </p>
         <Slider {...settings}>
           {images.map((image) => (
             <div key={image.id} className="p-2">

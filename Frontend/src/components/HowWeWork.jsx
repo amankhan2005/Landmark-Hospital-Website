@@ -2,8 +2,11 @@ import { FaClipboardList, FaStethoscope, FaHandHoldingHeart } from "react-icons/
 
 export default function HowWeWork() {
   return (
-    <div className="text-center py-12">
-      <h2 className="text-4xl messiri font-bold text-blue-500 mt-2 ">How We Work</h2>
+    <div className=" lg:py-14 md:py-12 py-10">
+      <h2 className="md:text-4xl text-2xl messiri font-bold text-blue-500  text-center">How We Work</h2>
+      <p className="text-gray-600 mb-6 text-center">
+    A transparent approach to providing exceptional care, every step of the way.
+  </p>
       <div className="flex flex-col md:flex-row justify-center items-center gap-14 mt-8">
         <div className="flex relative flex-col items-center text-center max-w-xs">
           <FaClipboardList className="text-blue-500 text-5xl" />

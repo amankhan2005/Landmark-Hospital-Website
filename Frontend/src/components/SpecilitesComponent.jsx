@@ -3,17 +3,16 @@ import { FaArrowRight } from "react-icons/fa";
 import {specialities} from '../SpecilitesData.jsx'
 import { Link } from 'react-router-dom';
 
-function SpecilitesComponent() {
+function SpecilitesComponent({specialty}) {
     
-
+// console.log(specialty.title)
   return (
-    <div className="grid grid-cols-1 bg-gray-100 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6  py-16 px-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ">
           {specialities.map((speciality, index) => (
             <div className="h-[30vh]">
             <Link to={`/specialities/${speciality.link}`}
               key={index}
-              className="bg-white block shadow-lg rounded-xl p-4 relative  hover:border-2 border-blue-500 transition-al"
-              onClick={()=>handleClick(speciality)}
+              className={` ${specialty?.title == speciality.title? 'border-2':'' }  bg-white block shadow-lg rounded-xl p-4 relative  hover:border-2 border-blue-500 transition-al`}
             >
               <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-blue-100 hover:bg-white h-20 w-28 flex justify-center  hover:border-2 border border-blue-500 rounded-3xl shadow-lg">
                 <img

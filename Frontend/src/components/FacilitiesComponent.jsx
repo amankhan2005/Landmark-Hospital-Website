@@ -1,31 +1,14 @@
-import React from "react";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { facilities } from "../FacilitiesData";
+function FacilitiesComponent({props}) {
 
-import {facilities} from '../FacilitiesData'
-import { Link } from "react-router-dom";
-
-
-const Facilities = () => {
   return (
-    <div className="md:py-12 lg:py-14 py-10 bg-gra0 px-14">
-      {/* <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url(${pattern})`,
-          backgroundSize: "contain",
-          backgroundPosition: "center",
-          opacity: 0.6,
-          zIndex: 0,
-        }}
-      ></div> */}
-      <div className="">
-        <h2 className="md:text-4xl text-blue-600 text-2xl font-bold text-center mb-8 messiri">
-          Our Facilities
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {facilities.map((specialty) => (
             <div
               key={specialty.id}
-              className="rounded shadow-lg overflow-hidden bg-white"
+              className={` ${props?.title == specialty?.title? 'border-2 border-blue-500':'' } rounded shadow-lg  overflow-hidden bg-white`}
             >
               <img
                 src={specialty.image}
@@ -47,9 +30,7 @@ const Facilities = () => {
             </div>
           ))}
         </div>
-      </div>
-    </div>
-  );
-};
+  )
+}
 
-export default Facilities;
+export default FacilitiesComponent

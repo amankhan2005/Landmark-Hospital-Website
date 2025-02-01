@@ -9,9 +9,9 @@ import experience from "../assets/home/experience.png";
 
 const stats = [
   { icon: happyClients, number: 9632, label: "Happy Patients" },
-  { icon: doctors, number: 178, label: "Qualified Doctors" },
-  { icon: experience, number: 864, label: "Years of Experience" },
-  { icon: icuBeds, number: 473, label: "ICU Beds" },
+  { icon: doctors, number: 12, label: "Qualified Doctors" },
+  { icon: experience, number: 10, label: "Years of Experience" },
+  { icon: icuBeds, number: 73, label: "ICU Beds" },
 ];
 
 const Stats = () => {
@@ -41,7 +41,7 @@ const Stats = () => {
               <img src={stat.icon} alt={stat.label} className="mx-auto md:w-20 w-14" />
             </div>
             <div className="md:text-3xl text-xl font-bold text-gray-800 mb-2">
-              <CountUp end={stat.number} duration={2} enableScrollSpy />
+              <CountUp end={stat.number} duration={2} enableScrollSpy /> +
             </div>
             <p className="text-gray-500">{stat.label}</p>
           </div>

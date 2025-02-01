@@ -50,9 +50,12 @@ const WhyChooseUs = () => {
   return (
     <div className="bg-gray-100 md:py-12 lg:py-14 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl text-blue-600 font-bold text-center mb-8 messiri">
+        <h1 className="md:text-4xl text-2xl text-blue-600 font-bold text-center messiri">
           Why Choose Us
-        </h2>
+        </h1>
+        <p className="text-gray-600 mb-6 text-center">
+    Your health and satisfaction are our top priority with personalized care.
+  </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div

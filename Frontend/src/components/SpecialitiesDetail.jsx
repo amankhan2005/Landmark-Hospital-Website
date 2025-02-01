@@ -75,11 +75,11 @@ const SpecialtyDetail = () => {
 
         <ContactUs/>
       </div>
-      <div className="bg-gray-100">
-        <h2 className="md:text-4xl text-2xl font-bold text-center p-4 messiri">
+      <div className="bg-gray-100 p-4">
+        <h2 className="md:text-4xl text-2xl font-bold text-center mb-12 messiri">
         Other Specialities
         </h2>
-        <SpecilitesComponent />
+        <SpecilitesComponent specialty = {specialty}/>
       </div>
     </>
   );

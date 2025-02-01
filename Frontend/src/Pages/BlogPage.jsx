@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BreadCumb from "../components/Breadcumb";
+import AppointmentForm from "../components/AppointmentForm";
 
 const BlogPage = () => {
   const [selectedTag, setSelectedTag] = useState("All");
@@ -160,47 +161,9 @@ const BlogPage = () => {
             </button>
           ))}
         </div>
-        <div className="w-full flex-2 mt-10 bg-white p-8 pt-6 shadow-lg rounded-lg border border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-800 messiri">
-              Book Appointment
-            </h3>
-            <form className="mt-4 flex flex-col gap-4">
-              <select className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500">
-                <option>Select Department</option>
-                <option>Cardiology</option>
-                <option>Dermatology</option>
-                <option>Neurology</option>
-              </select>
-              <select className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500">
-                <option>Select Doctor</option>
-                {teamMembers.map((doc, index) => (
-                  <option key={index}>{doc.name}</option>
-                ))}
-              </select>
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500"
-              />
-              <input
-                type="text"
-                placeholder="Phone Number"
-                className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500"
-              />
-              <input
-                type="date"
-                className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500"
-              />
-              <button className="bg-blue-500 text-white font-semibold py-3 rounded-lg hover:bg-orange-600 transition duration-300">
-                Appointment Now
-              </button>
-            </form>
-          </div>
+       <div className="mt-10">
+        <AppointmentForm/>
+       </div>
       </div>
     </div>
     </div>

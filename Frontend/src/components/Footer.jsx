@@ -76,7 +76,7 @@ const Footer = () => {
           </div> */}
           {/* Our Treatment Section */}
           <div>
-            <h4 className="text-2xl font-semibold mb-4 messiri">Our Treatment</h4>
+            <h4 className="text-2xl font-semibold mb-4 messiri">Our Specialities</h4>
             <ul className="space-y-2">
               <li>
                 <Link to="/treatment/high-risk-pregnancy" className="hover:underline">

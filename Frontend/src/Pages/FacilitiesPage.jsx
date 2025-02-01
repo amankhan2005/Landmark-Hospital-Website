@@ -1,7 +1,7 @@
 import React from 'react'
-import Facilities from '../components/OurFacilities'
 import BreadCumb from '../components/Breadcumb'
 import ContactUs from '../components/ContactUs'
+import FacilitiesComponent from '../components/FacilitiesComponent'
 function FacilitiesPage() {
   return (
     <div>
@@ -12,7 +12,7 @@ function FacilitiesPage() {
         ]}
         title='Our Facilities'
       />
-        <Facilities/>
+        <FacilitiesComponent/>
         <ContactUs/>
     </div>
   )

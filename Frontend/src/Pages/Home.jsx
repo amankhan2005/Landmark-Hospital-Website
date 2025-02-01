@@ -3,7 +3,7 @@ import TopNavBar from '../components/TopNavbar'
 import Header from '../components/Header'
 import HeroSlider from '../components/HeroSlide'
 import AboutSection from '../components/About'
-import Specialties from '../components/OurFacilities'
+import Facilities from '../components/FacilitiesSection'
 import OurTeam from '../components/OurTeam2'
 import Stats from '../components/Stats'
 import WhyChooseUs from '../components/WhyChooseUs'
@@ -12,6 +12,8 @@ import Footer from '../components/Footer'
 import ContactUs from '../components/ContactUs'
 import HowWeWork from '../components/HowWeWork'
 import BlogComponent from '../components/BlogSection'
+import SpecialitiesSection from '../components/SpecialitiesSection'
+import FacilitiesSection from '../components/FacilitiesSection'
 
 function Home() {
   return (
@@ -19,8 +21,9 @@ function Home() {
     
     <HeroSlider/>
     <AboutSection/>
+    <SpecialitiesSection/>
     <Stats/>
-    <Specialties/>
+    <FacilitiesSection/>
     <OurTeam/>
     <HowWeWork/>
     {/* <OurTeam/> */}
