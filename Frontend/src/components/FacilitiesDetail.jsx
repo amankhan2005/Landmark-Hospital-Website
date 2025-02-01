@@ -3,6 +3,8 @@ import BreadCumb from "./Breadcumb.jsx";
 import ContactUs from "./ContactUs.jsx";
 import {facilities as facilitiesData} from '../FacilitiesData'
 import FacilitiesComponent from "./FacilitiesComponent.jsx";
+import WhyChooseUs from "./WhyChooseUs.jsx";
+import OurTeam from "./OurTeam2.jsx";
 
 
 const FacilitiesDetail = () => {
@@ -34,9 +36,9 @@ const FacilitiesDetail = () => {
         ]}
         title={title}
       />
-      <div className="container mx-auto px-4 py-8">
+      <div className="px-6  py-8 ">
         {/* First Section: Description & Image */}
-        <div className="grid grid-cols-1 md:grid-cols-8 gap-6 ">
+        <div className="grid grid-cols-1 md:grid-cols-8 gap-6  p-4  rounded-2xl">
           <div className="md:col-span-5 ">
             <h1 className="text-3xl font-bold text-blue-600 mb-4 messiri">
               {facilities.title}
@@ -62,16 +64,20 @@ const FacilitiesDetail = () => {
                 </li>
               ))}
             </ul>
-          </div>
+            </div>
           </div>
           <div className="md:col-span-3 flex justify-center">
             <img
               src={facilities.image}
               alt={facilities.title}
-              className="w-full h-96 mt-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-2xl  p-3"
+              className="w-full h-72  border-2 border-gray-400  rounded mt-10 bg-gray-200  shadow-lg hover:shadow-2xl "
             />
           </div>
         </div>
+        <div className="px-4">
+            <OurTeam/>
+          </div>
+          <WhyChooseUs/>
         <ContactUs/>
       </div>
       <div className="bg-gray-100 p-4 px-10">

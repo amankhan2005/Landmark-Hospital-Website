@@ -12,7 +12,9 @@ function FacilitiesPage() {
         ]}
         title='Our Facilities'
       />
+      <div className='pt-12 px-6'>
         <FacilitiesComponent/>
+        </div>
         <ContactUs/>
     </div>
   )

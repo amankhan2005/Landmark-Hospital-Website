@@ -18,6 +18,7 @@ import FacilitiesDetail from './components/FacilitiesDetail'
 import BlogDetailPage from './components/BlogDetail'
 import AboutPage from './Pages/AboutPage'
 import TestimonialPage from './Pages/TestimonialPage'
+import ScrollToTop from './components/ScrollToTop'
 function App() {
   const blogs = [
     {
@@ -78,6 +79,7 @@ function App() {
   ];
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <TopNavBar/>
       <Header/>
     <Routes>

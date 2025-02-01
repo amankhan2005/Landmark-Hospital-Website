@@ -55,14 +55,14 @@ function AboutPage() {
           />
         </div>
         <div className="md:w-1/2">
-          <h2 className="text-3xl font-bold text-blue-700">The Story of Hope Hospital</h2>
+          <h2 className="md:text-4xl text-2xl font-bold text-blue-700 messiri">The Story of Hope Hospital</h2>
           <p className="mt-4 text-gray-700">
             At Hope Hospital, we are committed to bringing exceptional healthcare to our community. Since our inception, we have pursued excellence in medical care with a vision to make it accessible for all. With a patient-centric approach, we aim to transform healthcare by blending compassion with cutting-edge technology. Join us on our journey of making lives healthier and happier.
           </p>
           <div className="flex mt-4 gap-4">
-            <a href="/contact" className="text-blue-600 hover:underline">Contact Us</a>
-            <a href="/specialities" className="text-blue-600 hover:underline">Our Specialties</a>
-            <a href="/facilities" className="text-blue-600 hover:underline">Our Facilities</a>
+            <a href="/contact" className="text-blue-600 hover:underline underline-offset-2">Contact Us</a>
+            <a href="/specialities" className="text-blue-600 hover:underline underline-offset-2">Our Specialties</a>
+            <a href="/facilities" className="text-blue-600 hover:underline underline-offset-2">Our Facilities</a>
           </div>
         </div>
       </section>
@@ -82,7 +82,7 @@ function AboutPage() {
                   zIndex: 0,
                 }}
               ></div>
-            <h3 className="text-xl font-semibold text-blue-700">Our Vision</h3>
+            <h3 className="text-2xl font-semibold text-blue-700 messiri">Our Vision</h3>
             <p className="mt-4 text-gray-600">
               To be the leading healthcare institution known for innovation, excellence, and compassion in providing quality medical care.
             </p>
@@ -98,7 +98,7 @@ function AboutPage() {
                   zIndex: 0,
                 }}
               ></div>
-            <h3 className="text-xl font-semibold text-blue-700">Our Mission</h3>
+            <h3 className="text-2xl font-semibold text-blue-700 messiri">Our Mission</h3>
             <p className="mt-4 text-gray-600">
               To deliver exceptional healthcare services with a focus on accessibility, affordability, and patient satisfaction, while advancing medical research and education.
             </p>
@@ -114,7 +114,7 @@ function AboutPage() {
                   zIndex: 0,
                 }}
               ></div>
-            <h3 className="text-xl font-semibold text-blue-700">Our Values</h3>
+            <h3 className="text-2xl font-semibold text-blue-700 messiri">Our Values</h3>
             <p className="mt-4 text-gray-600">
               Compassion, Integrity, Excellence, Innovation, and Collaboration form the core of our values.
             </p>
@@ -143,7 +143,7 @@ function AboutPage() {
       {/* History Section */}
       <section className="mt-16 flex justify-between px-14 gap-6">
         <div>
-        <h2 className="text-3xl font-bold text-gray-800 text-center mb-8 messiri">Our History</h2>
+        <h2 className="text-3xl font-bold text-blue-600 text-center mb-8 messiri">Our History</h2>
         <div className="relative border-l-2 border-blue-700 pl-8">
           {[
             { year: "2000", event: "Founded with the vision of providing quality healthcare." },

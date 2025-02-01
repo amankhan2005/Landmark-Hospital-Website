@@ -79,37 +79,37 @@ const Footer = () => {
             <h4 className="text-2xl font-semibold mb-4 messiri">Our Specialities</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/treatment/high-risk-pregnancy" className="hover:underline">
+                <Link to="/specialities/general-surgery" className="hover:underline">
                   General Surgery
                 </Link>
               </li>
               <li>
-                <Link to="/treatment/sustainable-menstruation" className="hover:underline">
+                <Link to="/specialities/orthopedic-surgery" className="hover:underline">
                   Orthopedic Surgery
                 </Link>
               </li>
               <li>
-                <Link to="/treatment/infertility-treatment" className="hover:underline">
+                <Link to="/specialities/neurology" className="hover:underline">
                   Neurology
                 </Link>
               </li>
               <li>
-                <Link to="/treatment/hysterectomy" className="hover:underline">
+                <Link to="/specialities/dermatology" className="hover:underline">
                   Gynecology
                 </Link>
               </li>
               <li>
-                <Link to="/treatment/mtp-dnc" className="hover:underline">
+                <Link to="/specialities/dermatology" className="hover:underline">
                   Demotology
                 </Link>
               </li>
               <li>
-                <Link to="/treatment/mtp-dnc" className="hover:underline">
+                <Link to="/specialities/critical-care" className="hover:underline">
                   Critical Cares
                 </Link>
               </li>
               <li>
-                <Link to="/treatment/mtp-dnc" className="hover:underline">
+                <Link to="/specialities/general-medicine" className="hover:underline">
                   General Medicines
                 </Link>
               </li>
@@ -147,7 +147,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="hover:underline">
+                <Link to="/gallery" className="hover:underline">
                   Gallery
                 </Link>
               </li>

@@ -81,7 +81,7 @@ function OurTeam() {
         {teamMembers.map((member, index) => (
           <div key={index} className="w-full bg-white rounded-lg shadow-2xl overflow-hidden p-4">
             <img className="w-full h-48 object-cover" src={member.image} alt={member.name} />
-            <div className="p-4 text-start">
+            <div className="p text-start">
               <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
               <p className="text-sm text-gray-600">{member.specialty}</p>
               <button 
