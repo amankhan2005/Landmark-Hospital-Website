@@ -77,7 +77,7 @@ const FacilitiesDetail = () => {
         <div className="px-4">
             <OurTeam/>
           </div>
-          <WhyChooseUs/>
+          {/* <WhyChooseUs/> */}
         <ContactUs/>
       </div>
       <div className="bg-gray-100 p-4 px-10">
