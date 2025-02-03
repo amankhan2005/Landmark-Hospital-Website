@@ -4,7 +4,7 @@ import BreadCumb from "./Breadcumb.jsx";
 import SpecilitesComponent from "./SpecilitesComponent.jsx";
 import ContactUs from "./ContactUs.jsx";
 import { specialities as SpecilitesData } from "../SpecilitesData.jsx";
-
+import pattern from "../assets/pattern1.jpg";
 const SpecialtyDetail = () => {
   const { specialtyName } = useParams();
 
@@ -31,21 +31,31 @@ const SpecialtyDetail = () => {
           { label: "Specialities", link: "/specialities" },
           { label: title, link: `/specialities/${specialtyName}` },
         ]}
-        title={title}
+        title={specialty.title}
       />
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-8 gap-10 items-cente">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-8 gap-7 items-cente">
           <div className="md:col-span-5 bg-gray-100 p-4 rounded-2xl">
             {/* <h1 className="text-4xl font-bold text-blue-600 mb-6 messiri">
               {specialty.title}
             </h1> */}
             <img
-              src={specialty.image}
+              src={specialty.img}
               alt={specialty.title}
-              className="w-full  h-65 rounded-lg shadow-lg hover:shadow-2xl bg-white p-5 transform transition duration-300 hover:scale-105"
+              className="w-full  h-96 rounded-lg shadow-lg hover:shadow-2xl  p-5 transform transition duration-300 hover:scale-105"
             />
-            <p className="text-gray-700 text-lg leading-relaxed mt-6">
+            <p className="text-gray-700 relative p-9 z-10 text-lg leading-relaxed mt-6">
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `url(${pattern})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  opacity: 0.8,
+                  zIndex: -1,
+                }}
+              ></div>
               {specialty.description} Lorem ipsum dolor sit amet, consectetur
               adipisicing elit. Recusandae incidunt molestiae temporibus, velit
               sed nesciunt deleniti officiis sit mollitia? Accusantium dicta hic

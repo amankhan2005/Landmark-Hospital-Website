@@ -6,7 +6,7 @@ const BlogDetailPage = ({ blogs }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const blog = blogs.find((b) => b.id === parseInt(id));
-  const moreBlogs = blogs.filter((b) => b.id !== parseInt(id)).slice(0, 4);
+  const moreBlogs = blogs.filter((b) => b.id !== parseInt(id));
 
   if (!blog) {
     return <div className="text-center py-10 text-red-500">Blog not found!</div>;
@@ -38,7 +38,7 @@ const BlogDetailPage = ({ blogs }) => {
         </div>
 
         {/* More Blogs Section */}
-        <div className="col-span-4 border border-gray-300  rounded-2xl p-4 bg-gray-100">
+        <div className="col-span-4 border border-gray-300  rounded-2xl p-4 bg-gray-100 max-h-[90vh] overflow-y-scroll">
           <h3 className="text-2xl font-semibold mb-4 messiri">More Blogs</h3>
           <div className="space-y-4">
             {moreBlogs.map((b) => (

@@ -4,34 +4,35 @@ const teamMembers = [
   {
     name: "Dr. O.P. Pandey",
     specialty: "Medical Director",
-    image: "https://picsum.photos/300/300?random=1",
+    image: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
     name: "Dr. Anil Srivastava",
     specialty: "Hematologist",
-    image: "https://picsum.photos/300/300?random=2",
+    image: "https://randomuser.me/api/portraits/men/2.jpg",
   },
   {
     name: "Dr. A.k. Mishra",
     specialty: "Family Doctor",
-    image: "https://picsum.photos/300/300?random=3",
+    image: "https://randomuser.me/api/portraits/men/3.jpg",
   },
   {
     name: "Dr. B.P. Singh",
     specialty: "Skin Specialist",
-    image: "https://picsum.photos/300/300?random=4",
+    image: "https://randomuser.me/api/portraits/men/4.jpg",
   },
   {
-    name: "Dr. B.P. Singh",
-    specialty: "Skin Specialist",
-    image: "https://picsum.photos/300/300?random=5",
+    name: "Dr. Rajesh Verma",
+    specialty: "Neurologist",
+    image: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
-    name: "Dr. B.P. Singh",
-    specialty: "Skin Specialist",
-    image: "https://picsum.photos/300/300?random=6",
+    name: "Dr. Sameer Khan",
+    specialty: "Cardiologist",
+    image: "https://randomuser.me/api/portraits/men/6.jpg",
   },
 ];
+
 
 export default function OurTeam() {
   return (
