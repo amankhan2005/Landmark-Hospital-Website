@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { FaPlus } from 'react-icons/fa';
 import BreadCumb from '../components/Breadcumb';
-
+import logo from '../assets/hope-logo.png';
+import LoadingSpinner from '../components/LoadingSpinner';
 const casesData = Array.from({ length: 10 }, (_, index) => ({
   title: `Case ${index + 1}`,
   description: `This is a brief description of Case ${index + 1}.`,
@@ -41,6 +42,7 @@ const Cases = () => {
         title='Our Recent Cases'
       />
 
+        {/* <LoadingSpinner/> */}
       {/* Cases Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-10 container mx-auto">
         {casesData.map((caseItem, index) => (
@@ -102,6 +104,7 @@ const Cases = () => {
             <h3 className="text-center text-2xl font-semibold mt-1">
               {casesData[currentImageIndex].title}
             </h3>
+     
             <p className="text-center text-gray-600">
               {casesData[currentImageIndex].description}
             </p>
