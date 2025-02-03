@@ -23,7 +23,7 @@ export const specialities = [
     ],
   },
   {
-    title: "Orthopedic Surgery",
+    title: "Orthopedic",
     link: "orthopedic-surgery",
     image: `${orthopedic}`,
     description:
@@ -51,7 +51,7 @@ export const specialities = [
     ],
   },
   {
-    title: "Gynecology",
+    title: "Obstetrics & Gynecology",
     link: "gynecology",
     image: `${gynecology}`,
     description:
@@ -79,9 +79,9 @@ export const specialities = [
     ],
   },
   {
-    title: "Critical Care",
+    title: "Critical Care & anesthesia",
     link: "critical-care",
-    image: `${critical}`,
+    image: `${medicine}`,
     description:
       "Critical care is dedicated to supporting patients with life-threatening conditions requiring intensive monitoring and intervention.",
     services: [
@@ -93,9 +93,9 @@ export const specialities = [
     ],
   },
   {
-    title: "General Medicine",
-    link: "general-medicine",
-    image: `${medicine}`,
+    title: "Cardiology",
+    link: "cardiology",
+    image: `${critical}`,
     description:
       "General medicine addresses a wide range of adult health concerns, from chronic diseases to preventive care.",
     services: [
@@ -107,7 +107,7 @@ export const specialities = [
     ],
   },
   {
-    title: "Emergency Critical Care",
+    title: "Ophthalmology",
     link: "emergency-critical-care",
     image: `${emergency}`,
     description:

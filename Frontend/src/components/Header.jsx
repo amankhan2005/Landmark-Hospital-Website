@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/hope-logo.png";
-
+import { specialities } from "../SpecilitesData";
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -67,20 +67,20 @@ export default function Header() {
                   <ul className="block bg-white shadow-md rounded-md py-2 w-full text-sm">
                     <li>
                       <Link
-                        to="/our-team"
-                        className="block px-4 py-2 hover:bg-blue-100"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Our Team
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
                         to="/about"
                         className="block px-4 py-2 hover:bg-blue-100"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         About Hope Hospital
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/our-team"
+                        className="block px-4 py-2 hover:bg-blue-100"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        Our Team
                       </Link>
                     </li>
                   </ul>
@@ -95,33 +95,18 @@ export default function Header() {
                 </button>
                 {openDropdown === "specialities" && (
                   <ul className="block bg-white shadow-md rounded-md py-2 w-full text-sm">
+                    {specialities.map((item,i)=>(
                     <li>
                       <Link
-                        to="/specialities/general-surgery"
+                        to={`/specialities/${item.link}`}
                         className="block px-4 py-2 hover:bg-blue-100"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        General Surgery
+                        {item.title}
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        to="/specialities/orthopedic-surgery"
-                        className="block px-4 py-2 hover:bg-blue-100"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Orthopedic Surgery
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/specialities/neurology"
-                        className="block px-4 py-2 hover:bg-blue-100"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Neurology
-                      </Link>
-                    </li>
+                    ))}
+                   
                   </ul>
                 )}
               </li>
@@ -196,18 +181,18 @@ export default function Header() {
               <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-52 transition-all duration-300 text-sm">
                 <li>
                   <Link
-                    to="/our-team"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    Our Team
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     to="/about"
                     className="block px-4 py-2 hover:bg-blue-100"
                   >
                     About Hope Hospital
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/our-team"
+                    className="block px-4 py-2 hover:bg-blue-100"
+                  >
+                    Our Team
                   </Link>
                 </li>
               </ul>
@@ -222,63 +207,19 @@ export default function Header() {
               Specialities ▾
             </Link>
             {openDropdown === "specialities" && (
-              <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-48 transition-all duration-300 text-sm">
-                <li>
-                  <Link
-                    to="/specialities/general-surgery"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    General Surgery
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/specialities/orthopedic-surgery"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    Orthopedic Surgery
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/specialities/neurology"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    Neurology
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/specialities/gynecology"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    Gynecology
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/specialities/dermatology"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    Dermatology
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/specialities/critical-care"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    Critical Care
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/specialities/general-medicine"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    General Medicine
-                  </Link>
-                </li>
+              <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-56 transition-all duration-300 text-sm">
+                {specialities.map((item,i)=>(
+                    <li>
+                      <Link
+                        to={`/specialities/${item.link}`}
+                        className="block px-4 py-2 hover:bg-blue-100"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.title}
+                      </Link>
+                    </li>
+                    ))}
+             
               </ul>
             )}
           </li>

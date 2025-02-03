@@ -42,7 +42,7 @@ const ContactUs = () => {
       <div className=" md:px-8 mt-10  lg:px-4  gap-6 md:gap-0 lg:mb-12  ">
         <div className="flex lg:mx-10  lg:flex-row flex-col  gap-4">
           <div className="flex-1 flex flex-col  gap-4 text-white">
-            <div className=" bg-blue-500 rounded-4xl  py-8 px-4">
+            <div className=" bg-gray-800 rounded-4xl  py-8 px-4">
               <div className="text-3xl messiri">
                 <FaLocationDot className="inline-block mr-2 text-3xl my-4 " />{" "}
                 Our Location
@@ -51,7 +51,7 @@ const ContactUs = () => {
                 Gonda Road, Near Vinayak Resorts, Bharaich - 271801 (U.P.)
               </p>
             </div>
-            <div className=" bg-blue-400 rounded-4xl py-8 px-4">
+            <div className=" bg-pink-500 rounded-4xl py-8 px-4">
               <div className="text-3xl messiri">
                 <FaPhone className="inline-block mr-2 text-3xl my-4 rotate-90" /> Connect
                 with Us
@@ -60,7 +60,7 @@ const ContactUs = () => {
                 CALL: +01132534567 <br/> +011 3253 4569
               </p>
             </div>
-            <div className=" bg-blue-500 rounded-4xl py-8 px-4">
+            <div className=" bg-purple-600 rounded-4xl py-8 px-4">
               <div className="text-3xl messiri">
                 <FaClock className="inline-block mr-2 text-3xl my-4" /> Visiting Hours
               </div>
@@ -80,7 +80,7 @@ const ContactUs = () => {
         </div>
       </div>
 
-      <div className="bg-white py-4 rounded-lg shadow-lg">
+      <div className="bg-white  rounded-lg shadow-lg">
         {/* <div className="text-2xl font-semibold mb-2">Our Location</div> */}
         <iframe
           className="w-full px-10 h-[20rem] rounded-md"
