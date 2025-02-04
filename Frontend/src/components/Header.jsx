@@ -36,17 +36,25 @@ export default function Header() {
 
           {/* Mobile Menu */}
           <div
-            className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform ${
-              isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-            } transition-transform duration-300 ease-in-out lg:hidden`}
+            className={`fixed top-0 right-0 h-full w-52 bg-white shadow-lg transform ${
+              isMobileMenuOpen ? "translate-x-0 overflow-hidden" : "translate-x-full overflow-hidden"
+            } transition-transform duration-300 ease-in-out lg:hidden shadow-2xl`}
           >
+              <div className="flex justify-around py-2 text-lg bg-primary ">
+            <a href="#" className="hover: text-gray-50"><i className="fab fa-facebook-f"></i></a>
+            <a href="#" className="hover: text-gray-50"><i className="fab fa-twitter"></i></a>
+            <a href="#" className="hover: text-gray-50"><i className="fab fa-instagram"></i></a>
+            <a href="#" className="hover: text-gray-50"><i className="fab fa-youtube"></i></a>
+            <a href="#" className="hover: text-gray-50"><i className="fab fa-linkedin-in"></i></a>
+            <a href="#" className="hover: text-gray-50"><i className="fab fa-google-plus-g"></i></a>
+          </div>
             <button
-              className="absolute top-4 right-4 text-gray-600"
+              className="absolute top-14 shadow-2xl  right-2 text-gray-100 text-2xl font-bold bg-primary hover-bg-primary h-10 w-10 rounded-full cursor-pointer"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               ✕
             </button>
-            <ul className="text-gray-800 font-semibold space-y-4 p-6">
+            <ul className="text-gray-800 font-semibold space-y-4 px-2  mt-4 ">
               <li
                 className={`hover:text-blue-500 ${
                   location.pathname === "/" ? "text-blue-500" : ""
@@ -87,12 +95,12 @@ export default function Header() {
                 )}
               </li>
               <li className="relative">
-                <button
+                <Link to='/specialities'
                   onClick={() => handleDropdown("specialities")}
                   className="w-full text-left hover:text-blue-500"
                 >
                   Specialities ▾
-                </button>
+                </Link>
                 {openDropdown === "specialities" && (
                   <ul className="block bg-white shadow-md rounded-md py-2 w-full text-sm">
                     {specialities.map((item,i)=>(
@@ -111,13 +119,60 @@ export default function Header() {
                 )}
               </li>
               <li
+            className="relative cursor-pointer"
+          >
+            <Link to="/facilities" className="hover:text-blue-500 " onClick={() => handleDropdown("facilities")}>
+              Facilities ▾
+            </Link>
+            {openDropdown === "facilities" && (
+              <ul className="block bg-white shadow-md rounded-md py-2 w-full  text-sm">
+                <li>
+                  <Link
+                    to="/facilities/nicu"
+                    className="block px-4 py-2 hover:bg-blue-100"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    NICU
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/facilities/icu"
+                    className="block px-4 py-2 hover:bg-blue-100"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    ICU
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/facilities/general-care"
+                    className="block px-4 py-2 hover:bg-blue-100"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    General Care
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/facilities/private-care"
+                    className="block px-4 py-2 hover:bg-blue-100"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Private Care
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
+              <li
                 className={`hover:text-blue-500  ${
                   location.pathname === "/cases"
                     ? "border-b-2 border-blue-500"
                     : ""
                 }`}
               >
-                <Link to="/cases">Cases</Link>
+                <Link to="/cases" onClick={() => setIsMobileMenuOpen(false)}>Cases</Link>
               </li>
               <li
                 className={`hover:text-blue-500  ${
@@ -126,7 +181,7 @@ export default function Header() {
                     : ""
                 }`}
               >
-                <Link to="/testimonials">Testimonials</Link>
+                <Link to="/testimonials" onClick={() => setIsMobileMenuOpen(false)}>Testimonials</Link>
               </li>
               <li
                 className={`hover:text-blue-500  ${
@@ -135,7 +190,7 @@ export default function Header() {
                     : ""
                 }`}
               >
-                <Link to="/blog">Blog</Link>
+                <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
               </li>
               <li
                 className={`hover:text-blue-500  ${
@@ -144,7 +199,7 @@ export default function Header() {
                     : ""
                 }`}
               >
-                <Link to="/gallery">Gallery</Link>
+                <Link to="/gallery" onClick={() => setIsMobileMenuOpen(false)}>Gallery</Link>
               </li>
               <li
                 className={`hover:text-blue-500 ${

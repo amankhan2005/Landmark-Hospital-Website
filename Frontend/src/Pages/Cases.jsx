@@ -44,7 +44,7 @@ const Cases = () => {
 
         {/* <LoadingSpinner/> */}
       {/* Cases Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-10 container mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 py-10 px-4 md:px-10 md:container md:mx-auto">
         {casesData.map((caseItem, index) => (
           <div 
             key={index} 
@@ -54,15 +54,15 @@ const Cases = () => {
             <img 
               src={caseItem.imageUrl} 
               alt={caseItem.title} 
-              className="w-full h-48 object-cover group-hover:opacity-80 transition" 
+              className="w-full md:h-48 h-36  object-cover group-hover:opacity-80 transition" 
             />
             {/* Plus Icon on Hover */}
             <div className="absolute inset-0 flex top-[-70px] justify-center items-center opacity-0 group-hover:opacity-100 transition">
               <FaPlus className="text-white bg-black/50 rounded-full p-2 w-16 h-16" />
             </div>
-            <div className="p-4 bg-white">
-              <h3 className="text-xl font-semibold text-center">{caseItem.title}</h3>
-              <p className="text-gray-600 text-sm text-center">{caseItem.description}</p>
+            <div className="md:p-4 p-1 bg-white">
+              <h3 className="md:text-xl text-base font-semibold text-center">{caseItem.title}</h3>
+              <p className="text-gray-600 line-clamp-2 text-sm text-center">{caseItem.description}</p>
             </div>
           </div>
         ))}
@@ -90,7 +90,7 @@ const Cases = () => {
               <img
                 src={casesData[currentImageIndex].imageUrl}
                 alt={`Case ${currentImageIndex + 1}`}
-                className="w-full max-h-[500px] object-cover rounded"
+                className="md:w-full w-64  md:max-h-[500px] object-cover rounded"
               />
 
               <button

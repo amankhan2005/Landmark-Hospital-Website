@@ -7,7 +7,7 @@ function SpecialitiesSection() {
          <h1 className="md:text-4xl text-blue-600 text-2xl font-bold text-center  messiri">
           Our Specialities
         </h1>
-        <p className="text-gray-600 mb-12 text-center ">
+        <p className="text-gray-600 mb-12 text-sm md:text-base text-center ">
     We offer expert care across a range of specialties.
   </p>
         <SpecilitesComponent/>

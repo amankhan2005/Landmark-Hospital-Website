@@ -4,6 +4,7 @@ import BreadCumb from "../components/Breadcumb";
 
 
 import SpecilitesComponent from "../components/SpecilitesComponent";
+import ContactUs from "../components/ContactUs";
 
 const Specialities = () => {
 
@@ -16,10 +17,14 @@ const Specialities = () => {
         ]}
         title='Our Specialities'
       />
-      <div className="py-10 pt-20">
+      <div className="py-8 pt-20 px-2">
 
    <SpecilitesComponent/>
       </div>
+      <div className='mb-6 '>
+      
+              <ContactUs/>
+              </div>
     </>
   );
 };

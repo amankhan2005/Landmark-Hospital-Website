@@ -136,7 +136,7 @@ const BlogPage = () => {
         {/* <h2 className="text-4xl messiri font-bold text-blue-500 mt-2 text-center ">Our Recent Blog</h2> */}
         <div className="grid grid-cols-12 gap-4 p-4">
           {/* Blog Section */}
-          <div className="col-span-12 grid grid-cols-3 gap-2">
+          <div className="col-span-12 grid md:grid-cols-3 grid-cols-1 gap-2">
             {filteredBlogs.map((blog) => (
               <div
                 key={blog.id}

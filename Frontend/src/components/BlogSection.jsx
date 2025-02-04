@@ -72,10 +72,10 @@ const BlogComponent = () => {
     const { onClick } = props;
     return (
       <button
-        className="absolute top-1/2 left-0 z-20 transform cursor-pointer -translate-y-1/2 bg-blue-800 text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
+        className="md:block absolute hidden top-1/2 left-0 z-20 transform cursor-pointer -translate-y-1/2 bg-blue-800 text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
         onClick={onClick}
       >
-        <MdArrowBack size={16} />
+        <MdArrowBack size={18} />
       </button>
     );
   };
@@ -85,10 +85,10 @@ const BlogComponent = () => {
     const { onClick } = props;
     return (
       <button
-        className="absolute top-1/2 z-20 right-0 transform cursor-pointer -translate-y-1/2 bg-blue-800 text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
+        className="md:block absolute hidden top-1/2 z-20 right-0 transform cursor-pointer -translate-y-1/2 bg-blue-800 text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
         onClick={onClick}
       >
-        <MdArrowForward size={16} />
+        <MdArrowForward size={18} />
       </button>
     );
   };
@@ -120,11 +120,11 @@ const BlogComponent = () => {
   };
 
   return (
-    <div className="lg:py-14 md:py-12 py-10 relative">
+    <div className="lg:py-14 md:py-12 py-10 relative ">
       <h2 className="md:text-4xl text-2xl messiri font-bold text-blue-500 text-center">
         Our Recent Blog
       </h2>
-      <p className="text-gray-600 mb-6 text-center">
+      <p className="text-gray-600 md:mb-6 mb-2 text-center text-sm md:text-base">
         Latest updates, tips, and insights from our team.
       </p>
 
@@ -133,7 +133,7 @@ const BlogComponent = () => {
           {filteredBlogs.map((blog) => (
             <div
               key={blog.id}
-              className="rounded-lg p-4 shadow-2xl hover:shadow-none transition cursor-pointer mx-4" // Added mx-4 for space
+              className="rounded-lg p-4 shadow-2xl hover:shadow-none transition cursor-pointer md:mx-4" // Added mx-4 for space
               onClick={() => navigate(`/blog/${blog.id}`)}
             >
               <img
@@ -145,16 +145,16 @@ const BlogComponent = () => {
                 Published by <span className="text-gray-900">{blog.author}</span> || 
                 <span> on {blog.date}</span>
               </p>
-              <h2 className="text-xl font-bold line-clamp-1 mb-2">
+              <h2 className="md:text-xl text-lg font-bold line-clamp-1 mb-2">
                 {blog.title}
               </h2>
-              <p className="text-gray-700 mb-2 line-clamp-2">
+              <p className="text-gray-700 md:text-base text-sm mb-2 line-clamp-2">
                 {blog.description}
               </p>
               <p className="text-sm text-gray-500 flex justify-between items-center">
                 <button
                   onClick={() => navigate(`/blog/${blog.id}`)}
-                  className="text-white bg-blue-800 hover:bg-blue-600 cursor-pointer px-3 py-1 rounded"
+                  className="text-white  bg-blue-800 hover:bg-blue-600 cursor-pointer px-3 py-1 rounded"
                 >
                   Read More
                 </button>

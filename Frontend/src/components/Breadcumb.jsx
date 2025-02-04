@@ -5,7 +5,7 @@ import image from '../assets/breadcrumb.jpg'
 const BreadCumb = ({ items, title }) => {
   return (
     <div
-      className="relative w-full h-[250px] flex items-center justify-center bg-cover bg-center p-4"
+      className="relative w-full md:h-[250px] h-[150px] flex items-center justify-center bg-cover bg-center p-4"
       style={{ backgroundImage: `url(${image})` }}
     >
       {/* Overlay for text visibility */}
@@ -13,8 +13,8 @@ const BreadCumb = ({ items, title }) => {
 
       {/* Breadcrumb Content */}
       <div className="relative z-10 text-center text-white">
-        <h1 className="text-4xl font-semibold messiri">{title}</h1>
-        <div className="flex justify-center items-center mt-4">
+        <h1 className="md:text-4xl text-2xl font-semibold messiri">{title}</h1>
+        <div className="flex justify-center items-center md:mt-4 mt-0">
           {items.map((item, index) => (
             <React.Fragment key={index}>
               <Link to={item.link} className={` ${index == 0 ? 'text-white':'text-white/90'} font-medium hover:text-blue-500`}>

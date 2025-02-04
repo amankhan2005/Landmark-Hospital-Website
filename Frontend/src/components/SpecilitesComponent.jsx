@@ -7,25 +7,25 @@ function SpecilitesComponent({specialty}) {
     
 // console.log(specialty.title)
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ">
+    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ">
           {specialities.map((speciality, index) => (
-            <div className="h-[35vh]">
+            <div className="lg:h-[35vh] h-[16vh]">
             <Link to={`/specialities/${speciality.link}`}
               key={index}
-              className={` ${specialty?.title == speciality.title? 'border-2':'' }  bg-white block shadow-lg rounded-xl p-4 relative  hover:border-2 border-blue-500 transition-al`}
+              className={` ${specialty?.title == speciality.title? 'border-2':'' }  bg-white block shadow-xl rounded-xl p-4 relative  hover:border-2 border-blue-500 transition-al`}
             >
-              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-blue-100 hover:bg-white h-20 w-28 flex justify-center  hover:border-2 border border-blue-500 rounded-3xl shadow-lg">
+              <div className="absolute md:-top-8 -top-6 left-1/2 transform -translate-x-1/2 bg-blue-100 hover:bg-white md:h-20 md:w-28 h-10 w-14 flex justify-center rounded-lg items-center  hover:border-2 border border-blue-500 md:rounded-3xl shadow-lg">
                 <img
                   src={speciality.image}
                   alt={speciality.title}
-                  className="w-20 rounded-3xl h-20 object-cover p-2"
+                  className="md:w-20 w-8 md:rounded-3xl rounded md:h-20 h-8  object-cover md:p-2 "
                 />
               </div>
-              <div className="mt-16 text-center">
-                <h2 className="text-xl font-bold text-gray-800 mb-2 messiri ">
+              <div className="md:mt-16 mt-4 md:text-center text-left">
+                <h2 className="md:text-xl text-base font-bold text-gray-800 mb-2 w-full line-clamp-1 messiri ">
                   {speciality.title}
                 </h2>
-                <button className="text-blue-600 py-1 px-2 rounded-full hover:bg-blue-200 ">View More <FaArrowRight className="inline-block ms-1"/></button>
+                <button className="text-blue-600 md:py-1 md:px-2 rounded-full hover:bg-blue-200 ">View More <FaArrowRight className="inline-block ms-1"/></button>
                 {/* <p className="text-gray-600 text-sm mb-4">
                   {speciality.description}
                 </p>

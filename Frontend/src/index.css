@@ -1,7 +1,10 @@
 @import "tailwindcss";
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 
-
+html, body {
+    overflow-x: hidden;
+  }
+  
 body{
     font-family: "Poppins", serif;
 }
@@ -18,11 +21,19 @@ body{
 
 
 .text-primary{
-    color: #4848f8 !important;
+    color: #1b4d94 !important;
 }
 
 :root{
     --primary:#1b4d94;
+    --hover-primary:#1d3e6d;
+}
+
+.bg-primary{
+    background-color: var(--primary);
+}
+.hover-bg-primary{
+    background-color: var(--hover-primary);
 }
 
 .btn{
@@ -30,4 +41,9 @@ body{
 }
 .btn:hover{
     background-color: white;
+}
+
+
+.mobile li{
+    border-bottom: 1px solid ;
 }

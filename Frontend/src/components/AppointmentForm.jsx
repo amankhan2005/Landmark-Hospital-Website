@@ -82,8 +82,8 @@ function AppointmentForm() {
   };
 
   return (
-    <div className="w-full bg-white p-8 pt-6 shadow-lg rounded-lg border border-gray-200">
-      <h3 className="md:text-3xl text-xl messiri  font-bold text-gray-800">Book Appointment</h3>
+    <div className="w-full bg-white md:p-8 px-3 py-4 pt-6 shadow-lg rounded-lg border border-gray-200">
+      <h3 className="md:text-3xl text-2xl text-blue-600 messiri  font-bold md:text-gray-800">Book Appointment</h3>
       {loading && <p className="text-blue-500">Loading...</p>}
       {/* {error && <p className="text-red-500">{error}</p>} */}
       <form className="mt-4 flex flex-col gap-4" onSubmit={handleSubmit}>
@@ -101,11 +101,11 @@ function AppointmentForm() {
           ))}
         </select>
 
-        <input type="text" name="name" placeholder="Your Name" className="border border-gray-300 p-3 rounded-lg" onChange={handleChange} value={formData.name} />
-        <input type="text" name="phone" placeholder="Phone Number" className="border border-gray-300 p-3 rounded-lg" onChange={handleChange} value={formData.phone} />
-        <input type="email" name="email" placeholder="Email" className="border border-gray-300 p-3 rounded-lg" onChange={handleChange} value={formData.email} />
-        <input type="date" name="date" className="border border-gray-300  p-3 rounded-lg" onChange={handleChange} value={formData.date} />
-        <input type="time" name="time" className="border border-gray-300 p-3 rounded-lg" onChange={handleChange} value={formData.time} />
+        <input type="text" name="name" placeholder="Your Name" className="border w-full border-gray-300 p-3 rounded-lg" onChange={handleChange} value={formData.name} />
+        <input type="text" name="phone" placeholder="Phone Number" className="border w-full border-gray-300 p-3 rounded-lg" onChange={handleChange} value={formData.phone} />
+        <input type="email" name="email" placeholder="Email" className="border w-full border-gray-300 p-3 rounded-lg" onChange={handleChange} value={formData.email} />
+        <input type="date" name="date" placeholder="Date" className="border border-gray-300  w-full p-3 rounded-lg" onChange={handleChange} value={formData.date} />
+        <input type="time" name="time" placeholder="Time" className="border border-gray-300 w-full p-3 rounded-lg" onChange={handleChange} value={formData.time} />
         
         <button type="submit" disabled={loading} className={` bg-blue-500 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 cursor-pointer  transition duration-300`}>
           {loading ? "Processing..." : "Book Appointment"}

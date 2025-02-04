@@ -9,7 +9,7 @@ const TeamForm = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  // 🔹 Upload image to Cloudinary
+  
   const uploadImage = async (e) => {
     const file = e.target.files[0];
     if (!file) return;

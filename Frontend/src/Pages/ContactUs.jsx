@@ -34,7 +34,7 @@ const ContactUs = () => {
       {/* Form and Office Details Section */}
       <div className=" md:px-8 mt-10  lg:px-4  gap-6 md:gap-0 lg:mb-12  ">
         <div className="flex lg:mx-10  lg:flex-row flex-col  gap-4">
-          <div className="flex-1 relative flex flex-col p-6 gap-4 text-white">
+          <div className="flex-1 relative flex flex-col px-6 gap-4 text-white">
             <div
               className="absolute inset-0"
               style={{
@@ -78,16 +78,16 @@ const ContactUs = () => {
           <div className="lg:absolute hidden top-0 right-0 z-[-10] w-[500px] h-[500px] lg:bg-blue-600  rounded-full transform translate-x-[0%] translate-y-[0%] md:opacity-50 opacity-100"></div> */}
 
           {/* Enquiry Form */}
-          <div className="flex-2">
+          <div className="flex-2 px-2">
             <AppointmentForm />
           </div>
         </div>
       </div>
 
-      <div className="bg-white pb-10 rounded-lg shadow-lg">
+      <div className="bg-white md:pb-10 pb-6 rounded-lg shadow-lg">
         {/* <div className="text-2xl font-semibold mb-2">Our Location</div> */}
         <iframe
-          className="w-full px-10 h-[20rem] rounded-md"
+          className="w-full md:px-10 p-4 h-[20rem] rounded-md"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.5874931405597!2d81.62148837471162!3d27.575309976258538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3999af00557829fb%3A0xeb3ebdb88183dbe6!2sHope%20Hospital!5e0!3m2!1sen!2sin!4v1738136721650!5m2!1sen!2sin"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

@@ -8,7 +8,7 @@ const FacilitiesSection = () => {
       <h1 className="md:text-4xl text-blue-600 text-2xl font-bold text-center messiri">
         Our Facilities
       </h1>
-      <p className="text-gray-600 mb-6 text-center">
+      <p className="text-gray-600 mb-6 text-center text-sm md:text-base">
         State-of-the-art facilities for advanced medical care.
       </p>
       <FacilitiesComponent />

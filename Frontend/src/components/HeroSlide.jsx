@@ -80,12 +80,12 @@ export default function HeroSlider() {
     <div className="w-full  relative">
       <Slider {...settings}>
         {slides.map((slide,index) => (
-          <div key={slide.id} className={`relative w-full  md:h-[70vh] ${index !== slide ? 'inert' : ''}`}>
+          <div key={slide.id} className={`relative w-full h-auto md:h-[70vh] ${index !== slide ? 'inert' : ''}`}>
             {/* Background Image */}
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
 
             {/* Content Overlay

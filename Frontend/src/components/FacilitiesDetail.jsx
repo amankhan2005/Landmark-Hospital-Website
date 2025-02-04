@@ -38,12 +38,12 @@ const FacilitiesDetail = () => {
       />
       <div className="px-6  py-8 ">
         {/* First Section: Description & Image */}
-        <div className="grid grid-cols-1 md:grid-cols-8 gap-6  p-4  rounded-2xl">
+        <div className="grid grid-cols-1  md:grid-cols-8 gap-6  p-4  rounded-2xl">
           <div className="md:col-span-5 ">
-            <h1 className="text-3xl font-bold text-blue-600 mb-4 messiri">
+            {/* <h1 className="text-3xl font-bold text-blue-600 mb-4 messiri">
               {facilities.title}
-            </h1>
-            <p className="text-gray-700 text-justify">
+            </h1> */}
+            <p className="text-gray-700 text-justify mt-10">
               {facilities.description} Neurology is the medical facilities focused
               on diagnosing and treating disorders of the nervous system,
               including the brain, spinal cord, and peripheral nerves.
@@ -78,13 +78,16 @@ const FacilitiesDetail = () => {
             <OurTeam/>
           </div> */}
           {/* <WhyChooseUs/> */}
-        <ContactUs/>
       </div>
-      <div className="bg-gray-100 p-4 px-10">
+      <div className="bg-gray-100 p-4 md:px-10 px-4">
       <h2 className="md:text-4xl text-2xl font-bold text-center mb-12 messiri">
         Our Other Facilities
         </h2>
         <FacilitiesComponent props={facilities} />
+        <div className="mt-10">
+
+        <ContactUs/>
+        </div>
       </div>
     </>
   );

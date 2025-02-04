@@ -44,19 +44,19 @@ function AboutPage() {
         ]}
         title="About Hope Hospital"
       />
-    <div className="p-8">
+    <div className="md:p-8 pt-10">
       {/* Story Section */}
-      <section className="flex flex-col md:flex-row items-center gap-8 bg-gray-100 p-8 rounded-lg shadow-md">
-        <div className="md:w-1/2">
+      <section className="flex flex-col md:flex-row items-center gap-8 bg-gray-100 md:p-8 p-2 rounded-lg shadow-md">
+        <div className="md:w-1/2 w-full">
           <img 
             src="https://picsum.photos/600/400" 
             alt="Hopr Hospital" 
             className="rounded-lg shadow-lg"
           />
         </div>
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 w-full">
           <h2 className="md:text-4xl text-2xl font-bold text-blue-700 messiri">The Story of Hope Hospital</h2>
-          <p className="mt-4 text-gray-700">
+          <p className="mt-4 text-gray-700 text-justify">
             At Hope Hospital, we are committed to bringing exceptional healthcare to our community. Since our inception, we have pursued excellence in medical care with a vision to make it accessible for all. With a patient-centric approach, we aim to transform healthcare by blending compassion with cutting-edge technology. Join us on our journey of making lives healthier and happier.
           </p>
           <div className="flex mt-4 gap-4">
@@ -78,7 +78,7 @@ function AboutPage() {
                   backgroundImage: `url(${pattern})`,
                   backgroundSize: "contain",
                   backgroundPosition: "center",
-                  opacity: 0.4,
+                  opacity: 0.7,
                   zIndex: 0,
                 }}
               ></div>
@@ -94,7 +94,7 @@ function AboutPage() {
                   backgroundImage: `url(${pattern})`,
                   backgroundSize: "contain",
                   backgroundPosition: "center",
-                  opacity: 0.4,
+                  opacity: 0.7,
                   zIndex: 0,
                 }}
               ></div>
@@ -110,7 +110,7 @@ function AboutPage() {
                   backgroundImage: `url(${pattern})`,
                   backgroundSize: "contain",
                   backgroundPosition: "center",
-                  opacity: 0.4,
+                  opacity: 0.7,
                   zIndex: 0,
                 }}
               ></div>
@@ -141,10 +141,10 @@ function AboutPage() {
       </section>
 
       {/* History Section */}
-      <section className="mt-16 flex justify-between px-14 gap-6">
-        <div>
+      <section className="mt-16 flex flex-col md:flex-row justify-between  gap-6">
+        <div className='px-14'>
         <h2 className="text-3xl font-bold text-blue-600 text-center mb-8 messiri">Our History</h2>
-        <div className="relative border-l-2 border-blue-700 pl-8">
+        <div className="relative border-l-2 border-blue-700 pl-8  ">
           {[
             { year: "2000", event: "Founded with the vision of providing quality healthcare." },
             { year: "2005", event: "Expanded facilities with advanced medical technologies." },
@@ -159,7 +159,7 @@ function AboutPage() {
           ))}
         </div>
         </div>
-        <div className='w-full flex-1'>
+        <div className='w-full flex-1 px-2 my-4'>
           <AppointmentForm/>
         </div>
       </section>

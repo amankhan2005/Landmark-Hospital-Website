@@ -31,19 +31,19 @@ const Stats = () => {
       </div>
 
       {/* Stats content */}
-      <div className="relative grid grid-cols-2 md:grid-cols-4 md:px-28 px-4 gap-8 z-10">
+      <div className="relative grid grid-cols-2 md:grid-cols-4 md:px-28 px-2 md:gap-8 gap-2 z-10">
         {stats.map((stat, index) => (
           <div
             key={index}
-            className="bg-white md:p-5 p-2 rounded-lg shadow-2xl md:w-60 w-44 text-center"
+            className="bg-white md:p-5 p-1 rounded-lg shadow-2xl md:w-60 text-center"
           >
-            <div className="mb-4">
+            <div className="md:mb-4 mb-1">
               <img src={stat.icon} alt={stat.label} className="mx-auto md:w-20 w-14" />
             </div>
-            <div className="md:text-3xl text-xl font-bold text-gray-800 mb-2">
+            <div className="md:text-3xl text-xl font-bold text-gray-800 md:mb-2 ">
               <CountUp end={stat.number} duration={2} enableScrollSpy /> +
             </div>
-            <p className="text-gray-500">{stat.label}</p>
+            <p className="text-gray-500 text-sm md:text-base md:mt-0 mt-2">{stat.label}</p>
           </div>
         ))}
       </div>

@@ -12,10 +12,13 @@ function FacilitiesPage() {
         ]}
         title='Our Facilities'
       />
-      <div className='pt-12 px-6'>
+      <div className='md:pt-12 pt-6 md:px-6 px-2'>
         <FacilitiesComponent/>
         </div>
+        <div className='md:py-0 py-6'>
+
         <ContactUs/>
+        </div>
     </div>
   )
 }

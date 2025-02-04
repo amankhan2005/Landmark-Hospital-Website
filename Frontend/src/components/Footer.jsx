@@ -16,10 +16,10 @@ const Footer = () => {
     <>
       <footer className="bg-primary text-white py-8 border-b ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-2 gap-8">
             {/* Contact Section */}
             <div>
-              <h4 className="text-2xl  font-semibold mb-4 messiri">
+              <h4 className="text-2xl  font-semibold md:mb-4 mb-2 messiri">
                 Get In Touch With Us
               </h4>
               <ul>
@@ -69,7 +69,7 @@ const Footer = () => {
 
             {/* Our Facilities Section */}
             {/* <div className="">
-            <h4 className="text-2xl font-semibold mb-4 messiri">Our Facilities</h4>
+            <h4 className="text-2xl font-semibold md:md:mb-4 mb-2 mb-2 messiri">Our Facilities</h4>
             <ul className="space-y-2">
               <li>
                 <Link to="/treatment/high-risk-pregnancy" className="hover:underline">
@@ -96,7 +96,7 @@ const Footer = () => {
           </div> */}
             {/* Our Treatment Section */}
             <div>
-              <h4 className="text-2xl font-semibold mb-4 messiri">
+              <h4 className="text-2xl font-semibold md:mb-4 mb-2 messiri">
                 Our Specialities
               </h4>
               <ul className="space-y-2">
@@ -119,7 +119,7 @@ const Footer = () => {
 
             {/* Quick Links Section */}
             <div>
-              <h4 className="text-2xl font-semibold mb-4 messiri">
+              <h4 className="text-2xl font-semibold md:mb-4 mb-2 messiri">
                 Quick Links
               </h4>
               <ul className="space-y-2">
@@ -170,7 +170,7 @@ const Footer = () => {
 
             {/* Map Section */}
             <div>
-              <h4 className="text-2xl font-semibold mb-4 messiri">Location</h4>
+              <h4 className="text-2xl font-semibold md:mb-4 mb-2 messiri">Location</h4>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.5874931405597!2d81.62148837471162!3d27.575309976258538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3999af00557829fb%3A0xeb3ebdb88183dbe6!2sHope%20Hospital!5e0!3m2!1sen!2sin!4v1738136721650!5m2!1sen!2sin"
                 width="100%"
