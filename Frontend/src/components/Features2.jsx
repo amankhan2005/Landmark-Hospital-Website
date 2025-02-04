@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 const Features = () => {
   return (
-    <section className=" max-w-6xl mx-auto px-2 md:grid grid-cols-1 md:grid-cols-4 bg-white shadow-lg rounded-lg ">
+    <section className=" max-w-7xl mx-auto px-2 md:grid grid-cols-1 md:grid-cols-4 gap-2 bg-white shadow-lg rounded-lg ">
       {/* Working Time */}
-      <div className="bg-blue-400 text-white md:p-6 p-3 md:block hidden">
+      <div className="bg-blue-300 text-white md:p-6 p-3 md:block hidden">
         <h3 className="text-lg font-semibold">Working Time</h3>
         <ul className="mt-4 space-y-2 text-sm">
           <li className="flex justify-between border-b pb-1">
@@ -29,7 +29,7 @@ const Features = () => {
       </div>
 
       {/* Doctors Timetable */}
-      <div className="bg-blue-500 text-white md:p-6 p-3 flex flex-col justify-between">
+      <div className="bg-blue-400 text-white md:p-6 p-3 flex flex-col justify-between mb-1">
         <div>
           <h3 className="text-lg font-semibold">Expert Doctors</h3>
           <p className="text-sm mt-2 ">
@@ -46,7 +46,7 @@ const Features = () => {
       </div>
 
       {/* Appointments */}
-      <div className="bg-blue-600 text-white md:p-6 p-3 flex flex-col justify-between">
+      <div className="bg-blue-500 text-white md:p-6 p-3 flex flex-col justify-between mb-1">
         <div>
           <h3 className="text-lg font-semibold">Appointments</h3>
           <p className="text-sm mt-2">
@@ -64,7 +64,7 @@ const Features = () => {
       </div>
 
       {/* Emergency Cases */}
-      <div className="bg-blue-500 text-white md:p-6 p-3">
+      <div className="bg-blue-300 text-white md:p-6 p-3 mb-1">
   <h3 className="text-lg font-semibold">Emergency Cases</h3>
   <div className="md:mt-4 mt-2 flex items-center gap-2 md:text-xl text-base font-semibold">
     <FaPhoneAlt />

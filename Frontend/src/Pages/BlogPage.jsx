@@ -150,10 +150,10 @@ const BlogPage = () => {
                 />
                 <p className="text-sm text-gray-500 mb-1 underline  underline-offset-4">
                   Published by{" "}
-                  <span className="text-gray-900 ">{blog.author}</span> ||
+                  <span className="text-gray-900 mb-2">{blog.author}</span> ||
                   <span> on {blog.date}</span>
                 </p>
-                <h2 className="text-xl font-bold line-clamp-1 mb-2">
+                <h2 className="text-xl font-semibold line-clamp-1 mb-2">
                   {blog.title}
                 </h2>
                 <p className="text-gray-700 mb-2 line-clamp-2">

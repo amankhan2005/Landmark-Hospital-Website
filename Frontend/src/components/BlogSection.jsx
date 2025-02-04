@@ -75,7 +75,7 @@ const BlogComponent = () => {
         className="md:block absolute hidden top-1/2 left-0 z-20 transform cursor-pointer -translate-y-1/2 bg-blue-800 text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
         onClick={onClick}
       >
-        <MdArrowBack size={18} />
+        <MdArrowBack size={24} />
       </button>
     );
   };
@@ -88,7 +88,7 @@ const BlogComponent = () => {
         className="md:block absolute hidden top-1/2 z-20 right-0 transform cursor-pointer -translate-y-1/2 bg-blue-800 text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
         onClick={onClick}
       >
-        <MdArrowForward size={18} />
+        <MdArrowForward size={24} />
       </button>
     );
   };
@@ -133,7 +133,7 @@ const BlogComponent = () => {
           {filteredBlogs.map((blog,index) => (
             <div
               key={blog.id}
-              className={`rounded-lg p-4  hover:shadow-2xl ${index%2==0 ?'shadow-xl':''} transition cursor-pointer md:mx-4`} // Added mx-4 for space
+              className={`rounded-lg p-4  transition cursor-pointer md:mx-4`} // Added mx-4 for space
               onClick={() => navigate(`/blog/${blog.id}`)}
             >
               <img
@@ -141,11 +141,11 @@ const BlogComponent = () => {
                 alt={blog.title}
                 className="w-full h-40 object-cover rounded-lg mb-4"
               />
-              <p className="text-sm text-gray-500 mb-1 underline underline-offset-4">
+              <p className="text-sm text-gray-500 mb-4 underline underline-offset-4">
                 Published by <span className="text-gray-900">{blog.author}</span> || 
                 <span> on {blog.date}</span>
               </p>
-              <h2 className="md:text-xl text-lg font-bold line-clamp-1 mb-2">
+              <h2 className="md:text-xl text-lg font-semibold line-clamp-1 mb-2">
                 {blog.title}
               </h2>
               <p className="text-gray-700 md:text-base text-sm mb-2 line-clamp-2">
@@ -154,7 +154,7 @@ const BlogComponent = () => {
               <p className="text-sm text-gray-500 flex justify-between items-center">
                 <button
                   onClick={() => navigate(`/blog/${blog.id}`)}
-                  className="text-white  bg-blue-800 hover:bg-blue-600 cursor-pointer px-3 py-1 rounded"
+                  className="text-white  bg-blue-700 hover:bg-blue-600 cursor-pointer px-3 py-1 rounded"
                 >
                   Read More
                 </button>

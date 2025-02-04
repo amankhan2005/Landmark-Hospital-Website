@@ -10,10 +10,18 @@ app.use(express.json())
 app.use(cors())
 
 //routes
-import teamRouter from './Routes/team.js'
-app.use('/team',teamRouter)
 
+import teamRoutes from './Routes/team.js'
+app.use('/team',teamRoutes)
 
+import blogRoutes from './Routes/blog.routes.js'
+app.use('/blog',blogRoutes)
+
+import galleryRoutes from './Routes/gallery.routes.js'
+app.use('/gallery',galleryRoutes)
+
+import caseRoutes from './Routes/case.routes.js'
+app.use('/case',caseRoutes); 
 
 mongoose.connect(mongoDBUrl).then(() => console.log('MongoDB Connected')).catch((err) => console.log(`MongoDb Error, Err- ${err}}`))
 app.listen(port, () => { console.log(`Server is running on ${port}`) })

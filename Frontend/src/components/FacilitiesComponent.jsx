@@ -14,7 +14,7 @@ function FacilitiesComponent({ props }) {
           key={specialty.id}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className={`relative overflow-hidden md:rounded-lg rounded shadow-lg transition-all duration-500 ease-in-out ${
+          className={`relative overflow-hidden  md:rounded-lg rounded shadow-lg transition-all duration-500 ease-in-out ${
             props?.title === specialty?.title ? 'border-t-6   border-blue-500' : ''
           } bg-white`}
         >

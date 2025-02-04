@@ -10,9 +10,6 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import { GiRotaryPhone } from "react-icons/gi";
-import { MdEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
 import BreadCumb from "../components/Breadcumb";
 import AppointmentForm from "../components/AppointmentForm";
 import pattern from "../assets/pattern12.jpg";
@@ -45,7 +42,7 @@ const ContactUs = () => {
                 zIndex: -1,
               }}
             ></div>
-            <div className=" bg-gray-800 rounded-4xl  py-5 px-4">
+            <div className=" bg-gray-700 rounded-4xl  py-5 px-4">
               <div className="text-3xl messiri">
                 <FaLocationDot className="inline-block mr-2 text-3xl my-4 " />{" "}
                 Our Location
@@ -54,7 +51,7 @@ const ContactUs = () => {
                 Gonda Road, Near Vinayak Resorts, Bharaich - 271801 (U.P.)
               </p>
             </div>
-            <div className=" bg-red-500 rounded-4xl py-5 px-4">
+            <div className=" bg-red-400 rounded-4xl py-5 px-4">
               <div className="text-3xl messiri">
                 <FaPhone className="inline-block mr-2 text-3xl my-4 rotate-90" />{" "}
                 Connect with Us
@@ -63,7 +60,7 @@ const ContactUs = () => {
                 CALL: +01132534567 , +011 3253 4569
               </p>
             </div>
-            <div className=" bg-blue-600 rounded-4xl py-5 px-4">
+            <div className=" bg-purple-500 rounded-4xl py-5 px-4">
               <div className="text-3xl messiri">
                 <FaClock className="inline-block mr-2 text-3xl my-4" /> Visiting
                 Hours

@@ -107,7 +107,7 @@ function AppointmentForm() {
         <input type="date" name="date" placeholder="Date" className="border border-gray-300  w-full p-3 rounded-lg" onChange={handleChange} value={formData.date} />
         <input type="time" name="time" placeholder="Time" className="border border-gray-300 w-full p-3 rounded-lg" onChange={handleChange} value={formData.time} />
         
-        <button type="submit" disabled={loading} className={` bg-blue-500 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 cursor-pointer  transition duration-300`}>
+        <button type="submit" disabled={loading} className={` bg-blue-700 text-white font-semibold py-3 rounded-lg hover:bg-blue-800 cursor-pointer  transition duration-300`}>
           {loading ? "Processing..." : "Book Appointment"}
         </button>
       </form>

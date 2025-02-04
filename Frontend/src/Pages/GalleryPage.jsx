@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaPlus, FaTimes } from "react-icons/fa";
 import BreadCumb from "../components/Breadcumb";
 
 function GalleryPage() {
@@ -53,7 +53,10 @@ function GalleryPage() {
       />
       <div className="py-10 px-4 md:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {images.map((img, idx) => (
-          <div key={idx} className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer" onClick={() => openModal(idx)}>
+          <div key={idx} className="relative  bg-white rounded-lg shadow-md overflow-hidden cursor-pointer group" onClick={() => openModal(idx)}>
+            <div className="absolute inset-0 flex top-0 z-10 justify-center items-center opacity-0 group-hover:opacity-100 transition">
+                          <FaPlus className="text-white bg-black/50 rounded-full p-2 w-12 h-12" />
+                        </div>
             <img className="w-full h-48 object-cover" src={img.src} alt={img.alt} />
           </div>
         ))}
@@ -61,10 +64,10 @@ function GalleryPage() {
 
       {modalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
-          <button className="absolute top-5 right-5 text-white text-3xl" onClick={closeModal}>
+          <button className="absolute top-5 right-5 text-white text-3xl cursor-pointer" onClick={closeModal}>
             <FaTimes />
           </button>
-          <button className="absolute z-10 left-5  text-white text-3xl" onClick={prevImage}>
+          <button className="absolute z-10 left-5  text-white text-3xl cursor-pointer" onClick={prevImage}>
             <FaChevronLeft />
           </button>
           <div className="relative">
@@ -75,7 +78,7 @@ function GalleryPage() {
               className="max-w-full max-h-screen transition-transform"
             />
           </div>
-          <button className="absolute z-10 right-5 text-white text-3xl" onClick={nextImage}>
+          <button className="absolute z-10 right-5 text-white text-3xl cursor-pointer" onClick={nextImage}>
             <FaChevronRight />
           </button>
         </div>
