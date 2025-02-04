@@ -15,7 +15,7 @@ function FacilitiesPage() {
       <div className='md:pt-12 pt-6 md:px-6 px-2'>
         <FacilitiesComponent/>
         </div>
-        <div className='md:py-0 py-6'>
+        <div className='md:pt-10 py-6'>
 
         <ContactUs/>
         </div>

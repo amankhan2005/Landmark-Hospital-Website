@@ -85,7 +85,7 @@ export default function HeroSlider() {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full md:object-cover object-contain"
+              className="w-full md:h-full md:object-cover object-contain"
             />
 
             {/* Content Overlay

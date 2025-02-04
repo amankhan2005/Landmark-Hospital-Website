@@ -11,6 +11,13 @@ import BottomFooter from "./BottomFooter";
 import { specialities } from "../SpecilitesData";
 import { FaChevronCircleRight } from "react-icons/fa";
 
+const handletop = ()=>{
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
 const Footer = () => {
   return (
     <>
@@ -125,13 +132,13 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                 <FaChevronCircleRight className="inline-block mr-2" />
-                  <Link to="/" className="hover:underline">
+                  <Link to="/" className="hover:underline" onClick={handletop}>
                     Home
                   </Link>
                 </li>
                 <li>
                 <FaChevronCircleRight className="inline-block mr-2" />
-                  <Link to="/about-us" className="hover:underline">
+                  <Link to="/about" className="hover:underline">
                     About Us
                   </Link>
                 </li>
@@ -161,7 +168,7 @@ const Footer = () => {
                 </li>
                 <li>
                 <FaChevronCircleRight className="inline-block mr-2" />
-                  <Link to="/contact-us" className="hover:underline">
+                  <Link to="/contact" className="hover:underline">
                     Contact Us
                   </Link>
                 </li>

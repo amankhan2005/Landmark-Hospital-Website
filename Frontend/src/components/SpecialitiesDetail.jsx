@@ -36,16 +36,16 @@ const SpecialtyDetail = () => {
 
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-8 gap-7 items-cente">
-          <div className="md:col-span-5 bg-gray-100 p-4 rounded-2xl">
+          <div className="md:col-span-5 bg-gray-100 md:p-4 rounded-2xl">
             {/* <h1 className="text-4xl font-bold text-blue-600 mb-6 messiri">
               {specialty.title}
             </h1> */}
             <img
               src={specialty.img}
               alt={specialty.title}
-              className="w-full  h-96 rounded-lg shadow-lg hover:shadow-2xl  p-5 transform transition duration-300 hover:scale-105"
+              className="w-full md:h-96 h-52 rounded-xl"
             />
-            <p className="text-gray-700 relative p-9 z-10 text-lg leading-relaxed mt-6">
+            <p className="text-gray-700 relative md:p-5 z-10 md:text-lg  text-base text-justify leading-relaxed mt-6">
               <div
                 className="absolute inset-0"
                 style={{
@@ -65,8 +65,8 @@ const SpecialtyDetail = () => {
               vitae!
             </p>
 
-            <div className="mt-8">
-              <h2 className="text-2xl font-semibold text-blue-500 mb-4 messiri">
+            <div className="mt-8 px-4 mb-4">
+              <h2 className="text-2xl font-semibold text-blue-500 mb-4  messiri">
                 Services Offered
               </h2>
               <ul className="list-disc list-inside text-gray-700 space-y-2">
@@ -103,6 +103,9 @@ const SpecialtyDetail = () => {
             </div>
           </div>
         </div>
+
+      </div>
+      <div className="md:mb-0 mb-4">
 
         <ContactUs />
       </div>

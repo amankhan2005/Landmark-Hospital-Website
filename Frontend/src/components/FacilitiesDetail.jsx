@@ -5,7 +5,7 @@ import {facilities as facilitiesData} from '../FacilitiesData'
 import FacilitiesComponent from "./FacilitiesComponent.jsx";
 import WhyChooseUs from "./WhyChooseUs.jsx";
 import OurTeam from "./OurTeam2.jsx";
-
+import pattern from "../assets/pattern13.jpg";
 
 const FacilitiesDetail = () => {
   const { facilitiesName } = useParams();
@@ -36,14 +36,24 @@ const FacilitiesDetail = () => {
         ]}
         title={title}
       />
-      <div className="px-6  py-8 ">
+      <div className="md:px-6  py-8">
         {/* First Section: Description & Image */}
-        <div className="grid grid-cols-1  md:grid-cols-8 gap-6  p-4  rounded-2xl">
-          <div className="md:col-span-5 ">
+        <div className="flex relative z-10 md:flex-row flex-col-reverse gap-6  px-4 bg-gray-100 rounded-2xl">
+        <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url(${pattern})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                opacity: 0.2,
+                zIndex: -1,
+              }}
+            ></div>
+          <div className="flex-6 ">
             {/* <h1 className="text-3xl font-bold text-blue-600 mb-4 messiri">
               {facilities.title}
             </h1> */}
-            <p className="text-gray-700 text-justify mt-10">
+            <p className="text-gray-700 text-justify md:mt-10 ">
               {facilities.description} Neurology is the medical facilities focused
               on diagnosing and treating disorders of the nervous system,
               including the brain, spinal cord, and peripheral nerves.
@@ -66,11 +76,11 @@ const FacilitiesDetail = () => {
             </ul>
             </div>
           </div>
-          <div className="md:col-span-3 flex justify-center">
+          <div className=" flex justify-center ">
             <img
               src={facilities.image}
               alt={facilities.title}
-              className="w-full h-72  border-2 border-gray-400  rounded mt-10 bg-gray-200  shadow-lg hover:shadow-2xl "
+              className="w-full md:h-72  border-2 border-gray-400  rounded mt-10 bg-gray-200  shadow-lg hover:shadow-2xl "
             />
           </div>
         </div>
@@ -80,15 +90,15 @@ const FacilitiesDetail = () => {
           {/* <WhyChooseUs/> */}
       </div>
       <div className="bg-gray-100 p-4 md:px-10 px-4">
-      <h2 className="md:text-4xl text-2xl font-bold text-center mb-12 messiri">
+      <h2 className="md:text-4xl md:pt-10 text-2xl font-bold text-center md:mb-12 mb-6 messiri">
         Our Other Facilities
         </h2>
         <FacilitiesComponent props={facilities} />
-        <div className="mt-10">
+      </div>
+        <div className="mt-10 mb-6 md:mb-0">
 
         <ContactUs/>
         </div>
-      </div>
     </>
   );
 };

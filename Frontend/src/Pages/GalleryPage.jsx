@@ -51,7 +51,7 @@ function GalleryPage() {
         items={[{ label: "Home", link: "/" }, { label: "Gallery", link: "/gallery" }]}
         title="Our Recent Memories"
       />
-      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="py-10 px-4 md:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {images.map((img, idx) => (
           <div key={idx} className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer" onClick={() => openModal(idx)}>
             <img className="w-full h-48 object-cover" src={img.src} alt={img.alt} />
@@ -64,7 +64,7 @@ function GalleryPage() {
           <button className="absolute top-5 right-5 text-white text-3xl" onClick={closeModal}>
             <FaTimes />
           </button>
-          <button className="absolute left-5 text-white text-3xl" onClick={prevImage}>
+          <button className="absolute z-10 left-5  text-white text-3xl" onClick={prevImage}>
             <FaChevronLeft />
           </button>
           <div className="relative">
@@ -75,7 +75,7 @@ function GalleryPage() {
               className="max-w-full max-h-screen transition-transform"
             />
           </div>
-          <button className="absolute right-5 text-white text-3xl" onClick={nextImage}>
+          <button className="absolute z-10 right-5 text-white text-3xl" onClick={nextImage}>
             <FaChevronRight />
           </button>
         </div>

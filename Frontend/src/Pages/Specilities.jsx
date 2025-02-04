@@ -17,11 +17,11 @@ const Specialities = () => {
         ]}
         title='Our Specialities'
       />
-      <div className="py-8 pt-20 px-2">
+      <div className="py-10md:pb-0 md:pt-20 md:px-8 px-2">
 
    <SpecilitesComponent/>
       </div>
-      <div className='mb-6 '>
+      <div className='mb-6'>
       
               <ContactUs/>
               </div>

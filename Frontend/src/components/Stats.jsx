@@ -38,7 +38,7 @@ const Stats = () => {
             className="bg-white md:p-5 p-1 rounded-lg shadow-2xl md:w-60 text-center"
           >
             <div className="md:mb-4 mb-1">
-              <img src={stat.icon} alt={stat.label} className="mx-auto md:w-20 w-14" />
+              <img src={stat.icon} alt={stat.label} className="mx-auto md:w-20 w-10" />
             </div>
             <div className="md:text-3xl text-xl font-bold text-gray-800 md:mb-2 ">
               <CountUp end={stat.number} duration={2} enableScrollSpy /> +

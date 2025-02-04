@@ -76,11 +76,11 @@ const WhyChooseUs = () => {
                 <img
                   src={service.icon}
                   alt={service.title}
-                  className="mx-auto h-16 w-16 object-contain"
+                  className="mx-auto h-16 w-16  object-contain"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-gray-600 mb-4">{service.description}</p>
+              <p className="text-gray-600 mb-4 md:text-base text-sm">{service.description}</p>
               {/* <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300">
                 Read More
               </button> */}

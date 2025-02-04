@@ -22,7 +22,9 @@ const TestimonialPage = lazy(() => import("./Pages/TestimonialPage"));
 // Fallback Loader Component
 const LoadingSpinner = () => (
   <div className="flex justify-center flex-col items-center h-screen">
-  <span className="tracking-wider md:text-5xl text-2xl font-bold messiri text-blue-800  duration-1000">Welcome To</span> <img src={logo} loading="lazy" className="h-28 w-64"/>
+  <span className="tracking-wider md:text-5xl text-2xl font-bold messiri text-blue-800  duration-1000">Welcome To</span>
+   {/* <img src={logo} loading="lazy" className="h-28 w-64"/> */}
+   <div className="font-bold text-2xl messiri">Hope Hospital</div>
    <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-800">
    </div>
  </div>

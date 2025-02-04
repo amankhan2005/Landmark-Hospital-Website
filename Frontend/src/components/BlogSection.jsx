@@ -130,10 +130,10 @@ const BlogComponent = () => {
 
       <div className="px-4 relative">
         <Slider {...sliderSettings}>
-          {filteredBlogs.map((blog) => (
+          {filteredBlogs.map((blog,index) => (
             <div
               key={blog.id}
-              className="rounded-lg p-4 shadow-2xl hover:shadow-none transition cursor-pointer md:mx-4" // Added mx-4 for space
+              className={`rounded-lg p-4  hover:shadow-2xl ${index%2==0 ?'shadow-xl':''} transition cursor-pointer md:mx-4`} // Added mx-4 for space
               onClick={() => navigate(`/blog/${blog.id}`)}
             >
               <img

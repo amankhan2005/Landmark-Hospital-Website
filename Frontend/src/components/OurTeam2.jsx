@@ -52,7 +52,7 @@ export default function OurTeam() {
       <h1 className="md:text-4xl text-2xl messiri font-bold text-blue-600">
         Meet Our Team
       </h1>
-      <p className="text-gray-600 mb-7">
+      <p className="text-gray-600 mb-6 md:text-base text-sm">
         Our dedicated professionals committed to your health.
       </p>
 

@@ -11,6 +11,7 @@ export default function Header() {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
 
+
   return (
     <nav className="bg-white sticky top-0 z-50 shadow-md">
       <div className="container mx-auto flex justify-between items-center py-1 px-6 ">
@@ -40,7 +41,7 @@ export default function Header() {
               isMobileMenuOpen ? "translate-x-0 overflow-hidden" : "translate-x-full overflow-hidden"
             } transition-transform duration-300 ease-in-out lg:hidden shadow-2xl`}
           >
-              <div className="flex justify-around py-2 text-lg bg-primary ">
+              <div className="flex justify-around py-2  bg-primary md:text-lg text-sm px-2">
             <a href="#" className="hover: text-gray-50"><i className="fab fa-facebook-f"></i></a>
             <a href="#" className="hover: text-gray-50"><i className="fab fa-twitter"></i></a>
             <a href="#" className="hover: text-gray-50"><i className="fab fa-instagram"></i></a>
@@ -49,12 +50,12 @@ export default function Header() {
             <a href="#" className="hover: text-gray-50"><i className="fab fa-google-plus-g"></i></a>
           </div>
             <button
-              className="absolute top-14 shadow-2xl  right-2 text-gray-100 text-2xl font-bold bg-primary hover-bg-primary h-10 w-10 rounded-full cursor-pointer"
+              className="absolute top-10 shadow-2xl  right-2 text-gray-100 text-xl font-bold bg-primary hover-bg-primary h-8 w-8 rounded-full cursor-pointer"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               ✕
             </button>
-            <ul className="text-gray-800 font-semibold space-y-4 px-2  mt-4 ">
+            <ul className="text-gray-800 font-semibold space-y-4 px-2  mt-5 ">
               <li
                 className={`hover:text-blue-500 ${
                   location.pathname === "/" ? "text-blue-500" : ""

@@ -3,7 +3,7 @@ import about from "../assets/about.png";
 
 const AboutSection = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between bg-white  p-8 px-4 md:py-16">
+    <section className="flex flex-col md:flex-row items-center justify-between bg-white md:px-24  p-8 px-4 md:py-16">
       <div className="relative w-full md:w-1/2  items-center justify-center mb-8 md:mb-0 md:block hidden">
         <img
           src={about} 

@@ -8,14 +8,14 @@ export default function TopNavBar() {
               <i className="fas fa-envelope"></i>
               <span>info@hopeHospital.com</span>
             </span>
-            <span className="flex items-center space-x-2">
+            <a href="https://maps.app.goo.gl/zfh654X2njSzau8R6" className="flex items-center space-x-2">
               <i className="fas fa-map-marker-alt"></i>
               <span className="md:text-base text-xs line-clamp-1">Gonda Road, Near Vinayak Resorts, Bharaich - 271801 (U.P.)</span>
-            </span>
+            </a>
           </div>
   
           {/* Right side: Social media icons */}
-          <div className="flex space-x-4 text-lg">
+          <div className="flex space-x-4 md:text-lg text-sm">
             <a href="#" className="hover:text-gray-200"><i className="fab fa-facebook-f"></i></a>
             <a href="#" className="hover:text-gray-200"><i className="fab fa-twitter"></i></a>
             <a href="#" className="hover:text-gray-200"><i className="fab fa-instagram"></i></a>
