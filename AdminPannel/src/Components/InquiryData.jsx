@@ -6,10 +6,11 @@ const InquiryData = () => {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const api = import.meta.env.VITE_API_URL;
 
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/inquiry/getall");
+      const response = await axios.get(`${api}/inquiry/getall`);
       setAppointments(response.data);
       setLoading(false);
     } catch (err) {
@@ -44,7 +45,7 @@ const InquiryData = () => {
     if (!result.isConfirmed) return;
 
     try {
-      await axios.delete(`http://localhost:3000/inquiry/delete/${id}`);
+      await axios.delete(`${api}/inquiry/delete/${id}`);
       fetchAppointments();
       Swal.fire("Deleted!", "The inquiry has been deleted.", "success");
     } catch (error) {

@@ -63,6 +63,7 @@ const GalleryDashboard = () => {
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const api = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     fetchGallery();
@@ -70,7 +71,7 @@ const GalleryDashboard = () => {
 
   const fetchGallery = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/gallery/getall");
+      const response = await axios.get(`${api}/gallery/getall`);
       setGallery(response.data);
     } catch (error) {
       console.error("Error fetching gallery:", error);
@@ -119,21 +120,22 @@ const GalleryDashboard = () => {
     try {
       if (formData._id) {
         // Update existing image
-        await axios.put(`http://localhost:3000/gallery/update/${formData._id}`, formData);
+        await axios.put(`${api}gallery/update/${formData._id}`, formData);
         Swal.fire("Success", "Image updated successfully!", "success");
       } else {
         // Add new image
-        await axios.post("http://localhost:3000/gallery/save", formData);
+        await axios.post(`${api}/gallery/save`, formData);
         Swal.fire("Success", "Image added to gallery!", "success");
       }
       setFormData({ postedBy: "", imageUrl: "" });
-      setSelectedImage(null); // Reset selected image
+      setSelectedImage(null); 
       setShowModal(false);
-      fetchGallery(); // Refresh gallery
+      fetchGallery();
     } catch (error) {
       console.error("Error saving/updating image:", error);
       Swal.fire("Error", "Failed to save/update image!", "error");
     }
+    fetchGallery();
   };
   
 
@@ -149,7 +151,7 @@ const GalleryDashboard = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3000/gallery/delete/${id}`);
+          await axios.delete(`${api}/gallery/delete/${id}`);
           Swal.fire("Deleted", "Image removed from gallery!", "success");
           fetchGallery();
         } catch (error) {
@@ -164,9 +166,9 @@ const GalleryDashboard = () => {
     setFormData({
       postedBy: item.postedBy,
       imageUrl: item.imageUrl,
-      _id: item._id, // Include the _id to know which image to update
+      _id: item._id, 
     });
-    setSelectedImage(item); // Set selected image for later use in update
+    setSelectedImage(item); 
     setShowModal(true);
   };
 
@@ -184,6 +186,7 @@ const GalleryDashboard = () => {
       </button>
       </div>
       <div className="grid bg-gray-100 p-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {gallery?.length == 0 && (<div className="text-red-500 text-2xl text-center">No Data Yet!</div>)}
         {gallery.map((item) => (
           <div key={item._id} className="bg-white p-4 shadow rounded relative">
             <img src={item.imageUrl} alt="Gallery" className="w-full h-52 object-cover rounded" />

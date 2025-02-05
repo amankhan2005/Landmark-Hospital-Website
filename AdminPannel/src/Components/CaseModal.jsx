@@ -3,6 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const CaseModal = ({ caseData, onClose }) => {
+  const api = import.meta.env.VITE_API_URL;
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -55,8 +56,8 @@ const CaseModal = ({ caseData, onClose }) => {
 
     try {
       const response = caseData
-        ? await axios.put(`http://localhost:3000/case/update/${caseData._id}`, formData)
-        : await axios.post("http://localhost:3000/case/save", formData);
+        ? await axios.put(`${api}/case/update/${caseData._id}`, formData)
+        : await axios.post(`${api}/case/save`, formData);
 
       Swal.fire("Success", response.data.message, "success");
       onClose();

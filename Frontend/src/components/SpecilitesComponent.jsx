@@ -9,7 +9,7 @@ function SpecilitesComponent({specialty}) {
   return (
     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ">
           {specialities.map((speciality, index) => (
-            <div className="lg:h-[35vh] h-[17vh] sm:h-[14vh]">
+            <div className="lg:h-[35vh] h-[17vh] sm:h-[14vh]" key={index}>
             <Link to={`/specialities/${speciality.link}`}
               key={index}
               className={` ${specialty?.title == speciality.title? 'border-2':'' }  bg-white block shadow-xl rounded-xl p-4 relative  hover:border-2 border-[#1b4d94] transition-all`}

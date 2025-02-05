@@ -87,6 +87,7 @@ const handleDelete = async (id) => {
             </tr>
           </thead>
           <tbody>
+          {team?.length == 0 && (<div className="text-red-500 text-2xl text-center">No Data Yet!</div>)}
             {team.map((member) => (
               <tr key={member.id} className="text-center">
                 <td className="border p-2"><img src={member.imageUrl} alt={member.name} className="w-12 h-12 rounded-full mx-auto" /></td>

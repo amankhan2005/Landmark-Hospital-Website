@@ -3,6 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const TeamForm = ({ member, onClose }) => {
+  const api = import.meta.env.VITE_API_URL;
   const [formData, setFormData] = useState({
     name: "",
     specialty: "",
@@ -57,8 +58,8 @@ const TeamForm = ({ member, onClose }) => {
 
     try {
       const response = member
-        ? await axios.put(`http://localhost:3000/team/update/${member._id}`, formData)
-        : await axios.post("http://localhost:3000/team/save", formData);
+        ? await axios.put(`${api}/team/update/${member._id}`, formData)
+        : await axios.post(`${api}/team/save`, formData);
 
       Swal.fire("Success", response.data.message, "success");
       onClose();

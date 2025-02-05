@@ -5,6 +5,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const BlogModal = ({ blogData, onClose }) => {
+  const api = import.meta.env.VITE_API_URL;
   const [formData, setFormData] = useState({
     title: "",
     postedBy: "",
@@ -60,9 +61,8 @@ const BlogModal = ({ blogData, onClose }) => {
 
     try {
       const response = blogData
-        ? await axios.put(`http://localhost:3000/blog/update/${blogData._id}`, formData)
-        : await axios.post("http://localhost:3000/blog/save", formData);
-
+        ? await axios.put(`${api}/blog/update/${blogData._id}`, formData)
+        : await axios.post(`${api}/blog/save`, formData);
       Swal.fire("Success", response.data.message, "success");
       onClose();
     } catch (error) {
@@ -108,7 +108,6 @@ const BlogModal = ({ blogData, onClose }) => {
                   required
                 />
               </div>
-
               <div>
                 <label htmlFor="postedBy" className="block text-sm font-medium">Posted By</label>
                 <input

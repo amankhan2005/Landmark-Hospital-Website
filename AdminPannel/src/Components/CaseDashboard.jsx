@@ -84,6 +84,7 @@ const CaseDashboard = () => {
             </tr>
           </thead>
           <tbody>
+            {cases?.length == 0 && (<div className="text-red-500 text-2xl text-center">No Data Yet!</div>)}
             {cases.map((c) => (
               <tr key={c._id} className="text-center">
                 <td className="border p-2">

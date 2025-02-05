@@ -91,6 +91,7 @@ const BlogDashboard = () => {
             </tr>
           </thead>
           <tbody>
+          {blogs?.length == 0 && (<div className="text-red-500 text-2xl text-center">No Data Yet!</div>)}
             {blogs.map((b) => (
               <tr key={b._id} className="text-center">
                 <td className="border p-2">
