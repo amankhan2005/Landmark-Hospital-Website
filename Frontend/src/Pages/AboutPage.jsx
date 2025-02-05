@@ -2,6 +2,7 @@ import React from 'react';
 import BreadCumb from '../components/Breadcumb';
 import AppointmentForm from '../components/AppointmentForm';
 import pattern from "../assets/home/whywechoose.png";
+import appoint from '../assets/appointment-image.png'
 function AboutPage() {
     const teamMembers = [
         {
@@ -55,14 +56,14 @@ function AboutPage() {
           />
         </div>
         <div className="md:w-1/2 w-full">
-          <h2 className="md:text-4xl text-2xl font-bold text-blue-700 messiri">The Story of Hope Hospital</h2>
+          <h2 className="md:text-4xl text-2xl font-bold text-primary messiri">The Story of Hope Hospital</h2>
           <p className="mt-4 text-gray-700 text-justify">
             At Hope Hospital, we are committed to bringing exceptional healthcare to our community. Since our inception, we have pursued excellence in medical care with a vision to make it accessible for all. With a patient-centric approach, we aim to transform healthcare by blending compassion with cutting-edge technology. Join us on our journey of making lives healthier and happier.
           </p>
           <div className="flex mt-4 gap-4">
-            <a href="/contact" className="text-blue-600 hover:underline underline-offset-2">Contact Us</a>
-            <a href="/specialities" className="text-blue-600 hover:underline underline-offset-2">Our Specialties</a>
-            <a href="/facilities" className="text-blue-600 hover:underline underline-offset-2">Our Facilities</a>
+            <a href="/contact" className="text-primary hover:underline underline-offset-2">Contact Us</a>
+            <a href="/specialities" className="text-primary hover:underline underline-offset-2">Our Specialties</a>
+            <a href="/facilities" className="text-primary hover:underline underline-offset-2">Our Facilities</a>
           </div>
         </div>
       </section>
@@ -82,7 +83,7 @@ function AboutPage() {
                   zIndex: 0,
                 }}
               ></div>
-            <h3 className="text-2xl font-semibold text-blue-700 messiri">Our Vision</h3>
+            <h3 className="text-2xl font-semibold text-primary messiri">Our Vision</h3>
             <p className="mt-4 text-gray-600">
               To be the leading healthcare institution known for innovation, excellence, and compassion in providing quality medical care.
             </p>
@@ -98,7 +99,7 @@ function AboutPage() {
                   zIndex: 0,
                 }}
               ></div>
-            <h3 className="text-2xl font-semibold text-blue-700 messiri">Our Mission</h3>
+            <h3 className="text-2xl font-semibold text-primary messiri">Our Mission</h3>
             <p className="mt-4 text-gray-600">
               To deliver exceptional healthcare services with a focus on accessibility, affordability, and patient satisfaction, while advancing medical research and education.
             </p>
@@ -114,7 +115,7 @@ function AboutPage() {
                   zIndex: 0,
                 }}
               ></div>
-            <h3 className="text-2xl font-semibold text-blue-700 messiri">Our Values</h3>
+            <h3 className="text-2xl font-semibold text-primary messiri">Our Values</h3>
             <p className="mt-4 text-gray-600">
               Compassion, Integrity, Excellence, Innovation, and Collaboration form the core of our values.
             </p>
@@ -124,8 +125,8 @@ function AboutPage() {
 
       {/* Our Experts Section */}
       <section className="lg:py-12 md:py-10 py-8 mt-6 bg-gray-100">
-        <h2 className="md:text-4xl text-2xl messiri text-blue-700 font-bold  text-center mb-8">Meet Our Experts</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <h2 className="md:text-4xl text-2xl messiri text-primary font-bold  text-center mb-8">Meet Our Experts</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 md:px-20">
           {[...Array(8)].map((_, index) => (
             <div key={index} className="bg-white py-2 px-0 rounded-lg shadow-md text-center">
               <img 
@@ -142,8 +143,8 @@ function AboutPage() {
 
       {/* History Section */}
       <section className="mt-16 flex flex-col md:flex-row justify-between  gap-6">
-        <div className='px-14'>
-        <h2 className="text-3xl font-bold text-blue-600 text-center mb-8 messiri">Our History</h2>
+        {/* <div className='px-14'>
+        <h2 className="text-3xl font-bold text-primary text-center mb-8 messiri">Our History</h2>
         <div className="relative border-l-2 border-blue-700 pl-8  ">
           {[
             { year: "2000", event: "Founded with the vision of providing quality healthcare." },
@@ -158,6 +159,9 @@ function AboutPage() {
             </div>
           ))}
         </div>
+        </div> */}
+        <div className='md:block hidden'>
+          <img src={appoint} alt='appointmentPhoto' className=''/>
         </div>
         <div className='w-full flex-1 px-2 my-4'>
           <AppointmentForm/>

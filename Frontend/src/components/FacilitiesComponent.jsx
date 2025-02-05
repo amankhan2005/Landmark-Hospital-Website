@@ -15,7 +15,7 @@ function FacilitiesComponent({ props }) {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className={`relative overflow-hidden  md:rounded-lg rounded shadow-lg transition-all duration-500 ease-in-out ${
-            props?.title === specialty?.title ? 'border-t-6   border-blue-500' : ''
+            props?.title === specialty?.title ? 'border-t-6   border-primary' : ''
           } bg-white`}
         >
           <img
@@ -29,7 +29,7 @@ function FacilitiesComponent({ props }) {
             <p className="text-gray-600 md:text-base text-xs md:mb-4 mb-1 line-clamp-2">{specialty.description}</p>
             <Link
               to={`/facilities/${specialty.link}`}
-              className="block w-full md:mb-0 mb-2  text-center md:p-2 py-1 md:px-4  border border-transparent rounded-lg text-white bg-blue-500 hover:bg-blue-600 transition-all duration-500 ease-in-out"
+              className="block w-full md:mb-0 mb-2  text-center md:p-2 py-1 md:px-4  border border-transparent rounded-lg text-white bg-primary  transition-all duration-500 ease-in-out"
             >
               View More
             </Link>

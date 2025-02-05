@@ -3,14 +3,14 @@ import Team from "../model/team.js";
 
 const saveTeam = async (req, res) => {
     try {
-        const { name, specialty, imageUrl } = req.body;
+        const { name, specialty, imageUrl,degree } = req.body;
 
-        if (!name || !specialty || !imageUrl) {
+        if (!name || !specialty || !imageUrl || !degree) {
             return res.status(400).json({ message: "All fields are required" });
         }
 
         
-        const newMember = new Team({ name, specialty, imageUrl });
+        const newMember = new Team({ name, specialty, imageUrl,degree });
         const savedMember = await newMember.save();
 
         return res.status(201).json({
@@ -27,16 +27,14 @@ const saveTeam = async (req, res) => {
 const updateTeam = async (req, res) => {
     try {
         const { id } = req.params;
-        const { name, specialty, imageUrl } = req.body;
-
-        if (!name || !specialty || !imageUrl) {
+        const { name, specialty, imageUrl, degree } = req.body;
+        if (!name || !specialty || !imageUrl || !degree) {
             return res.status(400).json({ message: "All fields are required" });
         }
-
       
         const updatedMember = await Team.findByIdAndUpdate(
             id,
-            { name, specialty, imageUrl },
+            { name, specialty, imageUrl, degree },
             { new: true, runValidators: true }
         );
 

@@ -66,7 +66,7 @@ const SpecialtyDetail = () => {
             </p>
 
             <div className="mt-8 px-4 mb-4">
-              <h2 className="text-2xl font-semibold text-blue-500 mb-4  messiri">
+              <h2 className="text-2xl font-semibold text-primary mb-4  messiri">
                 Services Offered
               </h2>
               <ul className="list-disc list-inside text-gray-700 space-y-2">
@@ -78,7 +78,7 @@ const SpecialtyDetail = () => {
           </div>
 
           <div className="md:col-span-3 border border-gray-300 bg-gray-50 p-4 rounded-lg">
-            <h3 className="text-2xl messiri font-semibold text-blue-600 mb-4">
+            <h3 className="text-2xl messiri font-semibold text-primary mb-4">
               Other Specialities
             </h3>
             <div className="space-y-2">
@@ -92,7 +92,7 @@ const SpecialtyDetail = () => {
                 >
                   <img
                     src={item.image}
-                    className="h-10 w-10 rounded-full mr-3"
+                    className="h-10 w-10 p-0.5 bg-blue-200 rounded-full mr-3"
                     alt={item.title}
                   />
                   <span className="text-gray-700 font-medium">

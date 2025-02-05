@@ -3,7 +3,7 @@ import photo from '../assets/home/contactus-doctor.png'
 export default function ContactUs() {
     return (
         <div className='md:py-12  lg:pt-14 lg:pb-10 px-2'>
-      <div className="bg-blue-500 relative  text-white md:p-12 py-2 px-3 rounded-2xl flex flex-col md:flex-row items-center md:justify-between max-w-6xl mx-auto">
+      <div className="bg-primary relative  text-white md:p-12 py-2 px-3 rounded-2xl flex flex-col md:flex-row items-center md:justify-between max-w-6xl mx-auto">
         <div className="">
           <p className="text-base font-semibold">Need Emergency?</p>
           <h2 className="md:text-4xl text-lg font-bold mt-2">Looking For The Best Medical Solutions?</h2>

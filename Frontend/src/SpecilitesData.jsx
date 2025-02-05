@@ -93,7 +93,7 @@ export const specialities = [
     ],
   },
   {
-    title: "Critical Care & anesthesia",
+    title: "Critical Care & Anesthesia",
     link: "critical-care",
     image: `${medicine}`,
     img:`${anesthesia}`,

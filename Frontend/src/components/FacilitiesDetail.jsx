@@ -34,7 +34,7 @@ const FacilitiesDetail = () => {
           { label: `Facilites`, link: `/facilities` },
           { label: `${title}`, link: `/specialities/${facilitiesName}` },
         ]}
-        title={title}
+        title={facilities.title}
       />
       <div className="md:px-6  py-8">
         {/* First Section: Description & Image */}
@@ -64,7 +64,7 @@ const FacilitiesDetail = () => {
               imaging, and diagnostic tests. 
             </p>
             <div className="">
-            <h2 className="text-2xl font-semibold text-blue-500 mt-6 mb-2 messiri">
+            <h2 className="text-2xl font-semibold text-primary mt-6 mb-2 messiri">
               Services Offered
             </h2>
             <ul className="list-disc list-inside text-gray-700">

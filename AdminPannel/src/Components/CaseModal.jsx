@@ -2,25 +2,23 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const TeamForm = ({ member, onClose }) => {
+const CaseModal = ({ caseData, onClose }) => {
   const [formData, setFormData] = useState({
-    name: "",
-    specialty: "",
-    degree: "",
+    title: "",
+    description: "",
     imageUrl: "",
   });
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (member) {
+    if (caseData) {
       setFormData({
-        name: member.name,
-        specialty: member.specialty,
-        degree: member.degree,
-        imageUrl: member.imageUrl,
+        title: caseData.title || "",
+        description: caseData.description || "",
+        imageUrl: caseData.imageUrl || "",
       });
     }
-  }, [member]);
+  }, [caseData]);
 
   const uploadImage = async (e) => {
     const file = e.target.files[0];
@@ -50,56 +48,46 @@ const TeamForm = ({ member, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.specialty || !formData.degree || !formData.imageUrl) {
+    if (!formData.title || !formData.description || !formData.imageUrl) {
       Swal.fire("Warning", "All fields are required!", "warning");
       return;
     }
 
     try {
-      const response = member
-        ? await axios.put(`http://localhost:3000/team/update/${member._id}`, formData)
-        : await axios.post("http://localhost:3000/team/save", formData);
+      const response = caseData
+        ? await axios.put(`http://localhost:3000/case/update/${caseData._id}`, formData)
+        : await axios.post("http://localhost:3000/case/save", formData);
 
       Swal.fire("Success", response.data.message, "success");
       onClose();
     } catch (error) {
-      console.error("Error saving team member:", error);
-      Swal.fire("Error", "Failed to save team member!", "error");
+      console.error("Error saving case:", error);
+      Swal.fire("Error", "Failed to save case!", "error");
     }
   };
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
       <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-4">{member ? "Update" : "Add"} Team Member</h2>
+        <h2 className="text-2xl font-bold mb-4">{caseData ? "Update" : "Add"} Case</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium">Name</label>
+            <label className="block text-sm font-medium">Title</label>
             <input
               type="text"
-              value={formData.name}
+              value={formData.title}
               className="w-full p-2 border border-gray-300 rounded mt-1"
-              onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
+              onChange={(e) => setFormData((prev) => ({ ...prev, title: e.target.value }))}
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Specialty</label>
+            <label className="block text-sm font-medium">Description</label>
             <input
               type="text"
-              value={formData.specialty}
+              value={formData.description}
               className="w-full p-2 border border-gray-300 rounded mt-1"
-              onChange={(e) => setFormData((prev) => ({ ...prev, specialty: e.target.value }))}
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium">Degree</label>
-            <input
-              type="text"
-              value={formData.degree}
-              className="w-full p-2 border border-gray-300 rounded mt-1"
-              onChange={(e) => setFormData((prev) => ({ ...prev, degree: e.target.value }))}
+              onChange={(e) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
               required
             />
           </div>
@@ -111,7 +99,7 @@ const TeamForm = ({ member, onClose }) => {
           </div>
           <div className="flex justify-between">
             <button type="submit" className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
-              {member ? "Update" : "Save"} Team Member
+              {caseData ? "Update" : "Save"} Case
             </button>
             <button type="button" className="bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500" onClick={onClose}>
               Cancel
@@ -123,4 +111,4 @@ const TeamForm = ({ member, onClose }) => {
   );
 };
 
-export default TeamForm;
+export default CaseModal;

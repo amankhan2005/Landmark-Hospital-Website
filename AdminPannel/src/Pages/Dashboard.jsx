@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FaHome, FaUsers, FaBlog, FaBriefcase, FaImage, FaSignOutAlt } from 'react-icons/fa';
-import TeamForm from '../Components/SaveTeam';
+import TeamDashboard from '../Components/TeamDashboard';
+import CaseDashboard from '../Components/CaseDashboard';
+import GalleryDashboard from '../Components/GalleryDashboard';
 
 const SidebarItem = ({ name, icon, onClick }) => {
   return (
@@ -17,15 +19,15 @@ const SidebarItem = ({ name, icon, onClick }) => {
 const DashboardContent = ({ section }) => {
   switch (section) {
     case 'Home':
-      return <div className="text-xl"><TeamForm/></div>;
+      return <div className="text-xl"></div>;
     case 'Team':
-      return <div className="text-xl">Meet our Team</div>;
+      return <div className="text-xl"><TeamDashboard/></div>;
     case 'Blog':
       return <div className="text-xl">Latest Blog Posts</div>;
     case 'Cases':
-      return <div className="text-xl">Our Cases</div>;
+      return <div className="text-xl"><CaseDashboard/></div>;
     case 'Gallery':
-      return <div className="text-xl">Gallery</div>;
+      return <div className="text-xl"><GalleryDashboard/></div>;
     default:
       return <div>Select a section</div>;
   }

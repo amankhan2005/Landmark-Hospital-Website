@@ -49,7 +49,7 @@ export default function OurTeam() {
 
   return (
     <section className="lg:py-14 md:py-12 py-10 bg-gray-100 text-center">
-      <h1 className="md:text-4xl text-2xl messiri font-bold text-blue-600">
+      <h1 className="md:text-4xl text-2xl messiri font-bold text-primary">
         Meet Our Team
       </h1>
       <p className="text-gray-600 mb-6 md:text-base text-sm">
@@ -58,9 +58,9 @@ export default function OurTeam() {
 
       <div className="flex flex-col md:flex-row items-start gap-6 md:px-6 px-3">
         {/* Left Column - Team Members */}
-        <div className="w-full md:w-2/3">
+        <div className="w-full ">
           {/* Grid layout for Desktop */}
-          <div className="hidden mt-2 sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="hidden mt-2 sm:grid grid-cols-1 sm:grid-cols-2 md:px-10 lg:grid-cols-4 gap-6">
             {teamMembers.map((member, index) => (
               <div key={index} className="group">
                 <div className="overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl">
@@ -105,9 +105,9 @@ export default function OurTeam() {
         </div>
 
         {/* Right Column - Appointment Form */}
-        <div className="w-full md:w-1/3 md:mt-0 mt-6">
+        {/* <div className="w-full md:w-1/3 md:mt-0 mt-6">
           <AppointmentForm />
-        </div>
+        </div> */}
       </div>
     </section>
   );

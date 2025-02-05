@@ -72,7 +72,7 @@ const BlogComponent = () => {
     const { onClick } = props;
     return (
       <button
-        className="md:block absolute hidden top-1/2 left-0 z-20 transform cursor-pointer -translate-y-1/2 bg-blue-800 text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
+        className="md:block absolute hidden top-1/2 left-0 z-20 transform cursor-pointer -translate-y-1/2 bg-primary text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
         onClick={onClick}
       >
         <MdArrowBack size={24} />
@@ -85,7 +85,7 @@ const BlogComponent = () => {
     const { onClick } = props;
     return (
       <button
-        className="md:block absolute hidden top-1/2 z-20 right-0 transform cursor-pointer -translate-y-1/2 bg-blue-800 text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
+        className="md:block absolute hidden top-1/2 z-20 right-0 transform cursor-pointer -translate-y-1/2 bg-primary text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
         onClick={onClick}
       >
         <MdArrowForward size={24} />
@@ -121,7 +121,7 @@ const BlogComponent = () => {
 
   return (
     <div className="lg:py-14 md:py-12 py-10 relative ">
-      <h2 className="md:text-4xl text-2xl messiri font-bold text-blue-500 text-center">
+      <h2 className="md:text-4xl text-2xl messiri font-bold text-primary text-center">
         Our Recent Blog
       </h2>
       <p className="text-gray-600 md:mb-6 mb-2 text-center text-sm md:text-base">
@@ -154,7 +154,7 @@ const BlogComponent = () => {
               <p className="text-sm text-gray-500 flex justify-between items-center">
                 <button
                   onClick={() => navigate(`/blog/${blog.id}`)}
-                  className="text-white  bg-blue-700 hover:bg-blue-600 cursor-pointer px-3 py-1 rounded"
+                  className="text-white  bg-primary hover:bg-blue-600 cursor-pointer px-3 py-1 rounded"
                 >
                   Read More
                 </button>

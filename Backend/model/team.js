@@ -9,6 +9,10 @@ const teamSchema =  mongoose.Schema({
         type:String,
         required:true
     },
+    degree:{
+        type:String,
+        required:true
+    },
     imageUrl:{
         type:String,
         required:true

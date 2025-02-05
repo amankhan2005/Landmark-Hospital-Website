@@ -23,6 +23,12 @@ body{
 .text-primary{
     color: #1b4d94 !important;
 }
+.hover-text-primary:hover{
+    color: #1b4d94 !important;
+}
+.border-primary{
+    border-color: #1b4d94 !important;
+}
 
 :root{
     --primary:#1b4d94;
@@ -32,7 +38,7 @@ body{
 .bg-primary{
     background-color: var(--primary);
 }
-.hover-bg-primary{
+.hover-bg-primary:hover{
     background-color: var(--hover-primary);
 }
 

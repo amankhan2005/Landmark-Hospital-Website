@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
   return (
     <div className="bg-gray-00 md:py-12 lg:py-14 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="md:text-4xl text-2xl text-blue-600 font-bold text-center messiri">
+        <h1 className="md:text-4xl text-2xl text-primary font-bold text-center messiri">
           Why Choose Us
         </h1>
         <p className="text-gray-600 mb-6 text-center">

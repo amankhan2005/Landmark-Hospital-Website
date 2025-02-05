@@ -12,9 +12,9 @@ function SpecilitesComponent({specialty}) {
             <div className="lg:h-[35vh] h-[17vh] sm:h-[14vh]">
             <Link to={`/specialities/${speciality.link}`}
               key={index}
-              className={` ${specialty?.title == speciality.title? 'border-2':'' }  bg-white block shadow-xl rounded-xl p-4 relative  hover:border-2 border-blue-500 transition-al`}
+              className={` ${specialty?.title == speciality.title? 'border-2':'' }  bg-white block shadow-xl rounded-xl p-4 relative  hover:border-2 border-[#1b4d94] transition-all`}
             >
-              <div className="absolute md:-top-8 -top-6 left-1/2 transform -translate-x-1/2 bg-blue-100 hover:bg-white md:h-20 md:w-28 h-10 w-14 flex justify-center rounded-lg items-center  hover:border-2 border border-blue-500 md:rounded-3xl shadow-lg">
+              <div className="absolute md:-top-8 -top-6 left-1/2 transform -translate-x-1/2 bg-blue-100 hover:bg-white md:h-20 md:w-28 h-10 w-14 flex justify-center rounded-lg items-center  hover:border-2 border border-[#1b4d94] md:rounded-3xl shadow-lg">
                 <img
                   src={speciality.image}
                   alt={speciality.title}
@@ -25,7 +25,7 @@ function SpecilitesComponent({specialty}) {
                 <h2 className="md:text-xl text-base font-bold text-gray-800 mb-2 w-full line-clamp-1 messiri ">
                   {speciality.title}
                 </h2>
-                <button className="text-blue-600 md:py-1 md:px-2 rounded-full hover:bg-blue-200 ">View More <FaArrowRight className="inline-block ms-1"/></button>
+                <button className="text-primary md:py-1 md:px-2 rounded-full hover:bg-blue-200 ">View More <FaArrowRight className="inline-block ms-1"/></button>
                 {/* <p className="text-gray-600 text-sm mb-4">
                   {speciality.description}
                 </p>

@@ -57,7 +57,7 @@ export default function Header() {
             </button>
             <ul className="text-gray-800 font-semibold space-y-4 px-2  mt-5 ">
               <li
-                className={`hover:text-blue-500 ${
+                className={`hover-text-primary ${
                   location.pathname === "/" ? "text-blue-500" : ""
                 }`}
               >
@@ -68,7 +68,7 @@ export default function Header() {
               <li className="relative">
                 <button
                   onClick={() => handleDropdown("about")}
-                  className="w-full text-left hover:text-blue-500"
+                  className="w-full text-left hover-text-primary"
                 >
                   About Us ▾
                 </button>
@@ -98,7 +98,7 @@ export default function Header() {
               <li className="relative">
                 <Link to='/specialities'
                   onClick={() => handleDropdown("specialities")}
-                  className="w-full text-left hover:text-blue-500"
+                  className="w-full text-left hover-text-primary"
                 >
                   Specialities ▾
                 </Link>
@@ -122,7 +122,7 @@ export default function Header() {
               <li
             className="relative cursor-pointer"
           >
-            <Link to="/facilities" className="hover:text-blue-500 " onClick={() => handleDropdown("facilities")}>
+            <Link to="/facilities" className="hover-text-primary " onClick={() => handleDropdown("facilities")}>
               Facilities ▾
             </Link>
             {openDropdown === "facilities" && (
@@ -167,7 +167,7 @@ export default function Header() {
             )}
           </li>
               <li
-                className={`hover:text-blue-500  ${
+                className={`hover-text-primary  ${
                   location.pathname === "/cases"
                     ? "border-b-2 border-blue-500"
                     : ""
@@ -176,7 +176,7 @@ export default function Header() {
                 <Link to="/cases" onClick={() => setIsMobileMenuOpen(false)}>Cases</Link>
               </li>
               <li
-                className={`hover:text-blue-500  ${
+                className={`hover-text-primary  ${
                   location.pathname === "/testimonials"
                     ? "border-b-2 border-blue-500"
                     : ""
@@ -185,7 +185,7 @@ export default function Header() {
                 <Link to="/testimonials" onClick={() => setIsMobileMenuOpen(false)}>Testimonials</Link>
               </li>
               <li
-                className={`hover:text-blue-500  ${
+                className={`hover-text-primary  ${
                   location.pathname === "/blog"
                     ? "border-b-2 border-blue-500"
                     : ""
@@ -194,7 +194,7 @@ export default function Header() {
                 <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
               </li>
               <li
-                className={`hover:text-blue-500  ${
+                className={`hover-text-primary  ${
                   location.pathname === "/gallery"
                     ? "border-b-2 border-blue-500"
                     : ""
@@ -203,7 +203,7 @@ export default function Header() {
                 <Link to="/gallery" onClick={() => setIsMobileMenuOpen(false)}>Gallery</Link>
               </li>
               <li
-                className={`hover:text-blue-500 ${
+                className={`hover-text-primary ${
                   location.pathname === "/contact"
                     ? "border-b-2 border-blue-500"
                     : ""
@@ -219,8 +219,8 @@ export default function Header() {
         {/* Navigation Items for Desktop */}
         <ul className="hidden lg:flex space-x-8 text-gray-800 font-semibold">
           <li
-            className={`hover:text-blue-500  ${
-              location.pathname === "/" ? "border-b-2 border-blue-500" : ""
+            className={`hover-text-primary  ${
+              location.pathname === "/" ? "border-b-2  border-[#1b4d94]" : ""
             }`}
           >
             <Link to="/">Home</Link>
@@ -230,7 +230,7 @@ export default function Header() {
             onMouseEnter={() => handleDropdown("about")}
             onMouseLeave={() => handleDropdown(null)}
           >
-            <Link to="/about" className="hover:text-blue-500">
+            <Link to="/about" className="hover-text-primary">
               About Us ▾
             </Link>
             {openDropdown === "about" && (
@@ -259,7 +259,7 @@ export default function Header() {
             onMouseEnter={() => handleDropdown("specialities")}
             onMouseLeave={() => handleDropdown(null)}
           >
-            <Link to="/specialities" className="hover:text-blue-500">
+            <Link to="/specialities" className="hover-text-primary">
               Specialities ▾
             </Link>
             {openDropdown === "specialities" && (
@@ -284,7 +284,7 @@ export default function Header() {
             onMouseEnter={() => handleDropdown("facilities")}
             onMouseLeave={() => handleDropdown(null)}
           >
-            <Link to="/facilities" className="hover:text-blue-500">
+            <Link to="/facilities" className="hover-text-primary">
               Facilities ▾
             </Link>
             {openDropdown === "facilities" && (
@@ -325,14 +325,14 @@ export default function Header() {
             )}
           </li>
           <li
-            className={`hover:text-blue-500  ${
+            className={`hover-text-primary  ${
               location.pathname === "/cases" ? "border-b-2 border-blue-500" : ""
             }`}
           >
             <Link to="/cases">Cases</Link>
           </li>
           <li
-            className={`hover:text-blue-500  ${
+            className={`hover-text-primary  ${
               location.pathname === "/testimonials"
                 ? "border-b-2 border-blue-500"
                 : ""
@@ -341,14 +341,14 @@ export default function Header() {
             <Link to="/testimonials">Testimonials</Link>
           </li>
           <li
-            className={`hover:text-blue-500  ${
+            className={`hover-text-primary  ${
               location.pathname === "/blog" ? "border-b-2 border-blue-500" : ""
             }`}
           >
             <Link to="/blog">Blog</Link>
           </li>
           <li
-            className={`hover:text-blue-500  ${
+            className={`hover-text-primary  ${
               location.pathname === "/gallery"
                 ? "border-b-2 border-blue-500"
                 : ""
@@ -357,7 +357,7 @@ export default function Header() {
             <Link to="/gallery">Gallery</Link>
           </li>
           <li
-            className={`hover:text-blue-500  ${
+            className={`hover-text-primary  ${
               location.pathname === "/contact"
                 ? "border-b-2 border-blue-500"
                 : ""
