@@ -23,6 +23,9 @@ app.use('/gallery',galleryRoutes)
 import caseRoutes from './Routes/case.routes.js'
 app.use('/case',caseRoutes); 
 
+import inquiryRoutes from './Routes/inquiry.routes.js'
+app.use('/inquiry',inquiryRoutes)
+
 mongoose.connect(mongoDBUrl).then(() => console.log('MongoDB Connected')).catch((err) => console.log(`MongoDb Error, Err- ${err}}`))
 app.listen(port, () => { console.log(`Server is running on ${port}`) })
 app.get('/', (req, res) => {

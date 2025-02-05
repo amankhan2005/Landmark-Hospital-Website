@@ -177,20 +177,22 @@ const GalleryDashboard = () => {
 
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold mb-4">Gallery Dashboard</h1>
-      <button onClick={() => setShowModal(true)} className="mb-4 bg-blue-600 text-white px-4 py-2 rounded">
+      <h1 className="text-3xl font-bold ">Gallery Dashboard</h1>
+      <div className="text-right">
+      <button onClick={() => setShowModal(true)} className="mb-4  bg-blue-600 text-white px-4 py-2 rounded">
         Add New Image
       </button>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      </div>
+      <div className="grid bg-gray-100 p-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {gallery.map((item) => (
           <div key={item._id} className="bg-white p-4 shadow rounded relative">
-            <img src={item.imageUrl} alt="Gallery" className="w-full h-40 object-cover rounded" />
+            <img src={item.imageUrl} alt="Gallery" className="w-full h-52 object-cover rounded" />
             <p className="text-sm mt-2">Posted by: <strong>{item.postedBy}</strong></p>
-            <button onClick={() => handleUpdate(item)} className="absolute top-2 right-10 bg-blue-600 text-white text-xs px-2 py-1 rounded">
+            <button onClick={() => handleUpdate(item)} className="absolute top-2 left-2 bg-blue-600 text-white text-xs px-4 py-2 rounded">
               Update
             </button>
 
-            <button onClick={() => handleDelete(item._id)} className="absolute top-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded">
+            <button onClick={() => handleDelete(item._id)} className="absolute top-2 right-2 bg-red-600 text-white text-xs px-4 py-2 rounded">
               Delete
             </button>
           </div>

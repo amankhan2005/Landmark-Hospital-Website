@@ -3,6 +3,8 @@ import { FaHome, FaUsers, FaBlog, FaBriefcase, FaImage, FaSignOutAlt } from 'rea
 import TeamDashboard from '../Components/TeamDashboard';
 import CaseDashboard from '../Components/CaseDashboard';
 import GalleryDashboard from '../Components/GalleryDashboard';
+import BlogDashboard from '../Components/BlogDashboard';
+import Home from '../Components/Home';
 
 const SidebarItem = ({ name, icon, onClick }) => {
   return (
@@ -19,11 +21,11 @@ const SidebarItem = ({ name, icon, onClick }) => {
 const DashboardContent = ({ section }) => {
   switch (section) {
     case 'Home':
-      return <div className="text-xl"></div>;
+      return <div className="text-xl"><Home/></div>;
     case 'Team':
       return <div className="text-xl"><TeamDashboard/></div>;
     case 'Blog':
-      return <div className="text-xl">Latest Blog Posts</div>;
+      return <div className="text-xl"><BlogDashboard/></div>;
     case 'Cases':
       return <div className="text-xl"><CaseDashboard/></div>;
     case 'Gallery':
