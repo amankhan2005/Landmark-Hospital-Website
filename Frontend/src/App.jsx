@@ -2,7 +2,6 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import MainLayout from "./layouts/MainLayout";
-import logo from './assets/hope-logo.png';
 // Lazy Load Pages
 const Home = lazy(() => import("./Pages/Home"));
 const OurTeam = lazy(() => import("./Pages/OurTeam"));
@@ -22,7 +21,6 @@ const TestimonialPage = lazy(() => import("./Pages/TestimonialPage"));
 const LoadingSpinner = () => (
   <div className="flex justify-center flex-col items-center h-screen">
   <span className="tracking-wider md:text-5xl text-2xl font-bold messiri text-blue-800  duration-1000">Welcome To</span>
-   {/* <img src={logo} loading="lazy" className="h-28 w-64"/> */}
    <div className="font-bold text-2xl messiri">Hope Hospital</div>
    <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-800">
    </div>

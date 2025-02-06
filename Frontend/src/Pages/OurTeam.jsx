@@ -48,7 +48,6 @@ function OurTeam() {
 
   const backendUrl = import.meta.env.VITE_BACKENDURL;
 
-  // Form validation
   const validateForm = () => {
     const errors = {};
     if (!formData.name) errors.name = "Name is required";

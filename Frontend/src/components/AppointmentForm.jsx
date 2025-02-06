@@ -1,42 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchTeamData } from "../redux/slices/dataslice";
+import Swal from "sweetalert2";
+
+import {specialities} from '../SpecilitesData.jsx'
 
 function AppointmentForm() {
-  const [doctorsData, setDoctorsData] = useState([
-    {
-        name: "Dr. O.P. Pandey",
-        specialty: "Medical Director",
-        image: "https://picsum.photos/300/300?random=1",
-      },
-      {
-        name: "Dr. Anil Srivastava",
-        specialty: "Hematologist",
-        image: "https://picsum.photos/300/300?random=2",
-      },
-      {
-        name: "Dr. A.k. Mishra",
-        specialty: "Family Doctor",
-        image: "https://picsum.photos/300/300?random=3",
-      },
-      {
-        name: "Dr. B.P. Singh",
-        specialty: "Skin Specialist",
-        image: "https://picsum.photos/300/300?random=4",
-      },
-      {
-        name: "Dr. B.P. Singh",
-        specialty: "Skin Specialist",
-        image: "https://picsum.photos/300/300?random=5",
-      },
-      {
-        name: "Dr. B.P. Singh",
-        specialty: "Skin Specialist",
-        image: "https://picsum.photos/300/300?random=6",
-      },
-  ]);
-  const [departments, setDepartments] = useState([ "Skin Specialist","Skin Specialist"]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [doctorsData, setDoctorsData] = useState([]);
+  const [departments, setDepartments] = useState(
+    specialities.map((speciality) => speciality.title)
+  );
+  const [selectedDepartment, setSelectedDepartment] = useState("");
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     department: "",
     doctor: "",
@@ -44,70 +20,192 @@ function AppointmentForm() {
     phone: "",
     email: "",
     date: "",
-    time: ""
+    time: "",
   });
 
+  const [formErrors, setFormErrors] = useState({});
+
+  const dispatch = useDispatch();
+  const { teamData, status, error } = useSelector((state) => state.data);
+
+  // Fetch doctors data from API
   useEffect(() => {
-    const fetchDoctors = async () => {
-      try {
-        const response = await axios.get("https://api.example.com/doctors");
-        setDoctorsData(response.data);
-        
-        const uniqueDepartments = [...new Set(response.data.map(doc => doc.specialty))];
-        setDepartments(uniqueDepartments);
-      } catch (err) {
-        setError("Failed to load data. Please try again.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchDoctors();
-  }, []);
+    dispatch(fetchTeamData());
+  }, [dispatch]);
+
+  // Update doctorsData when data is fetched
+  useEffect(() => {
+    if (teamData) {
+      setDoctorsData(teamData);
+    }
+  }, [teamData]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleDepartmentChange = (e) => {
+    const selectedDept = e.target.value;
+    setSelectedDepartment(selectedDept);
+    setFormData({ ...formData, department: selectedDept, doctor: "" });
+  };
+  const backendUrl = import.meta.env.VITE_BACKENDURL;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validation logic
+    const errors = validateForm();
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      return;
+    }
+
     try {
+      const formattedData = {
+        department: formData.department,
+        requestedDoctor: formData.doctor,
+        patientName: formData.name,
+        mobileNo: formData.phone,
+        email: formData.email,
+        date: formData.date,
+        time: formData.time,
+      };
+
       setLoading(true);
-      await axios.post("https://api.example.com/appointments", formData);
-      alert("Appointment booked successfully!");
+      console.log(formattedData);
+
+      const res = await axios.post(`${backendUrl}/inquiry/save`, formattedData);
+      console.log(res);
+
+      Swal.fire({
+        title: "Success!",
+        text: "Appointment booked successfully!",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
     } catch (err) {
-      setError("Error booking appointment. Try again.");
+      Swal.fire({
+        title: "Error!",
+        text: "Error booking appointment. Try again.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
     } finally {
       setLoading(false);
+      setFormData({
+        department: "",
+        doctor: "",
+        name: "",
+        phone: "",
+        email: "",
+        date: "",
+        time: "",
+      });
+      setFormErrors({});
     }
+  };
+
+  const validateForm = () => {
+    const errors = {};
+    if (!formData.name) errors.name = "Name is required.";
+    if (!formData.phone) errors.phone = "Phone number is required.";
+    if (!formData.email) errors.email = "Email is required.";
+    if (!formData.date) errors.date = "Date is required.";
+    if (!formData.time) errors.time = "Time is required.";
+    return errors;
   };
 
   return (
     <div className="w-full bg-white md:p-8 px-3 py-4 pt-6 shadow-lg rounded-lg border border-gray-200">
-      <h3 className="md:text-3xl text-2xl text-primary messiri  font-bold md:text-gray-800">Book Appointment</h3>
+      <h3 className="md:text-3xl text-2xl text-primary messiri font-bold md:text-gray-800">
+        Book Appointment
+      </h3>
       {loading && <p className="text-blue-500">Loading...</p>}
-      {/* {error && <p className="text-red-500">{error}</p>} */}
       <form className="mt-4 flex flex-col gap-4" onSubmit={handleSubmit}>
-        <select name="department" className="border border-gray-300 p-3 rounded-lg" onChange={handleChange} value={formData.department}>
+        <select
+          name="department"
+          className="border border-gray-300 p-3 rounded-lg"
+          onChange={handleDepartmentChange}
+          value={formData.department}
+        >
           <option>Select Department</option>
           {departments.map((dept, index) => (
-            <option key={index} value={dept}>{dept}</option>
+            <option key={index} value={dept}>
+              {dept}
+            </option>
           ))}
         </select>
 
-        <select name="doctor" className="border border-gray-300 p-3 rounded-lg" onChange={handleChange} value={formData.doctor}>
+        <select
+          name="doctor"
+          className="border border-gray-300 p-3 rounded-lg"
+          onChange={handleChange}
+          value={formData.doctor}
+        >
           <option>Select Doctor</option>
           {doctorsData.map((doc, index) => (
-            <option key={index} value={doc.name}>{doc.name}</option>
+            <option key={index} value={doc.name}>
+              {doc.name}
+            </option>
           ))}
         </select>
 
-        <input type="text" name="name" placeholder="Your Name" className="border w-full border-gray-300 p-3 rounded-lg" onChange={handleChange} value={formData.name} />
-        <input type="text" name="phone" placeholder="Phone Number" className="border w-full border-gray-300 p-3 rounded-lg" onChange={handleChange} value={formData.phone} />
-        <input type="email" name="email" placeholder="Email" className="border w-full border-gray-300 p-3 rounded-lg" onChange={handleChange} value={formData.email} />
-        <input type="date" name="date" placeholder="Date" className="border border-gray-300  w-full p-3 rounded-lg" onChange={handleChange} value={formData.date} />
-        <input type="time" name="time" placeholder="Time" className="border border-gray-300 w-full p-3 rounded-lg" onChange={handleChange} value={formData.time} />
-        
-        <button type="submit" disabled={loading} className={` bg-primary text-white font-semibold py-3 rounded-lg hover:bg-blue-800 cursor-pointer  transition duration-300`}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          className="border w-full border-gray-300 p-3 rounded-lg"
+          onChange={handleChange}
+          value={formData.name}
+        />
+        {formErrors.name && <p className="text-red-500">{formErrors.name}</p>}
+
+        <input
+          type="number"
+          name="phone"
+          placeholder="Phone Number"
+          className="border w-full border-gray-300 p-3 rounded-lg"
+          onChange={handleChange}
+          value={formData.phone}
+        />
+        {formErrors.phone && <p className="text-red-500">{formErrors.phone}</p>}
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          className="border w-full border-gray-300 p-3 rounded-lg"
+          onChange={handleChange}
+          value={formData.email}
+        />
+        {formErrors.email && <p className="text-red-500">{formErrors.email}</p>}
+
+        <input
+          type="date"
+          name="date"
+          placeholder="Date"
+          className="border border-gray-300 w-full p-3 rounded-lg"
+          onChange={handleChange}
+          value={formData.date}
+        />
+        {formErrors.date && <p className="text-red-500">{formErrors.date}</p>}
+
+        <input
+          type="time"
+          name="time"
+          placeholder="Time"
+          className="border border-gray-300 w-full p-3 rounded-lg"
+          onChange={handleChange}
+          value={formData.time}
+        />
+        {formErrors.time && <p className="text-red-500">{formErrors.time}</p>}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="bg-primary text-white font-semibold py-3 rounded-lg hover:bg-blue-800 cursor-pointer transition duration-300"
+        >
           {loading ? "Processing..." : "Book Appointment"}
         </button>
       </form>
