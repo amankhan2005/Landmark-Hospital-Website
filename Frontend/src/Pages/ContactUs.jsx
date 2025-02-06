@@ -57,7 +57,7 @@ const ContactUs = () => {
                 Connect with Us
               </div>
               <p className="text-gray-100">
-                CALL: +01132534567 , +011 3253 4569
+                CALL: <a href="tel:+917840060096" className="hover:cursor-pointer">+91-7840060096</a>, <a href='tel:+917840060096' className="hover:cursor-pointer">+91-7840060096</a> 
               </p>
             </div>
             <div className=" bg-purple-500 rounded-4xl py-5 px-4">

@@ -6,7 +6,7 @@ export default function TopNavBar() {
           <div className="flex items-center space-x-6">
             <span className="md:flex hidden items-center space-x-2">
               <i className="fas fa-envelope"></i>
-              <span>info@hopeHospital.com</span>
+              <span>info@hopehospital.com</span>
             </span>
             <a href="https://maps.app.goo.gl/zfh654X2njSzau8R6" className="flex items-center space-x-2">
               <i className="fas fa-map-marker-alt"></i>

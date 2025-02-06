@@ -1,128 +1,85 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BreadCumb from "../components/Breadcumb";
-import AppointmentForm from "../components/AppointmentForm";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBlogData } from "../redux/slices/dataslice";
 
 const BlogPage = () => {
-  const [selectedTag, setSelectedTag] = useState("All");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const blogs = [
-    {
-      id: 1,
-      title: "What is CPR",
-      description:
-        "Understand the importance of immediate action in cardiac emergencies, how CPR works, and the impact it can have. This skill can save lives in critical moments.",
-      author: "Dr. Kishalay Datta",
-      date: "Jan 29, 2025",
-      tags: ["Emergency & Trauma"],
-      image:
-        "https://max-website20-images.s3.ap-south-1.amazonaws.com/medium_CPR_bb5dc76b72.jpg",
-    },
-    {
-      id: 2,
-      title: "Guillain-Barre Syndrome: Symptoms, Causes, and Treatment",
-      description:
-        "Learn how Guillain-Barre Syndrome affects the body and explore symptoms & treatment options. Early detection can improve outcomes.",
-      author: "Dr. Rajesh Gupta",
-      date: "Jan 28, 2025",
-      tags: ["Neurosciences Neurology"],
-      image:
-        "https://max-website20-images.s3.ap-south-1.amazonaws.com/medium_Guillain_Barre_1_e16366ddbc.jpg",
-    },
+  // Redux State
+  const { blogData, status, error } = useSelector((state) => state.data);
+  const [blogsData, setBlogsData] = useState([ {
+    id: 1,
+    title: "What is CPR",
+    description:
+      "Understand the importance of immediate action in cardiac emergencies, how CPR works, and the impact it can have. This skill can save lives in critical moments.",
+    author: "Dr. Kishalay Datta",
+    date: "Jan 29, 2025",
+    image:
+      "https://max-website20-images.s3.ap-south-1.amazonaws.com/medium_CPR_bb5dc76b72.jpg",
+  },
+  {
+    id: 2,
+    title: "Guillain-Barre Syndrome: Symptoms, Causes, and Treatment",
+    description:
+      "Learn how Guillain-Barre Syndrome affects the body and explore symptoms & treatment options. Early detection can improve outcomes.",
+    author: "Dr. Rajesh Gupta",
+    date: "Jan 28, 2025",
+    image:
+      "https://max-website20-images.s3.ap-south-1.amazonaws.com/medium_Guillain_Barre_1_e16366ddbc.jpg",
+  },
+  
+  {
+    id: 3,
+    title: "Managing Diabetes Effectively",
+    description:
+      "Discover tips and strategies for managing diabetes effectively, including diet, exercise, and medication.",
+    author: "Dr. Asha Sharma",
+    tags: ["Endocrinology", "General Health"],
+    image: "https://picsum.photos/150/100",
+  },
+  {
+    id: 7,
+    title: "What is CPR",
+    description:
+      "Understand the importance of immediate action in cardiac emergencies, how CPR works, and the impact it can have. This skill can save lives in critical moments.",
+    author: "Dr. Kishalay Datta",
+    tags: ["Emergency & Trauma"],
+    image:
+      "https://max-website20-images.s3.ap-south-1.amazonaws.com/medium_CPR_bb5dc76b72.jpg",
+  },
+  {
+    id: 4,
+    title: "Advancements in Cardiac Surgery",
+    description:
+      "Explore the latest advancements in cardiac surgery and how they improve patient outcomes and recovery times.",
+    author: "Dr. Vijay Kumar",
+    tags: ["Cardiology", "Surgery"],
+    image: "https://picsum.photos/150/100",
+  },
+  {
+    id: 5,
+    title: "Understanding Mental Health",
+    description:
+      "A comprehensive guide to understanding mental health, reducing stigma, and seeking help when needed.",
+    author: "Dr. Meera Iyer",
+    tags: ["Mental Health", "Psychology"],
+    image: "https://picsum.photos/150/100",
+  }]);
 
-    {
-      id: 3,
-      title: "Managing Diabetes Effectively",
-      description:
-        "Discover tips and strategies for managing diabetes effectively, including diet, exercise, and medication.",
-      author: "Dr. Asha Sharma",
-      date: "Jan 27, 2025",
-      tags: ["Endocrinology", "General Health"],
-      image: "https://picsum.photos/150/100",
-    },
-    {
-      id: 7,
-      title: "What is CPR",
-      description:
-        "Understand the importance of immediate action in cardiac emergencies, how CPR works, and the impact it can have. This skill can save lives in critical moments.",
-      author: "Dr. Kishalay Datta",
-      date: "Jan 29, 2025",
-      tags: ["Emergency & Trauma"],
-      image:
-        "https://max-website20-images.s3.ap-south-1.amazonaws.com/medium_CPR_bb5dc76b72.jpg",
-    },
-    {
-      id: 4,
-      title: "Advancements in Cardiac Surgery",
-      description:
-        "Explore the latest advancements in cardiac surgery and how they improve patient outcomes and recovery times.",
-      author: "Dr. Vijay Kumar",
-      date: "Jan 26, 2025",
-      tags: ["Cardiology", "Surgery"],
-      image: "https://picsum.photos/150/100",
-    },
-    {
-      id: 5,
-      title: "Understanding Mental Health",
-      description:
-        "A comprehensive guide to understanding mental health, reducing stigma, and seeking help when needed.",
-      author: "Dr. Meera Iyer",
-      date: "Jan 25, 2025",
-      tags: ["Mental Health", "Psychology"],
-      image: "https://picsum.photos/150/100",
-    },
-  ];
+  // Fetch Blogs
+  useEffect(() => {
+    dispatch(fetchBlogData());
+  }, [dispatch]);
 
-  const tags = [
-    "All",
-    "Emergency & Trauma",
-    "Neurosciences Neurology",
-    "Endocrinology",
-    "General Health",
-    "Cardiology",
-    "Surgery",
-    "Mental Health",
-    "Psychology",
-  ];
+  useEffect(() => {
+    if (blogData.length > 0) {
+      setBlogsData(blogData);
+    }
+  }, [blogData]);
 
-  const filteredBlogs =
-    selectedTag === "All"
-      ? blogs
-      : blogs.filter((blog) => blog.tags.includes(selectedTag));
-
-  const teamMembers = [
-    {
-      name: "Dr. O.P. Pandey",
-      specialty: "Medical Director",
-      image: "https://picsum.photos/300/300?random=1",
-    },
-    {
-      name: "Dr. Anil Srivastava",
-      specialty: "Hematologist",
-      image: "https://picsum.photos/300/300?random=2",
-    },
-    {
-      name: "Dr. A.k. Mishra",
-      specialty: "Family Doctor",
-      image: "https://picsum.photos/300/300?random=3",
-    },
-    {
-      name: "Dr. B.P. Singh",
-      specialty: "Skin Specialist",
-      image: "https://picsum.photos/300/300?random=4",
-    },
-    {
-      name: "Dr. B.P. Singh",
-      specialty: "Skin Specialist",
-      image: "https://picsum.photos/300/300?random=5",
-    },
-    {
-      name: "Dr. B.P. Singh",
-      specialty: "Skin Specialist",
-      image: "https://picsum.photos/300/300?random=6",
-    },
-  ];
   return (
     <>
       <BreadCumb
@@ -132,67 +89,54 @@ const BlogPage = () => {
         ]}
         title="Our Recent Blog"
       />
-      <div className="py-6 ">
-        {/* <h2 className="text-4xl messiri font-bold text-blue-500 mt-2 text-center ">Our Recent Blog</h2> */}
-        <div className="grid grid-cols-12 gap-4 p-4">
-          {/* Blog Section */}
-          <div className="col-span-12 grid md:grid-cols-3 grid-cols-1 gap-2">
-            {filteredBlogs.map((blog) => (
+      <div className="py-6">
+        <div className="col-span-12 grid md:grid-cols-3 grid-cols-1 gap-2">
+          {status === "loading" && <p>Loading Blog Data...</p>}
+          {error && <p className="text-red-500">{error}</p>}
+          {blogsData.length === 0 && status !== "loading" && (
+            <p className="text-red-500">No Data Found</p>
+          )}
+
+          {blogsData.map((blog) => {
+
+            const formattedDate = new Date(blog.createdAt).toLocaleDateString(
+              "en-GB",
+              { day: "2-digit", month: "short", year: "numeric" }
+            );
+
+            return (
               <div
-                key={blog.id}
+                key={blog._id}
                 className="bordr rounded-lg p-4 mb-4 shadow-2xl hover:shadow-none transition cursor-pointer"
-                onClick={() => navigate(`/blog/${blog.id}`)}
+                onClick={() => navigate(`/blog/${blog._id}`)}
               >
                 <img
-                  src={blog.image}
+                  src={blog.imageUrl}
                   alt={blog.title}
                   className="w-full h-40 object-cover rounded-lg mb-4"
                 />
-                <p className="text-sm text-gray-500 mb-1 underline  underline-offset-4">
+                <p className="text-sm text-gray-500 mb-1 underline underline-offset-4">
                   Published by{" "}
-                  <span className="text-gray-900 mb-2">{blog.author}</span> ||
-                  <span> on {blog.date}</span>
+                  <span className="text-gray-900 mb-2">{blog.postedBy}</span> ||
+                  <span> on {formattedDate}</span>
                 </p>
-                <h2 className="text-xl font-medium line-clamp-1 mb-2">
+                <h3 className="text-xl font-medium line-clamp-1 mb-2">
                   {blog.title}
-                </h2>
+                </h3>
                 <p className="text-gray-700 mb-2 line-clamp-2">
-                  {blog.description}
+                  {blog.description.replace(/<\/?[^>]+(>|$)/g, "")}
                 </p>
-                <p className="text-sm text-gray-500 flex justify-between  items-center">
+                <p className="text-sm text-gray-500 flex justify-between items-center">
                   <button
-                    onClick={() => navigate(`/blog/${blog.id}`)}
-                    className="text-white  hover:text-blue-800 border border-blue-800 cursor-pointer btn px-2 py-1 rounded"
+                    onClick={() => navigate(`/blog/${blog._id}`)}
+                    className="text-white hover:text-blue-800 border border-blue-800 cursor-pointer btn px-2 py-1 rounded"
                   >
                     Read More
                   </button>
                 </p>
               </div>
-            ))}
-          </div>
-
-          {/* Tags Section */}
-          {/* <div className="col-span-4 ">
-        <h3 className="text-xl font-semibold mb-4 mt-2 messiri">By Specialities</h3>
-        <div className="flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <button
-              key={tag}
-              onClick={() => setSelectedTag(tag)}
-              className={`px-4 py-2 rounded-full bordr text-sm transition cursor-pointer ${
-                selectedTag === tag
-                  ? "bg-blue-500 text-white"
-                  : "bg-blue-100 hover:bg-gray-300"
-              }`}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
-       <div className="mt-10">
-        <AppointmentForm/>
-       </div>
-      </div> */}
+            );
+          })}
         </div>
       </div>
     </>

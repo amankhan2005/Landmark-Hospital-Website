@@ -119,8 +119,7 @@ const GalleryDashboard = () => {
   
     try {
       if (formData._id) {
-        // Update existing image
-        await axios.put(`${api}gallery/update/${formData._id}`, formData);
+        await axios.put(`${api}/gallery/update/${formData._id}`, formData);
         Swal.fire("Success", "Image updated successfully!", "success");
       } else {
         // Add new image

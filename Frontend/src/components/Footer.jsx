@@ -41,8 +41,8 @@ const Footer = () => {
                 </li>
                 <li className="flex items-center mb-3">
                   <FontAwesomeIcon icon={faPhone} className="mr-2 " />
-                  <a href="tel:+917570018520" className="hover:underline">
-                    +91-9519838720
+                  <a href="tel:+917840060096" className="hover:underline">
+                    +917840060096
                   </a>
                 </li>
                 <li className="flex items-center">

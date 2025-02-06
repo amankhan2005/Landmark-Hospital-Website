@@ -18,10 +18,7 @@ const BlogDetailPage = lazy(() => import("./components/BlogDetail"));
 const AboutPage = lazy(() => import("./Pages/AboutPage"));
 const TestimonialPage = lazy(() => import("./Pages/TestimonialPage"));
 
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { fetchBlogData, fetchCasesData, fetchTeamData, fetchGalleryData } from "./redux/slices/dataslice";
-// Fallback Loader Component
+
 const LoadingSpinner = () => (
   <div className="flex justify-center flex-col items-center h-screen">
   <span className="tracking-wider md:text-5xl text-2xl font-bold messiri text-blue-800  duration-1000">Welcome To</span>
@@ -34,17 +31,7 @@ const LoadingSpinner = () => (
 
 function App() {
 
-  const dispatch = useDispatch()
-
-  const {blogData} = useSelector((state)=>state.data)
-
-  useEffect(()=>{
-    dispatch(fetchBlogData());
-  },[])
-  console.log(blogData)
-
-
-const blogs =blogData
+ 
 
   return (
     <BrowserRouter>
@@ -59,7 +46,7 @@ const blogs =blogData
           <Route path="/about" element={<MainLayout><AboutPage /></MainLayout>} />
           <Route path="/cases" element={<MainLayout><Cases /></MainLayout>} />
           <Route path="/blog" element={<MainLayout><BlogPage /></MainLayout>} />
-          <Route path="/blog/:id" element={<MainLayout><BlogDetailPage blogs={blogs} /></MainLayout>} />
+          <Route path="/blog/:id" element={<MainLayout><BlogDetailPage/></MainLayout>} />
           <Route path="/specialities" element={<MainLayout><Specialities /></MainLayout>} />
           <Route path="/specialities/:specialtyName" element={<MainLayout><SpecialtyDetail /></MainLayout>} />
           <Route path="/facilities" element={<MainLayout><FacilitiesPage /></MainLayout>} />

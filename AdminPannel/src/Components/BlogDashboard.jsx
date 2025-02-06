@@ -103,7 +103,7 @@ const BlogDashboard = () => {
                 </td>
                 <td className="border p-2">{b.title}</td>
 
-                <td className="border p-2">
+                <td className="border p-2 line-clamp-4">
                   {removeHTMLTags(b.description)}
                 </td>
 

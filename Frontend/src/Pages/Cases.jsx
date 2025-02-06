@@ -1,17 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaPlus } from 'react-icons/fa';
 import BreadCumb from '../components/Breadcumb';
-import logo from '../assets/hope-logo.png';
-import LoadingSpinner from '../components/LoadingSpinner';
-const casesData = Array.from({ length: 10 }, (_, index) => ({
+import {useDispatch, useSelector} from 'react-redux'
+import { fetchCasesData } from '../redux/slices/dataslice';
+const Data = Array.from({ length: 10 }, (_, index) => ({
   title: `Case ${index + 1}`,
   description: `This is a brief description of Case ${index + 1}.`,
   imageUrl: `https://picsum.photos/600/400?random=${index + 1}`, 
 }));
 
 const Cases = () => {
+  const [caseData,setCaseData] = useState(Data)
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  //data fetching 
+
+  const dispatch = useDispatch()
+  const {casesData,status, error} = useSelector((state)=>state.data)
+useEffect(()=>{
+  dispatch(fetchCasesData())
+  setCaseData(casesData)
+},[dispatch])
+
+  
 
   const openModal = (index) => {
     setCurrentImageIndex(index);
@@ -45,7 +57,9 @@ const Cases = () => {
         {/* <LoadingSpinner/> */}
       {/* Cases Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6 py-10 px-4 md:px-10 md:container md:mx-auto">
-        {casesData.map((caseItem, index) => (
+      {status =='loading' && <p>Loading cases Data...</p>}
+      {error && <p className="text-red-500">{error}</p>}
+        {caseData.map((caseItem, index) => (
           <div 
             key={index} 
             className="relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
