@@ -17,12 +17,12 @@ const FAQSection = ({ faqs }) => {
             className="w-full md:w-1/2 px-3 mb-4"
           >
             <div
-              className="border border-gray-300 p-5 rounded-lg shadow-lg bg-white cursor-pointer transition-all hover:shadow-xl self-start"
+              className="border border-gray-300 p-3 rounded-lg shadow-lg bg-white cursor-pointer transition-all hover:shadow-xl self-start"
               onClick={() => toggleFAQ(index)}
             >
               {/* Question Row */}
               <div className="flex justify-between items-center">
-                <h4 className="font-semibold text-lg text-gray-800">{faq.question}</h4>
+                <h4 className="font-semibold text-base text-gray-800">{faq.question}</h4>
                 <span
                   className={`text-primary text-xl font-bold transition-transform duration-300 ${
                     openIndex === index ? "rotate-180" : "rotate-0"

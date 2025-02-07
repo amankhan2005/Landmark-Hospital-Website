@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { fetchTeamData } from "../redux/slices/dataslice";
 import { useDispatch, useSelector } from "react-redux";
 import { ClipLoader } from "react-spinners"; // For loading spinner
-
+import { Link } from "react-router-dom";
 function OurTeam() {
   const [teamMembers, setTeamMembers] = useState([]);
   const [selectedDoctor, setSelectedDoctor] = useState(null);
@@ -108,30 +108,11 @@ function OurTeam() {
         ]}
         title="Our Expert Team"
       />
-      <div className="grid md:grid-cols-3 lg:grid-cols-4 py-10 items-center gap-4 p-2">
+      <div className="grid md:grid-cols-3 lg:grid-cols-3 px-6 py-10 items-center gap-4 p-2">
         {status === "loading" && <p>Loading team members...</p>}
         {error && <p className="text-red-500">{error}</p>}
         {teamMembers.map((member, index) => (
-          <div
-            key={index}
-            className="w-full bg-white rounded-lg shadow-2xl overflow-hidden p-4"
-          >
-            <img
-              className="w-full h-48 object-cover"
-              src={member?.image || member?.imageUrl}
-              alt={member.name}
-            />
-            <div className="p text-start">
-              <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
-              <p className="text-sm text-gray-600">{member.specialty}</p>
-              <button
-                className="mt-2 bg-blue-500 text-white py-2 px-4 cursor-pointer rounded-lg hover:bg-transparent hover:text-gray-600 outline hover:outline-gray-500 transition"
-                onClick={() => openModal(member)}
-              >
-                Book Appointment
-              </button>
-            </div>
-          </div>
+         <TeamMemberCard member={member} />
         ))}
       </div>
 
@@ -222,3 +203,31 @@ function OurTeam() {
 }
 
 export default OurTeam;
+
+
+
+const TeamMemberCard = ({ member }) => (
+  <div className="group border-b-4 border-white hover:border-[#1b4d94] transition-all duration-300 flex flex-col md:flex-row items-center gap-4 p-4 bg-white rounded-lg shadow-md">
+    {/* Image Section */}
+    <div className="flex-1 w-36 h-40 overflow-hidden rounded-lg shadow-md">
+      <img
+        src={member?.imageUrl || "https://via.placeholder.com/150"}
+        alt={member?.name || "Team member"}
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    {/* Content Section */}
+    <div className="flex-1 text-left">
+      <h3 className="text-base font-semibold text-gray-900">
+        {member?.name || "Unknown"}
+      </h3>
+      <p className="text-sm text-gray-600">{member?.degree || "N/A"}</p>
+      <p className="text-sm text-gray-600">{member?.specialty || "N/A"}</p>
+      <p className="text-sm text-gray-500">{member?.location || "N/A"}</p>
+      <Link to='/contact'  className="mt-4 text-center block px-4 py-2 text-xs text-white bg-primary rounded-full cursor-pointer">
+        Request Appointment
+      </Link>
+    </div>
+  </div>
+);
