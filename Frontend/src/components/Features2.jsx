@@ -6,7 +6,7 @@ const Features = () => {
   return (
     <section className=" max-w-6xl mx-auto px-2 md:grid grid-cols-1 md:grid-cols-4 gap-2 shadow-lg rounded-lg ">
       {/* Working Time */}
-      <div className="bg-blue-600 text-white md:p-6 p-3 mb-1 md:block hidden">
+      <div className="bg-blue-700 text-white md:p-6 p-3 mb-1 md:block hidden">
         <h3 className="text-lg font-semibold">Working Time</h3>
         <ul className="mt-4 space-y-2 text-sm">
           <li className="flex justify-between border-b pb-1">
@@ -46,7 +46,7 @@ const Features = () => {
       </div>
 
       {/* Appointments */}
-      <div className="bg-blue-600 text-white md:p-6 p-3 flex flex-col justify-between mb-1">
+      <div className="bg-blue-700 text-white md:p-6 p-3 flex flex-col justify-between mb-1">
         <div>
           <h3 className="text-lg font-semibold">Appointments</h3>
           <p className="text-sm mt-2">

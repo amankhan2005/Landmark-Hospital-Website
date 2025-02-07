@@ -1,16 +1,14 @@
 import React from "react";
-import BreadCumb from "../components/Breadcumb";
-
-
 
 import SpecilitesComponent from "../components/SpecilitesComponent";
 import ContactUs from "../components/ContactUs";
+import BreadCumb2 from "../components/Breadcumb2";
 
 const Specialities = () => {
 
   return (
     <>
-    <BreadCumb
+    <BreadCumb2
         items={[
           { label: 'Home', link: `/` },
           { label: `Specialities`, link:`/specialities` },

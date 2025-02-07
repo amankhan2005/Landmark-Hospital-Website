@@ -53,3 +53,11 @@ body{
 .mobile li{
     border-bottom: 1px solid ;
 }
+
+.text-primary-hover{
+    color:#1b4d94;
+}
+
+.text-primary-hover:hover{
+    color:#c91919;
+}

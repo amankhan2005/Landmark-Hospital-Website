@@ -260,7 +260,7 @@ export default function Header() {
             onMouseLeave={() => handleDropdown(null)}
           >
             <Link to="/specialities" className="hover-text-primary">
-              Specialities ▾
+              Our Departments ▾
             </Link>
             {openDropdown === "specialities" && (
               <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-56 transition-all duration-300 text-sm">

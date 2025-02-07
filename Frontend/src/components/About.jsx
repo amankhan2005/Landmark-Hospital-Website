@@ -14,13 +14,13 @@ const AboutSection = () => {
         />
       </div>
       <div className="w-full md:w-2/3 text-center md:text-left">
-        <h4 className="messiri text-lg text-primary font-bold uppercase mb-2">
+        <h4 className="messiri text-lg text-primary font-bold uppercase mb-0">
           Welcome to Hope Hospital
         </h4>
-        <h1 className="text-lg md:text-3xl  text-left md:font-bold font-base text-gray-800 md:mb-4 mb-2 md:border-0 border-s-4 border-[#1b4d94] md:ps-0 ps-2 leading-tight">
+        <h1 className="text-lg md:text-3xl  text-left md:font-bold font-base text-gray-800 md:mb-2 mb-2 md:border-0 border-s-4 border-[#1b4d94] md:ps-0 ps-2 ">
           Best Multi Speciality Hospital in Bahraich
         </h1>
-        <p className="text-gray-600  text-sm md:text-base leading-relaxed text-justify md:mb-1">
+        <p className="text-gray-600  text-sm md:text-base  text-justify md:mb-1">
           Welcome to Hope Hospital, your trusted multi-speciality healthcare
           provider. We are dedicated to providing exceptional medical care
           across various specialties, including Cardiology, Orthopedics, General
@@ -34,7 +34,7 @@ const AboutSection = () => {
         </p>
         <p className="text-gray-600 text-sm md:text-base  leading-relaxed text-justify md:mb-3">
           With 24/7 emergency services and a commitment to community health,
-          [Hospital Name] is here to support you at every stage of your
+          Hope Hospital is here to support you at every stage of your
           healthcare journey. Trust us for compassionate, high-quality care—your
           health is our priority!
         </p>

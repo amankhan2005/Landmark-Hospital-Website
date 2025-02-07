@@ -6,6 +6,7 @@ import FacilitiesComponent from "./FacilitiesComponent.jsx";
 import WhyChooseUs from "./WhyChooseUs.jsx";
 import OurTeam from "./OurTeam2.jsx";
 import pattern from "../assets/pattern13.jpg";
+import BreadCumb2 from "./Breadcumb2.jsx";
 
 const FacilitiesDetail = () => {
   const { facilitiesName } = useParams();
@@ -28,7 +29,7 @@ const FacilitiesDetail = () => {
     .join(" ");
   return (
     <>
-      <BreadCumb
+      <BreadCumb2
         items={[
           { label: "Home", link: `/` },
           { label: `Facilites`, link: `/facilities` },

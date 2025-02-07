@@ -4,7 +4,7 @@ import FacilitiesComponent from "./FacilitiesComponent";
 
 const FacilitiesSection = () => {
   return (
-    <div className="md:py-12 bg-gray-100 lg:py-14 py-10 md:px-6 px-4">
+    <div className="md:py-12 bg-gray-100 lg:py-14 py-10 md:px-10 px-4">
       <h1 className="md:text-4xl text-primary text-2xl font-bold text-center messiri">
         Our Facilities
       </h1>

@@ -8,10 +8,10 @@ import happyClients from "../assets/home/healthy.png";
 import experience from "../assets/home/experience.png";
 
 const stats = [
-  { icon: happyClients, number: 9632, label: "Happy Patients" },
-  { icon: doctors, number: 12, label: "Qualified Doctors" },
+  { icon: happyClients, number: 1000, label: "Happy Patients" },
+  { icon: doctors, number: 9, label: "Qualified Doctors" },
   { icon: experience, number: 10, label: "Years of Experience" },
-  { icon: icuBeds, number: 73, label: "ICU Beds" },
+  { icon: icuBeds, per:'100%', label: "Patient Satisfaction" },
 ];
 
 const Stats = () => {
@@ -41,7 +41,7 @@ const Stats = () => {
               <img src={stat.icon} alt={stat.label} className="mx-auto md:w-20 w-10" />
             </div>
             <div className="md:text-3xl text-xl font-bold text-gray-800 md:mb-2 ">
-              <CountUp end={stat.number} duration={2} enableScrollSpy /> +
+             { stat.per ? '100 %' : (<><CountUp end={stat?.number} duration={2} enableScrollSpy /> + </>) }
             </div>
             <p className="text-gray-500 text-sm md:text-base md:mt-0 mt-2">{stat.label}</p>
           </div>

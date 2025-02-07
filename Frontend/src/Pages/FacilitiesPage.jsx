@@ -1,11 +1,11 @@
 import React from 'react'
-import BreadCumb from '../components/Breadcumb'
 import ContactUs from '../components/ContactUs'
 import FacilitiesComponent from '../components/FacilitiesComponent'
+import BreadCumb2 from '../components/Breadcumb2'
 function FacilitiesPage() {
   return (
     <div>
-        <BreadCumb
+        <BreadCumb2
         items={[
           { label: "Home", link: `/` },
           { label: `Facilities`, link: `/facilities` },

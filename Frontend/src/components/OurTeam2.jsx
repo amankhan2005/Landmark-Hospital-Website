@@ -4,22 +4,30 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTeamData } from "../redux/slices/dataslice";
-
+import {Link} from 'react-router-dom'
 // Team Member Card Component
 const TeamMemberCard = ({ member }) => (
-  <div className="group">
-    <div className="overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+  <div className="group border-b-4 border-white hover:border-[#1b4d94] transition-all duration-300 flex flex-col md:flex-row items-center gap-4 p-4 bg-white rounded-lg shadow-md">
+    {/* Image Section */}
+    <div className="flex-1 w-36 h-40 overflow-hidden rounded-lg shadow-md">
       <img
         src={member?.imageUrl || "https://via.placeholder.com/150"}
-        alt={member.name}
-        className="w-full h-52 object-cover"
+        alt={member?.name || "Team member"}
+        className="w-full h-full object-cover"
       />
     </div>
-    <div className="p-4 text-center bg-white shadow-md">
-      <h3 className="text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
-        {member.name}
+
+    {/* Content Section */}
+    <div className="flex-1 text-left">
+      <h3 className="text-base font-semibold text-gray-900">
+        {member?.name || "Unknown"}
       </h3>
-      <p className="text-gray-500">{member.specialty}</p>
+      <p className="text-sm text-gray-600">{member?.degree || "N/A"}</p>
+      <p className="text-sm text-gray-600">{member?.specialty || "N/A"}</p>
+      <p className="text-sm text-gray-500">{member?.location || "N/A"}</p>
+      <Link to='/contact'  className="mt-4 block px-4 py-2 text-xs text-white bg-primary rounded-full cursor-pointer">
+        Request Appointment
+      </Link>
     </div>
   </div>
 );
@@ -29,11 +37,26 @@ const sliderSettings = {
   dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 1,
+  slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 3000,
-  arrows: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 640,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 export default function OurTeam() {
@@ -45,8 +68,14 @@ export default function OurTeam() {
   }, [dispatch]);
 
   if (loading) return <p className="text-center text-gray-500 py-5">Loading team members...</p>;
-  if (error) return <p className="text-center text-red-500 py-5">Failed to load team data.</p>;
-  if (!teamData?.length) return <p className="text-center text-gray-500 py-5">No team members available.</p>;
+  if (error)
+    return (
+      <div className="text-center text-red-500 py-5">
+        <p>⚠️ Failed to load team data. Please try again later.</p>
+      </div>
+    );
+  if (!teamData?.length)
+    return <p className="text-center text-gray-500 py-5">No team members available.</p>;
 
   return (
     <section className="lg:py-14 md:py-12 py-10 bg-gray-100 text-center">
@@ -55,24 +84,14 @@ export default function OurTeam() {
         Our dedicated professionals committed to your health.
       </p>
 
-      <div className="flex flex-col md:flex-row items-start gap-6 md:px-6 px-3">
-        <div className="w-full">
-          {/* Grid layout for Desktop */}
-          <div className="hidden mt-2 sm:grid grid-cols-1 sm:grid-cols-2 md:px-10 lg:grid-cols-4 gap-6">
-            {teamData.map((member) => (
-              <TeamMemberCard key={member._id} member={member} />
-            ))}
-          </div>
-
-          {/* Slick Slider for Mobile */}
-          <div className="sm:hidden">
-            <Slider {...sliderSettings}>
-              {teamData.map((member) => (
-                <TeamMemberCard key={member._id} member={member} />
-              ))}
-            </Slider>
-          </div>
-        </div>
+      <div className="md:px-10">
+        <Slider {...sliderSettings}>
+          {teamData.map((member) => (
+            <div className="px-2" key={member._id}>
+              <TeamMemberCard member={member} />
+            </div>
+          ))}
+        </Slider>
       </div>
     </section>
   );

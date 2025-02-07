@@ -1,7 +1,9 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import MainLayout from "./layouts/MainLayout";
+import AOS from "aos";
+import "aos/dist/aos.css";
 // Lazy Load Pages
 const Home = lazy(() => import("./Pages/Home"));
 const OurTeam = lazy(() => import("./Pages/OurTeam"));
@@ -29,6 +31,14 @@ const LoadingSpinner = () => (
 
 function App() {
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      easing: "ease-in-out",
+      offset: 100, 
+      once: true, 
+    });
+  }, []);
  
 
   return (
