@@ -1,14 +1,13 @@
 import React from "react";
 import Slider from "react-slick";
-import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import FeaturesOverlay from "./Features";
 import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 import Features from "./Features2";
 import banner1 from '../assets/home/banner6.jpg'
 import banner2 from '../assets/home/banner2.jpg'
 import banner3 from '../assets/home/banner4.jpg'
+
 // Slider data
 const slides = [
   {

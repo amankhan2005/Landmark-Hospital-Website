@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom'
 const TeamMemberCard = ({ member }) => (
   <div className="group border-b-4 border-white hover:border-[#1b4d94] transition-all duration-300 flex flex-col md:flex-row items-center gap-4 p-4 bg-white rounded-lg shadow-md">
     {/* Image Section */}
-    <div className="flex-1 w-36 h-40 overflow-hidden rounded-lg shadow-md">
+    <div className="flex-1 w-36 h-44 overflow-hidden rounded-lg shadow-md">
       <img
         src={member?.imageUrl || "https://via.placeholder.com/150"}
         alt={member?.name || "Team member"}
