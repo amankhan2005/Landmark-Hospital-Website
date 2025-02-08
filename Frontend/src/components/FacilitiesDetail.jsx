@@ -1,12 +1,15 @@
 import { useParams } from "react-router-dom";
 import BreadCumb from "./Breadcumb.jsx";
 import ContactUs from "./ContactUs.jsx";
-import {facilities as facilitiesData} from '../FacilitiesData'
+import { facilities as facilitiesData } from "../FacilitiesData";
 import FacilitiesComponent from "./FacilitiesComponent.jsx";
 import WhyChooseUs from "./WhyChooseUs.jsx";
 import OurTeam from "./OurTeam2.jsx";
 import pattern from "../assets/pattern13.jpg";
 import BreadCumb2 from "./Breadcumb2.jsx";
+import { FaCheck } from "react-icons/fa";
+import AppointmentForm from "./AppointmentForm.jsx";
+import FAQSection from "./Faq.jsx";
 
 const FacilitiesDetail = () => {
   const { facilitiesName } = useParams();
@@ -32,74 +35,88 @@ const FacilitiesDetail = () => {
       <BreadCumb2
         items={[
           { label: "Home", link: `/` },
-          { label: `Facilites`, link: `/facilities` },
+          { label: `Facilities`, link: `/facilities` },
           { label: `${title}`, link: `/specialities/${facilitiesName}` },
         ]}
         title={facilities.title}
       />
-      <div className="md:px-6  py-8">
+      <div className="md:px-6  lg:pt-12 ">
         {/* First Section: Description & Image */}
-        <div className="flex relative z-10 md:flex-row flex-col-reverse gap-6  px-4 bg-gray-100 rounded-2xl">
-        <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `url(${pattern})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                opacity: 0.2,
-                zIndex: -1,
-              }}
-            ></div>
-          <div className="flex-6 ">
-            {/* <h1 className="text-3xl font-bold text-blue-600 mb-4 messiri">
-              {facilities.title}
-            </h1> */}
-            <p className="text-gray-700 text-justify md:mt-10 ">
-              {facilities.description} Neurology is the medical facilities focused
-              on diagnosing and treating disorders of the nervous system,
-              including the brain, spinal cord, and peripheral nerves.
-              Neurologists address conditions such as strokes, epilepsy,
-              migraines, multiple sclerosis, Parkinson’s disease, and
-              neuropathy. They evaluate symptoms like memory loss, dizziness,
-              numbness, and coordination issues through neurological exams,
-              imaging, and diagnostic tests. 
+        <div className="flex relative z-10 md:flex-row flex-col-reverse gap-6  px-4 bg-gray-10 rounded-2xl">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${pattern})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              opacity: 0.2,
+              zIndex: -1,
+            }}
+          ></div>
+          <div className="flex-2 ">
+          <span className="text-2xl font-semibold messiri text-primary">
+                  Overview -{" "}
+                </span>
+                <span className="text-2xl font-semibold messiri text-primary">
+                  Best {facilities.title} Services in Bahraich{" "}
+                </span>
+            <p className="text-gray-700 text-justify ">
+              {facilities.description}
             </p>
-            <div className="">
-            <h2 className="text-2xl font-semibold text-primary mt-6 mb-2 messiri">
-              Services Offered
-            </h2>
-            <ul className="list-disc list-inside text-gray-700">
-              {facilities.services.map((service, index) => (
-                <li key={index} className="mb-2">
-                  {service}
-                </li>
-              ))}
-            </ul>
-            </div>
-          </div>
-          <div className=" flex justify-center ">
             <img
               src={facilities.image}
               alt={facilities.title}
-              className="w-full md:h-72  border-2 border-gray-400  rounded mt-10 bg-gray-200  shadow-lg hover:shadow-2xl "
+              className="w-full md:h-72 mt-4"
             />
+            <div className="py-4">
+              <h2 className="text-2xl font-semibold text-primary messiri">
+                Services Offered
+              </h2>
+              <ul className="list-disc grid grid-cols-2 list-inside text-gray-700">
+                {facilities.services.map((service, index) => (
+                  <li key={index} className="flex items-center space-x-2">
+                    <span className="bg-primary w-5 h-5 p-1 rounded-full flex justify-center items-center">
+                      <FaCheck className="text-white" />
+                    </span>
+                    <span>{service}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className=" flex-1 mt-4 p-4 rounded-xl bg-primary">
+           <AppointmentForm/>
           </div>
         </div>
         {/* <div className="px-4">
             <OurTeam/>
           </div> */}
-          {/* <WhyChooseUs/> */}
+        {/* <WhyChooseUs/> */}
       </div>
-      <div className="bg-gray-100 p-4 md:px-10 px-4">
-      <h2 className="md:text-4xl md:pt-10 text-2xl font-bold text-center md:mb-12 mb-6 messiri">
-        Our Other Facilities
+      <div className="max-w-7xl grid grid-cols-2 mx-auto pb-6">
+        {facilities.details.map((item)=>(
+          <div className="px-4 text-justify">
+         <div className="text-2xl mt-6 mb-2 font-semibold text-primary  messiri"> {item.title}</div>
+          <div className="">  {item.description}</div>
+          </div>
+        ))}
+      </div>
+      <div className="container mx-auto px-8 py-4 mb-8 bg-primary rounded mt-8">
+        <h2 className="text-2xl messiri font-semibold text-white mb-4 px-4">
+          Frequently Asked Questions
+        </h2>
+        <FAQSection faqs={facilities.faqs} />
+
+      </div>
+      <div className="bg-gray-100 mb-10 md:px-10 px-4">
+        <h2 className="md:text-4xl md:pt-10 text-2xl font-bold text-center md:mb-12 mb-6 messiri">
+          Our Other Facilities
         </h2>
         <FacilitiesComponent props={facilities} />
       </div>
-        <div className="mt-10 mb-6 md:mb-0">
-
-        <ContactUs/>
-        </div>
+      {/* <div className="mt-10 mb-6 md:mb-0">
+        <ContactUs />
+      </div> */}
     </>
   );
 };

@@ -5,7 +5,7 @@ import image from '../assets/breadcrumb.jpg'
 const BreadCumb = ({ items, title }) => {
   return (
     <div
-      className="relative w-full md:h-[350px] h-[150px] flex items-center justify-center ps-10 bg-cover bg-center p-4"
+      className="relative w-full md:h-[300px] h-[150px] flex items-center justify-center ps-10 bg-cover bg-center p-4"
       style={{ backgroundImage: `url(${image})` }}
     >
       {/* Overlay for text visibility */}

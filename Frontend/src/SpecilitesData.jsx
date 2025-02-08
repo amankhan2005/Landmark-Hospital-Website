@@ -6,7 +6,7 @@ import dermatology from "./assets/specility/derm.png";
 import critical from "./assets/specility/critical.png";
 import medicine from "./assets/specility/general.png";
 import emergency from "./assets/specility/health-care.png";
-import pediatric from './assets/specility/pediatric.png'
+import pediatric from "./assets/specility/pediatric.png";
 
 import anesthesia from "./assets/specility/anesthesia.png";
 import cardiology from "./assets/specility/cardiology.png";
@@ -16,7 +16,7 @@ import neurology1 from "./assets/specility/neurology1.png";
 import orthopedic1 from "./assets/specility/orthopedic.png";
 import ophthalmology from "./assets/specility/phthalmology.png";
 import derm1 from "./assets/specility/derm1.png";
-import pediatric1 from './assets/specility/pediatric1.png' 
+import pediatric1 from "./assets/specility/pediatric1.png";
 
 export const specialities = [
   {
@@ -176,21 +176,20 @@ export const specialities = [
           "Stress Tests: Evaluates heart performance during exercise or stress.",
           "Blood Tests: Checks for markers of heart disease, such as cholesterol levels and cardiac enzymes.",
           "Coronary Angiography: Uses imaging to visualize blood flow in the coronary arteries.",
-          ],
+        ],
       },
       {
         title: "Prevention of Heart Disease",
         description: [
-  "Healthy Diet: Emphasize fruits, vegetables, whole grains, lean proteins, and healthy fats. Limit saturated fats, trans fats, salt, and sugar.",
-  "Regular Exercise: Aim for at least 150 minutes of moderate-intensity aerobic activity each week, along with strength training exercises.",
-  "Avoid Tobacco: Quit smoking and avoid exposure to secondhand smoke.",
-  "Maintain a Healthy Weight: Achieve and maintain a healthy body weight to reduce the risk of hypertension and diabetes.",
-  "Manage Stress: Practice stress-reduction techniques such as mindfulness, yoga, or meditation.",
-  "Regular Health Screenings: Regular check-ups with a healthcare provider to monitor blood pressure, cholesterol levels, and other risk factors.",
-  "Limit Alcohol Consumption: If consumed, limit alcohol to moderate levels (up to one drink per day for women and two drinks for men).",
-  "Control Chronic Conditions: Effectively manage conditions such as diabetes, hypertension, and high cholesterol through medication and lifestyle changes."
-]
-
+          "Healthy Diet: Emphasize fruits, vegetables, whole grains, lean proteins, and healthy fats. Limit saturated fats, trans fats, salt, and sugar.",
+          "Regular Exercise: Aim for at least 150 minutes of moderate-intensity aerobic activity each week, along with strength training exercises.",
+          "Avoid Tobacco: Quit smoking and avoid exposure to secondhand smoke.",
+          "Maintain a Healthy Weight: Achieve and maintain a healthy body weight to reduce the risk of hypertension and diabetes.",
+          "Manage Stress: Practice stress-reduction techniques such as mindfulness, yoga, or meditation.",
+          "Regular Health Screenings: Regular check-ups with a healthcare provider to monitor blood pressure, cholesterol levels, and other risk factors.",
+          "Limit Alcohol Consumption: If consumed, limit alcohol to moderate levels (up to one drink per day for women and two drinks for men).",
+          "Control Chronic Conditions: Effectively manage conditions such as diabetes, hypertension, and high cholesterol through medication and lifestyle changes.",
+        ],
       },
     ],
     faqs: [
@@ -321,7 +320,8 @@ export const specialities = [
           "Generally, adults should have a comprehensive eye exam every one to two years. Those with existing eye conditions or risk factors may need more frequent exams.",
       },
       {
-        question: "What are the common symptoms that indicate I should see an eye doctor?",
+        question:
+          "What are the common symptoms that indicate I should see an eye doctor?",
         answer:
           "Symptoms include blurry vision, eye pain, redness, swelling, frequent headaches, halos around lights, or sudden vision changes.",
       },
@@ -377,7 +377,7 @@ export const specialities = [
       },
     ],
   },
-  
+
   {
     title: "Dermatology",
     link: "dermatology",
@@ -471,7 +471,8 @@ export const specialities = [
           "Using sunscreen daily, maintaining a proper skincare routine, avoiding smoking, and staying hydrated can help slow down the aging process.",
       },
       {
-        question: "What should I do if I notice an unusual mole or skin lesion?",
+        question:
+          "What should I do if I notice an unusual mole or skin lesion?",
         answer:
           "Schedule an appointment with a dermatologist for an evaluation, especially if the mole changes in size, color, or shape.",
       },
@@ -486,7 +487,8 @@ export const specialities = [
           "Regular exfoliation, hydration, vitamin C serums, chemical peels, and laser treatments can improve skin texture and tone.",
       },
       {
-        question: "What should I expect during my first dermatology appointment?",
+        question:
+          "What should I expect during my first dermatology appointment?",
         answer:
           "Your dermatologist will examine your skin, discuss your concerns, and recommend treatments tailored to your needs.",
       },
@@ -602,13 +604,14 @@ export const specialities = [
           "Treatment options include pain management, hormonal therapy, and surgery (laparoscopy) for severe cases to remove endometrial tissue.",
       },
       {
-        question: "What are the benefits of minimally invasive gynecological surgery?",
+        question:
+          "What are the benefits of minimally invasive gynecological surgery?",
         answer:
           "Minimally invasive surgeries offer faster recovery, less pain, minimal scarring, and reduced hospital stay compared to traditional open surgeries.",
       },
     ],
   },
-  
+
   {
     title: "Neurology",
     link: "neurology",
@@ -725,8 +728,8 @@ export const specialities = [
       },
     ],
   },
-  
- {
+
+  {
     title: "General Surgery",
     link: "general-surgery",
     image: `${general}`,
@@ -843,7 +846,6 @@ export const specialities = [
     ],
   },
 
-  
   {
     title: "Orthopedic Surgery",
     link: "orthopedic-surgery",
@@ -903,7 +905,8 @@ export const specialities = [
           "Joint replacement is recommended when severe arthritis or joint damage causes persistent pain and limits daily activities.",
       },
       {
-        question: "What are the benefits of minimally invasive orthopedic surgery?",
+        question:
+          "What are the benefits of minimally invasive orthopedic surgery?",
         answer:
           "Minimally invasive procedures offer smaller incisions, less pain, shorter hospital stays, and quicker recovery compared to traditional open surgeries.",
       },
@@ -913,7 +916,8 @@ export const specialities = [
           "Recovery time varies depending on the procedure, but most patients can resume normal activities within weeks to months with proper rehabilitation.",
       },
       {
-        question: "What are common sports injuries that require orthopedic treatment?",
+        question:
+          "What are common sports injuries that require orthopedic treatment?",
         answer:
           "Common sports injuries include ACL tears, meniscus injuries, rotator cuff tears, stress fractures, and dislocations.",
       },
@@ -944,7 +948,7 @@ export const specialities = [
       },
     ],
   },
-  
+
   {
     title: "Pediatric Care",
     link: "pediatric-care",
@@ -994,7 +998,8 @@ export const specialities = [
     ],
     faqs: [
       {
-        question: "At what age should my child have their first pediatric visit?",
+        question:
+          "At what age should my child have their first pediatric visit?",
         answer:
           "Newborns should have their first check-up within the first week of birth to assess their overall health and development.",
       },
@@ -1004,12 +1009,14 @@ export const specialities = [
           "Immunization protects children from serious infectious diseases, helping to prevent outbreaks and ensuring long-term health.",
       },
       {
-        question: "What are common childhood illnesses that require pediatric care?",
+        question:
+          "What are common childhood illnesses that require pediatric care?",
         answer:
           "Common illnesses include colds, flu, ear infections, asthma, allergies, digestive issues, and developmental disorders.",
       },
       {
-        question: "When should my child be screened for developmental milestones?",
+        question:
+          "When should my child be screened for developmental milestones?",
         answer:
           "Regular screenings should be conducted during routine pediatric visits to monitor speech, motor skills, and cognitive development.",
       },
@@ -1044,5 +1051,5 @@ export const specialities = [
           "Seek emergency care if your child has high fever, breathing difficulties, severe dehydration, unresponsiveness, or any serious injury.",
       },
     ],
-  },  
+  },
 ];

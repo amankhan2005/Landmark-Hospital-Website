@@ -58,6 +58,7 @@ useEffect(()=>{
       {/* Cases Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6 py-10 px-4 md:px-10 md:container md:mx-auto">
       {status =='loading' && <p>Loading cases Data...</p>}
+      {status =='failed' && <p className="text-red-500">No cases Data Found</p>}
       {error && <p className="text-red-500">{error}</p>}
         {caseData.map((caseItem, index) => (
           <div 

@@ -162,7 +162,7 @@ function AboutPage() {
         </section>
 
         {/* History Section */}
-        <section className="mt-16 flex flex-col md:flex-row justify-between  gap-6">
+        <section className=" flex flex-col md:flex-row justify-between  gap-6">
           {/* <div className='px-14'>
         <h2 className="text-3xl font-bold text-primary text-center mb-8 messiri">Our History</h2>
         <div className="relative border-l-2 border-blue-700 pl-8  ">

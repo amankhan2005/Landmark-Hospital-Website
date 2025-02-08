@@ -38,7 +38,7 @@ const SpecialtyDetail = () => {
       <div className="max-w-7xl mx-auto px-4 pt-8 ">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3 ">
           <div className="md:col-span-8 bg-gray-10 md:p-4 rounded-2xl py-5">
-            <p className="text-gray-700 relative  z-10 md:text-lg mb-4 text-base text-justify leading-relaxed ">
+            <p className="text-gray-700 relative  z-10 mb-4 text-base text-justify leading-relaxed ">
               <div className="">
                 <span className="text-2xl font-semibold messiri text-primary">
                   Overview -{" "}
@@ -62,7 +62,7 @@ const SpecialtyDetail = () => {
             <img
               src={specialty.img}
               alt={specialty.title}
-              className="w-full md:h-80 h-52 rounded-xl"
+              className="w-full md:h-96 h-52 rounded-xl"
             />
             
 
