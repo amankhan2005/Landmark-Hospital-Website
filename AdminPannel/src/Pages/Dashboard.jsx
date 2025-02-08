@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaHome, FaUsers, FaBlog, FaBriefcase, FaImage, FaSignOutAlt } from 'react-icons/fa';
 import TeamDashboard from '../Components/TeamDashboard';
 import CaseDashboard from '../Components/CaseDashboard';
 import GalleryDashboard from '../Components/GalleryDashboard';
 import BlogDashboard from '../Components/BlogDashboard';
 import Home from '../Components/Home';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const SidebarItem = ({ name, icon, onClick }) => {
   return (
@@ -36,13 +38,46 @@ const DashboardContent = ({ section }) => {
 };
 
 const Dashboard = () => {
+  const location = useLocation()
+  const navigate= useNavigate()
   const [section, setSection] = useState('Home');
   const [user, setUser] = useState('Mohd Suhel');
+  
+  const {adminData} = location?.state
+
+  useEffect(()=>{
+    if(adminData){
+      setUser(adminData?.user?.email || 'Admin')
+    }
+
+  },[])
+
+  
 
   const logout = () => {
-    console.log('User logged out');
-    // Add logout functionality here
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, Logout!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("admin");
+        Swal.fire({
+          title: "Logged Out",
+          text: "You have been logged out successfully!",
+          icon: "success",
+          confirmButtonText: "OK",
+        }).then(() => {
+          navigate("/")
+        });
+      }
+    });
   };
+  
 
   return (
     <div className="flex flex-col sm:flex-row h-screen">

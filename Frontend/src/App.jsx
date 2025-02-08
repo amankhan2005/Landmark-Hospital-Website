@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes ,Navigate} from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import MainLayout from "./layouts/MainLayout";
 import AOS from "aos";
@@ -60,6 +60,7 @@ function App() {
           <Route path="/facilities" element={<MainLayout><FacilitiesPage /></MainLayout>} />
           <Route path="/facilities/:facilitiesName" element={<MainLayout><FacilitiesDetail /></MainLayout>} />
           <Route path="/testimonials" element={<MainLayout><TestimonialPage /></MainLayout>} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

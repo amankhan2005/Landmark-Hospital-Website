@@ -29,7 +29,7 @@ const Home = () => {
 
       // Fetch total cases
       const caseResponse = await axios.get(`${import.meta.env.VITE_API_URL}/case/getall`);
-      setCaseCount(caseResponse.data.length);
+      setCaseCount(caseResponse.data?.length);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -41,7 +41,7 @@ const Home = () => {
 
   return (
     <>
-        <h1 className="text-3xl font-semibold text-center text-gray-900 mb-4">Hello Admin</h1>
+        {/* <h1 className="text-3xl font-semibold text-center text-gray-900 mb-4">Hello Admin</h1> */}
     <div className="bg-gray-100 max-h-[70vh] overflow-scroll py-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Greeting */}

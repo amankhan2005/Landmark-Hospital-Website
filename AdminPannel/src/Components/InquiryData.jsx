@@ -72,7 +72,7 @@ const InquiryData = () => {
           </tr>
         </thead>
         <tbody>
-          {appointments.map((appointment) => (
+          {appointments?.map((appointment) => (
             <tr key={appointment._id}>
               <td className="border px-4 py-2">{appointment.department}</td>
               <td className="border px-4 py-2">{appointment.requestedDoctor}</td>
