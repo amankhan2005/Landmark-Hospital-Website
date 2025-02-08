@@ -56,7 +56,7 @@ const InquiryData = () => {
 
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-auto">
       <h2 className="text-2xl font-bold mb-4 text-center">Patient Inquiries</h2>
       <table className="min-w-full table-auto border-collapse">
         <thead>
@@ -74,15 +74,15 @@ const InquiryData = () => {
         <tbody>
           {appointments?.map((appointment) => (
             <tr key={appointment._id}>
-              <td className="border px-4 py-2">{appointment.department}</td>
-              <td className="border px-4 py-2">{appointment.requestedDoctor}</td>
-              <td className="border px-4 py-2">{appointment.patientName}</td>
-              <td className="border px-4 py-2">{appointment.mobileNo}</td>
-              <td className="border px-4 py-2">{appointment.email}</td>
-              <td className="border px-4 py-2">{appointment.date}</td>
-              <td className="border px-4 py-2">{appointment.time}</td>
+              <td className="border px-4 py-3">{appointment.department}</td>
+              <td className="border px-4 py-3">{appointment.requestedDoctor}</td>
+              <td className="border px-4 py-3">{appointment.patientName}</td>
+              <td className="border px-4 py-3">{appointment.mobileNo}</td>
+              <td className="border px-4 py-3">{appointment.email}</td>
+              <td className="border px-4 py-3">{appointment.date}</td>
+              <td className="border px-4 py-3">{appointment.time}</td>
               <td>
-              <button className="bg-red-500 text-white px-2 py-1 rounded" onClick={() => handleDelete(appointment._id)}>
+              <button className="bg-red-500 text-white px-4 ms-1 py-2 rounded" onClick={() => handleDelete(appointment._id)}>
                     Delete
                   </button>
               </td>

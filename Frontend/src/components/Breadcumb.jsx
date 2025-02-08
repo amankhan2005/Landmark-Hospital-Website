@@ -13,7 +13,7 @@ const BreadCumb = ({ items, title }) => {
 
       {/* Breadcrumb Content */}
       <div className="relative z-10 text-center text-white">
-        <h1 className="md:text-4xl leading-[1.2rem] text-2xl font-extrabold  messiri">{title}</h1>
+        <h1 className="md:text-4xl leading-[1.2rem] text-3xl font-extrabold  messiri">{title}</h1>
         <div className="flex justify-center items-center md:mt-4 mt-0">
           {items.map((item, index) => (
             <React.Fragment key={index}>

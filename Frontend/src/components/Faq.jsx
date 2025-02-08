@@ -9,12 +9,12 @@ const FAQSection = ({ faqs }) => {
   };
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="md:container mx-auto md:px-4">
       <div className="flex flex-wrap -mx-3">
         {faqs?.map((faq, index) => (
           <div
             key={index}
-            className="w-full md:w-1/2 px-3 mb-4"
+            className="w-full md:w-1/2 md:px-3 mb-4"
           >
             <div
               className="border border-gray-300 p-3 rounded-lg shadow-lg bg-white cursor-pointer transition-all hover:shadow-xl self-start"

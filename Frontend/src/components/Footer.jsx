@@ -21,7 +21,7 @@ const handletop = ()=>{
 const Footer = () => {
   return (
     <>
-      <footer className="bg-primary text-white py-8 border-b ">
+      <footer className="bg-primary text-white pt-8 pb-3 border-b ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-2 gap-8">
             {/* Contact Section */}

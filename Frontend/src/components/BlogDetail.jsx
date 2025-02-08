@@ -68,9 +68,9 @@ const BlogDetailPage = () => {
           <h3 className="text-2xl font-semibold mb-4 messiri">More Blogs</h3>
           <div className="space-y-4 md:max-h-[90vh] max-h-[50vh] overflow-y-scroll">
             {moreBlogs.length == 0 && <p className="text-red-500">No More Blogs</p>}
-            {moreBlogs.map((b) => (
+            {moreBlogs.map((b,i) => (
               <div
-                key={b.id}
+                key={i}
                 className="borde rounded-lg p-4 bg-white shadow-lg hover:shadow-md transition cursor-pointer"
                 onClick={() => navigate(`/blog/${b._id}`)}
               >

@@ -22,7 +22,7 @@ function SpecilitesComponent({specialty}) {
                 />
               </div>
               <div className="md:mt-16 mt-4 text-center ">
-                <h2 className="md:text-xl text-base font-bold text-gray-800 mb-2 w-full messiri ">
+                <h2 className="md:text-xl text-base font-bold text-gray-800 mb-2 w-full messiri line-clamp-1">
                   {speciality.title}
                 </h2>
                 <button className="text-primary md:py-1 md:px-2 rounded-full hover:bg-blue-200 ">View More <FaArrowRight className="inline-block ms-1"/></button>

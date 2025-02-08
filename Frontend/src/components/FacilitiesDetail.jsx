@@ -42,7 +42,7 @@ const FacilitiesDetail = () => {
       />
       <div className="md:px-6  lg:pt-12 ">
         {/* First Section: Description & Image */}
-        <div className="flex relative z-10 md:flex-row flex-col-reverse gap-6  px-4 bg-gray-10 rounded-2xl">
+        <div className="flex relative z-10 md:flex-row flex-col gap-6  px-4 bg-gray-10 rounded-2xl">
           <div
             className="absolute inset-0"
             style={{
@@ -53,11 +53,11 @@ const FacilitiesDetail = () => {
               zIndex: -1,
             }}
           ></div>
-          <div className="flex-2 ">
-          <span className="text-2xl font-semibold messiri text-primary">
+          <div className="flex-2 md:mt-0 mt-5">
+          <span className="md:text-2xl text-xl font-semibold messiri text-primary">
                   Overview -{" "}
                 </span>
-                <span className="text-2xl font-semibold messiri text-primary">
+                <span className="md:text-2xl text-xl font-semibold messiri text-primary">
                   Best {facilities.title} Services in Bahraich{" "}
                 </span>
             <p className="text-gray-700 text-justify ">
@@ -84,7 +84,7 @@ const FacilitiesDetail = () => {
               </ul>
             </div>
           </div>
-          <div className=" flex-1 mt-4 p-4 rounded-xl bg-primary">
+          <div className="md:block hidden flex-1 mt-4 p-4 rounded-xl bg-primary">
            <AppointmentForm/>
           </div>
         </div>
@@ -93,16 +93,16 @@ const FacilitiesDetail = () => {
           </div> */}
         {/* <WhyChooseUs/> */}
       </div>
-      <div className="max-w-7xl grid grid-cols-2 mx-auto pb-6">
-        {facilities.details.map((item)=>(
-          <div className="px-4 text-justify">
-         <div className="text-2xl mt-6 mb-2 font-semibold text-primary  messiri"> {item.title}</div>
+      <div className="max-w-7xl grid md:grid-cols-2 grid-cols-1 mx-auto pb-6">
+        {facilities.details.map((item,i)=>(
+          <div className="px-4 text-justify" key={i}>
+         <div className="md:text-2xl text-xl mt-6 mb-2 font-semibold text-primary  messiri"> {item.title}</div>
           <div className="">  {item.description}</div>
           </div>
         ))}
       </div>
       <div className="container mx-auto px-8 py-4 mb-8 bg-primary rounded mt-8">
-        <h2 className="text-2xl messiri font-semibold text-white mb-4 px-4">
+        <h2 className="md:text-2xl text-xl messiri font-semibold text-white mb-4 px-4">
           Frequently Asked Questions
         </h2>
         <FAQSection faqs={facilities.faqs} />

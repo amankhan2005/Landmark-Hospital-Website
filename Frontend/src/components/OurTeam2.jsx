@@ -7,7 +7,7 @@ import { fetchTeamData } from "../redux/slices/dataslice";
 import {Link} from 'react-router-dom'
 // Team Member Card Component
 const TeamMemberCard = ({ member }) => (
-  <div className="group border-b-4 border-white hover:border-[#1b4d94] transition-all duration-300 flex flex-col md:flex-row items-center gap-4 p-4 bg-white rounded-lg shadow-md">
+  <div className="group border-b-4 border-white hover:border-[#1b4d94] transition-all duration-300 flex  md:flex-row items-center gap-4 p-4 bg-white rounded-lg shadow-md">
     {/* Image Section */}
     <div className="flex-1 w-36 h-44 overflow-hidden rounded-lg shadow-md">
       <img
@@ -22,9 +22,9 @@ const TeamMemberCard = ({ member }) => (
       <h3 className="text-base font-semibold text-gray-900">
         {member?.name || "Unknown"}
       </h3>
-      <p className="text-sm text-gray-600">{member?.degree || "N/A"}</p>
-      <p className="text-sm text-gray-600">{member?.specialty || "N/A"}</p>
-      <p className="text-sm text-gray-500">{member?.location || "N/A"}</p>
+      <p className="text-sm font-semibold text-gray-600">{member?.specialty || "N/A"}</p>
+      <p className="text-sm text-gray-600 mt-2">{member?.degree || "N/A"}</p>
+      {/* <p className="text-sm text-gray-500">{member?.location || "N/A"}</p> */}
       <Link to='/contact'  className="mt-4 block px-4 py-2 text-xs text-white bg-primary rounded-full cursor-pointer">
         Request Appointment
       </Link>

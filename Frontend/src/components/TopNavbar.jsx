@@ -15,7 +15,7 @@ export default function TopNavBar() {
           </div>
   
           {/* Right side: Social media icons */}
-          <div className="flex space-x-4 md:text-lg text-sm">
+          <div className="flex space-x-6 md:text-lg text-sm">
             <a href="#" className="hover:text-gray-200"><i className="fab fa-facebook-f"></i></a>
             <a href="#" className="hover:text-gray-200"><i className="fab fa-twitter"></i></a>
             <a href="#" className="hover:text-gray-200"><i className="fab fa-instagram"></i></a>

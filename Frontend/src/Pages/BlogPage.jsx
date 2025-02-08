@@ -97,7 +97,7 @@ const BlogPage = () => {
             <p className="text-red-500">No Data Found</p>
           )}
 
-          {blogsData.map((blog) => {
+          {blogsData.map((blog,i) => {
 
             const formattedDate = new Date(blog.createdAt).toLocaleDateString(
               "en-GB",
@@ -106,7 +106,7 @@ const BlogPage = () => {
 
             return (
               <div
-                key={blog._id}
+                key={i}
                 className="bordr rounded-lg p-4 mb-4 shadow-2xl hover:shadow-none transition cursor-pointer"
                 onClick={() => navigate(`/blog/${blog._id}`)}
               >

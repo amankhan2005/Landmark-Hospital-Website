@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Swal from "sweetalert2";
-import axios from "axios";
 import {
   FaClock,
   FaFacebookF,
@@ -31,48 +29,94 @@ const ContactUs = () => {
       {/* Form and Office Details Section */}
       <div className=" md:px-8 mt-10  lg:px-4  gap-6 md:gap-0 lg:mb-12  ">
         <div className="flex lg:mx-10  lg:flex-row flex-col  gap-4">
-          <div className="flex-1 relative flex flex-col px-6 gap-4 text-white">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `url(${pattern})`,
-                backgroundSize: "contain",
-                backgroundPosition: "center",
-                opacity: 0.8,
-                zIndex: -1,
-              }}
-            ></div>
-            <div className=" bg-gray-700 rounded-4xl  py-5 px-4">
-              <div className="text-3xl messiri">
-                <FaLocationDot className="inline-block mr-2 text-3xl my-4 " />{" "}
-                Our Location
-              </div>
-              <p className="text-gray-100">
-                Gonda Road, Near Vinayak Resorts, Bharaich - 271801 (U.P.)
-              </p>
-            </div>
-            <div className=" bg-red-400 rounded-4xl py-5 px-4">
-              <div className="text-3xl messiri">
-                <FaPhone className="inline-block mr-2 text-3xl my-4 rotate-90" />{" "}
-                Connect with Us
-              </div>
-              <p className="text-gray-100">
-                CALL: <a href="tel:+917840060096" className="hover:cursor-pointer">+91-7840060096</a>, <a href='tel:+917840060096' className="hover:cursor-pointer">+91-7840060096</a> 
-              </p>
-            </div>
-            <div className=" bg-purple-500 rounded-4xl py-5 px-4">
-              <div className="text-3xl messiri">
-                <FaClock className="inline-block mr-2 text-3xl my-4" /> Visiting
-                Hours
-              </div>
-              <p className="text-gray-100">
-                Sunday: 08:00 AM - 10:00 PM <br />
-                Monday - Friday: 06:00 AM - 12:00 AM
-              </p>
-            </div>
-          </div>
-          {/* <div className="lg:absolute lg:block hidden  w-[500px] h-[500px] bg-blue-400 z-[-10] rounded-full transform translate-x-[40%] translate-y-[40%] md:opacity-50 opacity-100"></div>
-          <div className="lg:absolute hidden top-0 right-0 z-[-10] w-[500px] h-[500px] lg:bg-blue-600  rounded-full transform translate-x-[0%] translate-y-[0%] md:opacity-50 opacity-100"></div> */}
+        <div className="flex-1 relative flex flex-col px-6 gap-6 text-white">
+  <div
+    className="absolute inset-0"
+    style={{
+      backgroundImage: `url(${pattern})`,
+      backgroundSize: "contain",
+      backgroundPosition: "center",
+      opacity: 0.8,
+      zIndex: -1,
+    }}
+  ></div>
+  
+  <div className="bg-slate-800 rounded-xl py-5 px-6">
+    <div className="text-3xl font-bold flex items-center messiri">
+      <FaLocationDot className="inline-block mr-2 text-3xl " /> Our Location
+    </div>
+    <p className="text-gray-100 mt-2">
+      Gonda Road, Near Vinayak Resorts, Bharaich - 271801 (U.P.)
+    </p>
+  </div>
+  
+  <div className="bg-primary rounded-xl py-5 px-6">
+    <div className="text-3xl font-bold flex items-center messiri">
+      <FaPhone className="inline-block mr-2 text-3xl rotate-90" /> Connect with Us
+    </div>
+    <p className="text-gray-100 mt-2">
+      CALL:{" "}
+      <a href="tel:+917840060096" className="hover:text-white">
+        +91-7840060096
+      </a>
+      ,{" "}
+      <a href="tel:+917840060096" className="hover:text-white">
+        +91-7840060096
+      </a>
+    </p>
+  </div>
+  
+  <div className="bg-blue-900 rounded-xl py-5 px-6">
+    <div className="text-3xl font-bold flex items-center messiri">
+      <FaClock className="inline-block mr-2 text-3xl " /> Visiting Hours
+    </div>
+    <p className="text-gray-100 mt-2">
+      Sunday: 08:00 AM - 10:00 PM <br />
+      Monday - Friday: 06:00 AM - 12:00 AM
+    </p>
+  </div>
+  
+  <div className="flex md:space-x-4 space-x-3 justify-center items-center text-xl p-6">
+    <a
+      href="#"
+      className="p-4 w-12 h-12 flex hover:-rotate-12 hover:scale-110 justify-center items-center rounded-full bg-gradient-to-r from-blue-800 to-blue-400 hover:text-white transition duration-300 ease-in-out"
+    >
+      <i className="fab fa-facebook-f"></i>
+    </a>
+    <a
+      href="#"
+      className="p-4 w-12 h-12 flex hover:-rotate-12 hover:scale-110  justify-center items-center rounded-full bg-gradient-to-r from-gray-900 via-black to-gray-700 hover:text-white transition duration-300 ease-in-out"
+    >
+      <i className="fab fa-x"></i>
+    </a>
+    <a
+      href="#"
+      className="p-4 w-12 h-12 flex hover:-rotate-12 hover:scale-110 justify-center items-center rounded-full bg-gradient-to-r from-pink-600 via-red-500 to-yellow-200 hover:text-white transition duration-300 ease-in-out"
+    >
+      <i className="fab fa-instagram"></i>
+    </a>
+    <a
+      href="#"
+      className="p-4 w-12 h-12 flex hover:-rotate-12 hover:scale-110 justify-center items-center rounded-full bg-gradient-to-r from-red-600 via-red-500 to-yellow-500 hover:text-white transition duration-300 ease-in-out"
+    >
+      <i className="fab fa-youtube"></i>
+    </a>
+    <a
+      href="#"
+      className="p-4 w-12 h-12 flex hover:-rotate-12 hover:scale-110 justify-center items-center rounded-full bg-gradient-to-r from-blue-700 via-blue-500 to-blue-300 hover:text-white transition duration-300 ease-in-out"
+    >
+      <i className="fab fa-linkedin-in"></i>
+    </a>
+    <a
+      href="#"
+      className="p-4 w-12 h-12 flex hover:-rotate-12 hover:scale-110 justify-center items-center rounded-full bg-gradient-to-r from-red-400 via-red-600 to-pink-500 hover:text-white transition duration-300 ease-in-out"
+    >
+      <i className="fab fa-google-plus-g"></i>
+    </a>
+  </div>
+</div>
+
+        
 
           {/* Enquiry Form */}
           <div className="flex-2 px-2">

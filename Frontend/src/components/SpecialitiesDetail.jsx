@@ -34,15 +34,15 @@ const SpecialtyDetail = () => {
         title={specialty.title}
       />
 
-      <div className="container mx-auto px-4 pt-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <div className="px-4  pt-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {/* Left Section */}
-          <div className="md:col-span-8 bg-gray-100 p-6 rounded-2xl">
+          <div className="md:col-span-8 bg-gray-10 md:p-6 rounded-2xl">
             <div className="relative mb-6">
-              <h2 className="text-2xl font-semibold messiri text-primary">
+              <h2 className="md:text-2xl text-xl font-semibold messiri text-primary">
                 Overview - Best {specialty.title} Hospital in Bahraich
               </h2>
-              <p className="text-gray-700 text-base text-justify leading-relaxed">
+              <p className="text-gray-700 md:mt-0 mt-2 text-base text-justify leading-relaxed">
                 {specialty.description}
               </p>
               <div
@@ -66,7 +66,7 @@ const SpecialtyDetail = () => {
 
             {/* Services Section */}
             <div className="pt-6">
-              <h2 className="text-2xl font-semibold messiri text-primary mb-4">
+              <h2 className="md:text-2xl text-xl font-semibold messiri text-primary mb-4">
                 Our Specialized Services
               </h2>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-700">
@@ -84,10 +84,10 @@ const SpecialtyDetail = () => {
             {/* Details Section */}
             {specialty.details.map((item, index) => (
               <div key={index} className="mt-6">
-                <h3 className="text-2xl font-semibold text-primary messiri">
+                <h3 className="md:text-2xl text-xl mb-1 font-semibold text-primary messiri">
                   {item.title}
                 </h3>
-                <ul className="list-disc px-4 text-justify list-inside text-gray-700 space-y-1">
+                <ul className="list-disc px-4 text-justify  text-gray-700 space-y-1">
                   {item.description.map((li, i) => (
                     <li key={i} className="font-semibold">
                       {li.split(":")[0]}:{" "}
@@ -141,7 +141,7 @@ const SpecialtyDetail = () => {
 
       {/* FAQ Section */}
       <div className="container mx-auto px-8 py-6 bg-primary rounded my-8">
-        <h2 className="text-2xl messiri font-semibold text-white mb-4">
+        <h2 className="md:text-2xl text-xl messiri font-semibold text-white mb-4">
           Frequently Asked Questions
         </h2>
         <FAQSection faqs={specialty.faqs} />

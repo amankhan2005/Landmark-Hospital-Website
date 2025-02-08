@@ -18,7 +18,6 @@ function GalleryPage() {
 
   const dispatch = useDispatch();
   const { galleryData, status, error } = useSelector((state) => state.data);
-  console.log(galleryData, status, error);
   useEffect(() => {
     dispatch(fetchGalleryData());
   }, [dispatch]);

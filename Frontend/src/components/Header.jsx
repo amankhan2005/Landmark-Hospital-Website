@@ -18,7 +18,7 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/">
-            <img src={logo} alt="Hope Hospital Logo" className="w-44" />
+            <img src={logo} alt="Hope Hospital Logo" className="w-44 h-full" />
           </Link>
         </div>
 
@@ -37,7 +37,7 @@ export default function Header() {
 
           {/* Mobile Menu */}
           <div
-            className={`fixed top-0 right-0 h-full w-52 bg-white shadow-lg transform ${
+            className={`fixed top-0 right-0 h-full w-60  bg-white shadow-2xl transform ${
               isMobileMenuOpen ? "translate-x-0 overflow-hidden" : "translate-x-full overflow-hidden"
             } transition-transform duration-300 ease-in-out lg:hidden shadow-2xl`}
           >
@@ -55,10 +55,10 @@ export default function Header() {
             >
               ✕
             </button>
-            <ul className="text-gray-800 font-semibold space-y-4 px-2  mt-5 ">
+            <ul className="text-gray-800 font-semibold space-y-4 px-2 ps-6  mt-5 ">
               <li
                 className={`hover-text-primary ${
-                  location.pathname === "/" ? "text-blue-500" : ""
+                  location.pathname === "/" ? "text-primary" : ""
                 }`}
               >
                 <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
@@ -169,7 +169,7 @@ export default function Header() {
               <li
                 className={`hover-text-primary  ${
                   location.pathname === "/cases"
-                    ? "border-b-2 border-blue-500"
+                    ? "text-primary"
                     : ""
                 }`}
               >
@@ -178,7 +178,7 @@ export default function Header() {
               <li
                 className={`hover-text-primary  ${
                   location.pathname === "/testimonials"
-                    ? "border-b-2 border-blue-500"
+                    ? "text-primary"
                     : ""
                 }`}
               >
@@ -187,7 +187,7 @@ export default function Header() {
               <li
                 className={`hover-text-primary  ${
                   location.pathname === "/blog"
-                    ? "border-b-2 border-blue-500"
+                    ? "text-primary"
                     : ""
                 }`}
               >
@@ -196,7 +196,7 @@ export default function Header() {
               <li
                 className={`hover-text-primary  ${
                   location.pathname === "/gallery"
-                    ? "border-b-2 border-blue-500"
+                    ? "text-primary"
                     : ""
                 }`}
               >
@@ -205,7 +205,7 @@ export default function Header() {
               <li
                 className={`hover-text-primary ${
                   location.pathname === "/contact"
-                    ? "border-b-2 border-blue-500"
+                    ? "text-primary"
                     : ""
                 }`}
               >
@@ -220,7 +220,7 @@ export default function Header() {
         <ul className="hidden lg:flex space-x-8 text-gray-800 font-semibold">
           <li
             className={`hover-text-primary  ${
-              location.pathname === "/" ? "border-b-2  border-[#1b4d94]" : ""
+              location.pathname === "/" ? " text-primary" : ""
             }`}
           >
             <Link to="/">Home</Link>
@@ -326,7 +326,7 @@ export default function Header() {
           </li>
           <li
             className={`hover-text-primary  ${
-              location.pathname === "/cases" ? "border-b-2 border-blue-500" : ""
+              location.pathname === "/cases" ? "text-primary" : ""
             }`}
           >
             <Link to="/cases">Cases</Link>
@@ -334,7 +334,7 @@ export default function Header() {
           <li
             className={`hover-text-primary  ${
               location.pathname === "/testimonials"
-                ? "border-b-2 border-blue-500"
+                ? "text-primary"
                 : ""
             }`}
           >
@@ -342,7 +342,7 @@ export default function Header() {
           </li>
           <li
             className={`hover-text-primary  ${
-              location.pathname === "/blog" ? "border-b-2 border-blue-500" : ""
+              location.pathname === "/blog" ? "text-primary" : ""
             }`}
           >
             <Link to="/blog">Blog</Link>
@@ -350,7 +350,7 @@ export default function Header() {
           <li
             className={`hover-text-primary  ${
               location.pathname === "/gallery"
-                ? "border-b-2 border-blue-500"
+                ? "text-primary"
                 : ""
             }`}
           >
@@ -359,7 +359,7 @@ export default function Header() {
           <li
             className={`hover-text-primary  ${
               location.pathname === "/contact"
-                ? "border-b-2 border-blue-500"
+                ? "text-primary"
                 : ""
             }`}
           >

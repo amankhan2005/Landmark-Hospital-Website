@@ -15,7 +15,7 @@ const Specialities = () => {
         ]}
         title='Our Specialities'
       />
-      <div className=" md:pb-0 md:pt-20 md:px-10 px-2">
+      <div className=" md:pb-0 md:pt-20 pt-12 md:px-10 px-2">
 
    <SpecilitesComponent/>
       </div>

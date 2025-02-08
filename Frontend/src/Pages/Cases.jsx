@@ -78,9 +78,9 @@ const Cases = () => {
               <h3 className="md:text-xl text-base font-semibold text-center">
                 {caseItem.title}
               </h3>
-              <p className="text-gray-600 line-clamp-2 text-sm text-center">
+              {/* <p className="text-gray-600 line-clamp-2 text-sm text-center">
                 {caseItem.description}
-              </p>
+              </p> */}
             </div>
           </div>
         ))}

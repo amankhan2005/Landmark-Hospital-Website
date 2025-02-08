@@ -84,6 +84,7 @@ export default function HeroSlider() {
             <img
               src={slide.image}
               alt={slide.title}
+              loading="lazy"
               className="w-full md:h-full md:object-cover object-contain"
             />
 

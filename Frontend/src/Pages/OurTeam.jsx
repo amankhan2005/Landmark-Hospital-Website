@@ -112,7 +112,7 @@ function OurTeam() {
         {status === "loading" && <p>Loading team members...</p>}
         {error && <p className="text-red-500">{error}</p>}
         {teamMembers.map((member, index) => (
-         <TeamMemberCard member={member} />
+         <TeamMemberCard member={member} key={index} />
         ))}
       </div>
 
@@ -207,9 +207,9 @@ export default OurTeam;
 
 
 const TeamMemberCard = ({ member }) => (
-  <div className="group border-b-4 border-white hover:border-[#1b4d94] transition-all duration-300 flex flex-col md:flex-row items-center gap-4 p-4 bg-white rounded-lg shadow-md">
+  <div className="group border-b-4 border-white hover:border-[#1b4d94] transition-all duration-300 flex flex-row items-center gap-4 p-4 bg-white rounded-lg shadow-md">
     {/* Image Section */}
-    <div className="flex-1 w-36 h-40 overflow-hidden rounded-lg shadow-md">
+    <div className="flex-1 w-36 h-44 overflow-hidden rounded-lg shadow-md">
       <img
         src={member?.imageUrl || "https://via.placeholder.com/150"}
         alt={member?.name || "Team member"}
@@ -222,9 +222,9 @@ const TeamMemberCard = ({ member }) => (
       <h3 className="text-base font-semibold text-gray-900">
         {member?.name || "Unknown"}
       </h3>
-      <p className="text-sm text-gray-600">{member?.degree || "N/A"}</p>
-      <p className="text-sm text-gray-600">{member?.specialty || "N/A"}</p>
-      <p className="text-sm text-gray-500">{member?.location || "N/A"}</p>
+      <p className="text-sm font-semibold text-gray-600">{member?.specialty || "N/A"}</p>
+      <p className="text-sm text-gray-600 mt-2">{member?.degree || "N/A"}</p>
+      {/* <p className="text-sm text-gray-500">{member?.location || "N/A"}</p> */}
       <Link to='/contact'  className="mt-4 text-center block px-4 py-2 text-xs text-white bg-primary rounded-full cursor-pointer">
         Request Appointment
       </Link>

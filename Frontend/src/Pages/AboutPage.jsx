@@ -26,17 +26,17 @@ function AboutPage() {
         ]}
         title="About Hope Hospital"
       />
-      <div className="md:p-8 pt-10">
+      <div className="md:p-8 md:pt-10 pt-4">
         {/* Story Section */}
-        <section className="flex flex-col md:flex-row items-center gap-8 bg-gray-100 md:p-8 p-2 rounded-lg shadow-md">
+        <section className="flex flex-col md:flex-row items-center gap-8 md:bg-gray-100 md:p-8 p-2 rounded-lg shadow-md">
           <div className="md:w-1/2 w-full">
             <img
               src={about}
               alt="Hopr Hospital"
-              className="rounded-lg w-full h-[80vh] shadow-lg"
+              className="rounded-lg w-full md:h-[80vh] shadow-lg"
             />
           </div>
-          <div className="md:w-1/2 w-full">
+          <div className="md:w-1/2 w-full md:px-0 px-2">
             <h2 className="md:text-4xl text-2xl font-bold text-primary messiri md:mb-4">
               The Story of Hope Hospital
             </h2>
@@ -61,25 +61,24 @@ function AboutPage() {
             <p className="text-gray-800 text-sm md:text-base leading-relaxed">
               "Your health is our priority—where expertise meets excellence."
             </p>
-            <div className="flex mt-2 gap-4">
-              <a
-                href="/contact"
-                className="text-primary-hover hover:underline underline-offset-2 pr-4 border-r-2 rounded  border-[#1b4d94]"
+            <div className="flex mt-2 md:gap-4 gap-2">
+              <Link
+                to="/contact"
+                className="text-primary-hover hover:underline underline-offset-2 md:pr-4 pr-2 border-r-2 rounded  border-[#1b4d94]"
+              > Contact Us
+              </Link>
+              <Link
+                to="/specialities"
+                className="text-primary-hover hover:underline underline-offset-2 md:pr-4 pr-2 border-r-2 rounded  border-[#1b4d94]"
               >
-                Contact Us
-              </a>
-              <a
-                href="/specialities"
-                className="text-primary-hover hover:underline underline-offset-2 pr-4 border-r-2 rounded  border-[#1b4d94]"
-              >
-                Our Specialties
-              </a>
-              <a
-                href="/facilities"
+               <span className="hidden md:flex">Our</span> Specialties
+              </Link>
+              <Link
+                to="/facilities"
                 className="text-primary-hover hover:underline underline-offset-2"
               >
-                Our Facilities
-              </a>
+               <span className="hidden md:flex"></span> Our Facilities
+              </Link>
             </div>
           </div>
         </section>
@@ -87,7 +86,7 @@ function AboutPage() {
         {/* Vision, Mission, Values Section */}
         <section className="mt-6">
           {/* <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">Our Vision, Mission, and Values</h2> */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-4 px-2 md:px-0">
             <div className=" p-6 rounded-lg shadow-md relative">
               <div
                 className="absolute inset-0"
@@ -99,10 +98,10 @@ function AboutPage() {
                   zIndex: 0,
                 }}
               ></div>
-              <h3 className="text-2xl font-semibold text-primary messiri">
+              <h3 className="md:text-2xl text-xl font-semibold text-primary messiri">
                 Our Vision
               </h3>
-              <p className="mt-4 text-gray-600">
+              <p className="md:mt-4 text-gray-600">
                 To be the leading healthcare institution known for innovation,
                 excellence, and compassion in providing quality medical care.
               </p>
@@ -118,10 +117,10 @@ function AboutPage() {
                   zIndex: 0,
                 }}
               ></div>
-              <h3 className="text-2xl font-semibold text-primary messiri">
+              <h3 className="md:text-2xl text-xl font-semibold text-primary messiri">
                 Our Mission
               </h3>
-              <p className="mt-4 text-gray-600">
+              <p className="md:mt-4 text-gray-600">
                 To deliver exceptional healthcare services with a focus on
                 accessibility, affordability, and patient satisfaction, while
                 advancing medical research and education.
@@ -138,10 +137,10 @@ function AboutPage() {
                   zIndex: 0,
                 }}
               ></div>
-              <h3 className="text-2xl font-semibold text-primary messiri">
+              <h3 className="md:text-2xl text-xl font-semibold text-primary messiri">
                 Our Values
               </h3>
-              <p className="mt-4 text-gray-600">
+              <p className="md:mt-4 text-gray-600">
                 Compassion, Integrity, Excellence, Innovation, and Collaboration
                 form the core of our values.
               </p>
@@ -150,13 +149,13 @@ function AboutPage() {
         </section>
 
         {/* Our Experts Section */}
-        <section className="lg:py-12 md:py-10 py-8 mt-6 bg-gray-100">
-          <h2 className="md:text-3xl text-2xl messiri text-primary font-bold  text-center mb-8">
+        <section className="lg:py-12 px-4 md:py-10 py-8 mt-6 bg-gray-100">
+          <h2 className="md:text-3xl text-xl messiri text-primary font-bold  text-center mb-8">
             Meet Our Experts
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 md:px-4">
-            {teamData.map((member) => (
-              <TeamMemberCard member={member} />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:px-4">
+            {teamData.map((member,i) => (
+              <TeamMemberCard member={member} key={i} />
             ))}
           </div>
         </section>
@@ -212,9 +211,9 @@ function AboutPage() {
 export default AboutPage;
 
 const TeamMemberCard = ({ member }) => (
-  <div className="group border-b-4 border-white hover:border-[#1b4d94] transition-all duration-300 flex flex-col md:flex-row items-center gap-4 p-4 bg-white rounded-lg shadow-md">
+  <div className="group border-b-4 border-white hover:border-[#1b4d94] transition-all duration-300 flex flex-col md:flex-row items-center gap-4 md:p-4 py-4 bg-white rounded-lg shadow-md">
     {/* Image Section */}
-    <div className="flex-1 w-36 h-40 overflow-hidden rounded-lg shadow-md">
+    <div className="flex-1 md:w-36 md:h-44 h-52 px-2 md:px-0 overflow-hidden rounded-lg shadow-md">
       <img
         src={member?.imageUrl || "https://via.placeholder.com/150"}
         alt={member?.name || "Team member"}
@@ -227,9 +226,9 @@ const TeamMemberCard = ({ member }) => (
       <h3 className="text-base font-semibold text-gray-900">
         {member?.name || "Unknown"}
       </h3>
-      <p className="text-sm text-gray-600">{member?.degree || "N/A"}</p>
-      <p className="text-sm text-gray-600">{member?.specialty || "N/A"}</p>
-      <p className="text-sm text-gray-500">{member?.location || "N/A"}</p>
+      <p className="text-sm font-semibold text-gray-600">{member?.specialty || "N/A"}</p>
+      <p className="text-sm text-gray-600 mt-2">{member?.degree || "N/A"}</p>
+      {/* <p className="text-sm text-gray-500">{member?.location || "N/A"}</p> */}
       <Link
         to="/contact"
         className="mt-4 block px-4 py-2 text-xs text-white bg-primary rounded-full cursor-pointer"
