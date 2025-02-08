@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import Dashboard from './Pages/Dashboard'
 import AdminLogin from './Pages/Login'
 import ProtectedRoute from './Components/ProtectRoutes'

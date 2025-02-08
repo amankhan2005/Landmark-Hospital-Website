@@ -7,7 +7,7 @@ function SpecilitesComponent({specialty}) {
     
 // console.log(specialty.title)
   return (
-    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ">
+    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 ">
           {specialities.map((speciality, index) => (
             <div className="lg:h-[35vh] h-[17vh] sm:h-[14vh]" key={index}>
             <Link to={`/specialities/${speciality.link}`}
