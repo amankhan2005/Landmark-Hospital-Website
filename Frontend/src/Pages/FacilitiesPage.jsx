@@ -10,15 +10,12 @@ function FacilitiesPage() {
           { label: "Home", link: `/` },
           { label: `Facilities`, link: `/facilities` },
         ]}
-        title='Our Facilities'
+        title='Best Facilities'
       />
-      <div className='md:pt-12 pt-6 md:px-6 px-2'>
+      <div className='md:py-12 pt-6 md:px-6 px-2'>
         <FacilitiesComponent/>
         </div>
-        <div className='md:pt-10 py-6'>
-
-        <ContactUs/>
-        </div>
+ 
     </div>
   )
 }

@@ -13,7 +13,7 @@ const Specialities = () => {
           { label: 'Home', link: `/` },
           { label: `Specialities`, link:`/specialities` },
         ]}
-        title='Our Specialities'
+        title='Best Specialities'
       />
       <div className=" md:pb-0 md:pt-20 pt-12 md:px-10 px-2">
 

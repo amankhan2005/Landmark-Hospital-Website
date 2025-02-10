@@ -123,33 +123,7 @@ function AppointmentForm() {
       </h3>
       {loading && <p className="text-blue-500">Loading...</p>}
       <form className="mt-4 flex flex-col gap-4" onSubmit={handleSubmit}>
-        <select
-          name="department"
-          className="border border-gray-300 p-3 rounded-lg"
-          onChange={handleDepartmentChange}
-          value={formData.department}
-        >
-          <option>Select Department</option>
-          {departments.map((dept, index) => (
-            <option key={index} value={dept}>
-              {dept}
-            </option>
-          ))}
-        </select>
-
-        <select
-          name="doctor"
-          className="border border-gray-300 p-3 rounded-lg"
-          onChange={handleChange}
-          value={formData.doctor}
-        >
-          <option>Select Doctor</option>
-          {doctorsData.map((doc, index) => (
-            <option key={index} value={doc.name}>
-              {doc.name}
-            </option>
-          ))}
-        </select>
+        
 
         <input
           type="text"
@@ -180,7 +154,33 @@ function AppointmentForm() {
           value={formData.email}
         />
         {formErrors.email && <p className="text-red-500">{formErrors.email}</p>}
+        <select
+          name="department"
+          className="border border-gray-300 p-3 rounded-lg"
+          onChange={handleDepartmentChange}
+          value={formData.department}
+        >
+          <option>Select Department</option>
+          {departments.map((dept, index) => (
+            <option key={index} value={dept}>
+              {dept}
+            </option>
+          ))}
+        </select>
 
+        <select
+          name="doctor"
+          className="border border-gray-300 p-3 rounded-lg"
+          onChange={handleChange}
+          value={formData.doctor}
+        >
+          <option>Select Doctor</option>
+          {doctorsData.map((doc, index) => (
+            <option key={index} value={doc.name}>
+              {doc.name}
+            </option>
+          ))}
+        </select>
         <input
           type="date"
           name="date"

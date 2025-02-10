@@ -12,7 +12,7 @@ import banner3 from '../assets/home/banner4.jpg'
 const slides = [
   {
     id: 1,
-    image: `${banner1}`,
+    image: `${banner3}`,
     title: "Explore the World",
     description: "Discover new places and experiences with us.",
     buttonText: "Learn More",
@@ -30,7 +30,7 @@ const slides = [
   },
   {
     id: 3,
-    image:`${banner3}`,
+    image:`${banner1}`,
     title: "Luxury Travel",
     description: "Experience the best in luxury travel.",
     buttonText: "View Packages",

@@ -12,7 +12,7 @@ const services = [
     icon: doctor,
     title: "Qualified Doctors",
     description:
-      "Expert doctors providing care across multiple medical specialties.",
+      "Expert doctors providing care across multiple medical specialities.",
   },
   {
     icon: pharmacy,
@@ -22,7 +22,7 @@ const services = [
   },
   {
     icon: heart,
-    title: "Cardiology Service",
+    title: "Cardiology Services",
     description:
       "Specialized heart care, treatments, and cardiovascular disease management.",
   },
@@ -36,11 +36,11 @@ const services = [
     icon: surgery,
     title: "Surgical Services",
     description:
-      "Advanced surgical care for various specialties and critical conditions.",
+      "Advanced surgical care for various specialities and critical conditions.",
   },
   {
     icon: tooth,
-    title: "Dental Care & Service",
+    title: "Dental Care & Services",
     description:
       "Routine check-ups, cleanings, and advanced oral health treatments.",
   },

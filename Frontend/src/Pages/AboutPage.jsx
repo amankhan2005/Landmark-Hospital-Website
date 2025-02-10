@@ -43,18 +43,18 @@ function AboutPage() {
               The Story of Hope Hospital
             </h2>
             <p className="text-gray-600  text-sm md:text-base  text-justify md:mb-1">
-              Welcome to Hope Hospital, your trusted multi-speciality healthcare
-              provider. We are dedicated to providing exceptional medical care
-              across various specialties, including Cardiology, Orthopedics,
-              General Surgery, Pediatrics, Obstetrics & Gynecology, Neurology,
-              Dermatology, Ophthalmology and Critical Care & Anaesthesia. Our
-              team of highly skilled professionals utilizes state-of-the-art
-              technology to ensure accurate diagnoses and effective treatments
-              tailored to your unique needs. We prioritize patient comfort and
-              satisfaction, fostering a collaborative environment where
-              specialists work together for comprehensive care.
+            Welcome to <b> Hope Hospital </b>, your trusted multi-speciality healthcare
+          provider. We are dedicated to providing exceptional medical care
+          across various specialties, including <b>Cardiology</b>, <b>Orthopedics</b>, <b>General Surgery</b>,
+           <b> Pediatrics</b>, <b>Obstetrics & Gynecology</b>, <b>Neurology</b>, <b>Dermatology</b>,
+          <b> Ophthalmology</b> and <b>Critical Care & Anaesthesia</b>. Our team of highly
+          skilled professionals utilizes state-of-the-art technology to ensure
+          accurate diagnoses and effective treatments tailored to your unique
+          needs. We prioritize patient comfort and satisfaction, fostering a
+          collaborative environment where specialists work together for
+          comprehensive care.
             </p>
-            <p className="text-gray-600 text-sm md:text-base  leading-relaxed text-justify md:mb-1">
+            <p className="text-gray-600 text-sm md:text-base  text-justify md:mb-1">
               With 24/7 emergency services and a commitment to community health,
               Hope Hospital is here to support you at every stage of your
               healthcare journey. Trust us for compassionate, high-quality
@@ -73,7 +73,7 @@ function AboutPage() {
                 to="/specialities"
                 className="text-primary-hover hover:underline underline-offset-2 md:pr-4 pr-2 border-r-2 rounded  border-[#1b4d94]"
               >
-               <span className="hidden md:inline">Our</span> Specialties
+               <span className="hidden md:inline">Our</span> Specialities
               </Link>
               <Link
                 to="/facilities"
@@ -86,7 +86,7 @@ function AboutPage() {
         </section>
 
         {/* Vision, Mission, Values Section */}
-        <section className="mt-6">
+        <section className="mt-8">
           {/* <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">Our Vision, Mission, and Values</h2> */}
           <div className="grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-4 px-2 md:px-0">
             <div className=" p-6 rounded-lg shadow-md relative">
@@ -115,7 +115,7 @@ function AboutPage() {
                   backgroundImage: `url(${pattern})`,
                   backgroundSize: "contain",
                   backgroundPosition: "center",
-                  opacity: 0.7,
+                  opacity: 0.3,
                   zIndex: 0,
                 }}
               ></div>
@@ -135,7 +135,7 @@ function AboutPage() {
                   backgroundImage: `url(${pattern})`,
                   backgroundSize: "contain",
                   backgroundPosition: "center",
-                  opacity: 0.7,
+                  opacity: 0.3,
                   zIndex: 0,
                 }}
               ></div>
@@ -162,12 +162,12 @@ function AboutPage() {
           </div>
         </section> */}
 
-       <section className="mt-4">
-        <SpecialitiesSection/>
-       </section>
-       <section className="mt-2">
+       <section className="md:py-8 py-4">
 
         <Stats/>
+       </section>
+       <section className="">
+        <SpecialitiesSection/>
        </section>
       </div>
     </>

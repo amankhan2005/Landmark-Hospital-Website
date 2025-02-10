@@ -21,18 +21,18 @@ const AboutSection = () => {
           Best Multi Speciality Hospital in Bahraich
         </h1>
         <p className="text-gray-600  text-sm md:text-base  text-justify md:mb-1">
-          Welcome to Hope Hospital, your trusted multi-speciality healthcare
+          Welcome to <b> Hope Hospital </b>, your trusted multi-speciality healthcare
           provider. We are dedicated to providing exceptional medical care
-          across various specialties, including Cardiology, Orthopedics, General
-          Surgery, Pediatrics, Obstetrics & Gynecology, Neurology, Dermatology,
-          Ophthalmology and Critical Care & Anaesthesia. Our team of highly
+          across various specialties, including <b>Cardiology</b>, <b>Orthopedics</b>, <b>General Surgery</b>,
+           <b> Pediatrics</b>, <b>Obstetrics & Gynecology</b>, <b>Neurology</b>, <b>Dermatology</b>,
+          <b> Ophthalmology</b> and <b>Critical Care & Anaesthesia</b>. Our team of highly
           skilled professionals utilizes state-of-the-art technology to ensure
           accurate diagnoses and effective treatments tailored to your unique
           needs. We prioritize patient comfort and satisfaction, fostering a
           collaborative environment where specialists work together for
           comprehensive care.
         </p>
-        <p className="text-gray-600 text-sm md:text-base  leading-relaxed text-justify md:mb-3">
+        <p className="text-gray-600 text-sm md:text-base  text-justify md:mb-3">
           With 24/7 emergency services and a commitment to community health,
           Hope Hospital is here to support you at every stage of your
           healthcare journey. Trust us for compassionate, high-quality care—your

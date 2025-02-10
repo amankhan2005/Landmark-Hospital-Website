@@ -84,7 +84,7 @@ export default function OurTeam() {
         Our dedicated professionals committed to your health.
       </p>
 
-      <div className="md:px-14">
+      <div className="md:px-10">
         <Slider {...sliderSettings}>
           {teamData.map((member,index) => (
             <div className="px-2" key={member._id} data-aos='fade-up' data-aos-delay={index * 200} >

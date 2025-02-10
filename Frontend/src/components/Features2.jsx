@@ -56,7 +56,7 @@ const Features = () => {
         </div>
 
         <Link
-          to="/contact"
+          to="/appointment"
           className="mt-4 text-center border border-white py-2 px-4 rounded hover:bg-white hover:text-blue-600 transition"
         >
           Make an Appointment
@@ -66,7 +66,7 @@ const Features = () => {
       {/* Emergency Cases */}
       <div className="bg-primary text-white md:p-6 p-3 mb-1">
   <h3 className="text-lg font-semibold">Emergency Cases</h3>
-  <a href="7840060096" className="md:mt-4 mt-2 flex items-center gap-2 md:text-xl text-base font-semibold">
+  <a href="tel:7840060096" className="md:mt-4 mt-2 flex items-center gap-2 md:text-xl text-base font-semibold">
     <FaPhoneAlt />
     <span>+91-7840060096</span>
   </a>

@@ -42,14 +42,14 @@ const ContactUs = () => {
     }}
   ></div>
   
-  <div className="bg-slate-800 rounded-xl py-5 px-6">
-    <div className="text-3xl font-bold flex items-center messiri">
+  <a href="https://maps.app.goo.gl/nt8BVHTHFHfzuJL77" className="bg-slate-800 cursor-pointer rounded-xl py-5 px-6">
+    <div href="" className="text-3xl font-bold flex items-center messiri">
       <FaLocationDot className="inline-block mr-2 text-3xl " /> Our Location
     </div>
     <p className="text-gray-100 mt-2">
-      Gonda Road, Near Vinayak Resorts, Bharaich - 271801 (U.P.)
+      Gonda Road, Near Vinayak Resorts, Bahraich - 271801 (U.P.)
     </p>
-  </div>
+  </a>
   
   <div className="bg-primary rounded-xl py-5 px-6">
     <div className="text-3xl font-bold flex items-center messiri">
@@ -57,13 +57,10 @@ const ContactUs = () => {
     </div>
     <p className="text-gray-100 mt-2">
       CALL:{" "}
-      <a href="tel:+917840060096" className="hover:text-white">
+      <a href="tel:7840060096" className="hover:text-white cursor-pointer">
         +91-7840060096
       </a>
-      ,{" "}
-      <a href="tel:+917840060096" className="hover:text-white">
-        +91-7840060096
-      </a>
+      
     </p>
   </div>
   

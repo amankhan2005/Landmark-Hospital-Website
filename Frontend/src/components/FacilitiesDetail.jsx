@@ -38,7 +38,7 @@ const FacilitiesDetail = () => {
           { label: `Facilities`, link: `/facilities` },
           { label: `${title}`, link: `/specialities/${facilitiesName}` },
         ]}
-        title={facilities.title}
+        title={`Best ${facilities.title}`}
       />
       <div className="md:px-6  lg:pt-12 ">
         {/* First Section: Description & Image */}
