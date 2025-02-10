@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const GalleryModal = ({ isOpen, onClose, onSubmit, formData, setFormData, uploadImage }) => {
+const GalleryModal = ({ isOpen, onClose, onSubmit, formData, setFormData, uploadImage ,loading}) => {
     if (!isOpen) return null;
   
     return (
@@ -21,6 +21,7 @@ const GalleryModal = ({ isOpen, onClose, onSubmit, formData, setFormData, upload
             <div className="mb-3">
               <img src={formData.imageUrl} alt="Preview" className="w-full h-40 object-cover rounded" />
               <button
+              disabled={loading}
                 className="mt-2 bg-red-600 text-white px-4 py-1 rounded w-full"
                 onClick={() => setFormData({ ...formData, imageUrl: "" })} // Remove image
               >
@@ -44,7 +45,7 @@ const GalleryModal = ({ isOpen, onClose, onSubmit, formData, setFormData, upload
             disabled={formData.imageUrl && formData.imageUrl !== ""} 
           />
   
-          <button onClick={onSubmit} className="bg-blue-600 text-white px-4 py-2 rounded w-full">
+          <button disabled={loading} onClick={onSubmit} className="bg-blue-600 text-white px-4 py-2 rounded w-full">
             {formData._id ? "Update" : "Add"} Image
           </button>
           
@@ -207,6 +208,7 @@ const GalleryDashboard = () => {
         formData={formData}
         setFormData={setFormData}
         uploadImage={uploadImage}
+        loading={loading}
       />
     </div>
   );

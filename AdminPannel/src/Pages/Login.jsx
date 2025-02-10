@@ -89,7 +89,7 @@ function AdminLogin() {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
+            className={` ${loading?'cursor-not-allowed':''} w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300`}
             disabled={loading}
           >
             {loading ? 'Logging in...' : 'Log In'}

@@ -42,8 +42,8 @@ const Home = () => {
   return (
     <>
         {/* <h1 className="text-3xl font-semibold text-center text-gray-900 mb-4">Hello Admin</h1> */}
-    <div className="bg-gray-100 max-h-[70vh] overflow-scroll py-6 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-gray-100   py-6 px-4 sm:px-6 lg:px-8">
+      <div className="">
         {/* Greeting */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">

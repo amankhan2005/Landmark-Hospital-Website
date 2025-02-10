@@ -49,6 +49,9 @@ const Dashboard = () => {
     if(adminData){
       setUser(adminData?.user?.email || 'Admin')
     }
+    else{
+      setUser('Admin')
+    }
 
   },[])
 
@@ -80,9 +83,9 @@ const Dashboard = () => {
   
 
   return (
-    <div className="flex flex-col sm:flex-row h-screen">
+    <div className="flex flex-col sm:flex-row ">
       {/* Sidebar */}
-      <div className="bg-gray-800 text-white w-full sm:w-64 p-6">
+      <div className="bg-gray-800 text-white min-h-screen  sm:w-64 p-6">
         <div className="text-2xl font-semibold mb-6">Dashboard</div>
         <SidebarItem name="Home" icon={<FaHome />} onClick={setSection} />
         <SidebarItem name="Team" icon={<FaUsers />} onClick={setSection} />
@@ -113,7 +116,7 @@ const Dashboard = () => {
         </div>
 
         {/* Section Content */}
-        <div className="p-6">
+        <div className="">
           <DashboardContent section={section} />
         </div>
       </div>

@@ -6,18 +6,25 @@ const InquiryData = () => {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [loadcount,setLoadCount] = useState()
+
   const api = import.meta.env.VITE_API_URL;
 
   const fetchAppointments = async () => {
     try {
       const response = await axios.get(`${api}/inquiry/getall`);
       setAppointments(response.data);
-      setLoading(false);
+      setLoadCount(5);
     } catch (err) {
       setError("Error fetching data");
+    } finally {
       setLoading(false);
     }
   };
+  
+
+
+
   useEffect(() => {
 
     fetchAppointments();
@@ -54,13 +61,17 @@ const InquiryData = () => {
     }
   };
 
+  const onMore = () => {
+    setLoadCount((prevCount) => Math.min(prevCount + 5, appointments.length));
+  };
+  
 
   return (
-    <div className="overflow-auto">
-      <h2 className="text-2xl font-bold mb-4 text-center">Patient Inquiries</h2>
+    <div className="">
+      <h2 className="text-2xl font-bold mb-4 text-center">Recent Patient Inquiries</h2>
       <table className="min-w-full table-auto border-collapse">
         <thead>
-          <tr>
+          <tr className=" ">
             <th className="border px-4 py-2">Department</th>
             <th className="border px-4 py-2">Requested Doctor</th>
             <th className="border px-4 py-2">Patient Name</th>
@@ -72,7 +83,7 @@ const InquiryData = () => {
           </tr>
         </thead>
         <tbody>
-          {appointments?.map((appointment) => (
+          {appointments?.slice(0,loadcount).reverse()?.map((appointment) => (
             <tr key={appointment._id}>
               <td className="border px-4 py-3">{appointment.department}</td>
               <td className="border px-4 py-3">{appointment.requestedDoctor}</td>
@@ -90,6 +101,11 @@ const InquiryData = () => {
           ))}
         </tbody>
       </table>
+      <div className={`text-center ${loadcount == appointments.length && 'hidden'}`} >
+      <button className="cursor-pointer rounded text-center text-white bg-blue-600 hover:bg-blue-700 px-2 py-1 font-semibold mt-3" onClick={onMore}>
+  Show More
+</button>
+</div>
     </div>
   );
 };

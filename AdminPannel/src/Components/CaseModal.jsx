@@ -99,7 +99,7 @@ const CaseModal = ({ caseData, onClose }) => {
             {formData.imageUrl && <img src={formData.imageUrl} alt="Uploaded" className="mt-2 w-20 h-20 object-cover" />}
           </div>
           <div className="flex justify-between">
-            <button type="submit" className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
+            <button disabled={loading} type="submit" className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
               {caseData ? "Update" : "Save"} Case
             </button>
             <button type="button" className="bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500" onClick={onClose}>
