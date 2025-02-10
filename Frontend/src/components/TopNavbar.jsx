@@ -1,3 +1,5 @@
+import { FaXTwitter } from "react-icons/fa6";
+import {Link} from 'react-router-dom'
 export default function TopNavBar() {
     return (
       <header className="bg-primary text-white">
@@ -13,11 +15,14 @@ export default function TopNavBar() {
               <span className="md:text-base text-xs line-clamp-1">Gonda Road, Near Vinayak Resorts, Bahraich - 271801 (U.P.)</span>
             </a>
           </div>
+          <Link to='/appointment' className="flex gap-2 shadow-2xl rounded py-1 bg-white px-2 text-primary font-semibold animate-pulse">
+            <span className=""><i class="fa-solid fa-calendar-check"></i></span><span>Book Appointment</span>
+          </Link>
   
           {/* Right side: Social media icons */}
-          <div className="flex md:space-x-6 space-x-3 md:text-lg text-sm">
+          <div className="flex md:space-x-6 space-x-3 md:text-lg text-sm justify-center items-center">
             <a href="#" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300"><i className="fab fa-facebook-f"></i></a>
-            <a href="#" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300"><i className="fab fa-twitter"></i></a>
+            <a href="#" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300"><FaXTwitter/></a>
             <a href="#" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300"><i className="fab fa-instagram"></i></a>
             <a href="#" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300"><i className="fab fa-youtube"></i></a>
             <a href="#" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300"><i className="fab fa-linkedin-in"></i></a>

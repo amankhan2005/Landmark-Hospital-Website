@@ -1,4 +1,5 @@
 import React from "react";
+import {FaXTwitter} from 'react-icons/fa6'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -21,7 +22,7 @@ const handletop = ()=>{
 const Footer = () => {
   return (
     <>
-      <footer className="bg-primary text-white pt-8 pb-3 border-b ">
+      <footer className="bg-primary text-white py-8 border-b ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-2 gap-8">
             {/* Contact Section */}
@@ -30,7 +31,7 @@ const Footer = () => {
                 Get In Touch With Us
               </h4>
               <ul>
-                <li className="flex items-center mb-3">
+                <li className="flex items-center mb-2">
                   <FontAwesomeIcon icon={faEnvelope} className="mr-2 " />
                   <a
                     href="mailto:hospital@gmail.com"
@@ -39,7 +40,7 @@ const Footer = () => {
                     hospital@gmail.com
                   </a>
                 </li>
-                <li className="flex items-center mb-3">
+                <li className="flex items-center mb-2">
                   <FontAwesomeIcon icon={faPhone} className="mr-2 " />
                   <a href="tel:+917840060096" className="hover:underline">
                     +917840060096
@@ -58,7 +59,7 @@ const Footer = () => {
                     <i className="fab fa-facebook-f"></i>
                   </a>
                   <a href="#" className="hover:text-gray-200 text-xl hover:scale-125">
-                    <i className="fab fa-twitter"></i>
+                  <FaXTwitter />
                   </a>
                   <a href="#" className="hover:text-gray-200 text-xl hover:scale-125">
                     <i className="fab fa-instagram"></i>
@@ -108,7 +109,7 @@ const Footer = () => {
               <h4 className="text-2xl font-semibold md:mb-4 mb-2 messiri">
                 Our Specialities
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-0.5">
                 {specialities.map((item,index) => (
                   <li key={index}>
                     {/* <span><img src={item.image} className="h-6 mr-2 bg-white p-0.5 rounded-full inline-block"/></span> */}
@@ -131,7 +132,7 @@ const Footer = () => {
               <h4 className="text-2xl font-semibold md:mb-4 mb-2 messiri">
                 Quick Links
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 <li>
                 <FaChevronCircleRight className="inline-block mr-2" />
                   <Link to="/" className="hover:underline" onClick={handletop}>

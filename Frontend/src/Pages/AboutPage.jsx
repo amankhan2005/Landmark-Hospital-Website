@@ -9,6 +9,8 @@ import pattern1 from "../assets/pattern1.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTeamData } from "../redux/slices/dataslice";
 import { Link } from "react-router-dom";
+import SpecialitiesSection from "../components/SpecialitiesSection";
+import Stats from "../components/Stats";
 function AboutPage() {
   const dispatch = useDispatch();
   const { teamData, loading, error } = useSelector((state) => state.data);
@@ -94,7 +96,7 @@ function AboutPage() {
                   backgroundImage: `url(${pattern})`,
                   backgroundSize: "contain",
                   backgroundPosition: "center",
-                  opacity: 0.7,
+                  opacity: 0.3,
                   zIndex: 0,
                 }}
               ></div>
@@ -149,7 +151,7 @@ function AboutPage() {
         </section>
 
         {/* Our Experts Section */}
-        <section className="lg:py-12 px-4 md:py-10 py-8 mt-6 bg-gray-100">
+        {/* <section className="lg:py-12 px-4 md:py-10 py-8 mt-6 bg-gray-100">
           <h2 className="md:text-3xl text-xl messiri text-primary font-bold  text-center mb-8">
             Meet Our Experts
           </h2>
@@ -158,51 +160,15 @@ function AboutPage() {
               <TeamMemberCard member={member} key={i} />
             ))}
           </div>
-        </section>
+        </section> */}
 
-        {/* History Section */}
-        <section className=" flex flex-col md:flex-row justify-between  gap-6">
-          {/* <div className='px-14'>
-        <h2 className="text-3xl font-bold text-primary text-center mb-8 messiri">Our History</h2>
-        <div className="relative border-l-2 border-blue-700 pl-8  ">
-          {[
-            { year: "2000", event: "Founded with the vision of providing quality healthcare." },
-            { year: "2005", event: "Expanded facilities with advanced medical technologies." },
-            { year: "2010", event: "Opened specialized departments for comprehensive care." },
-            { year: "2020", event: "Achieved accreditation for excellence in healthcare services." },
-          ].map((item, index) => (
-            <div key={index} className="mb-8">
-              <div className="absolute w-6 h-6 bg-blue-700 rounded-full -left-3"></div>
-              <h3 className="text-lg font-semibold text-gray-800">{item.year}</h3>
-              <p className="mt-2 text-gray-600">{item.event}</p>
-            </div>
-          ))}
-        </div>
-        </div> */}
-         <div className="relative flex w-full">
-  {/* Background Pattern */}
-  <div
-    className="absolute inset-0 z-[-1]"
-    style={{
-      backgroundImage: `url(${pattern1})`,
-      backgroundSize: "contain",
-      backgroundPosition: "center",
-      opacity: 0.4,
-    }}
-  ></div>
+       <section className="mt-4">
+        <SpecialitiesSection/>
+       </section>
+       <section className="mt-2">
 
-  {/* Appointment Image (Visible on medium screens and above) */}
-  <div className="md:block hidden flex-1">
-    <img src={appoint} alt="appointmentPhoto" className="max-w- w-auto" />
-  </div>
-
-  {/* Appointment Form */}
-  <div className="w-full flex-1 px-4 md:px-8 py-6">
-    <AppointmentForm />
-  </div>
-</div>
-
-        </section>
+        <Stats/>
+       </section>
       </div>
     </>
   );
@@ -210,31 +176,31 @@ function AboutPage() {
 
 export default AboutPage;
 
-const TeamMemberCard = ({ member }) => (
-  <div className="group border-b-4 border-white hover:border-[#1b4d94] transition-all duration-300 flex flex-col md:flex-row items-center gap-4 md:p-4 py-4 bg-white rounded-lg shadow-md">
-    {/* Image Section */}
-    <div className="flex-1 md:w-36 md:h-44 h-52 px-2 md:px-0 overflow-hidden rounded-lg shadow-md">
-      <img
-        src={member?.imageUrl || "https://via.placeholder.com/150"}
-        alt={member?.name || "Team member"}
-        className="w-full h-full object-cover"
-      />
-    </div>
+// const TeamMemberCard = ({ member }) => (
+//   <div className="group border-b-4 border-white hover:border-[#1b4d94] transition-all duration-300 flex flex-col md:flex-row items-center gap-4 md:p-4 py-4 bg-white rounded-lg shadow-md">
+//     {/* Image Section */}
+//     <div className="flex-1 md:w-36 md:h-44 h-52 px-2 md:px-0 overflow-hidden rounded-lg shadow-md">
+//       <img
+//         src={member?.imageUrl || "https://via.placeholder.com/150"}
+//         alt={member?.name || "Team member"}
+//         className="w-full h-full object-cover"
+//       />
+//     </div>
 
-    {/* Content Section */}
-    <div className="flex-1 text-left">
-      <h3 className="text-base font-semibold text-gray-900">
-        {member?.name || "Unknown"}
-      </h3>
-      <p className="text-sm font-semibold text-gray-600">{member?.specialty || "N/A"}</p>
-      <p className="text-sm text-gray-600 mt-2">{member?.degree || "N/A"}</p>
-      {/* <p className="text-sm text-gray-500">{member?.location || "N/A"}</p> */}
-      <Link
-        to="/contact"
-        className="mt-4 block px-4 py-2 text-xs text-white bg-primary rounded-full cursor-pointer"
-      >
-        Request Appointment
-      </Link>
-    </div>
-  </div>
-);
+//     {/* Content Section */}
+//     <div className="flex-1 text-left">
+//       <h3 className="text-base font-semibold text-gray-900">
+//         {member?.name || "Unknown"}
+//       </h3>
+//       <p className="text-sm font-semibold text-gray-600">{member?.specialty || "N/A"}</p>
+//       <p className="text-sm text-gray-600 mt-2">{member?.degree || "N/A"}</p>
+//       {/* <p className="text-sm text-gray-500">{member?.location || "N/A"}</p> */}
+//       <Link
+//         to="/contact"
+//         className="mt-4 block px-4 py-2 text-xs text-white bg-primary rounded-full cursor-pointer"
+//       >
+//         Request Appointment
+//       </Link>
+//     </div>
+//   </div>
+// );

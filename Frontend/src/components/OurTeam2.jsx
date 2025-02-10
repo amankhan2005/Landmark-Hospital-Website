@@ -22,10 +22,10 @@ const TeamMemberCard = ({ member }) => (
       <h3 className="text-base font-semibold text-gray-900">
         {member?.name || "Unknown"}
       </h3>
-      <p className="text-sm font-semibold text-gray-600">{member?.specialty || "N/A"}</p>
+      <p className="text-sm font-medium text-gray-600"><span className="font-semibold">Head</span> - Department of {member?.specialty || "N/A"}</p>
       <p className="text-sm text-gray-600 mt-2">{member?.degree || "N/A"}</p>
       {/* <p className="text-sm text-gray-500">{member?.location || "N/A"}</p> */}
-      <Link to='/contact'  className="mt-4 block px-4 py-2 text-xs text-white bg-primary rounded-full cursor-pointer">
+      <Link to='/appointment'  className="mt-4 block px-4 py-2 text-xs text-white bg-primary rounded-full cursor-pointer">
         Request Appointment
       </Link>
     </div>
@@ -84,7 +84,7 @@ export default function OurTeam() {
         Our dedicated professionals committed to your health.
       </p>
 
-      <div className="md:px-10">
+      <div className="md:px-14">
         <Slider {...sliderSettings}>
           {teamData.map((member,index) => (
             <div className="px-2" key={member._id} data-aos='fade-up' data-aos-delay={index * 200} >

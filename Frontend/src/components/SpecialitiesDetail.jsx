@@ -42,7 +42,7 @@ const SpecialtyDetail = () => {
               <h2 className="md:text-2xl text-xl font-semibold messiri text-primary">
                 Overview - Best {specialty.title} Hospital in Bahraich
               </h2>
-              <p className="text-gray-700 md:mt-0 mt-2 text-base text-justify leading-relaxed">
+              <p className="text-gray-700 md:mt-0 mt-2 text-base text-left leading-relaxed">
                 {specialty.description}
               </p>
               <div
@@ -108,7 +108,7 @@ const SpecialtyDetail = () => {
               <h3 className="text-2xl font-semibold text-white messiri mb-4">
                 Other Specialities
               </h3>
-              <div className="space-y-2">
+              <div className="space-y-4">
                 {specialities
                   .filter((item) => item.title !== specialty.title)
                   .map((item) => (

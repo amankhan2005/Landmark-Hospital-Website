@@ -73,7 +73,7 @@ function GalleryPage() {
             onClick={() => openModal(idx)}
           >
             <div className="absolute inset-0 flex top-0 z-10 justify-center items-center opacity-0 group-hover:opacity-100 transition">
-              <FaPlus className="text-white bg-black/50 rounded-full p-2 w-12 h-12" />
+              <FaPlus className="text-white bg-black/50 rounded-full p-2 w-10 h-10" />
             </div>
             <img
               className="w-full h-48 object-cover"

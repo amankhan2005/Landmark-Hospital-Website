@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaPlus, FaTimes } from "react-icons/fa";
 import Slider from "react-slick";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGalleryData } from "../redux/slices/dataslice";
@@ -95,12 +95,15 @@ const Gallery = () => {
         {galleryData.length > 0 && (
           <Slider {...settings}>
             {galleryData.map((image, idx) => (
-              <div key={idx} className="p-2">
+              <div key={idx} className="p-2 relative group cursor-pointer " onClick={() => openModal(idx)}>
+                <div className="absolute inset-0 flex top-0 z-10 justify-center items-center opacity-0 group-hover:opacity-100 transition">
+                              <FaPlus className="text-white font-extralight bg-black/50 rounded-full p-2 w-10 h-10" />
+                            </div>
                 <img
                   src={image?.imageUrl} 
                   alt={image.title || `Gallery Image ${idx}`}
-                  className="w-full h-64 object-cover rounded-xl shadow-md cursor-pointer"
-                  onClick={() => openModal(idx)}
+                  className="w-full h-64 object-cover z-20 rounded-xl shadow-md cursor-pointer"
+                  
                 />
               </div>
             ))}

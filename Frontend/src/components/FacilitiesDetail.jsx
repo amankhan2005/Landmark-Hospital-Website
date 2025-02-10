@@ -93,7 +93,7 @@ const FacilitiesDetail = () => {
           </div> */}
         {/* <WhyChooseUs/> */}
       </div>
-      <div className="max-w-7xl grid md:grid-cols-2 grid-cols-1 mx-auto pb-6">
+      <div className="md:px-10 grid md:grid-cols-2 grid-cols-1  pb-6">
         {facilities.details.map((item,i)=>(
           <div className="px-4 text-justify" key={i}>
          <div className="md:text-2xl text-xl mt-6 mb-2 font-semibold text-primary  messiri"> {item.title}</div>
@@ -108,12 +108,7 @@ const FacilitiesDetail = () => {
         <FAQSection faqs={facilities.faqs} />
 
       </div>
-      <div className="bg-gray-100 mb-10 md:px-10 px-4">
-        <h2 className="md:text-4xl md:pt-10 text-2xl font-bold text-center md:mb-12 mb-6 messiri">
-          Our Other Facilities
-        </h2>
-        <FacilitiesComponent props={facilities} />
-      </div>
+     
       {/* <div className="mt-10 mb-6 md:mb-0">
         <ContactUs />
       </div> */}

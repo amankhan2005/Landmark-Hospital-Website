@@ -11,6 +11,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import BreadCumb from "../components/Breadcumb";
 import AppointmentForm from "../components/AppointmentForm";
 import pattern from "../assets/pattern12.jpg";
+import ContactUsForm from "../components/ContactUsForm";
 const ContactUs = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -120,7 +121,7 @@ const ContactUs = () => {
 
           {/* Enquiry Form */}
           <div className="flex-2 px-2">
-            <AppointmentForm />
+            <ContactUsForm/>
           </div>
         </div>
       </div>

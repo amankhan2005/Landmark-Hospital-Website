@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/hope-logo.png";
 import { specialities } from "../SpecilitesData";
+import { FaXTwitter } from "react-icons/fa6";
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -52,7 +53,7 @@ export default function Header() {
                 : "translate-x-full overflow-hidden"
             } transition-transform duration-300 ease-in-out lg:hidden shadow-2xl`}
           >
-            <div className="flex text-gray-100 justify-around py-2  bg-primary md:text-lg text-sm px-2">
+            <div className="flex text-gray-100 justify-around items-center py-2  bg-primary md:text-lg text-sm px-2">
               <a
                 href="https://facebook.com"
                 className="hover:text-gray-50"
@@ -68,7 +69,7 @@ export default function Header() {
                 title="Twitter"
                 aria-label="Visit our Twitter page"
               >
-                <i className="fab fa-twitter"></i>
+                <FaXTwitter />
               </a>
 
               <a
@@ -235,18 +236,7 @@ export default function Header() {
                   Cases
                 </Link>
               </li>
-              <li
-                className={`hover-text-primary  ${
-                  location.pathname === "/testimonials" ? "text-primary" : ""
-                }`}
-              >
-                <Link
-                  to="/testimonials"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Testimonials
-                </Link>
-              </li>
+              
               <li
                 className={`hover-text-primary  ${
                   location.pathname === "/blog" ? "text-primary" : ""
@@ -263,6 +253,18 @@ export default function Header() {
               >
                 <Link to="/gallery" onClick={() => setIsMobileMenuOpen(false)}>
                   Gallery
+                </Link>
+              </li>
+              <li
+                className={`hover-text-primary  ${
+                  location.pathname === "/testimonials" ? "text-primary" : ""
+                }`}
+              >
+                <Link
+                  to="/testimonials"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Testimonials
                 </Link>
               </li>
               <li
@@ -391,13 +393,7 @@ export default function Header() {
           >
             <Link to="/cases">Cases</Link>
           </li>
-          <li
-            className={`hover-text-primary  ${
-              location.pathname === "/testimonials" ? "text-primary" : ""
-            }`}
-          >
-            <Link to="/testimonials">Testimonials</Link>
-          </li>
+         
           <li
             className={`hover-text-primary  ${
               location.pathname === "/blog" ? "text-primary" : ""
@@ -411,6 +407,13 @@ export default function Header() {
             }`}
           >
             <Link to="/gallery">Gallery</Link>
+          </li>
+          <li
+            className={`hover-text-primary  ${
+              location.pathname === "/testimonials" ? "text-primary" : ""
+            }`}
+          >
+            <Link to="/testimonials">Testimonials</Link>
           </li>
           <li
             className={`hover-text-primary  ${

@@ -72,7 +72,7 @@ const Cases = () => {
             />
             {/* Plus Icon on Hover */}
             <div className="absolute inset-0 flex top-[-70px] justify-center items-center opacity-0 group-hover:opacity-100 transition">
-              <FaPlus className="text-white bg-black/50 rounded-full p-2 w-16 h-16" />
+              <FaPlus className="text-white bg-black/50 rounded-full p-2 w-10 h-10" />
             </div>
             <div className="md:p-4 p-1 bg-white">
               <h3 className="md:text-xl text-base font-semibold text-center">

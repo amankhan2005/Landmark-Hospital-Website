@@ -93,9 +93,10 @@ const BlogComponent = () => {
         )}
         <Slider {...sliderSettings} >
           {blogsData.map((blog) => (
+            <div className="p-2">
             <div
               key={blog._id}
-              className="rounded-lg  p-4 transition cursor-pointer md:mx-4"
+              className="rounded-lg shadow-2xl hover:shadow-none  p-4 transition cursor-pointer "
               onClick={() => navigate(`/blog/${blog._id}`)}
             >
               <img
@@ -120,7 +121,7 @@ const BlogComponent = () => {
                   Read More
                 </button>
               </p>
-            </div>
+            </div></div>
           ))}
         </Slider>
       </div>

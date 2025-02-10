@@ -222,10 +222,10 @@ const TeamMemberCard = ({ member }) => (
       <h3 className="text-base font-semibold text-gray-900">
         {member?.name || "Unknown"}
       </h3>
-      <p className="text-sm font-semibold text-gray-600">{member?.specialty || "N/A"}</p>
+      <p className="text-sm font-medium text-gray-600"><span className="font-semibold">Head</span> - Department of {member?.specialty || "N/A"}</p>
       <p className="text-sm text-gray-600 mt-2">{member?.degree || "N/A"}</p>
       {/* <p className="text-sm text-gray-500">{member?.location || "N/A"}</p> */}
-      <Link to='/contact'  className="mt-4 text-center block px-4 py-2 text-xs text-white bg-primary rounded-full cursor-pointer">
+      <Link to='/appointment'  className="mt-4 text-center block px-4 py-2 text-xs text-white bg-primary rounded-full cursor-pointer">
         Request Appointment
       </Link>
     </div>

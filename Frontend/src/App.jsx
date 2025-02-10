@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import TopNavBar from "./components/TopNavbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Appoinment from "./Pages/Appointment";
 
 // Lazy Load Pages
 const Home = lazy(() => import("./Pages/Home"));
@@ -65,6 +66,7 @@ function App() {
           <Route path="/facilities" element={ <FacilitiesPage />  } />
           <Route path="/facilities/:facilitiesName" element={ <FacilitiesDetail />  } />
           <Route path="/testimonials" element={ <TestimonialPage />  } />
+          <Route path="/Appointment" element={<Appoinment/>  } />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer/>
