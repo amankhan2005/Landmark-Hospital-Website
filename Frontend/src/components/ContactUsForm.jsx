@@ -1,45 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchTeamData } from "../redux/slices/dataslice";
 import Swal from "sweetalert2";
+import { specialities } from "../SpecilitesData.jsx";
 
-import {specialities} from '../SpecilitesData.jsx'
-
-function   ContactUsForm() {
-  const [doctorsData, setDoctorsData] = useState([]);
-  const [departments, setDepartments] = useState(
-    specialities.map((speciality) => speciality.title)
-  );
+function ContactUsForm() {
+  const [selectedDepartment, setSelectedDepartment] = useState("");
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     department: "",
     name: "",
     phone: "",
     email: "",
-    message:""
+    message: "",
   });
 
   const [formErrors, setFormErrors] = useState({});
 
-;
+  const backendUrl = import.meta.env.VITE_BACKENDURL;
 
-
+  // Handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Handle department selection
   const handleDepartmentChange = (e) => {
     const selectedDept = e.target.value;
     setSelectedDepartment(selectedDept);
-    setFormData({ ...formData, department: selectedDept, doctor: "" });
+    setFormData({ ...formData, department: selectedDept });
   };
-  const backendUrl = import.meta.env.VITE_BACKENDURL;
 
+  // Validate form fields
+  const validateForm = () => {
+    const errors = {};
+    if (!formData.name.trim()) errors.name = "Name is required.";
+    if (!formData.phone.trim()) errors.phone = "Phone number is required.";
+    if (!formData.email.trim()) errors.email = "Email is required.";
+    if (!formData.department) errors.department = "Department is required.";
+    if (!formData.message.trim()) errors.message = "Message is required.";
+    return errors;
+  };
+
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validation logic
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
@@ -47,66 +52,62 @@ function   ContactUsForm() {
     }
 
     try {
+      setLoading(true);
+
       const formattedData = {
         department: formData.department,
         patientName: formData.name,
         mobileNo: formData.phone,
         email: formData.email,
-        message:formData.message
+        message: formData.message,
       };
 
-      setLoading(true);
-      console.log(formattedData);
+      const res = await axios.post(
+        `${backendUrl}/inquiry-msg/save`,
+        formattedData
+      );
 
-      const res = await axios.post(`${backendUrl}/inquiry-message/save`, formattedData);
-      console.log(res);
+      console.log(res.data);
 
       Swal.fire({
         title: "Success!",
-        text: "Appointment booked successfully!",
+        text: "Your query has been submitted successfully!",
         icon: "success",
         confirmButtonText: "OK",
       });
-    } catch (err) {
-      Swal.fire({
-        title: "Error!",
-        text: "Error booking appointment. Try again.",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-    } finally {
-      setLoading(false);
+
+      // Reset form after submission
       setFormData({
         department: "",
         name: "",
         phone: "",
         email: "",
-        message:''
+        message: "",
       });
+      setSelectedDepartment("");
       setFormErrors({});
+    } catch (err) {
+      console.error("Error:", err.response?.data || err.message);
+      Swal.fire({
+        title: "Error!",
+        text: err.response?.data?.message || "Something went wrong. Please try again.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+    } finally {
+      setLoading(false);
     }
-  };
-
-  const validateForm = () => {
-    const errors = {};
-    if (!formData.name) errors.name = "Name is required.";
-    if (!formData.phone) errors.phone = "Phone number is required.";
-    if (!formData.email) errors.email = "Email is required.";
-    if (!formData.message) errors.message = "Message is required.";
-    return errors;
   };
 
   return (
     <div className="w-full bg-white md:p-8 px-3 py-4 pt-6 shadow-lg rounded-lg border border-gray-200">
       <h3 className="md:text-3xl text-2xl text-primary messiri font-bold md:text-gray-800">
-        Genral Query
+        General Query
       </h3>
-      {loading && <p className="text-blue-500">Loading...</p>}
+      {loading && <p className="text-blue-500">Processing your request...</p>}
+      
       <form className="mt-4 flex flex-col gap-4" onSubmit={handleSubmit}>
-        
-
-        
-
+        {/* Name Field */}
         <input
           type="text"
           name="name"
@@ -117,8 +118,9 @@ function   ContactUsForm() {
         />
         {formErrors.name && <p className="text-red-500">{formErrors.name}</p>}
 
+        {/* Phone Field */}
         <input
-          type="number"
+          type="tel"
           name="phone"
           placeholder="Phone Number"
           className="border w-full border-gray-300 p-3 rounded-lg"
@@ -127,6 +129,7 @@ function   ContactUsForm() {
         />
         {formErrors.phone && <p className="text-red-500">{formErrors.phone}</p>}
 
+        {/* Email Field */}
         <input
           type="email"
           name="email"
@@ -137,21 +140,24 @@ function   ContactUsForm() {
         />
         {formErrors.email && <p className="text-red-500">{formErrors.email}</p>}
 
+        {/* Department Dropdown */}
         <select
           name="department"
           className="border border-gray-300 p-3 rounded-lg"
           onChange={handleDepartmentChange}
           value={formData.department}
         >
-          <option>Select Department</option>
-          {departments.map((dept, index) => (
-            <option key={index} value={dept}>
-              {dept}
+          <option value="">Select Department</option>
+          {specialities.map((speciality, index) => (
+            <option key={index} value={speciality.title}>
+              {speciality.title}
             </option>
           ))}
         </select>
+        {formErrors.department && <p className="text-red-500">{formErrors.department}</p>}
+
+        {/* Message Field */}
         <textarea
-          type="text"
           name="message"
           placeholder="Enter Your Message"
           className="border border-gray-300 w-full p-3 rounded-lg"
@@ -160,6 +166,7 @@ function   ContactUsForm() {
         />
         {formErrors.message && <p className="text-red-500">{formErrors.message}</p>}
 
+        {/* Submit Button */}
         <button
           type="submit"
           disabled={loading}
@@ -172,4 +179,4 @@ function   ContactUsForm() {
   );
 }
 
-export default   ContactUsForm;
+export default ContactUsForm;
