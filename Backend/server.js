@@ -29,6 +29,8 @@ app.use('/inquiry',inquiryRoutes)
 import adminRoutes from './Routes/user.routes.js'
 app.use('/admin',adminRoutes)
 
+import contactRoutes from './Routes/contact.routes.js'
+app.use('/inquiry-msg',contactRoutes)
 
 
 mongoose.connect(mongoDBUrl).then(() => console.log('MongoDB Connected')).catch((err) => console.log(`MongoDb Error, Err- ${err}}`))

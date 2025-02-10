@@ -2,19 +2,17 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const InquiryData = () => {
+const AppointmentData = () => {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [loadcount,setLoadCount] = useState()
-  const [message,setMessage] = useState(false)
-  const [Id,setId] = useState()
 
   const api = import.meta.env.VITE_API_URL;
 
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get(`${api}/inquiry-msg/getall`);
+      const response = await axios.get(`${api}/inquiry/getall`);
       setAppointments(response.data);
       setLoadCount(5);
     } catch (err) {
@@ -54,7 +52,7 @@ const InquiryData = () => {
     if (!result.isConfirmed) return;
 
     try {
-      await axios.delete(`${api}/inquiry-msg/delete/${id}`);
+      await axios.delete(`${api}/inquiry/delete/${id}`);
       fetchAppointments();
       Swal.fire("Deleted!", "The inquiry has been deleted.", "success");
     } catch (error) {
@@ -67,22 +65,20 @@ const InquiryData = () => {
     setLoadCount((prevCount) => Math.min(prevCount + 5, appointments.length));
   };
   
-const onRead = (id)=>{
-  setId(id)
-  if(id == Id){
-setMessage((pre)=>!pre)}
-}
+
   return (
     <div className="">
-      <h2 className="text-2xl font-bold mb-4 text-center">Recent Patient Inquiries</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center">Recent Patient Appointments</h2>
       <table className="min-w-full table-auto border-collapse">
         <thead>
           <tr className=" ">
             <th className="border px-4 py-2">Department</th>
+            <th className="border px-4 py-2">Requested Doctor</th>
             <th className="border px-4 py-2">Patient Name</th>
             <th className="border px-4 py-2">Mobile No</th>
             <th className="border px-4 py-2">Email</th>
-            <th className="border px-4 py-2">Message</th>
+            <th className="border px-4 py-2">Date</th>
+            <th className="border px-4 py-2">Time</th>
             <th className="border px-4 py-2">Action</th>
           </tr>
         </thead>
@@ -90,11 +86,12 @@ setMessage((pre)=>!pre)}
           {appointments?.slice(0,loadcount).reverse()?.map((appointment) => (
             <tr key={appointment._id}>
               <td className="border px-4 py-3">{appointment.department}</td>
+              <td className="border px-4 py-3">{appointment.requestedDoctor}</td>
               <td className="border px-4 py-3">{appointment.patientName}</td>
               <td className="border px-4 py-3">{appointment.mobileNo}</td>
               <td className="border px-4 py-3">{appointment.email}</td>
-              <td className={`border px-4 py-3`}> <span  className={`${message && Id==appointment._id ? '':'line-clamp-1'}`}>{appointment.message}</span> <button className="text-white p-[1px] text-xs bg-green-700" onClick={()=>onRead(appointment._id)}>..Read More</button></td>
-              
+              <td className="border px-4 py-3">{appointment.date}</td>
+              <td className="border px-4 py-3">{appointment.time}</td>
               <td>
               <button className="bg-red-500 text-white px-4 ms-1 py-2 rounded" onClick={() => handleDelete(appointment._id)}>
                     Delete
@@ -113,4 +110,4 @@ setMessage((pre)=>!pre)}
   );
 };
 
-export default InquiryData;
+export default AppointmentData;

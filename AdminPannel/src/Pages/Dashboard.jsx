@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaHome, FaUsers, FaBlog, FaBriefcase, FaImage, FaSignOutAlt } from 'react-icons/fa';
+import { FaHome, FaUsers, FaBlog, FaBriefcase, FaImage, FaSignOutAlt, FaCalendarCheck } from 'react-icons/fa';
 import TeamDashboard from '../Components/TeamDashboard';
 import CaseDashboard from '../Components/CaseDashboard';
 import GalleryDashboard from '../Components/GalleryDashboard';
@@ -7,6 +7,7 @@ import BlogDashboard from '../Components/BlogDashboard';
 import Home from '../Components/Home';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import AppointDashbaord from '../Components/AppointDashbaord';
 
 const SidebarItem = ({ name, icon, onClick }) => {
   return (
@@ -32,6 +33,8 @@ const DashboardContent = ({ section }) => {
       return <div className="text-xl"><CaseDashboard/></div>;
     case 'Gallery':
       return <div className="text-xl"><GalleryDashboard/></div>;
+    case 'Appointment Data':
+      return <div className="text-xl"><AppointDashbaord/></div>;
     default:
       return <div>Select a section</div>;
   }
@@ -85,13 +88,14 @@ const Dashboard = () => {
   return (
     <div className="flex flex-col sm:flex-row ">
       {/* Sidebar */}
-      <div className="bg-gray-800 text-white min-h-screen  sm:w-64 p-6">
+      <div className="bg-gray-800 text-white min-h-screen  sm:w-64 py-6 px-3">
         <div className="text-2xl font-semibold mb-6">Dashboard</div>
         <SidebarItem name="Home" icon={<FaHome />} onClick={setSection} />
         <SidebarItem name="Team" icon={<FaUsers />} onClick={setSection} />
         <SidebarItem name="Blog" icon={<FaBlog />} onClick={setSection} />
         <SidebarItem name="Cases" icon={<FaBriefcase />} onClick={setSection} />
         <SidebarItem name="Gallery" icon={<FaImage />} onClick={setSection} />
+        <SidebarItem name="Appointment Data" icon={<FaCalendarCheck />} onClick={setSection} />
       </div>
 
       {/* Main Content */}
