@@ -44,7 +44,7 @@ const BlogDetailPage = () => {
         items={[
           { label: "Home", link: "/" },
           { label: "Blog", link: "/blog" },
-          { label: blog.title, link: `/blog/${blog.id}` },
+          { label: blog.title, link: `/blog/${blog._id}` },
         ]}
         title={blog.title}
       />

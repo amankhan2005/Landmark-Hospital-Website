@@ -48,7 +48,7 @@ const services = [
 
 const WhyChooseUs = () => {
   return (
-    <div className=" md:py-12 lg:py-14 py-10">
+    <div className=" md:py-12 lg:py-14 py-10" data-aos='fade-up'>
       <div className="container mx-auto  sm:px-6 lg:px-8">
         <h1 className="md:text-4xl text-2xl text-primary font-bold text-center messiri">
           Why Choose Us

@@ -86,8 +86,8 @@ export default function OurTeam() {
 
       <div className="md:px-10">
         <Slider {...sliderSettings}>
-          {teamData.map((member) => (
-            <div className="px-2" key={member._id}>
+          {teamData.map((member,index) => (
+            <div className="px-2" key={member._id} data-aos='fade-up' data-aos-delay={index * 200} >
               <TeamMemberCard member={member} />
             </div>
           ))}

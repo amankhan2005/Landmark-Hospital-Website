@@ -16,7 +16,7 @@ const stats = [
 
 const Stats = () => {
   return (
-    <div className="relative lg:py-14 md:py-12 py-10">
+    <div className="relative lg:py-14 md:py-12 py-10" data-aos='fade-up' data-aos-duration="500">
       {/* Background image with overlay */}
       <div
         className="absolute inset-0 z-0"
@@ -35,7 +35,8 @@ const Stats = () => {
         {stats.map((stat, index) => (
           <div
             key={index}
-            className="bg-white md:p-5 p-1 rounded-lg shadow-2xl md:w-60 text-center"
+            className="bg-white md:p-5 p-1 rounded-lg shadow-2xl md:w-60 text-center" data-aos='fade-up'
+            data-aos-duration="1500"
           >
             <div className="md:mb-4 mb-1">
               <img src={stat.icon} alt={stat.label} className="mx-auto md:w-20 w-10" />

@@ -14,11 +14,11 @@ const BreadCumb2 = ({ items, title }) => {
 
       {/* Breadcrumb Content */}
       <div className=" z-10 w-full md:text-left text-center ">
-        <h1 className="text-white md:text-5xl text-xl md:px-10 font-extrabold leading-tight mb-2 messiri" data-aos="fade-left">{title}</h1>
-        <div className="text-white md:text-xl text-sm  md:px-10 font-semibold mb-4" data-aos="fade-left" data-aos-delay="300">Hospital in Bahraich</div>
+        <h1 className="text-white md:text-5xl text-xl md:px-10 font-extrabold leading-tight  messiri" data-aos="fade-left">{title}</h1>
+        <div className="text-white md:text-xl text-sm  md:px-10 font-semibold mb-4" data-aos="fade-left" data-aos-delay="500">Hospital in Bahraich</div>
 
         {/* Breadcrumb Links */}
-        <div className="flex absolute bottom-0 md:px-10 py-[6px] bg-white/30 w-full md:justify-start justify-center  items-center text-white md:text-lg text-sm">
+        <div className="flex absolute bottom-0 md:px-10 py-[6px] bg-black/10 w-full md:justify-start justify-center  items-center text-white md:text-lg text-sm">
           {items.map((item, index) => (
             <React.Fragment key={index}>
               <Link

@@ -89,8 +89,8 @@ const BlogPage = () => {
         ]}
         title="Our Recent Blog"
       />
-      <div className="py-6">
-        <div className="col-span-12 grid md:grid-cols-3 grid-cols-1 gap-2">
+      <div className="py-6 md:px-10 px-4">
+        <div className="col-span-12 grid md:grid-cols-3 grid-cols-1 gap-2 ">
           {status === "loading" && <p>Loading Blog Data...</p>}
           {error && <p className="text-red-500">{error}</p>}
           {blogsData.length === 0 && status !== "loading" && (

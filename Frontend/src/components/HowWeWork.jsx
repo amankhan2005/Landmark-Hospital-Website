@@ -6,7 +6,7 @@ import {
 
 export default function HowWeWork() {
   return (
-    <div className=" lg:py-14 md:py-12 py-10">
+    <div className=" lg:py-14 md:py-12 py-10" data-aos='fade-up'>
       <h2 className="md:text-4xl text-2xl messiri font-bold text-primary  text-center">
         How We Work
       </h2>

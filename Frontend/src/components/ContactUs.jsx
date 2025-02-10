@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import photo from '../assets/home/contactus-doctor.png'
 export default function ContactUs() {
     return (
-        <div className='md:py-12  lg:pt-14 lg:pb-10 px-2'>
+        <div className='md:py-12  lg:pt-14 lg:pb-10 px-2' data-aos='fade-up'>
       <div className="bg-primary relative  text-white md:p-12 py-2 px-3 rounded-2xl flex flex-col md:flex-row items-center md:justify-between max-w-6xl mx-auto">
         <div className="">
           <p className="text-base font-semibold">Need Emergency?</p>

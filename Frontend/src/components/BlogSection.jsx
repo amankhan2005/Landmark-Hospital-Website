@@ -95,7 +95,7 @@ const BlogComponent = () => {
           {blogsData.map((blog) => (
             <div
               key={blog._id}
-              className="rounded-lg p-4 transition cursor-pointer md:mx-4"
+              className="rounded-lg  p-4 transition cursor-pointer md:mx-4"
               onClick={() => navigate(`/blog/${blog._id}`)}
             >
               <img

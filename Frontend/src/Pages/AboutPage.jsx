@@ -61,7 +61,7 @@ function AboutPage() {
             <p className="text-gray-800 text-sm md:text-base leading-relaxed">
               "Your health is our priority—where expertise meets excellence."
             </p>
-            <div className="flex mt-2 md:gap-4 gap-2">
+            <div className="flex mt-2 md:gap-5 gap-2 md:w-full">
               <Link
                 to="/contact"
                 className="text-primary-hover hover:underline underline-offset-2 md:pr-4 pr-2 border-r-2 rounded  border-[#1b4d94]"
@@ -71,7 +71,7 @@ function AboutPage() {
                 to="/specialities"
                 className="text-primary-hover hover:underline underline-offset-2 md:pr-4 pr-2 border-r-2 rounded  border-[#1b4d94]"
               >
-               <span className="hidden md:flex">Our</span> Specialties
+               <span className="hidden md:inline">Our</span> Specialties
               </Link>
               <Link
                 to="/facilities"

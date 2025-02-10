@@ -46,10 +46,12 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="flex items-center">
+                  <a href="https://maps.app.goo.gl/nt8BVHTHFHfzuJL77" className="flex items-center">
                   <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 " />
                   <p className="text-left">
                     Gonda Road, Near Vinayak Resorts, Bharaich - 271801 (U.P.)
                   </p>
+                  </a>
                 </li>
                 <div className="flex space-x-4 justify-left mt-4 items-center">
                   <a href="#" className="hover:text-gray-200 text-xl hover:scale-125">
