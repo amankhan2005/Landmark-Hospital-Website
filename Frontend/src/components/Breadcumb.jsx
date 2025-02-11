@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import image from '../assets/breadcrumb.jpg'
+import image from '../assets/breadcrumb.webp'
 const BreadCumb = ({ items, title }) => {
   return (
     <div
@@ -13,14 +13,14 @@ const BreadCumb = ({ items, title }) => {
 
       {/* Breadcrumb Content */}
       <div className="relative z-10 text-center text-white">
-        <h1 className="md:text-4xl leading-[1.2rem] text-3xl font-extrabold  messiri" data-aos="fade-down" data-aos-delay="400">{title}</h1>
-        <div className="flex justify-center items-center md:mt-4 mt-0" data-aos='fade-up' data-aos-delay="400">
+        <h1 className="md:text-4xl leading-[1.2rem] text-3xl font-extrabold md:line-clamp-none line-clamp-2 messiri" data-aos="fade-down" data-aos-delay="400">{title}</h1>
+        <div className="flex justify-center items-center md:mt-4 mt-1" data-aos='fade-up' data-aos-delay="400">
           {items.map((item, index) => (
             <React.Fragment key={index}>
-              <Link to={item.link} className={` ${index == 0 ? 'text-white':'text-white/80'} font-medium hover:text-blue-500`}>
+              <Link to={item.link} className={` ${index == 0 ? 'text-white':'text-white/80'} font-medium hover:text-blue-500 md:line-clamp-none line-clamp-1`}>
                 {item.label}
               </Link>
-              {index < items.length - 1 && <span className="text-white"><MdKeyboardArrowRight className='text-xl inline-block font-extrabold' /></span>}
+              {index < items.length - 1 && <span className="text-white"><MdKeyboardArrowRight className='lg:text-xl text-lg inline-block font-extrabold' /></span>}
             </React.Fragment>
           ))}
         </div>

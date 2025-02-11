@@ -1,10 +1,5 @@
 import { useParams } from "react-router-dom";
-import BreadCumb from "./Breadcumb.jsx";
-import ContactUs from "./ContactUs.jsx";
 import { facilities as facilitiesData } from "../FacilitiesData";
-import FacilitiesComponent from "./FacilitiesComponent.jsx";
-import WhyChooseUs from "./WhyChooseUs.jsx";
-import OurTeam from "./OurTeam2.jsx";
 import pattern from "../assets/pattern13.jpg";
 import BreadCumb2 from "./Breadcumb2.jsx";
 import { FaCheck } from "react-icons/fa";
@@ -53,7 +48,7 @@ const FacilitiesDetail = () => {
               zIndex: -1,
             }}
           ></div>
-          <div className="flex-2 md:mt-0 mt-5">
+          <div className="flex-2 md:mt-4 lg:mt-0 mt-5">
           <span className="md:text-2xl text-xl font-semibold messiri text-primary">
                   Overview -{" "}
                 </span>
@@ -84,7 +79,7 @@ const FacilitiesDetail = () => {
               </ul>
             </div>
           </div>
-          <div className="md:block hidden flex-1 mt-4 p-4 rounded-xl bg-primary">
+          <div className="md:block hidden h-fit flex-1 mt-4 p-4 rounded-xl bg-primary">
            <AppointmentForm/>
           </div>
         </div>

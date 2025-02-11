@@ -1,7 +1,7 @@
 
 import BreadCumb from "../components/Breadcumb";
 import AppointmentForm from "../components/AppointmentForm";
-import image from "../assets/Book-Appointment.jpg";
+import image from "../assets/Book-Appointment.webp";
 const Appoinment = () => {
   return (
     <div className="">

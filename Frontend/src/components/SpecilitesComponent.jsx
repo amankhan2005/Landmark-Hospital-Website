@@ -7,9 +7,9 @@ function SpecilitesComponent({specialty}) {
     
 // console.log(specialty.title)
   return (
-    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 ">
+    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 xl:gap-16 container mx-auto">
           {specialities.map((speciality, index) => (
-            <div className="lg:h-[35vh] md:h-[30vh] h-[17vh] sm:h-[14vh]" key={index} data-aos='fade-up'>
+            <div className="h-full" key={index} data-aos='fade-up'>
             <Link to={`/specialities/${speciality.link}`}
               key={index}
               className={` ${specialty?.title == speciality.title? 'border-2':'' }  bg-white block shadow-xl rounded-xl p-4 relative  hover:border-2 border-[#1b4d94] transition-all`}
@@ -26,14 +26,7 @@ function SpecilitesComponent({specialty}) {
                   {speciality.title}
                 </h2>
                 <button className="text-primary md:py-1 md:px-2 rounded-full hover:bg-blue-200 ">View More <FaArrowRight className="inline-block ms-1"/></button>
-                {/* <p className="text-gray-600 text-sm mb-4">
-                  {speciality.description}
-                </p>
-                <ul className="text-gray-600 text-sm list-disc list-inside">
-                  {speciality.services.map((service, i) => (
-                    <li key={i}>{service}</li>
-                  ))}
-                </ul> */}
+              
               </div>
             </Link>
             </div>

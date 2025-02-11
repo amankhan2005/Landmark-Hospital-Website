@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
 import BreadCumb from "../components/Breadcumb";
-import AppointmentForm from "../components/AppointmentForm";
 import pattern from "../assets/home/whywechoose.png";
-import appoint from "../assets/appointment-image.png";
-import about from "../assets/home/HopeHospital-about.jpg";
-import pattern1 from "../assets/pattern1.jpg";
-
+import about from "../assets/home/HopeHospital-about.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTeamData } from "../redux/slices/dataslice";
 import { Link } from "react-router-dom";

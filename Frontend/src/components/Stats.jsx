@@ -1,11 +1,11 @@
 import React from "react";
 import CountUp from "react-countup";
 
-import bg from "../assets/home/stats-bg.jpg";
-import icuBeds from "../assets/home/icuBeds.png";
-import doctors from "../assets/home/medical-team.png";
-import happyClients from "../assets/home/healthy.png";
-import experience from "../assets/home/experience.png";
+import bg from "../assets/home/stats-bg.webp";
+import icuBeds from "../assets/home/icuBeds.webp";
+import doctors from "../assets/home/medical-team.webp";
+import happyClients from "../assets/home/healthy.webp";
+import experience from "../assets/home/experience.webp";
 
 const stats = [
   { icon: happyClients, number: 1000, label: "Happy Patients" },
@@ -31,7 +31,7 @@ const Stats = () => {
       </div>
 
       {/* Stats content */}
-      <div className="relative grid grid-cols-2 md:grid-cols-4 md:px-28 px-2 md:gap-8 gap-2 z-10">
+      <div className="relative grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:px-28 px-2 md:gap-8 gap-2 z-10">
         {stats.map((stat, index) => (
           <div
             key={index}

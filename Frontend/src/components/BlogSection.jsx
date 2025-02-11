@@ -78,9 +78,9 @@ const BlogComponent = () => {
 
   return (
     <div className="lg:py-14 md:py-12 py-10 relative">
-      <h2 className="md:text-4xl text-2xl messiri font-bold text-primary text-center">
+      <h1 className="md:text-4xl text-2xl messiri font-bold text-primary text-center">
         Our Recent Blog
-      </h2>
+      </h1>
       <p className="text-gray-600 md:mb-6 mb-2 text-center text-sm md:text-base">
         Latest updates, tips, and insights from our team.
       </p>

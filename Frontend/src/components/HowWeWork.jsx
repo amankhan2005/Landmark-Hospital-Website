@@ -6,10 +6,10 @@ import {
 
 export default function HowWeWork() {
   return (
-    <div className=" lg:py-14 md:py-12 py-10" data-aos='fade-up'>
-      <h2 className="md:text-4xl text-2xl messiri font-bold text-primary  text-center">
+    <div className=" lg:py-14 md:py-12 py-10 px-2" data-aos='fade-up'>
+      <h1 className="md:text-4xl text-2xl messiri font-bold text-primary  text-center">
         How We Work
-      </h2>
+      </h1>
       <p className="text-gray-600 mb-6 text-center md:text-base text-sm px-4">
         A transparent approach to providing exceptional care, every step of the
         way.

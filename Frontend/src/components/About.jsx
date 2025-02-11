@@ -1,26 +1,25 @@
 import React from "react";
-import about from "../assets/home/HopeHospital-about.jpg";
+import about from "../assets/home/HopeHospital-about.webp";
 
 const AboutSection = () => {
   return (
     <section className="flex  flex-col md:flex-row items-center md:gap-10 justify-between md:px-20  p-8 px-4 md:py-14">
-      <div className="relative w-full md:w-1/3  items-center justify-center mb-8 md:mb-0 md:block hidden" data-aos='zoom-in'>
+      <div className="relative w-full lg:w-1/3  items-center justify-center mb-8 lg:mb-0 lg:block hidden" data-aos='zoom-in'>
         <img
           src={about}
-          alt="Healthcare Professionals"
-          width={430}
-          height={430}
-          className="rounded-2xl  shadow-md object-cover"
+          alt="Hope hospital"
+          loading="lazy"
+          className="rounded-2xl  shadow-md h-full w-full object-cover"
         />
       </div>
-      <div className="w-full md:w-2/3 text-center md:text-left">
+      <div className="w-full lg:w-2/3 text-center md:text-left">
         <h4 className="messiri text-lg text-primary font-bold uppercase mb-0">
           Welcome to Hope Hospital
         </h4>
-        <h1 className="text-lg md:text-3xl  text-left md:font-bold font-base text-gray-800 md:mb-2 mb-2 md:border-0 border-s-4 border-[#1b4d94] md:ps-0 ps-2 ">
+        <h1 className="text-lg lg:text-3xl md:text-3xl  text-left md:font-bold font-base text-gray-800 md:mb-2 mb-2 md:border-0 border-s-4 border-[#1b4d94] md:ps-0 ps-2 ">
           Best Multi Speciality Hospital in Bahraich
         </h1>
-        <p className="text-gray-600  text-sm md:text-base  text-justify md:mb-1">
+        <p className="text-gray-600  text-sm md:text-base  text-justify mb-1">
           Welcome to <b> Hope Hospital</b>, your trusted multi-speciality healthcare
           provider. We are dedicated to providing exceptional medical care
           across various specialities, including <b>Cardiology</b>, <b>Orthopedics</b>, <b>General Surgery</b>,

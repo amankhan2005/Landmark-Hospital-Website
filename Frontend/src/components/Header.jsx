@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/hope-logo.png";
+import logo from "../assets/hope-logo.webp";
 import { specialities } from "../SpecilitesData";
 import { FaXTwitter } from "react-icons/fa6";
 export default function Header() {
@@ -26,7 +26,7 @@ export default function Header() {
               src={logo}
               alt="Hope Hospital Logo"
               title="Hope Logo"
-              aria-level="Hope Logo"
+              aria-level="Hope-Logo"
               className="w-44 h-full"
             />
           </Link>

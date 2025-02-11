@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import image from '../assets/breadcrumb.jpg'
+import image from '../assets/breadcrumb.webp'
 
 const BreadCumb2 = ({ items, title }) => {
   return (

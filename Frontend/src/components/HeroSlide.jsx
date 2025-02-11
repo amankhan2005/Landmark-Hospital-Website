@@ -13,29 +13,17 @@ const slides = [
   {
     id: 1,
     image: `${banner3}`,
-    title: "Explore the World",
-    description: "Discover new places and experiences with us.",
-    buttonText: "Learn More",
-    link: "/explore",
-    class: "justify-start text-left" // Left-aligned text
+    title: "Higher Standards for all Heathcare",
   },
   {
     id: 2,
     image: `${banner2}`,
-    title: "Adventure Awaits",
-    description: "Plan your next adventure today!",
-    buttonText: "Get Started",
-    link: "/adventure",
-    class: "justify-end text-center" // Center-aligned text
+    title: "Best Healthcare services",
   },
   {
     id: 3,
     image:`${banner1}`,
-    title: "Luxury Travel",
-    description: "Experience the best in luxury travel.",
-    buttonText: "View Packages",
-    link: "/luxury",
-    class: "justify-center text-right" // Right-aligned text
+    title: "Trustworthy hospital",
   }
 ];
 
@@ -79,34 +67,19 @@ export default function HeroSlider() {
     <div className="w-full  relative">
       <Slider {...settings}>
         {slides.map((slide,index) => (
-          <div key={slide.id} className={`relative w-full h-auto md:h-[70vh] ${index !== slide ? 'inert' : ''}`}>
+          <div key={slide.id} className={`relative w-full h-auto lg:h-[70vh] ${index !== slide ? 'inert' : ''}`}>
             {/* Background Image */}
             <img
               src={slide.image}
               alt={slide.title}
+              title={slide.title}
               loading="lazy"
-              className="w-full md:h-full md:object-cover object-contain"
+              className="w-full lg:h-full lg:object-cover object-contain"
             />
 
-            {/* Content Overlay
-            <div
-              className={`absolute inset-0 flex ${slide.class} items-center h-full px-20 `}
-            >
-              <div className="text-white max-w-2xl text-center">
-                <h2 className="text-5xl font-bold mb-2">{slide.title}</h2>
-                <p className="text-lg mb-6">{slide.description}</p>
-                <Link
-                  to={slide.link}
-                  className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md transition duration-300"
-                >
-                  {slide.buttonText}
-                </Link>
-              </div>
-            </div> */}
           </div>
         ))}
       </Slider>
-    {/* <FeaturesOverlay/> */}
     </div>
     <Features/>
     </>
@@ -116,12 +89,14 @@ export default function HeroSlider() {
 const SampleNextArrow = (props) => {
   const { onClick } = props;
   return (
-    <div
+    <button
+    aria-label="Next"
+    title='Next'
       className="absolute top-1/2 right-6 transform -translate-y-1/2 bg-primary text-white rounded-full p-3 hover-bg-primary cursor-pointer  z-10"
       onClick={onClick}
     >
       <FaArrowRight size={20} />
-    </div>
+    </button>
   );
 };
 
@@ -129,11 +104,13 @@ const SampleNextArrow = (props) => {
 const SamplePrevArrow = (props) => {
   const { onClick } = props;
   return (
-    <div
+    <button
+    aria-label="previous"
+    title="previous"
       className="absolute top-1/2 left-6 transform -translate-y-1/2 bg-primary text-white rounded-full p-3 hover-bg-primary cursor-pointer  z-10"
       onClick={onClick}
     >
       <FaArrowLeft size={20} />
-    </div>
+    </button>
   );
 };
