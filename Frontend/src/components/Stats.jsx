@@ -39,7 +39,7 @@ const Stats = () => {
             data-aos-duration="1500"
           >
             <div className="md:mb-4 mb-1">
-              <img src={stat.icon} alt={stat.label} className="mx-auto md:w-20 w-10" />
+              <img src={stat.icon} alt={stat.label} loading='lazy' className="mx-auto md:w-20 w-10" />
             </div>
             <div className="md:text-3xl text-xl font-bold text-gray-800 md:mb-2 ">
              { stat.per ? '100 %' : (<><CountUp end={stat?.number} duration={2} enableScrollSpy /> + </>) }

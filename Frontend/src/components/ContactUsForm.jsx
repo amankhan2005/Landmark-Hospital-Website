@@ -168,6 +168,8 @@ function ContactUsForm() {
 
         {/* Submit Button */}
         <button
+        aria-label="Submit"
+          title="Submit"
           type="submit"
           disabled={loading}
           className="bg-primary text-white font-semibold py-3 rounded-lg hover:bg-blue-800 cursor-pointer transition duration-300"

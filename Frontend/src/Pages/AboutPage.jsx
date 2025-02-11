@@ -1,19 +1,11 @@
-import React, { useEffect } from "react";
+import React, { memo } from "react";
 import BreadCumb from "../components/Breadcumb";
 import pattern from "../assets/home/whywechoose.png";
 import about from "../assets/home/HopeHospital-about.webp";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchTeamData } from "../redux/slices/dataslice";
 import { Link } from "react-router-dom";
 import SpecialitiesSection from "../components/SpecialitiesSection";
 import Stats from "../components/Stats";
 function AboutPage() {
-  const dispatch = useDispatch();
-  const { teamData, loading, error } = useSelector((state) => state.data);
-
-  useEffect(() => {
-    dispatch(fetchTeamData());
-  }, [dispatch]);
 
   return (
     <>
@@ -146,17 +138,6 @@ function AboutPage() {
           </div>
         </section>
 
-        {/* Our Experts Section */}
-        {/* <section className="lg:py-12 px-4 md:py-10 py-8 mt-6 bg-gray-100">
-          <h2 className="md:text-3xl text-xl messiri text-primary font-bold  text-center mb-8">
-            Meet Our Experts
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:px-4">
-            {teamData.map((member,i) => (
-              <TeamMemberCard member={member} key={i} />
-            ))}
-          </div>
-        </section> */}
 
        <section className="md:py-8 py-4">
 
@@ -170,33 +151,4 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
-
-// const TeamMemberCard = ({ member }) => (
-//   <div className="group border-b-4 border-white hover:border-[#1b4d94] transition-all duration-300 flex flex-col md:flex-row items-center gap-4 md:p-4 py-4 bg-white rounded-lg shadow-md">
-//     {/* Image Section */}
-//     <div className="flex-1 md:w-36 md:h-44 h-52 px-2 md:px-0 overflow-hidden rounded-lg shadow-md">
-//       <img
-//         src={member?.imageUrl || "https://via.placeholder.com/150"}
-//         alt={member?.name || "Team member"}
-//         className="w-full h-full object-cover"
-//       />
-//     </div>
-
-//     {/* Content Section */}
-//     <div className="flex-1 text-left">
-//       <h3 className="text-base font-semibold text-gray-900">
-//         {member?.name || "Unknown"}
-//       </h3>
-//       <p className="text-sm font-semibold text-gray-600">{member?.specialty || "N/A"}</p>
-//       <p className="text-sm text-gray-600 mt-2">{member?.degree || "N/A"}</p>
-//       {/* <p className="text-sm text-gray-500">{member?.location || "N/A"}</p> */}
-//       <Link
-//         to="/contact"
-//         className="mt-4 block px-4 py-2 text-xs text-white bg-primary rounded-full cursor-pointer"
-//       >
-//         Request Appointment
-//       </Link>
-//     </div>
-//   </div>
-// );
+export default memo(AboutPage);

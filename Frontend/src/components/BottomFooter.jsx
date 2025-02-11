@@ -27,6 +27,7 @@ const BottomFooter = () => {
         <img
           src={companyLogo}
           alt="Designed by Company"
+          loading='lazy'
           className="h-auto w-[6rem] md:w-[7rem] lg:w-[8rem] inline-block"
         />
       </Link>

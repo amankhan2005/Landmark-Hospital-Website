@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Features = () => {
   return (
-    <section className=" max-w-6xl mx-auto px-2 md:grid grid-cols-1 md:grid-cols-4 gap-2 shadow-lg rounded-lg " data-aos='fade-up'>
+    <section className=" max-w-6xl mx-auto px-2 md:grid grid-cols-1 md:grid-cols-4 gap-2 shadow-lg rounded-lg ">
       {/* Working Time */}
       <div className="bg-blue-900 text-white md:p-6 p-3 mb-1 md:block hidden">
         <h3 className="text-lg font-semibold">Working Time</h3>

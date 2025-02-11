@@ -147,7 +147,7 @@ function AppointmentForm() {
 
         <input
           type="email"
-          name="email"
+          name="email" 
           placeholder="Email"
           className="border w-full border-gray-300 p-3 rounded-lg"
           onChange={handleChange}
@@ -203,6 +203,8 @@ function AppointmentForm() {
 
         <button
           type="submit"
+          aria-label="Submit"
+          title="Submit"
           disabled={loading}
           className="bg-primary text-white font-semibold py-3 rounded-lg hover:bg-blue-800 cursor-pointer transition duration-300"
         >

@@ -10,7 +10,7 @@ export default function ContactUs() {
           <Link to='/contact' className="md:mt-6 mt-2 inline-block bg-white text-blue-500 px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-gray-200 transition">Contact With Us</Link>
         </div>
         <div className=" md:right-0 right-0 bottom-0 absolute mt-6 md:mt-0">
-          <img src={photo} alt="Doctor" className="md:w-64 w-24 object-cover" />
+          <img src={photo} alt="Doctor"loading='lazy' className="md:w-64 w-24 object-cover" />
         </div>
       </div>
       </div>

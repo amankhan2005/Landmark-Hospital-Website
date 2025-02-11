@@ -24,7 +24,7 @@ function FacilitiesComponent({ props }) {
             className="w-full md:h-48 h-20 object-cover transition-transform duration-300 hover:scale-110"
           />
           <div className="md:p-5 px-2">
-            <h3 className="md:text-xl text-lg font-semibold md:mb-2 text-gray-800">{specialty.title}</h3>
+            <div className="md:text-xl text-lg font-semibold md:mb-2 text-gray-800">{specialty.title}</div>
             <div className="border-b border-gray-300 mb-2"></div>
             <p className="text-gray-600 md:text-base text-xs md:mb-4 mb-1 line-clamp-2">{specialty.description}</p>
             <Link

@@ -26,7 +26,6 @@ export default function Header() {
               src={logo}
               alt="Hope Hospital Logo"
               title="Hope Logo"
-              aria-level="Hope-Logo"
               className="w-44 h-full"
             />
           </Link>
@@ -109,6 +108,8 @@ export default function Header() {
               </a>
             </div>
             <button
+            aria-label="Navbar Icon"
+    title="Navbar Icon"
               className="absolute top-10 shadow-2xl  right-2 text-gray-100 text-xl font-bold bg-primary hover-bg-primary h-8 w-8 rounded-full cursor-pointer"
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -125,12 +126,12 @@ export default function Header() {
                 </Link>
               </li>
               <li className="relative">
-                <button
+                <Link to='/about'
                   onClick={() => handleDropdown("about")}
                   className="w-full text-left hover-text-primary"
                 >
                   About Us ▾
-                </button>
+                </Link>
                 {openDropdown === "about" && (
                   <ul className="block bg-white shadow-md rounded-md py-2 w-full text-sm">
                     <li>
