@@ -110,13 +110,13 @@ function OurTeam() {
       />
       <div className="grid md:grid-cols-3 lg:grid-cols-3 px-6 py-10 items-center gap-4 p-2">
         {status === "loading" && <p>Loading team members...</p>}
-        {error && <p className="text-red-500">{error}</p>}
+        {error && <p className="text-red-700">{error}</p>}
         {teamMembers.map((member, index) => (
          <TeamMemberCard member={member} key={index} />
         ))}
       </div>
 
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <div
           className="fixed z-50 inset-0 flex items-center justify-center bg-black/60 bg-opacity-50"
           onClick={closeModal}
@@ -125,7 +125,7 @@ function OurTeam() {
             className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg border border-gray-200"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-xl font-bold text-gray-800">Book Appointment</h3>
+            <h5 className="text-xl font-bold text-gray-800">Book Appointment</h5>
             <form className="mt-4 flex flex-col gap-2" onSubmit={handleSubmit}>
               <select
                 className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500"
@@ -197,7 +197,7 @@ function OurTeam() {
             </button>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
@@ -213,6 +213,7 @@ const TeamMemberCard = ({ member }) => (
       <img
         src={member?.imageUrl || "https://via.placeholder.com/150"}
         alt={member?.name || "Team member"}
+        loading="lazy"
         className="w-full h-full object-cover"
       />
     </div>

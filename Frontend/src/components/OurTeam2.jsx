@@ -65,14 +65,14 @@ export default function OurTeam() {
     fetchData();
   }, [fetchData]);
 
-  if (loading) return <p className="text-center text-gray-500 py-5">Loading team members...</p>;
-  if (error) return <p className="text-center text-red-500 py-5">⚠️ Failed to load team data. Please try again later.</p>;
-  if (!teamData?.length) return <p className="text-center text-gray-500 py-5">No team members available.</p>;
+  if (loading) return <p className="text-center text-gray-800 py-5">Loading team members...</p>;
+  if (error) return <p className="text-center text-red-700 py-5">⚠️ Failed to load team data. Please try again later.</p>;
+  if (!teamData?.length) return <p className="text-center text-gray-800 py-5">No team members available.</p>;
 
   return (
     <section className="lg:py-14 md:py-12 py-10 bg-gray-100 text-center">
       <h1 className="md:text-4xl text-2xl font-bold text-primary messiri">Meet Our Team</h1>
-      <p className="text-gray-600 mb-6 md:text-base text-sm">Our dedicated professionals committed to your health.</p>
+      <p className="text-gray-700 mb-6 md:text-base text-sm">Our dedicated professionals committed to your health.</p>
 
       <div className="md:px-10">
         <Slider {...sliderSettings}>

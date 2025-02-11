@@ -17,7 +17,7 @@ export default function HowWeWork() {
       <div className="flex flex-col md:flex-row justify-center items-center md:gap-14 gap-8 mt-8">
         <div className="flex relative flex-col items-center text-center max-w-xs">
           <FaClipboardList className="text-blue-500 md:text-5xl text-4xl" />
-          <h3 className="text-xl font-semibold mt-4">Make Appointment</h3>
+          <div className="text-xl font-semibold mt-4">Make Appointment</div>
           <p className="text-gray-500 mt-2 md:text-base text-sm">
             If you are going to use a passage Ipsum, you need to anything for
             hidden.

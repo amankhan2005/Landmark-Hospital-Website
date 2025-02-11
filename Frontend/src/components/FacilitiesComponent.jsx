@@ -21,6 +21,7 @@ function FacilitiesComponent({ props }) {
           <img
             src={specialty.image}
             alt={specialty.title}
+            loading='lazy'
             className="w-full md:h-48 h-20 object-cover transition-transform duration-300 hover:scale-110"
           />
           <div className="md:p-5 px-2">

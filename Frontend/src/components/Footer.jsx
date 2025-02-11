@@ -21,9 +21,9 @@ const Footer = () => {
             
             {/* 📌 Contact Section */}
             <address className="not-italic">
-              <h4 className="text-2xl font-semibold md:mb-4 mb-2 messiri">
+              <div className="text-2xl font-semibold md:mb-4 mb-2 messiri">
                 Get In Touch With Us
-              </h4>
+              </div>
               <ul>
                 <li className="flex items-center mb-2">
                   <FontAwesomeIcon icon={faEnvelope} className="mr-2" />

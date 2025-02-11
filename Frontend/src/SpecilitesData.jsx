@@ -1,22 +1,22 @@
-import general from "./assets/specility/dropper.png";
-import orthopedic from "./assets/specility/arthritis.png";
-import neurology from "./assets/specility/neurology.png";
-import gynecology from "./assets/specility/gynecology.png";
-import dermatology from "./assets/specility/derm.png";
-import critical from "./assets/specility/critical.png";
-import medicine from "./assets/specility/general.png";
-import emergency from "./assets/specility/health-care.png";
-import pediatric1 from "./assets/specility/pediatric1.png";
+import general from "./assets/specility/dropper.webp";
+import orthopedic from "./assets/specility/arthritis.webp";
+import neurology from "./assets/specility/neurology.webp";
+import gynecology from "./assets/specility/gynecology.webp";
+import dermatology from "./assets/specility/derm.webp";
+import critical from "./assets/specility/critical.webp";
+import medicine from "./assets/specility/general.webp";
+import emergency from "./assets/specility/health-care.webp";
+import pediatric1 from "./assets/specility/pediatric1.webp";
 
 import anesthesia from "./assets/specility/critical.jpg";
-import cardiology from "./assets/specility/cardiology.jpg";
-import general1 from "./assets/specility/General-Surgery.jpg";
-import gynecology1 from "./assets/specility/Gynae.jpg";
+import cardiology from "./assets/specility/cardiology.webp";
+import general1 from "./assets/specility/General-Surgery.webp";
+import gynecology1 from "./assets/specility/Gynae.webp";
 import neurology1 from "./assets/specility/Neurology.jpg";
-import orthopedic1 from "./assets/specility/orthopedic.jpg";
-import ophthalmology from "./assets/specility/ophthalmology.jpg";
-import derm1 from "./assets/specility/Dermatology.jpg";
-import pediatric from "./assets/specility/Pediatrics.jpg";
+import orthopedic1 from "./assets/specility/orthopedic.webp";
+import ophthalmology from "./assets/specility/ophthalmology.webp";
+import derm1 from "./assets/specility/Dermatology.webp";
+import pediatric from "./assets/specility/Pediatrics.webp";
 
 export const specialities = [
   {

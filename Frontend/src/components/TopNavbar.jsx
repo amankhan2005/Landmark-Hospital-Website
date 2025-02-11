@@ -20,7 +20,6 @@ export default function TopNavBar() {
             <span className="animate-bounce"><i className="fa-solid fa-calendar-check"></i></span><span>Book Appointment</span>
           </Link>
   
-          {/* Right side: Social media icons */}
           <div aria-label="Social Media Links" className="flex md:space-x-5 space-x-3 md:text-lg text-sm justify-center items-center">
           <a href="#" aria-label="Facebook" title="Facebook" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
           <FaFacebookF aria-hidden="true" />

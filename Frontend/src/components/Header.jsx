@@ -26,7 +26,7 @@ export default function Header() {
               src={logo}
               alt="Hope Hospital Logo"
               title="Hope Logo"
-              className="w-44 h-full"
+              className="w-[11rem] h-auto"
             />
           </Link>
         </div>
@@ -108,8 +108,8 @@ export default function Header() {
               </a>
             </div>
             <button
-            aria-label="Navbar Icon"
-    title="Navbar Icon"
+              aria-label="Navbar Icon"
+              title="Navbar Icon"
               className="absolute top-10 shadow-2xl  right-2 text-gray-100 text-xl font-bold bg-primary hover-bg-primary h-8 w-8 rounded-full cursor-pointer"
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -121,12 +121,17 @@ export default function Header() {
                   location.pathname === "/" ? "text-primary" : ""
                 }`}
               >
-                <Link to="/" title="Home" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link
+                  to="/"
+                  title="Home"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   Home
                 </Link>
               </li>
               <li className="relative">
-                <Link to='/about'
+                <Link
+                  to="/about"
                   onClick={() => handleDropdown("about")}
                   className="w-full text-left hover-text-primary"
                 >
@@ -237,7 +242,7 @@ export default function Header() {
                   Cases
                 </Link>
               </li>
-              
+
               <li
                 className={`hover-text-primary  ${
                   location.pathname === "/blog" ? "text-primary" : ""
@@ -287,7 +292,9 @@ export default function Header() {
               location.pathname === "/" ? " text-primary" : ""
             }`}
           >
-            <Link to="/" title="Home">Home</Link>
+            <Link to="/" title="Home">
+              Home
+            </Link>
           </li>
           <li
             className="relative cursor-pointer"
@@ -394,7 +401,7 @@ export default function Header() {
           >
             <Link to="/cases">Cases</Link>
           </li>
-         
+
           <li
             className={`hover-text-primary  ${
               location.pathname === "/blog" ? "text-primary" : ""
