@@ -26,7 +26,7 @@ export default function Header() {
               src={logo}
               alt="Hope Hospital Logo"
               title="Hope Logo"
-              className="w-[11rem] h-auto"
+              className="w-[11rem] h-full"
             />
           </Link>
         </div>

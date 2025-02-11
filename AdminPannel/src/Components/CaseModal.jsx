@@ -30,6 +30,7 @@ const CaseModal = ({ caseData, onClose }) => {
     const uploadData = new FormData();
     uploadData.append("file", file);
     uploadData.append("upload_preset", "hope-hospital");
+    uploadData.append("folder", "hope-hospital/case");
 
     try {
       const response = await axios.post(

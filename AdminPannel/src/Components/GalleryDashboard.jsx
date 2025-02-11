@@ -93,6 +93,7 @@ const GalleryDashboard = () => {
     const uploadData = new FormData();
     uploadData.append("file", file);
     uploadData.append("upload_preset", "hope-hospital");
+    uploadData.append("folder", "hope-hospital/gallery");
 
     try {
       const response = await axios.post(

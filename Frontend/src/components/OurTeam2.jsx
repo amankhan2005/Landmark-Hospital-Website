@@ -24,7 +24,7 @@ const TeamMemberCard = memo(({ member }) => {
 
       {/* Content Section */}
       <div className="flex-1 text-left">
-        <h3 className="text-base font-semibold text-gray-900">{name || "Unknown"}</h3>
+        <div className="text-base font-semibold text-gray-900">{name || "Unknown"}</div>
         <p className="text-sm font-medium text-gray-600">
           <span className="font-semibold">Head</span> - Department of {specialty || "N/A"}
         </p>

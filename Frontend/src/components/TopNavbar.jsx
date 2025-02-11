@@ -22,22 +22,22 @@ export default function TopNavBar() {
   
           <div aria-label="Social Media Links" className="flex md:space-x-5 space-x-3 md:text-lg text-sm justify-center items-center">
           <a href="#" aria-label="Facebook" title="Facebook" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
-          <FaFacebookF aria-hidden="true" />
+          <FaFacebookF />
         </a>
         <a href="#" aria-label="Twitter" title="Twitter" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
-          <FaXTwitter aria-hidden="true" />
+          <FaXTwitter />
         </a>
         <a href="#" aria-label="Instagram" title="Instagram" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
-          <FaInstagram aria-hidden="true" />
+          <FaInstagram />
         </a>
         <a href="#" aria-label="YouTube" title="YouTube" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
-          <FaYoutube aria-hidden="true" />
+          <FaYoutube />
         </a>
         <a href="#" aria-label="LinkedIn" title="LinkedIn" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
-          <FaLinkedinIn aria-hidden="true" />
+          <FaLinkedinIn />
         </a>
         <a href="#" aria-label="Google Plus" title="Google Plus" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
-          <FaGooglePlusG aria-hidden="true" />
+          <FaGooglePlusG />
         </a>
           </div>
         </div>

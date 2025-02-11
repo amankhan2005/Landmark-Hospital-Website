@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import BreadCumb from "../components/Breadcumb";
-import Swal from "sweetalert2";
 import { fetchTeamData } from "../redux/slices/dataslice";
 import { useDispatch, useSelector } from "react-redux";
-import { ClipLoader } from "react-spinners"; // For loading spinner
 import { Link } from "react-router-dom";
 function OurTeam() {
   const [teamMembers, setTeamMembers] = useState([]);
-  const [selectedDoctor, setSelectedDoctor] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    date: "",
-    time: "",
-  });
-  const [formErrors, setFormErrors] = useState({});
+  // const [selectedDoctor, setSelectedDoctor] = useState(null);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [loading, setLoading] = useState(false);
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   phone: "",
+  //   email: "",
+  //   date: "",
+  //   time: "",
+  // });
+  // const [formErrors, setFormErrors] = useState({});
 
   const dispatch = useDispatch();
   const { teamData, status, error } = useSelector((state) => state.data);
@@ -33,71 +30,71 @@ function OurTeam() {
     }
   }, [teamData]);
 
-  const openModal = (doctor) => {
-    setSelectedDoctor(doctor);
-    setIsModalOpen(true);
-  };
+  // const openModal = (doctor) => {
+  //   setSelectedDoctor(doctor);
+  //   setIsModalOpen(true);
+  // };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  // const closeModal = () => {
+  //   setIsModalOpen(false);
+  // };
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  // const handleChange = (e) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
 
-  const backendUrl = import.meta.env.VITE_BACKENDURL;
+  // const backendUrl = import.meta.env.VITE_BACKENDURL;
 
-  const validateForm = () => {
-    const errors = {};
-    if (!formData.name) errors.name = "Name is required";
-    if (!formData.phone) errors.phone = "Phone number is required";
-    if (!formData.email) errors.email = "Email is required";
-    if (!formData.date) errors.date = "Date is required";
-    if (!formData.time) errors.time = "Time is required";
-    return errors;
-  };
+  // const validateForm = () => {
+  //   const errors = {};
+  //   if (!formData.name) errors.name = "Name is required";
+  //   if (!formData.phone) errors.phone = "Phone number is required";
+  //   if (!formData.email) errors.email = "Email is required";
+  //   if (!formData.date) errors.date = "Date is required";
+  //   if (!formData.time) errors.time = "Time is required";
+  //   return errors;
+  // };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const errors = validateForm();
-    if (Object.keys(errors).length > 0) {
-      setFormErrors(errors);
-      return;
-    }
-    try {
-      const formattedData = {
-        department: selectedDoctor.specialty,  // Cardiology1
-        requestedDoctor: selectedDoctor.name,  // Dr. Smith2
-        patientName: formData.name,           // John Doe3
-        mobileNo: formData.phone,             // 12345678903
-        email: formData.email,                // john.doe@example.com
-        date: formData.date,                  // 2025-02-06
-        time: formData.time                   // 10:00 AM
-      };
-      setLoading(true);
-      console.log(formattedData)
-     const res= await axios.post(`${backendUrl}/inquiry/save`, formattedData);
-      console.log(res)
-      Swal.fire({
-        title: "Success!",
-        text: "Appointment booked successfully!",
-        icon: "success",
-        confirmButtonText: "OK",
-      });
-    } catch (err) {
-      Swal.fire({
-        title: "Error!",
-        text: "Error booking appointment. Try again.",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-    } finally {
-      setLoading(false);
-    setIsModalOpen(false);
-    setFormData([])
-    }
-  };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const errors = validateForm();
+  //   if (Object.keys(errors).length > 0) {
+  //     setFormErrors(errors);
+  //     return;
+  //   }
+  //   try {
+  //     const formattedData = {
+  //       department: selectedDoctor.specialty,  // Cardiology1
+  //       requestedDoctor: selectedDoctor.name,  // Dr. Smith2
+  //       patientName: formData.name,           // John Doe3
+  //       mobileNo: formData.phone,             // 12345678903
+  //       email: formData.email,                // john.doe@example.com
+  //       date: formData.date,                  // 2025-02-06
+  //       time: formData.time                   // 10:00 AM
+  //     };
+  //     setLoading(true);
+  //     console.log(formattedData)
+  //    const res= await axios.post(`${backendUrl}/inquiry/save`, formattedData);
+  //     console.log(res)
+  //     Swal.fire({
+  //       title: "Success!",
+  //       text: "Appointment booked successfully!",
+  //       icon: "success",
+  //       confirmButtonText: "OK",
+  //     });
+  //   } catch (err) {
+  //     Swal.fire({
+  //       title: "Error!",
+  //       text: "Error booking appointment. Try again.",
+  //       icon: "error",
+  //       confirmButtonText: "OK",
+  //     });
+  //   } finally {
+  //     setLoading(false);
+  //   setIsModalOpen(false);
+  //   setFormData([])
+  //   }
+  // };
 
   return (
     <div>
@@ -220,9 +217,9 @@ const TeamMemberCard = ({ member }) => (
 
     {/* Content Section */}
     <div className="flex-1 text-left">
-      <h3 className="text-base font-semibold text-gray-900">
+      <div className="text-base font-semibold text-gray-900">
         {member?.name || "Unknown"}
-      </h3>
+      </div>
       <p className="text-sm font-medium text-gray-600"><span className="font-semibold">Head</span> - Department of {member?.specialty || "N/A"}</p>
       <p className="text-sm text-gray-600 mt-2">{member?.degree || "N/A"}</p>
       {/* <p className="text-sm text-gray-500">{member?.location || "N/A"}</p> */}

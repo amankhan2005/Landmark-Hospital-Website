@@ -94,7 +94,7 @@ const Gallery = () => {
 
         {galleryData.length > 0 && (
           <Slider {...settings}>
-            {galleryData.map((image, idx) => (
+           {[...galleryData].reverse().map((image, idx) => (
               <div key={idx} className="p-2 relative group cursor-pointer " onClick={() => openModal(idx)}>
                 <div className="absolute inset-0 flex top-0 z-10 justify-center items-center opacity-0 group-hover:opacity-100 transition">
                               <FaPlus className="text-white font-extralight bg-black/50 rounded-full p-2 w-10 h-10" />

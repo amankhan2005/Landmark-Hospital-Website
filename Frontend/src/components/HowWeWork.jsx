@@ -41,7 +41,7 @@ export default function HowWeWork() {
 
         <div className="flex relative flex-col items-center text-center max-w-xs md:bg-transparent bg-gray-100 p-2">
           <FaStethoscope className="text-red-500 md:text-5xl text-4xl" />
-          <h3 className="text-xl font-semibold mt-4">Get Consultant</h3>
+          <div className="text-xl font-semibold mt-4">Get Consultant</div>
           <p className="text-gray-500 mt-2 md:text-base text-sm">
             If you are going to use a passage Ipsum, you need to anything for
             hidden.
@@ -65,7 +65,7 @@ export default function HowWeWork() {
         </div>
         <div className="flex flex-col items-center text-center max-w-xs">
           <FaHandHoldingHeart className="text-green-500 md:text-5xl text-4xl" />
-          <h3 className="text-xl font-semibold mt-4">Get Care & Relief</h3>
+          <div className="text-xl font-semibold mt-4">Get Care & Relief</div>
           <p className="text-gray-500 mt-2 md:text-base text-sm">
             If you are going to use a passage Ipsum, you need to anything for
             hidden.
