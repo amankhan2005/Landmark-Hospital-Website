@@ -8,7 +8,7 @@ function SpecialitiesSection() {
           Our Specialities
         </h1>
         <p className="text-gray-600 mb-12 text-sm md:text-base text-center ">
-    We offer expert care across a range of specialties.
+    We offer expert care across a range of specialities.
   </p>
         <SpecilitesComponent/>
     </div>

@@ -1,7 +1,7 @@
-import nicu from "./assets/home/nicu.png";
-import icu from "./assets/home/icu.png";
-import privateRoom from "./assets/home/private-room.png";
-import genral from "./assets/home/genral.png";
+import nicu from "./assets/Facilities/NICU.jpg";
+import icu from "./assets/Facilities/ICU.jpg";
+import privateRoom from "./assets/Facilities/Private.jpg";
+import genral from "./assets/Facilities/General-care.jpg";
 
 export const facilities = [
   {
@@ -56,14 +56,8 @@ export const facilities = [
         "question": "What are the common medical conditions treated in the NICU?",
         "answer": "Common conditions include respiratory distress syndrome (RDS), neonatal jaundice, infections such as sepsis, low blood sugar (hypoglycemia), anemia, feeding difficulties, and congenital abnormalities requiring medical intervention."
       },
-      {
-        "question": "How can parents prepare for their baby’s discharge from the NICU?",
-        "answer": "Parents receive detailed instructions on feeding, hygiene, medication, and recognizing warning signs that may require medical attention. Many NICUs also provide training sessions on newborn care, CPR, and home monitoring if needed."
-      },
-      {
-        "question": "What kind of follow-up care is required after a baby is discharged from the NICU?",
-        "answer": "NICU graduates often require follow-up visits with neonatologists, pediatricians, or specialists to monitor their growth, development, and health. Some may need vision or hearing tests, therapy for motor skills, or nutritional guidance."
-      },
+      
+      
       {
         "question": "What is Kangaroo Care, and why is it important?",
         "answer": "Kangaroo Care is a method where parents hold their baby skin-to-skin on their chest. This technique helps regulate the baby’s temperature, heart rate, and breathing while promoting bonding and reducing stress."
@@ -75,7 +69,15 @@ export const facilities = [
       {
         "question": "What role do neonatologists play in the NICU?",
         "answer": "Neonatologists are doctors who specialize in the care of newborns, particularly those who are premature or critically ill. They lead the NICU team, diagnose conditions, and develop treatment plans tailored to each baby's needs."
-      }
+      },
+      {
+        "question": "How can parents prepare for their baby’s discharge from the NICU?",
+        "answer": "Parents receive detailed instructions on feeding, hygiene, medication, and recognizing warning signs that may require medical attention. Many NICUs also provide training sessions on newborn care, CPR, and home monitoring if needed."
+      },
+      {
+        "question": "What kind of follow-up care is required after a baby is discharged from the NICU?",
+        "answer": "NICU graduates often require follow-up visits with neonatologists, pediatricians, or specialists to monitor their growth, development, and health. Some may need vision or hearing tests, therapy for motor skills, or nutritional guidance."
+      },
     ]
   },
   

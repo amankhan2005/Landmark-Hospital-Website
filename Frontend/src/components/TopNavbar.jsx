@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 export default function TopNavBar() {
     return (
       <header className="bg-primary text-white">
-        <div className="container mx-auto flex justify-between items-center py-2 px-4">
+        <div className="container mx-auto flex justify-between md:gap-0 gap-2 items-center py-2 px-4">
           {/* Left side: Email and Address */}
           <div className="flex items-center space-x-6">
             <span className="md:flex hidden items-center space-x-2 hover:cursor-pointer hover:scale-x-105 ease-in-out transition-all duration-500">
@@ -15,7 +15,7 @@ export default function TopNavBar() {
               <span className="md:text-base text-xs line-clamp-1">Gonda Road, Near Vinayak Resorts, Bahraich - 271801 (U.P.)</span>
             </a>
           </div>
-          <Link to='/appointment' className="flex hover:scale-x-105 ease-in-out transition-all duration-500 hover:animate-none gap-2 shadow-2xl rounded py-1 bg-white px-2 text-primary font-semibold animate-pulse">
+          <Link to='/appointment' className="md:flex hidden hover:scale-x-105 ease-in-out transition-all duration-500 hover:animate-none gap-2 shadow-2xl rounded py-1 bg-white px-2 text-primary md:font-semibold animate-pulse">
             <span className="animate-bounce"><i class="fa-solid fa-calendar-check"></i></span><span>Book Appointment</span>
           </Link>
   

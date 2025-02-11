@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+
 import BreadCumb from "../components/Breadcumb";
 import AppointmentForm from "../components/AppointmentForm";
-import image from "../assets/appointment-image.png";
+import image from "../assets/Book-Appointment.jpg";
 const Appoinment = () => {
   return (
     <div className="">
@@ -13,9 +13,9 @@ const Appoinment = () => {
         title="Book Appointment"
       />
 
-      <div className="flex md:py-12 py-8 md:px-8 px-4">
+      <div className="flex md:py-12 py-8 md:px-14 px-4">
         <div className="flex-1">
-          <img src={image} />
+          <img src={image} className="rounded shadow-2xl hover:shadow-none"/>
         </div>
 
         <div className="flex-1 px-2">

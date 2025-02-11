@@ -6,17 +6,17 @@ import dermatology from "./assets/specility/derm.png";
 import critical from "./assets/specility/critical.png";
 import medicine from "./assets/specility/general.png";
 import emergency from "./assets/specility/health-care.png";
-import pediatric from "./assets/specility/pediatric.png";
-
-import anesthesia from "./assets/specility/anesthesia.png";
-import cardiology from "./assets/specility/cardiology.png";
-import general1 from "./assets/specility/general1.png";
-import gynecology1 from "./assets/specility/gynecology1.png";
-import neurology1 from "./assets/specility/neurology1.png";
-import orthopedic1 from "./assets/specility/orthopedic.png";
-import ophthalmology from "./assets/specility/phthalmology.png";
-import derm1 from "./assets/specility/derm1.png";
 import pediatric1 from "./assets/specility/pediatric1.png";
+
+import anesthesia from "./assets/specility/critical.jpg";
+import cardiology from "./assets/specility/cardiology.jpg";
+import general1 from "./assets/specility/General-Surgery.jpg";
+import gynecology1 from "./assets/specility/Gynae.jpg";
+import neurology1 from "./assets/specility/Neurology.jpg";
+import orthopedic1 from "./assets/specility/orthopedic.jpg";
+import ophthalmology from "./assets/specility/ophthalmology.jpg";
+import derm1 from "./assets/specility/Dermatology.jpg";
+import pediatric from "./assets/specility/Pediatrics.jpg";
 
 export const specialities = [
   {
@@ -25,7 +25,7 @@ export const specialities = [
     image: `${medicine}`,
     img: `${anesthesia}`,
     description:
-      "Critical care medicine is a specialized area that focuses on the management of patients with life-threatening conditions. It involves comprehensive monitoring, advanced medical interventions, and support for patients whose health is at significant risk.",
+      "Critical Care & Anesthesia is a specialized area that focuses on the management of patients with life-threatening conditions. It involves comprehensive monitoring, advanced medical interventions, and support for patients whose health is at significant risk.",
     services: [
       "Ventilator Management",
       "Organ Support",
@@ -228,12 +228,7 @@ export const specialities = [
         answer:
           "Frequency depends on individual risk factors, age, and medical history. Generally, adults should have regular check-ups at least once a year, but those with risk factors may need more frequent evaluations.",
       },
-      {
-        question:
-          "What is the difference between a heart attack and cardiac arrest?",
-        answer:
-          "A heart attack occurs when blood flow to the heart is blocked, leading to heart muscle damage. Cardiac arrest is a sudden loss of heart function, often caused by an electrical problem in the heart, leading to collapse and loss of consciousness.",
-      },
+      
       {
         question: "Can heart disease be inherited?",
         answer:
@@ -259,6 +254,12 @@ export const specialities = [
         answer:
           "If you experience chest pain, especially if it is severe, persistent, or accompanied by symptoms like shortness of breath or sweating, seek emergency medical attention immediately.",
       },
+      {
+        question:
+          "What is the difference between a heart attack and cardiac arrest?",
+        answer:
+          "A heart attack occurs when blood flow to the heart is blocked, leading to heart muscle damage. Cardiac arrest is a sudden loss of heart function, often caused by an electrical problem in the heart, leading to collapse and loss of consciousness.",
+      },
     ],
   },
   {
@@ -270,7 +271,6 @@ export const specialities = [
       "Ophthalmology is the branch of medicine dedicated to the study, diagnosis, and treatment of eye disorders. It includes routine eye exams, diagnosis and treatment of eye diseases, and surgical interventions for various conditions affecting the eyes.",
     services: [
       "Comprehensive Eye Exams",
-      "Diagnosis and Management of Eye Conditions",
       "Refractive Surgery",
       "Cataract Surgery",
       "Glaucoma Management",
@@ -278,6 +278,7 @@ export const specialities = [
       "Oculoplastic Surgery",
       "Emergency Eye Care",
       "Vision Therapy",
+      "Diagnosis and Management of Eye Conditions",
     ],
     details: [
       {
@@ -319,12 +320,7 @@ export const specialities = [
         answer:
           "Generally, adults should have a comprehensive eye exam every one to two years. Those with existing eye conditions or risk factors may need more frequent exams.",
       },
-      {
-        question:
-          "What are the common symptoms that indicate I should see an eye doctor?",
-        answer:
-          "Symptoms include blurry vision, eye pain, redness, swelling, frequent headaches, halos around lights, or sudden vision changes.",
-      },
+     
       {
         question: "What treatments are available for common eye conditions?",
         answer:
@@ -374,6 +370,12 @@ export const specialities = [
         question: "Is vision therapy effective?",
         answer:
           "Vision therapy can be effective for certain conditions, such as strabismus or convergence insufficiency. It involves a customized program of exercises to improve visual skills.",
+      },
+      {
+        question:
+          "What are the common symptoms that indicate I should see an eye doctor?",
+        answer:
+          "Symptoms include blurry vision, eye pain, redness, swelling, frequent headaches, halos around lights, or sudden vision changes.",
       },
     ],
   },
@@ -847,12 +849,12 @@ export const specialities = [
   },
 
   {
-    title: "Orthopedic Surgery",
-    link: "orthopedic-surgery",
+    title: "Orthopedic",
+    link: "orthopedic",
     image: `${orthopedic}`,
     img: `${orthopedic1}`,
     description:
-      "Orthopedic surgery deals with conditions involving the musculoskeletal system such as bones, joints, ligaments, and muscles. Our expert orthopedic surgeons provide advanced treatments for fractures, joint disorders, sports injuries, and spinal conditions, ensuring optimal recovery and mobility.",
+      "orthopedic deals with conditions involving the musculoskeletal system such as bones, joints, ligaments, and muscles. Our expert orthopedic surgeons provide advanced treatments for fractures, joint disorders, sports injuries, and spinal conditions, ensuring optimal recovery and mobility.",
     services: [
       "Joint Replacement",
       "Arthroscopy",
@@ -882,7 +884,7 @@ export const specialities = [
         ],
       },
       {
-        title: "Why Choose Hope Hospital for Orthopedic Surgery?",
+        title: "Why Choose Hope Hospital for orthopedic?",
         description: [
           "Experienced Orthopedic Surgeons: Highly skilled specialists with expertise in advanced orthopedic procedures.",
           "Cutting-Edge Technology: Use of robotic-assisted surgery, 3D imaging, and minimally invasive techniques for precision treatment.",
@@ -895,9 +897,9 @@ export const specialities = [
     ],
     faqs: [
       {
-        question: "What is orthopedic surgery?",
+        question: "What is orthopedic?",
         answer:
-          "Orthopedic surgery focuses on the diagnosis, treatment, and rehabilitation of conditions affecting the bones, joints, ligaments, tendons, and muscles.",
+          "orthopedic focuses on the diagnosis, treatment, and rehabilitation of conditions affecting the bones, joints, ligaments, tendons, and muscles.",
       },
       {
         question: "When is joint replacement necessary?",
@@ -906,28 +908,23 @@ export const specialities = [
       },
       {
         question:
-          "What are the benefits of minimally invasive orthopedic surgery?",
+          "What are the benefits of minimally invasive orthopedic?",
         answer:
           "Minimally invasive procedures offer smaller incisions, less pain, shorter hospital stays, and quicker recovery compared to traditional open surgeries.",
       },
       {
-        question: "How long does it take to recover from orthopedic surgery?",
+        question: "How long does it take to recover from orthopedic?",
         answer:
           "Recovery time varies depending on the procedure, but most patients can resume normal activities within weeks to months with proper rehabilitation.",
       },
+     
       {
-        question:
-          "What are common sports injuries that require orthopedic treatment?",
-        answer:
-          "Common sports injuries include ACL tears, meniscus injuries, rotator cuff tears, stress fractures, and dislocations.",
-      },
-      {
-        question: "Is physical therapy necessary after orthopedic surgery?",
+        question: "Is physical therapy necessary after orthopedic?",
         answer:
           "Yes, physical therapy is essential for restoring mobility, strength, and function after orthopedic procedures.",
       },
       {
-        question: "What are the risks associated with orthopedic surgery?",
+        question: "What are the risks associated with orthopedic?",
         answer:
           "Risks include infection, blood clots, nerve damage, and complications related to anesthesia, though these are minimized with proper care.",
       },
@@ -945,6 +942,12 @@ export const specialities = [
         question: "How can I prevent orthopedic injuries?",
         answer:
           "Regular exercise, maintaining a healthy weight, proper posture, and using protective gear during sports can help prevent orthopedic injuries.",
+      },
+      {
+        question:
+          "What are common sports injuries that require orthopedic treatment?",
+        answer:
+          "Common sports injuries include ACL tears, meniscus injuries, rotator cuff tears, stress fractures, and dislocations.",
       },
     ],
   },

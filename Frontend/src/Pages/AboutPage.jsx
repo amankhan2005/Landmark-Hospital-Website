@@ -43,9 +43,9 @@ function AboutPage() {
               The Story of Hope Hospital
             </h2>
             <p className="text-gray-600  text-sm md:text-base  text-justify md:mb-1">
-            Welcome to <b> Hope Hospital </b>, your trusted multi-speciality healthcare
+            Welcome to <b> Hope Hospital</b>, your trusted multi-speciality healthcare
           provider. We are dedicated to providing exceptional medical care
-          across various specialties, including <b>Cardiology</b>, <b>Orthopedics</b>, <b>General Surgery</b>,
+          across various specialities, including <b>Cardiology</b>, <b>Orthopedics</b>, <b>General Surgery</b>,
            <b> Pediatrics</b>, <b>Obstetrics & Gynecology</b>, <b>Neurology</b>, <b>Dermatology</b>,
           <b> Ophthalmology</b> and <b>Critical Care & Anaesthesia</b>. Our team of highly
           skilled professionals utilizes state-of-the-art technology to ensure
