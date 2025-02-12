@@ -26,7 +26,7 @@ export default function Header() {
               src={logo}
               alt="Hope Hospital Logo"
               title="Hope Logo"
-              className="w-[11rem] h-full"
+              className="w-40 h-full"
             />
           </Link>
         </div>
@@ -171,7 +171,7 @@ export default function Header() {
                 {openDropdown === "specialities" && (
                   <ul className="block bg-white shadow-md rounded-md py-2 w-full text-sm">
                     {specialities.map((item, i) => (
-                      <li>
+                      <li key={i}>
                         <Link
                           to={`/specialities/${item.link}`}
                           className="block px-4 py-2 hover:bg-blue-100"
@@ -336,7 +336,7 @@ export default function Header() {
             {openDropdown === "specialities" && (
               <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-56 transition-all duration-300 text-sm">
                 {specialities.map((item, i) => (
-                  <li>
+                  <li key={i}>
                     <Link
                       to={`/specialities/${item.link}`}
                       className="block px-4 py-2 hover:bg-blue-100"

@@ -29,13 +29,12 @@ function AppointmentForm() {
 
   const dispatch = useDispatch();
   const { teamData, status, error } = useSelector((state) => state.data);
-
+console.log(teamData)
   // Fetch doctors data from API
   useEffect(() => {
     dispatch(fetchTeamData());
   }, [dispatch]);
 
-  // Update doctorsData when data is fetched
   useEffect(() => {
     if (teamData) {
       setDoctorsData(teamData);
@@ -118,6 +117,18 @@ function AppointmentForm() {
     return errors;
   };
 
+// Filter doctors based on selected department
+// const filteredDoctors = doctorsData.filter(
+//   (doc) => doc.department === selectedDepartment
+// );
+
+const filteredDoctors =
+  selectedDepartment === "" ? doctorsData : doctorsData.filter(
+    (doc) => doc.department === selectedDepartment
+  );
+
+  const finalDoctorsList = filteredDoctors.length > 0 ? filteredDoctors : doctorsData;
+
   return (
     <div className="w-full bg-white md:p-8 px-3 py-4 pt-6 shadow-lg rounded-lg border border-gray-200">
       <h3 className="md:text-3xl text-2xl text-primary messiri font-bold md:text-gray-800">
@@ -167,7 +178,7 @@ function AppointmentForm() {
           value={formData.department}
           required
         >
-          <option>Select Department</option>
+          <option value='' disabled>Select Department</option>
           {departments.map((dept, index) => (
             <option key={index} value={dept}>
               {dept}
@@ -182,8 +193,8 @@ function AppointmentForm() {
           value={formData.doctor}
           required
         >
-          <option>Select Doctor</option>
-          {doctorsData.map((doc, index) => (
+          <option  value='' disabled>Select Doctor</option>
+          {finalDoctorsList.map((doc, index) => (
             <option key={index} value={doc.name}>
               {doc.name}
             </option>

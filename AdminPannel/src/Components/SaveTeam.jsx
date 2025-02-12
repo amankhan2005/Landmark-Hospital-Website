@@ -7,6 +7,7 @@ const TeamForm = ({ member, onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
     specialty: "",
+    department: "",
     degree: "",
     imageUrl: "",
   });
@@ -17,6 +18,7 @@ const TeamForm = ({ member, onClose }) => {
       setFormData({
         name: member.name,
         specialty: member.specialty,
+        department: member.department || "",
         degree: member.degree,
         imageUrl: member.imageUrl,
       });
@@ -51,8 +53,14 @@ const TeamForm = ({ member, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!formData.name || !formData.specialty || !formData.degree || !formData.imageUrl) {
+    console.log(formData);
+    if (
+      !formData.name ||
+      !formData.specialty ||
+      !formData.department ||
+      !formData.degree ||
+      !formData.imageUrl
+    ) {
       Swal.fire("Warning", "All fields are required!", "warning");
       return;
     }
@@ -70,10 +78,24 @@ const TeamForm = ({ member, onClose }) => {
     }
   };
 
+  const departments = [
+    "Critical Care & Anesthesia",
+    "Cardiology",
+    "Ophthalmology",
+    "Dermatology",
+    "Obstetrics & Gynecology",
+    "Neurology",
+    "General Surgery",
+    "Orthopedic",
+    "Pediatric Care",
+  ];
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
       <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-4">{member ? "Update" : "Add"} Team Member</h2>
+        <h2 className="text-2xl font-bold mb-4">
+          {member ? "Update" : "Add"} Team Member
+        </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium">Name</label>
@@ -81,7 +103,9 @@ const TeamForm = ({ member, onClose }) => {
               type="text"
               value={formData.name}
               className="w-full p-2 border border-gray-300 rounded mt-1"
-              onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, name: e.target.value }))
+              }
               required
             />
           </div>
@@ -91,7 +115,9 @@ const TeamForm = ({ member, onClose }) => {
               type="text"
               value={formData.specialty}
               className="w-full p-2 border border-gray-300 rounded mt-1"
-              onChange={(e) => setFormData((prev) => ({ ...prev, specialty: e.target.value }))}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, specialty: e.target.value }))
+              }
               required
             />
           </div>
@@ -101,21 +127,66 @@ const TeamForm = ({ member, onClose }) => {
               type="text"
               value={formData.degree}
               className="w-full p-2 border border-gray-300 rounded mt-1"
-              onChange={(e) => setFormData((prev) => ({ ...prev, degree: e.target.value }))}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, degree: e.target.value }))
+              }
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Upload Image</label>
-            <input type="file" className="mt-2" onChange={uploadImage} />
-            {loading && <p className="text-blue-500 text-sm">Uploading...</p>}
-            {formData.imageUrl && <img src={formData.imageUrl} alt="Uploaded" className="mt-2 w-20 h-20 object-cover" />}
+            <label className="block text-sm font-medium">Department</label>
+            <select
+              value={formData.department}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, department: e.target.value }))
+              }
+              className="w-full p-2 border border-gray-300 rounded mt-1"
+              required
+            >
+              <option value="" disabled>
+                Select Department
+              </option>
+              {departments.map((dept, index) => (
+                <option key={index} value={dept}>
+                  {dept}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="image" className="block text-sm font-medium">
+              Upload Image
+            </label>
+            <input
+              type="file"
+              id="image"
+              className="mt-2 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
+              onChange={uploadImage}
+            />
+            {loading && (
+              <p className="text-blue-500 text-sm mt-2">Uploading...</p>
+            )}
+            {formData.imageUrl && (
+              <img
+                src={formData.imageUrl}
+                alt="Uploaded"
+                className="mt-2 w-20 h-20 object-cover"
+              />
+            )}
           </div>
           <div className="flex justify-between">
-            <button disabled={loading} type="submit" className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
+            <button
+              disabled={loading}
+              type="submit"
+              className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+            >
               {member ? "Update" : "Save"} Team Member
             </button>
-            <button type="button" className="bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500" onClick={onClose}>
+            <button
+              type="button"
+              className="bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500"
+              onClick={onClose}
+            >
               Cancel
             </button>
           </div>

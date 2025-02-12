@@ -16,8 +16,9 @@ export default function TopNavBar() {
               <span className="md:text-base text-xs line-clamp-1">Gonda Road, Near Vinayak Resorts, Bahraich - 271801 (U.P.)</span>
             </a>
           </div>
-          <Link to='/appointment' title="Book Appointment" aria-label="Book-Appointment" className="lg:flex hidden hover:scale-x-105 ease-in-out transition-all duration-500 gap-2 shadow-2xl rounded py-1 bg-white px-2 text-primary md:font-semibold ">
-            <span className="animate-bounce"><i className="fa-solid fa-calendar-check"></i></span><span>Book Appointment</span>
+          
+          <Link to='/appointment' title="Book Appointment" aria-label="Book-Appointment" className="flex  hover:scale-x-105 ease-in-out transition-all duration-500 gap-2 shadow-2xl rounded lg:py-1 py-0.5 bg-white lg:px-2 px-1 text-primary md:font-semibold ">
+            <span className="animate-bounce"><i className="fa-solid fa-calendar-check"></i></span><span className="lg:text-base text-xs  flex justify-center items-center"><span className="lg:flex hidden">Book</span> Appointment</span>
           </Link>
   
           <div aria-label="Social Media Links" className="flex md:space-x-5 space-x-3 md:text-lg text-sm justify-center items-center">
