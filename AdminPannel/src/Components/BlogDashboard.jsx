@@ -93,7 +93,7 @@ const BlogDashboard = () => {
           <tbody>
           {blogs?.length == 0 && (<div className="text-red-500 text-2xl text-center">No Data Yet!</div>)}
             {blogs.map((b) => (
-              <tr key={b._id} className="text-center">
+              <tr key={b._id} className="text-left">
                 <td className="border p-2">
                   <img
                     src={b.imageUrl}
@@ -101,14 +101,14 @@ const BlogDashboard = () => {
                     className="w-12 h-12 rounded-full mx-auto"
                   />
                 </td>
-                <td className="border p-2">{b.title}</td>
+                <td className="border p-2 text-base font-medium">{b.title}</td>
 
-                <td className="border p-2 line-clamp-4">
-                  {removeHTMLTags(b.description)}
+                <td className="border p-2 text-base">
+                  <div className="overflow-y-scroll h-[20vh]">{removeHTMLTags(b.description)}</div> 
                 </td>
 
-                <td className="border p-2">{b.postedBy}</td>
-                <td className="border p-2">
+                <td className="border p-2 w-32 text-base font-medium">{b.postedBy}</td>
+                <td className="border p-2 flex flex-row ">
                   <button
                     className="mr-2 bg-yellow-500 text-white px-2 py-1 rounded"
                     onClick={() => handleEdit(b)}

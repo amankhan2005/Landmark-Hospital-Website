@@ -10,64 +10,7 @@ const BlogPage = () => {
 
   // Redux State
   const { blogData, status, error } = useSelector((state) => state.data);
-  const [blogsData, setBlogsData] = useState([ {
-    id: 1,
-    title: "What is CPR",
-    description:
-      "Understand the importance of immediate action in cardiac emergencies, how CPR works, and the impact it can have. This skill can save lives in critical moments.",
-    author: "Dr. Kishalay Datta",
-    date: "Jan 29, 2025",
-    image:
-      "https://max-website20-images.s3.ap-south-1.amazonaws.com/medium_CPR_bb5dc76b72.jpg",
-  },
-  {
-    id: 2,
-    title: "Guillain-Barre Syndrome: Symptoms, Causes, and Treatment",
-    description:
-      "Learn how Guillain-Barre Syndrome affects the body and explore symptoms & treatment options. Early detection can improve outcomes.",
-    author: "Dr. Rajesh Gupta",
-    date: "Jan 28, 2025",
-    image:
-      "https://max-website20-images.s3.ap-south-1.amazonaws.com/medium_Guillain_Barre_1_e16366ddbc.jpg",
-  },
-  
-  {
-    id: 3,
-    title: "Managing Diabetes Effectively",
-    description:
-      "Discover tips and strategies for managing diabetes effectively, including diet, exercise, and medication.",
-    author: "Dr. Asha Sharma",
-    tags: ["Endocrinology", "General Health"],
-    image: "https://picsum.photos/150/100",
-  },
-  {
-    id: 7,
-    title: "What is CPR",
-    description:
-      "Understand the importance of immediate action in cardiac emergencies, how CPR works, and the impact it can have. This skill can save lives in critical moments.",
-    author: "Dr. Kishalay Datta",
-    tags: ["Emergency & Trauma"],
-    image:
-      "https://max-website20-images.s3.ap-south-1.amazonaws.com/medium_CPR_bb5dc76b72.jpg",
-  },
-  {
-    id: 4,
-    title: "Advancements in Cardiac Surgery",
-    description:
-      "Explore the latest advancements in cardiac surgery and how they improve patient outcomes and recovery times.",
-    author: "Dr. Vijay Kumar",
-    tags: ["Cardiology", "Surgery"],
-    image: "https://picsum.photos/150/100",
-  },
-  {
-    id: 5,
-    title: "Understanding Mental Health",
-    description:
-      "A comprehensive guide to understanding mental health, reducing stigma, and seeking help when needed.",
-    author: "Dr. Meera Iyer",
-    tags: ["Mental Health", "Psychology"],
-    image: "https://picsum.photos/150/100",
-  }]);
+  const [blogsData, setBlogsData] = useState([]);
 
   // Fetch Blogs
   useEffect(() => {
@@ -97,7 +40,7 @@ const BlogPage = () => {
             <p className="text-red-500">No Data Found</p>
           )}
 
-          {blogsData.map((blog,i) => {
+          {blogsData?.map((blog,i) => {
 
             const formattedDate = new Date(blog.createdAt).toLocaleDateString(
               "en-GB",
@@ -129,7 +72,7 @@ const BlogPage = () => {
                 <p className="text-sm text-gray-500 flex justify-between items-center">
                   <button
                     onClick={() => navigate(`/blog/${blog._id}`)}
-                    className="text-white hover:text-blue-800 border border-blue-800 cursor-pointer btn px-2 py-1 rounded"
+                    className="text-white hover:text-blue-100 border bg-primary border-blue-800 cursor-pointer btn px-2 py-1 rounded"
                   >
                     Read More
                   </button>

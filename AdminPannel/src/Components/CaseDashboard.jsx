@@ -79,7 +79,6 @@ const CaseDashboard = () => {
             <tr className="bg-gray-100">
               <th className="border p-2">Photo</th>
               <th className="border p-2">Title</th>
-              <th className="border p-2">Description</th>
               <th className="border p-2">Actions</th>
             </tr>
           </thead>
@@ -91,7 +90,6 @@ const CaseDashboard = () => {
                   <img src={c.imageUrl} alt={c.title} className="w-12 h-12 rounded-full mx-auto" />
                 </td>
                 <td className="border p-2">{c.title}</td>
-                <td className="border p-2">{c.description}</td>
                 <td className="border p-2">
                   <button className="mr-2 bg-yellow-500 text-white px-2 py-1 rounded" onClick={() => handleEdit(c)}>
                     Edit

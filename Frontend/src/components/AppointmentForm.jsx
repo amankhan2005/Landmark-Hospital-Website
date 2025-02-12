@@ -3,8 +3,10 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTeamData } from "../redux/slices/dataslice";
 import Swal from "sweetalert2";
+import { specialities } from "../SpecilitesData.jsx";
 
-import {specialities} from '../SpecilitesData.jsx'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function AppointmentForm() {
   const [doctorsData, setDoctorsData] = useState([]);
@@ -123,8 +125,6 @@ function AppointmentForm() {
       </h3>
       {loading && <p className="text-blue-500">Loading...</p>}
       <form className="mt-4 flex flex-col gap-4" onSubmit={handleSubmit}>
-        
-
         <input
           type="text"
           name="name"
@@ -132,26 +132,32 @@ function AppointmentForm() {
           className="border w-full border-gray-300 p-3 rounded-lg"
           onChange={handleChange}
           value={formData.name}
+          required
         />
         {formErrors.name && <p className="text-red-500">{formErrors.name}</p>}
 
         <input
-          type="number"
+          type="tel"
           name="phone"
-          placeholder="Phone Number"
+          placeholder="Enter 10-digit phone number"
+          pattern="[0-9]{10}"
+          maxlength="10"
           className="border w-full border-gray-300 p-3 rounded-lg"
           onChange={handleChange}
           value={formData.phone}
+          required
         />
+
         {formErrors.phone && <p className="text-red-500">{formErrors.phone}</p>}
 
         <input
           type="email"
-          name="email" 
+          name="email"
           placeholder="Email"
           className="border w-full border-gray-300 p-3 rounded-lg"
           onChange={handleChange}
           value={formData.email}
+          required
         />
         {formErrors.email && <p className="text-red-500">{formErrors.email}</p>}
         <select
@@ -159,6 +165,7 @@ function AppointmentForm() {
           className="border border-gray-300 p-3 rounded-lg"
           onChange={handleDepartmentChange}
           value={formData.department}
+          required
         >
           <option>Select Department</option>
           {departments.map((dept, index) => (
@@ -173,6 +180,7 @@ function AppointmentForm() {
           className="border border-gray-300 p-3 rounded-lg"
           onChange={handleChange}
           value={formData.doctor}
+          required
         >
           <option>Select Doctor</option>
           {doctorsData.map((doc, index) => (
@@ -184,21 +192,36 @@ function AppointmentForm() {
         <input
           type="date"
           name="date"
+          min={new Date().toISOString().split("T")[0]}
           placeholder="Date"
           className="border border-gray-300 w-full p-3 rounded-lg"
           onChange={handleChange}
           value={formData.date}
+          required
         />
+
         {formErrors.date && <p className="text-red-500">{formErrors.date}</p>}
 
-        <input
-          type="time"
+        <select
           name="time"
-          placeholder="Time"
-          className="border border-gray-300 w-full p-3 rounded-lg"
           onChange={handleChange}
           value={formData.time}
-        />
+          className="border border-gray-300 w-full p-3 rounded-lg"
+          required
+        >
+          <option value="">Select Time</option>
+          {[...Array(12)].map((_, i) => (
+            <>
+              <option key={`${i + 1}-AM`} value={`${i + 1} AM`}>
+                {i + 1} AM
+              </option>
+              <option key={`${i + 1}-PM`} value={`${i + 1} PM`}>
+                {i + 1} PM
+              </option>
+            </>
+          ))}
+        </select>
+
         {formErrors.time && <p className="text-red-500">{formErrors.time}</p>}
 
         <button

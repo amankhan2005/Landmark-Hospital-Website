@@ -90,7 +90,9 @@ function ContactUsForm() {
       console.error("Error:", err.response?.data || err.message);
       Swal.fire({
         title: "Error!",
-        text: err.response?.data?.message || "Something went wrong. Please try again.",
+        text:
+          err.response?.data?.message ||
+          "Something went wrong. Please try again.",
         icon: "error",
         confirmButtonText: "OK",
       });
@@ -105,7 +107,7 @@ function ContactUsForm() {
         General Query
       </h3>
       {loading && <p className="text-blue-500">Processing your request...</p>}
-      
+
       <form className="mt-4 flex flex-col gap-4" onSubmit={handleSubmit}>
         {/* Name Field */}
         <input
@@ -115,6 +117,7 @@ function ContactUsForm() {
           className="border w-full border-gray-300 p-3 rounded-lg"
           onChange={handleChange}
           value={formData.name}
+          required
         />
         {formErrors.name && <p className="text-red-500">{formErrors.name}</p>}
 
@@ -122,10 +125,13 @@ function ContactUsForm() {
         <input
           type="tel"
           name="phone"
-          placeholder="Phone Number"
+          placeholder="Enter 10-digit phone number"
+          pattern="[0-9]{10}"
+          maxlength="10"
           className="border w-full border-gray-300 p-3 rounded-lg"
           onChange={handleChange}
           value={formData.phone}
+          required
         />
         {formErrors.phone && <p className="text-red-500">{formErrors.phone}</p>}
 
@@ -137,6 +143,7 @@ function ContactUsForm() {
           className="border w-full border-gray-300 p-3 rounded-lg"
           onChange={handleChange}
           value={formData.email}
+          required
         />
         {formErrors.email && <p className="text-red-500">{formErrors.email}</p>}
 
@@ -146,6 +153,7 @@ function ContactUsForm() {
           className="border border-gray-300 p-3 rounded-lg"
           onChange={handleDepartmentChange}
           value={formData.department}
+          required
         >
           <option value="">Select Department</option>
           {specialities.map((speciality, index) => (
@@ -154,7 +162,9 @@ function ContactUsForm() {
             </option>
           ))}
         </select>
-        {formErrors.department && <p className="text-red-500">{formErrors.department}</p>}
+        {formErrors.department && (
+          <p className="text-red-500">{formErrors.department}</p>
+        )}
 
         {/* Message Field */}
         <textarea
@@ -163,12 +173,15 @@ function ContactUsForm() {
           className="border border-gray-300 w-full p-3 rounded-lg"
           onChange={handleChange}
           value={formData.message}
+          required
         />
-        {formErrors.message && <p className="text-red-500">{formErrors.message}</p>}
+        {formErrors.message && (
+          <p className="text-red-500">{formErrors.message}</p>
+        )}
 
         {/* Submit Button */}
         <button
-        aria-label="Submit"
+          aria-label="Submit"
           title="Submit"
           type="submit"
           disabled={loading}

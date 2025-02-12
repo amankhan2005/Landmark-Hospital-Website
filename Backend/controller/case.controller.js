@@ -3,13 +3,13 @@ import Case from "../model/case.model.js";
 //     Create a new case entry
 export const createCase = async (req, res) => {
     try {
-        const { title, description, imageUrl } = req.body;
+        const { title, imageUrl } = req.body;
 
-        if (!title || !description || !imageUrl) {
+        if (!title || !imageUrl) {
             return res.status(400).json({ message: "All fields are required." });
         }
 
-        const newCase = new Case({ title, description, imageUrl });
+        const newCase = new Case({ title, imageUrl });
         await newCase.save();
 
         res.status(201).json({ message: "Case created successfully!", case: newCase });
@@ -44,15 +44,15 @@ export const getCaseById = async (req, res) => {
 //     Update a case
 export const updateCase = async (req, res) => {
     try {
-        const { title, description, imageUrl } = req.body;
+        const { title, imageUrl } = req.body;
 
-        if (!title || !description || !imageUrl) {
+        if (!title || !imageUrl) {
             return res.status(400).json({ message: "All fields are required." });
         }
 
         const updatedCase = await Case.findByIdAndUpdate(
             req.params.id,
-            { title, description, imageUrl },
+            { title, imageUrl },
             { new: true }
         );
 

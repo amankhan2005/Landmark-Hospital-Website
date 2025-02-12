@@ -29,7 +29,7 @@ const TeamMemberCard = memo(({ member }) => {
           <span className="font-semibold">Head</span> - Department of {specialty || "N/A"}
         </p>
         <p className="text-sm text-gray-600 mt-2">{degree || "N/A"}</p>
-        <Link to="/appointment" className="mt-4 block px-4 py-2 text-xs text-white bg-primary rounded-full cursor-pointer">
+        <Link to="/appointment" className="mt-4 block px-4 py-2 text-xs text-white bg-primary text-center rounded-full cursor-pointer">
           Request Appointment
         </Link>
       </div>

@@ -19,7 +19,9 @@ function Home() {
       <HeroSlider />  
 
       {/* Lazy Load the Rest */}
-      <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
+      <Suspense fallback={ <div className="flex justify-center flex-col items-center py-10">
+    <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-800"></div>
+  </div>}>
         <AboutSection />
         <SpecialitiesSection />
         <Stats />

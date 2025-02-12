@@ -94,8 +94,8 @@ const handleDelete = async (id) => {
                 <td className="border p-2">{member?.name}</td>
                 <td className="border p-2">{member?.specialty}</td>
                 <td className="border p-2">{member?.degree}</td>
-                <td className="border p-2">
-                  <button className="mr-2 bg-yellow-500 text-white px-2 py-1 rounded" onClick={() => handleEdit(member)}>Edit</button>
+                <td className="border p-2 flex flex-row gap-2">
+                  <button className="mr-2 bg-yellow-400 text-white px-2 py-1 rounded" onClick={() => handleEdit(member)}>Edit</button>
                   <button className="bg-red-500 text-white px-2 py-1 rounded" onClick={() => handleDelete(member._id)}>Delete</button>
                 </td>
               </tr>

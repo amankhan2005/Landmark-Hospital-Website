@@ -6,7 +6,6 @@ const CaseModal = ({ caseData, onClose }) => {
   const api = import.meta.env.VITE_API_URL;
   const [formData, setFormData] = useState({
     title: "",
-    description: "",
     imageUrl: "",
   });
   const [loading, setLoading] = useState(false);
@@ -15,7 +14,6 @@ const CaseModal = ({ caseData, onClose }) => {
     if (caseData) {
       setFormData({
         title: caseData.title || "",
-        description: caseData.description || "",
         imageUrl: caseData.imageUrl || "",
       });
     }
@@ -50,7 +48,7 @@ const CaseModal = ({ caseData, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.title || !formData.description || !formData.imageUrl) {
+    if (!formData.title || !formData.imageUrl) {
       Swal.fire("Warning", "All fields are required!", "warning");
       return;
     }
@@ -80,16 +78,6 @@ const CaseModal = ({ caseData, onClose }) => {
               value={formData.title}
               className="w-full p-2 border border-gray-300 rounded mt-1"
               onChange={(e) => setFormData((prev) => ({ ...prev, title: e.target.value }))}
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium">Description</label>
-            <input
-              type="text"
-              value={formData.description}
-              className="w-full p-2 border border-gray-300 rounded mt-1"
-              onChange={(e) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
               required
             />
           </div>

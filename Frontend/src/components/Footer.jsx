@@ -75,6 +75,8 @@ const Footer = () => {
                   </li>
                 </ul>
               </nav>
+                <a href="https://hope-adminpannel.netlify.app/" target="_blank" title="Admin Login" aria-label="Admin Login" className="border inline-block border-white my-4 py-1 px-3 rounded hover:bg-white hover:text-blue-900 cursor-pointer">Admin Login</a>
+             
             </address>
 
         

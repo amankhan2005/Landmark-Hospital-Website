@@ -46,7 +46,7 @@ const Dashboard = () => {
   const [section, setSection] = useState('Home');
   const [user, setUser] = useState('Mohd Suhel');
   
-  const {adminData} = location?.state
+  const {adminData} = location?.state || 'Admin'
 
   useEffect(()=>{
     if(adminData){

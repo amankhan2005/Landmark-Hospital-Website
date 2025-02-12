@@ -59,8 +59,8 @@ const BlogDetailPage = () => {
           <p className="text-sm text-gray-500 mt-4">
             Published by <span className="text-gray-900 font-semibold">{blog.postedBy}</span> on {formatDate(blog.createdAt)}
           </p>
-          <h1 className="text-3xl font-bold mt-2">{blog.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.description) }} /> 
+          <h1 className="text-3xl font-bold my-2 ">{blog.title}</h1>
+          <div className="blog" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.description) }} /> 
         </div>
 
         {/* More Blogs Section */}

@@ -66,7 +66,7 @@ function GalleryPage() {
         {gallery.length == 0 && <p className="text-red-500">No Data Found</p>}
         {status == "loading" && <p>Loading Gallery Images...</p>}
         {error && <p className="text-red-500">{error}</p>}
-        {gallery.map((img, idx) => (
+        {gallery?.map((img, idx) => (
           <div
             key={idx}
             className="relative  bg-white rounded-lg shadow-md overflow-hidden cursor-pointer group"
