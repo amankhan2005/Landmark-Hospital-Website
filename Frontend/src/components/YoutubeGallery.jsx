@@ -199,7 +199,7 @@ export default function YouTubePage() {
             </button>
             <button
               onClick={() => scroll("right")}
-              className={`absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full shadow z-10 transition-colors duration-300 ${darkMode
+              className={`absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full shadow z-10  ${darkMode
                   ? "bg-gray-700 hover:bg-gray-600 text-white"
                   : "bg-white hover:bg-gray-200 text-black"
                 }`}
