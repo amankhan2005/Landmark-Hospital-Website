@@ -34,10 +34,8 @@ const ClinicStats = () => {
   }, []);
 
   return (
-    <section
-    className="bg-primary"
-    >
-      <div className="  mx-auto px-4 flex items-center justify-center flex-col">
+    <section className="bg-primary">
+      <div className="mx-auto px-4 flex items-center justify-center flex-col">
         <div className="grid container grid-cols-2 md:grid-cols-5 gap-8 text-center mx-auto">
           {statsData.map((stat, index) => {
             const Icon = stat.icon;
@@ -57,7 +55,7 @@ const ClinicStats = () => {
                   {Math.floor(counts[index])}
                   {stat.label === "YEARS EXPERIENCE" ? "+" : "+"}
                 </div>
-                <div className="text-white font-semibold text-sm lg:text-base opacity-90">
+                <div className="text-white font-semibold text-sm lg:text-base opacity-90 whitespace-nowrap">
                   {stat.label}
                 </div>
               </div>
