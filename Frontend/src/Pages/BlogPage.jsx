@@ -50,7 +50,7 @@ const BlogPage = () => {
             return (
               <div
                 key={i}
-                className=" rounded-lg p-4 mb-4 shadow-2xl hover:shadow-none transition cursor-pointer"
+                className=" container rounded-lg p-4 mb-4 shadow-2xl hover:shadow-none transition cursor-pointer"
                 onClick={() => navigate(`/blog/${blog._id}`)}
               >
                 <img
