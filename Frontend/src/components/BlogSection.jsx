@@ -68,7 +68,7 @@ const BlogComponent = () => {
 
   return (
     <div className="lg:py-14 md:py-12 py-10">
-      <div className="max-w-[80%] mx-auto px-4 relative">
+      <div className=" container mx-auto px-4 relative">
         <h1 className="md:text-4xl text-2xl   font-bold  text-gray-800 text-center">
           Our Recent Blog
         </h1>
