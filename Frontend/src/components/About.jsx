@@ -1,47 +1,55 @@
-import React from "react";
-import about from "../assets/home/HopeHospital-about.webp";
+import React from 'react';
 
-const AboutSection = () => {
+const AboutHospital = () => {
+  const primaryColor = '#13335b'; // Dark Blue
+  const secondaryColor = '#3b628b'; // Light Blue
+
   return (
-    <section className="flex  flex-col md:flex-row items-center md:gap-10 justify-between md:px-20  p-8 px-4 md:py-14">
-      <div className="relative w-full lg:w-1/3  items-center justify-center mb-8 lg:mb-0 lg:block hidden" data-aos='zoom-in'>
-        <img
-          src={about}
-          alt="Hope hospital"
-          loading="lazy"
-          className="rounded-2xl  shadow-md h-full w-full object-cover"
-        />
+    <div className="w-full py-10 px-4 sm:px-6 lg:px-8 bg-gray-100">
+      <div className="container mx-auto">
+        <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
+
+          {/* Left Side - Image */}
+          <div className="w-full md:w-1/2">
+            <div className="w-full h-96 md:h-full">
+              <img
+                src="https://content3.jdmagicbox.com/comp/lucknow/j5/0522px522.x522.230827215507.m8j5/catalogue/landmark-advance-neurospine-care-superspeciality-hospital-jankipuram-lucknow-oe707gq0tz.jpg"
+                alt="LandMark Hospital"
+                className="w-full h-full object-cover rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+
+          {/* Right Side - Content */}
+          <div className="w-full md:w-1/2 flex flex-col justify-center">
+            <h2 className="lg:text-4xl text-2xl  text-gray-800 font-bold mb-4"  >
+              Welcome to LandMark Hospital
+            </h2>
+            <h3 className="text-xl font-semibold mb-6  text-gray-600" >
+              Leading Brain, Spine & Peripheral Nerve Care in Lucknow
+            </h3>
+
+            <p className="text-gray-700 mb-4">
+              Welcome to LandMark Hospital, your trusted destination for advanced Brain, Spine, and Peripheral Nerve care. Our expert neurosurgeons use cutting-edge technology to provide personalized and effective treatments.
+            </p>
+
+            <p className="text-gray-700 mb-4">
+              We combine years of surgical expertise with modern innovations to ensure that every patient receives the highest quality of care possible.
+            </p>
+
+            <p className="text-gray-700 mb-4">
+              From emergency interventions to complex surgeries, we ensure precision, safety, and compassionate care at every step of your journey. Our dedicated rehabilitation team works closely with patients to speed up recovery, restore mobility, and improve quality of life.
+            </p>
+
+            <p className="text-gray-700 font-medium">
+              At LandMark, your health, comfort, and trust are our top priorities.
+            </p>
+          </div>
+
+        </div>
       </div>
-      <div className="w-full lg:w-2/3 text-center md:text-left">
-        <h4 className="messiri text-lg text-primary font-bold uppercase mb-0">
-          Welcome to Hope Hospital
-        </h4>
-        <h1 className="text-lg lg:text-3xl md:text-3xl  text-left md:font-bold font-base text-gray-800 md:mb-2 mb-2 md:border-0 border-s-4 border-[#1b4d94] md:ps-0 ps-2 ">
-          Best Multi Speciality Hospital in Bahraich
-        </h1>
-        <p className="text-gray-600  text-sm md:text-base  text-justify mb-1">
-          Welcome to <b> Hope Hospital</b>, your trusted multi-speciality healthcare
-          provider. We are dedicated to providing exceptional medical care
-          across various specialities, including <b>Cardiology</b>, <b>Orthopedics</b>, <b>General Surgery</b>,
-           <b> Pediatrics</b>, <b>Obstetrics & Gynecology</b>, <b>Neurology</b>, <b>Dermatology</b>,
-          <b> Ophthalmology</b> and <b>Critical Care & Anaesthesia</b>. Our team of highly
-          skilled professionals utilizes state-of-the-art technology to ensure
-          accurate diagnoses and effective treatments tailored to your unique
-          needs. We prioritize patient comfort and satisfaction, fostering a
-          collaborative environment where specialists work together for
-          comprehensive care.
-        </p>
-        <p className="text-gray-600 text-sm md:text-base  text-justify md:mb-3">
-          With 24/7 emergency services and a commitment to community health,
-          Hope Hospital is here to support you at every stage of your
-          healthcare journey. Trust us for compassionate, high-quality care—your
-          health is our priority!
-        </p>
-        <p className="text-gray-800 text-sm md:text-base leading-relaxed">
-          "Your health is our priority—where expertise meets excellence."
-        </p>
-      </div>
-    </section>
+    </div>
   );
 };
-export default AboutSection;
+
+export default AboutHospital;

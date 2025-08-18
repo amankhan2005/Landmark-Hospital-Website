@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/hope-logo.webp";
+import landmarkLogo from "../assets/Landmark Dr rahul singh.png";
 import { specialities } from "../SpecilitesData";
+import TestimonialSection from "./Testimonial";
 import { FaXTwitter } from "react-icons/fa6";
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,19 +15,19 @@ export default function Header() {
 
   return (
     <nav
-      className="bg-white sticky top-0 z-50 shadow-md"
+      className="bg-white   shadow-md"
       role="navigation"
       aria-label="Main Navigation"
     >
-      <div className="container mx-auto flex justify-between items-center py-1 px-6 ">
+      <div className=" container  mx-auto flex justify-between items-center py-1 px-4"  >
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/">
             <img
-              src={logo}
-              alt="Hope Hospital Logo"
-              title="Hope Logo"
-              className="w-40 h-full"
+              src={landmarkLogo}
+              alt="Landmark Hospital Logo"
+              title="Landmark Logo"
+              className="w-30 h-full"
             />
           </Link>
         </div>
@@ -46,11 +47,10 @@ export default function Header() {
 
           {/* Mobile Menu */}
           <div
-            className={`fixed top-0 right-0 h-full w-60  bg-white shadow-2xl transform ${
-              isMobileMenuOpen
+            className={`fixed top-0 right-0 h-full w-60  bg-white shadow-2xl transform ${isMobileMenuOpen
                 ? "translate-x-0 overflow-hidden"
                 : "translate-x-full overflow-hidden"
-            } transition-transform duration-300 ease-in-out lg:hidden shadow-2xl`}
+              } transition-transform duration-300 ease-in-out lg:hidden shadow-2xl`}
           >
             <div className="flex text-gray-100 justify-around items-center py-2  bg-primary md:text-lg text-sm px-2">
               <a
@@ -117,9 +117,8 @@ export default function Header() {
             </button>
             <ul className="text-gray-800 font-semibold space-y-4 px-2 ps-6  mt-5 ">
               <li
-                className={`hover-text-primary ${
-                  location.pathname === "/" ? "text-primary" : ""
-                }`}
+                className={`hover-text-primary ${location.pathname === "/" ? "text-primary" : ""
+                  }`}
               >
                 <Link
                   to="/"
@@ -234,9 +233,8 @@ export default function Header() {
                 )}
               </li>
               <li
-                className={`hover-text-primary  ${
-                  location.pathname === "/cases" ? "text-primary" : ""
-                }`}
+                className={`hover-text-primary  ${location.pathname === "/cases" ? "text-primary" : ""
+                  }`}
               >
                 <Link to="/cases" onClick={() => setIsMobileMenuOpen(false)}>
                   Cases
@@ -244,27 +242,24 @@ export default function Header() {
               </li>
 
               <li
-                className={`hover-text-primary  ${
-                  location.pathname === "/blog" ? "text-primary" : ""
-                }`}
+                className={`hover-text-primary  ${location.pathname === "/blog" ? "text-primary" : ""
+                  }`}
               >
                 <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>
                   Blog
                 </Link>
               </li>
               <li
-                className={`hover-text-primary  ${
-                  location.pathname === "/gallery" ? "text-primary" : ""
-                }`}
+                className={`hover-text-primary  ${location.pathname === "/gallery" ? "text-primary" : ""
+                  }`}
               >
                 <Link to="/gallery" onClick={() => setIsMobileMenuOpen(false)}>
                   Gallery
                 </Link>
               </li>
               <li
-                className={`hover-text-primary  ${
-                  location.pathname === "/testimonials" ? "text-primary" : ""
-                }`}
+                className={`hover-text-primary  ${location.pathname === "/testimonials" ? "text-primary" : ""
+                  }`}
               >
                 <Link
                   to="/testimonials"
@@ -274,9 +269,8 @@ export default function Header() {
                 </Link>
               </li>
               <li
-                className={`hover-text-primary ${
-                  location.pathname === "/contact" ? "text-primary" : ""
-                }`}
+                className={`hover-text-primary ${location.pathname === "/contact" ? "text-primary" : ""
+                  }`}
               >
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                   Contact Us
@@ -285,152 +279,138 @@ export default function Header() {
             </ul>
           </div>
         </div>
-        {/* Navigation Items for Desktop */}
-        <ul className="hidden lg:flex space-x-8 text-gray-800 font-semibold">
-          <li
-            className={`hover-text-primary  ${
-              location.pathname === "/" ? " text-primary" : ""
-            }`}
-          >
-            <Link to="/" title="Home">
-              Home
-            </Link>
-          </li>
-          <li
-            className="relative cursor-pointer"
-            onMouseEnter={() => handleDropdown("about")}
-            onMouseLeave={() => handleDropdown(null)}
-          >
-            <Link to="/about" title="About Us" className="hover-text-primary">
-              About Us ▾
-            </Link>
-            {openDropdown === "about" && (
-              <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-52 transition-all duration-300 text-sm">
-                <li>
-                  <Link
-                    to="/about"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    About Hope Hospital
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/our-team"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    Our Team
-                  </Link>
-                </li>
-              </ul>
-            )}
-          </li>
-          <li
-            className="relative cursor-pointer"
-            onMouseEnter={() => handleDropdown("specialities")}
-            onMouseLeave={() => handleDropdown(null)}
-          >
-            <Link to="/specialities" className="hover-text-primary">
-              Our Departments ▾
-            </Link>
-            {openDropdown === "specialities" && (
-              <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-56 transition-all duration-300 text-sm">
-                {specialities.map((item, i) => (
-                  <li key={i}>
-                    <Link
-                      to={`/specialities/${item.link}`}
-                      className="block px-4 py-2 hover:bg-blue-100"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {item.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-          <li
-            className="relative cursor-pointer"
-            onMouseEnter={() => handleDropdown("facilities")}
-            onMouseLeave={() => handleDropdown(null)}
-          >
-            <Link to="/facilities" className="hover-text-primary">
-              Facilities ▾
-            </Link>
-            {openDropdown === "facilities" && (
-              <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-48 transition-all duration-300 text-sm">
-                <li>
-                  <Link
-                    to="/facilities/nicu"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    NICU
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/facilities/icu"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    ICU
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/facilities/general-care"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    General Care
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/facilities/private-care"
-                    className="block px-4 py-2 hover:bg-blue-100"
-                  >
-                    Private Care
-                  </Link>
-                </li>
-              </ul>
-            )}
-          </li>
-          <li
-            className={`hover-text-primary  ${
-              location.pathname === "/cases" ? "text-primary" : ""
-            }`}
-          >
-            <Link to="/cases">Cases</Link>
-          </li>
 
-          <li
-            className={`hover-text-primary  ${
-              location.pathname === "/blog" ? "text-primary" : ""
-            }`}
-          >
-            <Link to="/blog">Blog</Link>
-          </li>
-          <li
-            className={`hover-text-primary  ${
-              location.pathname === "/gallery" ? "text-primary" : ""
-            }`}
-          >
-            <Link to="/gallery">Gallery</Link>
-          </li>
-          <li
-            className={`hover-text-primary  ${
-              location.pathname === "/testimonials" ? "text-primary" : ""
-            }`}
-          >
-            <Link to="/testimonials">Testimonials</Link>
-          </li>
-          <li
-            className={`hover-text-primary  ${
-              location.pathname === "/contact" ? "text-primary" : ""
-            }`}
-          >
-            <Link to="/contact">Contact Us</Link>
-          </li>
-        </ul>
+        {/* Navigation Items for Desktop */}
+         {/* Navigation Items for Desktop */}
+<ul className="hidden lg:flex  text-gray-800 font-semibold">
+  <li
+    className={`px-4 hover-text-primary ${location.pathname === "/" ? " text-primary" : ""}`}
+  >
+    <Link to="/" title="Home">
+      Home
+    </Link>
+  </li>
+
+  <li
+    className="relative cursor-pointer px-4"
+    onMouseEnter={() => handleDropdown("about")}
+    onMouseLeave={() => handleDropdown(null)}
+  >
+    <Link to="/about" title="About Us" className="hover-text-primary">
+      About Us ▾
+    </Link>
+    {openDropdown === "about" && (
+      <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-64 transition-all duration-300 text-sm divide-y divide-gray-200">
+        <li>
+          <Link to="/about" className="block px-4 py-2 hover:bg-blue-100">
+            About LandMark Hospital
+          </Link>
+        </li>
+        <li>
+          <Link to="/our-team" className="block px-4 py-2 hover:bg-blue-100">
+            About Dr. Rahul Singh
+          </Link>
+        </li>
+      </ul>
+    )}
+  </li>
+
+ <li
+  className="relative cursor-pointer px-4"
+  onMouseEnter={() => handleDropdown("specialities")}
+  onMouseLeave={() => handleDropdown(null)}
+>
+  <Link to="/brain" title="Our Specialities" className="hover-text-primary">
+    Our Specialities ▾
+  </Link>
+  {openDropdown === "specialities" && (
+    <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-64 transition-all duration-300 text-sm divide-y divide-gray-200">
+      <li>
+        <Link to="/brain" className="block px-4 py-2 hover:bg-blue-100">
+          Brain
+        </Link>
+      </li>
+      <li>
+        <Link to="/spine" className="block px-4 py-2 hover:bg-blue-100">
+          Spine
+        </Link>
+      </li>
+      <li>
+        <Link to="/peripheral-nerve-surgery" className="block px-4 py-2 hover:bg-blue-100">
+          Peripheral Nerve Surgery
+        </Link>
+      </li>
+    </ul>
+  )}
+</li>
+
+
+  <li
+    className={`px-4 hover-text-primary ${location.pathname === "/facilities" ? "text-primary" : ""}`}
+  >
+    <Link to="/facilities">Facilities</Link>
+  </li>
+
+  <li
+    className={`px-4 hover-text-primary ${location.pathname === "/cases" ? "text-primary" : ""}`}
+  >
+    <Link to="/cases">Cases</Link>
+  </li>
+
+  <li
+    className={`px-4 hover-text-primary ${location.pathname === "/blog" ? "text-primary" : ""}`}
+  >
+    <Link to="/blog">Blog</Link>
+  </li>
+
+  <li
+    className="relative cursor-pointer px-4"
+    onMouseEnter={() => handleDropdown("gallery")}
+    onMouseLeave={() => handleDropdown(null)}
+  >
+    <Link to="/gallery" title="Gallery" className="hover-text-primary">
+      Gallery ▾
+    </Link>
+
+    {openDropdown === "gallery" && (
+      <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-52 transition-all duration-300 text-sm divide-y divide-gray-200">
+        <li>
+          <Link to="/gallery/photos" className="block px-4 py-2 hover:bg-blue-100">
+            Photo Gallery
+          </Link>
+        </li>
+        <li>
+          <Link to="/gallery/videos" className="block px-4 py-2 hover:bg-blue-100">
+            Video Gallery
+          </Link>
+        </li>
+        <li>
+          <Link to="/gallery/news" className="block px-4 py-2 hover:bg-blue-100">
+            News & Media
+          </Link>
+        </li>
+        <li>
+          <Link to="/gallery/recognition" className="block px-4 py-2 hover:bg-blue-100">
+            Rewards & Recognition
+          </Link>
+        </li>
+      </ul>
+    )}
+  </li>
+
+  <li
+    className={`px-4 hover-text-primary ${location.pathname === "/testimonials" ? "text-primary" : ""}`}
+  >
+    <Link to="/testimonials">Testimonials</Link>
+  </li>
+
+  <li
+    className={`px-4 hover-text-primary ${location.pathname === "/contact" ? "text-primary" : ""}`}
+  >
+    <Link to="/contact">Contact Us</Link>
+  </li>
+</ul>
+
       </div>
     </nav>
   );

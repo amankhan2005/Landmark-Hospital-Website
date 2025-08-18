@@ -13,12 +13,12 @@ const Appoinment = () => {
         title="Book Appointment"
       />
 
-      <div className="flex md:py-12 py-8 md:px-14 px-4">
-        <div className="flex-1">
+      <div className="flex   md:py-12 py-8 md:px-14 px-4">
+        <div className="flex-1  ">
           <img src={image} className="rounded shadow-2xl hover:shadow-none"/>
         </div>
 
-        <div className="flex-1 px-2">
+        <div className="container flex-1 px-2">
           <AppointmentForm />
         </div>
       </div>

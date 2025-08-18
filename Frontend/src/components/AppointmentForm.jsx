@@ -130,8 +130,8 @@ const filteredDoctors =
   const finalDoctorsList = filteredDoctors.length > 0 ? filteredDoctors : doctorsData;
 
   return (
-    <div className="w-full bg-white md:p-8 px-3 py-4 pt-6 shadow-lg rounded-lg border border-gray-200">
-      <h3 className="md:text-3xl text-2xl text-primary messiri font-bold md:text-gray-800">
+    <div className="   bg-white md:p-8 px-3 py-4 pt-6 shadow-lg rounded-lg border border-gray-200">
+      <h3 className="md:text-3xl text-2xl text-primary   font-bold md:text-gray-800">
         Book Appointment
       </h3>
       {loading && <p className="text-blue-500">Loading...</p>}

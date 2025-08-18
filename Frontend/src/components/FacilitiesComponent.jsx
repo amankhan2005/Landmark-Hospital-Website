@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 function FacilitiesComponent({ props }) {
 
   return (
-    <div className="grid relative grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 md:gap-6 gap-3">
+    <div className=" grid relative grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 md:gap-6 gap-3">
       {facilities.map((specialty, index) => (
         <motion.div
           key={specialty.id}

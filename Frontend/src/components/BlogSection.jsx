@@ -1,4 +1,4 @@
-import React, { useEffect, memo } from "react";
+ import React, { useEffect, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
@@ -17,7 +17,7 @@ const formatDate = (dateString) => {
 // Memoized Arrow Components
 const PrevArrow = memo(({ onClick }) => (
   <button
-  aria-label="Previous Slide"
+    aria-label="Previous Slide"
     title="Previous Slide"
     className="md:block absolute hidden top-1/2 left-0 z-20 transform cursor-pointer -translate-y-1/2 bg-primary text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
     onClick={onClick}
@@ -28,7 +28,7 @@ const PrevArrow = memo(({ onClick }) => (
 
 const NextArrow = memo(({ onClick }) => (
   <button
-  aria-label="Next Slide"
+    aria-label="Next Slide"
     title="Next Slide"
     className="md:block absolute hidden top-1/2 right-0 z-20 transform cursor-pointer -translate-y-1/2 bg-primary text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition"
     onClick={onClick}
@@ -67,15 +67,15 @@ const BlogComponent = () => {
   };
 
   return (
-    <div className="lg:py-14 md:py-12 py-10 relative">
-      <h1 className="md:text-4xl text-2xl messiri font-bold text-primary text-center">
-        Our Recent Blog
-      </h1>
-      <p className="text-gray-600 md:mb-6 mb-2 text-center text-sm md:text-base">
-        Latest updates, tips, and insights from our team.
-      </p>
+    <div className="lg:py-14 md:py-12 py-10">
+      <div className="max-w-[80%] mx-auto px-4 relative">
+        <h1 className="md:text-4xl text-2xl   font-bold  text-gray-800 text-center">
+          Our Recent Blog
+        </h1>
+        <p className="text-gray-600 md:mb-6 mb-2 text-center text-sm md:text-base">
+          Latest updates, tips, and insights from our team.
+        </p>
 
-      <div className="px-4 relative">
         {status === "loading" && <p className="text-center">Loading Blog Data...</p>}
         {error && <p className="text-center text-red-500">{error}</p>}
         {blogData.length === 0 && status !== "loading" && (
@@ -107,7 +107,7 @@ const BlogComponent = () => {
                   <button
                     onClick={() => handleNavigate(blog._id)}
                     aria-label={`Read more about ${blog.title}`}
-    title="Read More Blog"
+                    title="Read More Blog"
                     className="text-white bg-primary hover:bg-blue-600 cursor-pointer px-3 py-1 rounded"
                   >
                     Read More

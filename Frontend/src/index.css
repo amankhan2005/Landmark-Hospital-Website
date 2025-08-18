@@ -13,19 +13,19 @@ body{
 }
 
 .text-primary{
-    color: #1b4d94 !important;
+    color: #003480 !important;
 }
 .hover-text-primary:hover{
-    color: #1b4d94 !important;
+    color: #3597e0 !important;
 }
 
 .border-primary{
-    border-color: #1b4d94 !important;
+    border-color: #003480 !important;
 }
 
 :root{
-    --primary:#1b4d94;
-    --hover-primary:#1d3e6d;
+    --primary:#2e6294 ;
+    --hover-primary:#3597e0;
 }
 
 .bg-primary{

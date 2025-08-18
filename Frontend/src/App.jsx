@@ -3,16 +3,17 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import TopNavBar from "./components/TopNavbar";
-import Header from "./components/Header";
+
+ import StickyNavbar from "./components/StickyNavbar";
 import Footer from "./components/Footer";
 
-
+// ✅ Pages
 import Home from "./Pages/Home";  
+import Testimonial from "./components/Testimonial"; // Component, not lazy
 
-
-const Appoinment  = lazy(()=>import( "./Pages/Appointment"));
-const OurTeam = lazy(() => import("./Pages/OurTeam"));
+// ✅ Lazy-loaded pages
+const Appointment  = lazy(() => import("./Pages/Appointment"));
+const OurTeam = lazy(() => import("./Pages/RahulSinghPage"));
 const GalleryPage = lazy(() => import("./Pages/GalleryPage"));
 const ContactUs = lazy(() => import("./Pages/ContactUs"));
 const Cases = lazy(() => import("./Pages/Cases"));
@@ -23,19 +24,20 @@ const FacilitiesPage = lazy(() => import("./Pages/FacilitiesPage"));
 const FacilitiesDetail = lazy(() => import("./components/FacilitiesDetail"));
 const BlogDetailPage = lazy(() => import("./components/BlogDetail"));
 const AboutPage = lazy(() => import("./Pages/AboutPage"));
-const TestimonialPage = lazy(() => import("./Pages/TestimonialPage"));
 
+// ✅ New Speciality Pages
+const Brain = lazy(() => import("./Pages/Brain"));
+const Spine = lazy(() => import("./Pages/Spine"));
+const PeripheralNerveSurgery = lazy(() => import("./Pages/PeripheralNerveSurgery"));
+
+// ✅ Loading fallback for lazy pages
 const LoadingSpinner = () => (
   <div className="flex justify-center flex-col items-center h-screen">
-    {/* <span className="tracking-wider md:text-5xl text-2xl font-bold messiri text-blue-800  duration-1000">
-      Welcome To
-    </span>
-    <div className="font-bold text-2xl messiri">Hope Hospital</div> */}
     <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-800"></div>
   </div>
 );
 
-const App=()=>{
+const App = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -48,117 +50,87 @@ const App=()=>{
   return (
     <BrowserRouter>
       <ScrollToTop />
-      
-      <TopNavBar />
-      <Header />
+ 
+      {/* Global styles */}
+      <StickyNavbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
 
+        {/* Lazy-loaded pages */}
         <Route
           path="/our-team"
-          element={
-            <Suspense fallback={<LoadingSpinner />}>
-              <OurTeam />
-            </Suspense>
-          }
+          element={<Suspense fallback={<LoadingSpinner />}><OurTeam /></Suspense>}
         />
         <Route
           path="/gallery"
-          element={
-            <Suspense fallback={<LoadingSpinner />}>
-              <GalleryPage />
-            </Suspense>
-          }
+          element={<Suspense fallback={<LoadingSpinner />}><GalleryPage /></Suspense>}
         />
         <Route
           path="/contact"
-          element={
-            <Suspense fallback={<LoadingSpinner />}>
-              <ContactUs />
-            </Suspense>
-          }
+          element={<Suspense fallback={<LoadingSpinner />}><ContactUs /></Suspense>}
         />
         <Route
           path="/about"
-          element={
-            <Suspense fallback={<LoadingSpinner />}>
-              <AboutPage />
-            </Suspense>
-          }
+          element={<Suspense fallback={<LoadingSpinner />}><AboutPage /></Suspense>}
         />
         <Route
           path="/cases"
-          element={
-            <Suspense fallback={<LoadingSpinner />}>
-              <Cases />
-            </Suspense>
-          }
+          element={<Suspense fallback={<LoadingSpinner />}><Cases /></Suspense>}
         />
         <Route
           path="/blog"
-          element={
-            <Suspense fallback={<LoadingSpinner />}>
-              <BlogPage />
-            </Suspense>
-          }
+          element={<Suspense fallback={<LoadingSpinner />}><BlogPage /></Suspense>}
         />
         <Route
           path="/blog/:id"
-          element={
-            <Suspense fallback={<LoadingSpinner />}>
-              <BlogDetailPage />
-            </Suspense>
-          }
+          element={<Suspense fallback={<LoadingSpinner />}><BlogDetailPage /></Suspense>}
         />
         <Route
           path="/specialities"
-          element={
-            <Suspense fallback={<LoadingSpinner />}>
-              <Specialities />
-            </Suspense>
-          }
+          element={<Suspense fallback={<LoadingSpinner />}><Specialities /></Suspense>}
         />
         <Route
           path="/specialities/:specialtyName"
-          element={
-            <Suspense fallback={<LoadingSpinner />}>
-              <SpecialtyDetail />
-            </Suspense>
-          }
+          element={<Suspense fallback={<LoadingSpinner />}><SpecialtyDetail /></Suspense>}
         />
         <Route
           path="/facilities"
-          element={
-            <Suspense fallback={<LoadingSpinner />}>
-              <FacilitiesPage />
-            </Suspense>
-          }
+          element={<Suspense fallback={<LoadingSpinner />}><FacilitiesPage /></Suspense>}
         />
         <Route
           path="/facilities/:facilitiesName"
-          element={
-            <Suspense fallback={<LoadingSpinner />}>
-              <FacilitiesDetail />
-            </Suspense>
-          }
+          element={<Suspense fallback={<LoadingSpinner />}><FacilitiesDetail /></Suspense>}
+        />
+
+        {/* New Specialities Pages */}
+        <Route
+          path="/brain"
+          element={<Suspense fallback={<LoadingSpinner />}><Brain /></Suspense>}
         />
         <Route
-          path="/testimonials"
-          element={
-            <Suspense fallback={<LoadingSpinner />}>
-              <TestimonialPage />
-            </Suspense>
-          }
+          path="/spine"
+          element={<Suspense fallback={<LoadingSpinner />}><Spine /></Suspense>}
         />
-        <Route path="/Appointment" element={<Appoinment />} />
+        <Route
+          path="/peripheral-nerve-surgery"
+          element={<Suspense fallback={<LoadingSpinner />}><PeripheralNerveSurgery /></Suspense>}
+        />
+
+        {/* Component, not lazy */}
+        <Route path="/testimonials" element={<Testimonial />} />
+
+        <Route
+          path="/appointment"
+          element={<Suspense fallback={<LoadingSpinner />}><Appointment /></Suspense>}
+        />
+
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
 
-      {/* 🔥 Load Footer Instantly for Faster FCP */}
       <Footer />
     </BrowserRouter>
   );
-}
+};
 
 export default App;
