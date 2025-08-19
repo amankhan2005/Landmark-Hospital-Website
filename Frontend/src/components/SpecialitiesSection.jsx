@@ -16,7 +16,7 @@ export default function ServiceSection() {
       features: ["Minimally Invasive", "99% Success Rate", "Advanced Technology"],
       iconColor: "text-white",
       iconBg: "bg-primary",
-      link:"/treatments/brain-surgery"
+      link:"/brain"
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ export default function ServiceSection() {
       features: ["Quick Recovery", "Pain-Free Results", "Expert Care"],
       iconColor: "text-white",
       iconBg: "bg-primary",
-      link:"/treatments/spine-surgery"
+      link:"/spine"
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ export default function ServiceSection() {
       features: ["World-Class Care", "Latest Techniques", "Proven Results"],
       iconColor: "text-white",
       iconBg: "bg-primary",
-      link:"/treatments/neuroendoscopy"
+      link:"/peripheral-nerve-surgery"
     }
   ];
 
@@ -47,10 +47,10 @@ export default function ServiceSection() {
       <div className="  mx-auto container relative z-10">
         {/* Header Section */}
         <div className="text-center lg:mb-12 mb-4">
-          <div className="inline-flex items-center gap-2 bg-white backdrop-blur-sm rounded-full px-4 py-1 shadow-lg mb-4 border border-[#3b628b] border-opacity-20">
+          {/* <div className="inline-flex items-center gap-2 bg-white backdrop-blur-sm rounded-full px-4 py-1 shadow-lg mb-4 border border-[#3b628b] border-opacity-20">
             <Award className="w-5 h-5 text-[#3b628b]" />
             <span className="text-[#13335b] font-medium text-sm">Premium Healthcare Services</span>
-          </div>
+          </div> */}
           
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-1 leading-tight">
             Expert Medical Care

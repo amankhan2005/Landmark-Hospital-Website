@@ -9,24 +9,24 @@ export default function TestimonialSection() {
   }, []);
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-12 bg-gray-100">
       <div className="mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-12">
+        <h2 className="text-4xl font-bold text-gray-800 mb-4 ">
           What Our Patients Say
         </h2>
-
+ <p className="text-gray-600 md:mb-6 mb-3 text-center text-sm md:text-base">
+See why so many families choose us for their healthcare needs.        </p>
         {/* Laptop-style Frame without border/shadow */}
-        <div className="mx-auto container bg-gray-900 rounded-3xl overflow-hidden">
+        <div className="mx-auto container bg-gray-900  overflow-hidden">
           {/* Top Bar */}
         
 
           {/* Laptop Screen */}
-          <div className="bg-white container p-4 overflow-hidden">
-            {/* Google Search Bar */}
+             {/* Google Search Bar */}
             
 
             {/* Google Reviews & Map */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="bg-gray-100  overflow-hidden">
               <iframe
                 src="https://widgets.sociablekit.com/google-reviews/iframe/25558445"
                 frameBorder="0"
@@ -37,7 +37,7 @@ export default function TestimonialSection() {
               ></iframe>
             </div>
           </div>
-        </div>
+       
       </div>
     </section>
   );

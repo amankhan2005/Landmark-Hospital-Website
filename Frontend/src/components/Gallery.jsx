@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+ import React, { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaPlus, FaTimes } from "react-icons/fa";
 import Slider from "react-slick";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,6 +7,7 @@ import { fetchGalleryData } from "../redux/slices/dataslice";
 const Gallery = () => {
   const dispatch = useDispatch();
   const { galleryData, status, error } = useSelector((state) => state.data);
+
   useEffect(() => {
     dispatch(fetchGalleryData());
   }, [dispatch]);
@@ -36,7 +37,9 @@ const Gallery = () => {
   };
 
   const handleWheel = (e) => {
-    setScale((prevScale) => Math.min(Math.max(prevScale + e.deltaY * -0.001, 1), 3));
+    setScale((prevScale) =>
+      Math.min(Math.max(prevScale + e.deltaY * -0.001, 1), 3)
+    );
   };
 
   useEffect(() => {
@@ -59,51 +62,54 @@ const Gallery = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 2500,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 1 },
-      },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
 
   return (
-    <div className="md:py-12 lg:py-14 py-10 bg-gray-100">
+    <div className="bg-white md:py-16 py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="md:text-4xl text-2xl font-bold text-center   text-gray-800">
-          Our Recent Photos
-        </h1>
-        <p className="text-gray-600 mb-6 text-center">
-          A glimpse into our recent work and accomplishments.
-        </p>
+        {/* Heading */}
+        <div className="text-center mb-10">
+          <h1 className="md:text-4xl mb-4 text-2xl font-bold text-gray-800">
+            Our Recent Photos
+          </h1>
+          {/* <div className="w-20 h-1 bg-primary mx-auto mt-3 rounded-full"></div> */}
+          <p className="text-gray-600 mt-4">
+            A glimpse into our recent work and accomplishments.
+          </p>
+        </div>
 
-        {status === "loading" && <p className="text-center">Loading Gallery Images...</p>}
+        {/* Loader & Error */}
+        {status === "loading" && <p className="text-center">Loading Gallery...</p>}
         {error && <p className="text-center text-red-500">{error}</p>}
         {galleryData.length === 0 && status === "success" && (
           <p className="text-center text-red-500">No images available</p>
         )}
 
+        {/* Gallery Slider */}
         {galleryData.length > 0 && (
           <Slider {...settings}>
-           {[...galleryData].reverse().map((image, idx) => (
-              <div key={idx} className="p-2 relative group cursor-pointer " onClick={() => openModal(idx)}>
-                <div className="absolute inset-0 flex top-0 z-10 justify-center items-center opacity-0 group-hover:opacity-100 transition">
-                              <FaPlus className="text-white font-extralight bg-black/50 rounded-full p-2 w-10 h-10" />
-                            </div>
+            {[...galleryData].reverse().map((image, idx) => (
+              <div
+                key={idx}
+                className="p-3 relative group cursor-pointer"
+                onClick={() => openModal(idx)}
+              >
+                <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition bg-black/40 rounded-xl">
+                  <FaPlus className="text-white bg-primary rounded-full p-3 w-12 h-12 shadow-lg" />
+                </div>
                 <img
-                  src={image?.imageUrl} 
+                  src={image?.imageUrl}
                   alt={image.title || `Gallery Image ${idx}`}
-                  className="w-full h-64 object-cover z-20 rounded-xl shadow-md cursor-pointer"
-                  
+                  className="w-full h-64 object-cover rounded-xl shadow-md transform group-hover:scale-105 transition duration-300"
                 />
               </div>
             ))}
@@ -113,20 +119,18 @@ const Gallery = () => {
 
       {/* Modal */}
       {modalOpen && (
-        <div
-          className="fixed inset-0 flex h-screen overflow-hidden items-center justify-center bg-black bg-opacity-80 z-50"
-          aria-hidden={!modalOpen}
-        >
+        <div className="fixed inset-0 flex h-screen overflow-hidden items-center justify-center bg-black bg-opacity-90 z-50">
           {/* Close Button */}
           <button
-            className="absolute top-5 right-5 text-white text-3xl cursor-pointer"
+            className="absolute top-6 right-6 text-white text-3xl hover:text-primary transition"
             onClick={closeModal}
           >
             <FaTimes />
           </button>
 
+          {/* Prev */}
           <button
-            className="absolute left-5 text-white text-3xl cursor-pointer"
+            className="absolute left-6 text-white text-4xl hover:text-primary transition"
             onClick={prevImage}
           >
             <FaChevronLeft />
@@ -137,13 +141,14 @@ const Gallery = () => {
               src={galleryData[currentIndex]?.imageUrl}
               alt={galleryData[currentIndex]?.title || `Gallery Image ${currentIndex}`}
               style={{ transform: `scale(${scale})` }}
-              className="max-w-full max-h-screen transition-transform"
-              onWheel={handleWheel} // Enable zoom with mouse wheel
+              className="max-w-full max-h-[90vh] rounded-lg shadow-xl transition-transform"
+              onWheel={handleWheel}
             />
           </div>
 
+          {/* Next */}
           <button
-            className="absolute right-5 text-white text-3xl cursor-pointer"
+            className="absolute right-6 text-white text-4xl hover:text-primary transition"
             onClick={nextImage}
           >
             <FaChevronRight />

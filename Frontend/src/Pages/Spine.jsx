@@ -18,7 +18,6 @@ const SpineSurgeryPage = () => {
   const [activeService, setActiveService] = useState(null);
   const navigate = useNavigate();
 
-  // ✅ Services Data (Spine)
   const services = [
     {
       id: 1,
@@ -179,13 +178,10 @@ const SpineSurgeryPage = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="max-w-7xl mx-auto px-4 lg:px-8 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 cursor-pointer group flex flex-col overflow-hidden"
-            >
+      <section className="max-w-7xl mx-auto px-4 lg:px-8 py-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service) => (
+          <div key={service.id} className="flex flex-col">
+            <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer flex flex-col overflow-hidden">
               {/* Header */}
               <div
                 className="px-4 py-4 text-white relative"
@@ -193,7 +189,7 @@ const SpineSurgeryPage = () => {
                   background: "linear-gradient(135deg, #3b628b, #13335b)",
                 }}
               >
-                <div className="w-10 h-10 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-bold">{service.title}</h3>
@@ -207,7 +203,7 @@ const SpineSurgeryPage = () => {
                 <p className="text-gray-600 mb-4">{service.description}</p>
 
                 {activeService === service.id && (
-                  <div className="animate-fade-in space-y-4 border-t pt-4">
+                  <div className="animate-fade-in space-y-4 border-t border-gray-100 pt-4">
                     <p className="text-gray-700">{service.details}</p>
 
                     <div>
@@ -218,7 +214,7 @@ const SpineSurgeryPage = () => {
                         <CheckCircle className="w-5 h-5 mr-2 text-green-500" />
                         Key Benefits:
                       </h4>
-                      <ul className="space-y-1 text-gray-600 text-sm">
+                      <ul className="space-y-1 text-gray-600 mb-4 text-sm">
                         {service.benefits.map((b, i) => (
                           <li key={i}>• {b}</li>
                         ))}
@@ -237,7 +233,7 @@ const SpineSurgeryPage = () => {
                         {service.procedures.map((p, i) => (
                           <span
                             key={i}
-                            className="px-3 py-1 text-xs rounded-full font-medium"
+                            className="px-3 py-1 text-xs rounded-full mb-4 font-medium"
                             style={{
                               backgroundColor: "#3b628b20",
                               color: "#13335b",
@@ -252,18 +248,20 @@ const SpineSurgeryPage = () => {
                 )}
 
                 {/* Footer Buttons */}
-                <div className="mt-auto flex justify-between pt-4 border-t">
+                <div className="mt-auto flex justify-between pt-4 border-t border-gray-300">
                   <button
                     className="font-semibold flex items-center gap-2"
                     style={{ color: "#3b628b" }}
                     onClick={() =>
-                      setActiveService(
-                        activeService === service.id ? null : service.id
-                      )
+                      setActiveService(activeService === service.id ? null : service.id)
                     }
                   >
-                    Learn More
-                    <ChevronRight className="w-4 h-4" />
+                    {activeService === service.id ? "Show Less" : "Learn More"}
+                    <ChevronRight
+                      className={`w-4 h-4 transform transition-transform duration-300 ${
+                        activeService === service.id ? "rotate-90" : ""
+                      }`}
+                    />
                   </button>
                   <button
                     className="text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg hover:scale-105 transition-transform"
@@ -277,11 +275,11 @@ const SpineSurgeryPage = () => {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </section>
 
-      {/* CTA */}
+      {/* CTA Section */}
       <section
         className="rounded-3xl py-12 px-4 lg:px-12 text-center text-white shadow-2xl max-w-7xl mx-auto mb-12"
         style={{ background: "linear-gradient(135deg, #13335b, #3b628b)" }}

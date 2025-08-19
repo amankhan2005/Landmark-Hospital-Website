@@ -327,12 +327,12 @@ export default function Header() {
     <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-64 transition-all duration-300 text-sm divide-y divide-gray-200">
       <li>
         <Link to="/brain" className="block px-4 py-2 hover:bg-blue-100">
-          Brain
+          Brain Surgery
         </Link>
       </li>
       <li>
         <Link to="/spine" className="block px-4 py-2 hover:bg-blue-100">
-          Spine
+          Spine Surgery
         </Link>
       </li>
       <li>
@@ -363,40 +363,53 @@ export default function Header() {
     <Link to="/blog">Blog</Link>
   </li>
 
-  <li
-    className="relative cursor-pointer px-4"
-    onMouseEnter={() => handleDropdown("gallery")}
-    onMouseLeave={() => handleDropdown(null)}
-  >
-    <Link to="/gallery" title="Gallery" className="hover-text-primary">
-      Gallery ▾
-    </Link>
+ <li
+  className="relative cursor-pointer px-4"
+  onMouseEnter={() => handleDropdown("gallery")}
+  onMouseLeave={() => handleDropdown(null)}
+>
+  <Link to="/gallery" title="Gallery" className="hover-text-primary">
+    Gallery ▾
+  </Link>
 
-    {openDropdown === "gallery" && (
-      <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-52 transition-all duration-300 text-sm divide-y divide-gray-200">
-        <li>
-          <Link to="/gallery/photos" className="block px-4 py-2 hover:bg-blue-100">
-            Photo Gallery
-          </Link>
-        </li>
-        <li>
-          <Link to="/gallery/videos" className="block px-4 py-2 hover:bg-blue-100">
-            Video Gallery
-          </Link>
-        </li>
-        <li>
-          <Link to="/gallery/news" className="block px-4 py-2 hover:bg-blue-100">
-            News & Media
-          </Link>
-        </li>
-        <li>
-          <Link to="/gallery/recognition" className="block px-4 py-2 hover:bg-blue-100">
-            Rewards & Recognition
-          </Link>
-        </li>
-      </ul>
-    )}
-  </li>
+  {openDropdown === "gallery" && (
+    <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-52 transition-all duration-300 text-sm divide-y divide-gray-200">
+      <li>
+        <Link
+          to="/gallery?tab=photo"
+          className="block px-4 py-2 hover:bg-blue-100"
+        >
+          Photo Gallery
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/gallery?tab=video"
+          className="block px-4 py-2 hover:bg-blue-100"
+        >
+          Video Gallery
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/gallery?tab=news"
+          className="block px-4 py-2 hover:bg-blue-100"
+        >
+          News & Media
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/gallery?tab=rewards"
+          className="block px-4 py-2 hover:bg-blue-100"
+        >
+          Rewards & Recognition
+        </Link>
+      </li>
+    </ul>
+  )}
+</li>
+
 
   <li
     className={`px-4 hover-text-primary ${location.pathname === "/testimonials" ? "text-primary" : ""}`}

@@ -71,17 +71,19 @@ export default function YouTubePage() {
 
   return (
     <div
-      className={`  bg-gray-50 flex flex-col items-center p-6 transition-colors duration-300  `}
+      className={`  bg-white flex flex-col items-center p-6 transition-colors duration-300  `}
     >
       {/* Page Heading */}
       <h2
-        className={`text-4xl  text-gray-800 font-bold mb-12  `}
+        className={`text-4xl  text-gray-800 font-bold mb-4 mt-1  `}
       >
         Watch Us on YouTube
       </h2>
+       <p className="text-gray-600 md:mb-6 mb-3 text-center text-sm md:text-base">
+Explore health tips, awareness talks, and expert advice from our doctors.      </p>
 
       <div
-        className={`mx-auto rounded-3xl shadow-2xl overflow-hidden w-full container transition-colors duration-300 ${darkMode ? "bg-gray-900" : "bg-white"
+        className={`mx-auto   overflow-hidden w-full container transition-colors duration-300 ${darkMode ? "bg-gray-900" : "bg-white"
           }`}
       >
         {/* Laptop Top Bar */}
@@ -103,17 +105,17 @@ export default function YouTubePage() {
             <input
               type="text"
               placeholder="Search"
-              className={`rounded-l-full px-4 py-1 focus:outline-none border transition-colors duration-300 ${darkMode
+              className={`  px-4 py-1 focus:outline-none border transition-colors duration-300 ${darkMode
                   ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                  : "bg-white border-gray-300 text-black"
+                  : "bg-gray-150 border-gray-300 text-black"
                 }`}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             <button
-              className={`px-4 p-2 rounded-r-full border transition-colors duration-300 ${darkMode
+              className={`px-4 p-2   transition-colors duration-300 ${darkMode
                   ? "bg-gray-700 border-gray-600"
-                  : "bg-gray-100 border-gray-300"
+                  : "bg-gray-150 border-gray-300"
                 }`}
             >
               <FaSearch className={darkMode ? "text-white" : "text-gray-600"} />
@@ -134,7 +136,7 @@ export default function YouTubePage() {
         {/* Channel Info */}
         <main className="p-6">
           <div
-            className={`flex items-center justify-between p-4 rounded-md transition-colors duration-300 ${darkMode ? "bg-gray-800" : "bg-white"
+            className={`flex items-center justify-between p-4 rounded-md transition-colors duration-300 ${darkMode ? "bg-gray-800" : "bg-gray-150"
               }`}
           >
             <div className="flex items-center gap-4">
@@ -206,8 +208,7 @@ export default function YouTubePage() {
             >
               &#8594;
             </button>
-
-            {/* Videos */}
+             {/* Videos */}
             <div
               ref={scrollRef}
               className="flex overflow-x-auto gap-3 scroll-smooth pb-2"
