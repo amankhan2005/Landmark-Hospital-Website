@@ -59,7 +59,7 @@ const Features = () => {
       {/* Emergency Cases */}
       <div className="bg-primary text-white md:p-6 p-3 mb-1">
         <h3 className="text-lg font-semibold">Emergency Cases</h3>
-        <a href="tel:7840060096" className="md:mt-4 mt-2 flex items-center gap-2 md:text-xl text-base font-semibold">
+        <a href="tel: +918400136465" className="md:mt-4 mt-2 flex items-center gap-2 md:text-xl text-base font-semibold">
           <FaPhoneAlt />
           <span> +91 84001-36465</span>
         </a>
