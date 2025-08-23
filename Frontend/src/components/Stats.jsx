@@ -32,7 +32,7 @@ const ClinicStats = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-gradient-to-r from-[#13335b] to-[#3b628b]">
+    <section className="py-16  bg-gradient-to-r from-[#7da4c4] via-[#2e6294] to-[#1e4a73]">
       <div className="container mx-auto px-4">
         
 
