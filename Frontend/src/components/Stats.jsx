@@ -50,7 +50,7 @@ const ClinicStats = () => {
                 </div>
 
                 {/* Number */}
-                <div className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
                   {Math.floor(counts[index])}+
                 </div>
 
