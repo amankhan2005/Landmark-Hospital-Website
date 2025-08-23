@@ -1,85 +1,68 @@
-import nicu from "./assets/Facilities/NICU.jpg";
+import emergency from "./assets/Facilities/emergency.jpg";
 import icu from "./assets/Facilities/ICU.jpg";
 import privateRoom from "./assets/Facilities/Private.jpg";
 import genral from "./assets/Facilities/General-care.jpg";
 
 export const facilities = [
-  {
+ {
     "id": 1,
-    "title": "NICU",
-    "link": "nicu",
-    "description": "Our Neonatal Intensive Care Unit (NICU) provides highly specialized medical care for premature and critically ill newborns. The NICU is equipped with cutting-edge life-support technology, including advanced incubators, ventilators, and continuous monitoring systems to ensure the best possible care for fragile infants. We emphasize family-centered care, providing parents with regular updates, emotional support, and education on newborn care. In addition to medical treatment, our NICU focuses on developmental care strategies, including skin-to-skin contact, noise reduction, and individualized feeding plans, to improve long-term health outcomes for infants. Our mission is to provide the highest standard of care to ensure a healthy and bright future for every newborn, giving them the best start in life.",
-    "image": `${nicu}`,
+    "title": "Emergency & Trauma Care",
+    "link": "emergency",
+    "description": "Our Emergency & Trauma Care Department provides immediate, life-saving treatment for patients facing critical medical or surgical emergencies. Available 24/7, our unit is equipped with advanced resuscitation systems, trauma bays, and rapid diagnostic support to ensure the fastest possible response. We specialize in managing cardiac arrests, strokes, road accidents, fractures, burns, poisoning, and other critical conditions. With a dedicated team of emergency physicians, trauma surgeons, and paramedics, we deliver world-class emergency care when every second matters.",
+    "image": `${emergency}`,  
     "services": [
-      "24/7 neonatal monitoring",
-      "Advanced life-support systems",
-      "Ventilator and respiratory support",
-      "Specialized neonatal nutrition",
-      "Parental counseling and education"
+      "24/7 emergency medical response",
+      "Advanced trauma and accident care",
+      "Stroke and cardiac emergency management",
+      "Critical care ambulance services",
+      "On-site diagnostic and radiology support"
     ],
     "details": [
       {
-        "title": "Who Needs NICU Care?",
-        "description": "NICU care is essential for newborns who are born prematurely, have low birth weight, experience complications during delivery, or suffer from serious infections, congenital disorders, or respiratory distress. Babies who have difficulty regulating their body temperature, need respiratory support, or require specialized feeding interventions also need NICU care. Additionally, infants born to mothers with high-risk pregnancies, gestational diabetes, or preeclampsia may need intensive monitoring and medical interventions in the NICU to ensure their stability and well-being."
+        "title": "Who Needs Emergency Care?",
+        "description": "Emergency services are vital for anyone experiencing sudden and severe medical conditions such as chest pain, difficulty breathing, loss of consciousness, severe bleeding, high fever with seizures, poisoning, burns, major fractures, or injuries caused by accidents."
       },
       {
-        "title": "Types of Treatments in NICU",
-        "description": "Our NICU provides a wide range of treatments tailored to meet the specific needs of each newborn. These include oxygen therapy for babies with breathing difficulties, intravenous (IV) nutrition for infants unable to feed, phototherapy to treat neonatal jaundice, and blood transfusions for babies with severe anemia. Advanced respiratory support, including CPAP and mechanical ventilation, helps babies with underdeveloped lungs breathe more effectively. Additionally, our NICU team administers specialized medications to treat infections, ensuring each baby receives optimal care."
+        "title": "Types of Emergency Treatments",
+        "description": "Our emergency department provides a wide range of immediate treatments including CPR and cardiac life support, wound management, fracture stabilization, burn treatment, stroke interventions, and rapid surgical care for trauma cases. We also offer poisoning management and critical respiratory support with ventilators."
       },
       {
-        "title": "Parental Support and Education",
-        "description": "We believe in the importance of parental involvement in a baby's NICU journey. Our team provides parents with emotional support, regular health updates, and education on newborn care. Parents are encouraged to participate in skin-to-skin contact (kangaroo care) to strengthen bonding and improve their baby's health outcomes. We also provide training on handling, feeding, and recognizing warning signs to help parents feel more confident when their baby is discharged. Our goal is to ensure parents are well-equipped to continue providing the best care at home."
+        "title": "Specialized Emergency Teams",
+        "description": "Our multidisciplinary team includes emergency physicians, trauma surgeons, cardiologists, neurologists, and critical care specialists. Together, they ensure quick diagnosis, effective treatment, and seamless transition to ICU or operation theatres when required."
       },
       {
-        "title": "NICU Discharge and Follow-Up Care",
-        "description": "Before a baby is discharged from the NICU, our team carefully assesses their health to ensure they can thrive outside the hospital environment. Parents receive comprehensive instructions on feeding schedules, medication administration, and signs that may require medical attention. Follow-up care is essential for NICU graduates, and we provide scheduled check-ups to monitor developmental progress, hearing and vision screenings, and guidance on vaccinations. Our goal is to ensure a smooth transition from the NICU to home and to provide continued medical support as needed."
+        "title": "Ambulance & Pre-Hospital Care",
+        "description": "Our fleet of fully equipped ambulances provides rapid response with paramedics trained in advanced life support. Critical care ambulances carry ventilators, defibrillators, oxygen support, and monitoring systems to deliver expert care during patient transport."
       }
     ],
     "faqs": [
       {
-        "question": "What is the NICU?",
-        "answer": "The Neonatal Intensive Care Unit (NICU) is a specialized medical unit that provides intensive care for premature and critically ill newborns. It is equipped with advanced technology and a team of experts dedicated to ensuring the best possible care for fragile infants."
+        "question": "What types of emergencies do you treat?",
+        "answer": "We handle a wide range of emergencies including heart attacks, strokes, accidents, fractures, severe bleeding, breathing difficulties, burns, poisoning, seizures, and trauma-related injuries."
       },
       {
-        "question": "Why do babies need to be admitted to the NICU?",
-        "answer": "Babies may require NICU admission due to premature birth, low birth weight, respiratory distress, infections, congenital abnormalities, birth complications, or maternal health conditions that affect the baby’s well-being."
+        "question": "Is the emergency department open 24/7?",
+        "answer": "Yes, our Emergency & Trauma Care services are available 24 hours a day, 7 days a week, including holidays."
       },
       {
-        "question": "How long does a baby stay in the NICU?",
-        "answer": "The length of stay in the NICU varies depending on the baby's condition. Some may stay for a few days, while others may require weeks or even months of specialized care before they are strong enough to go home."
+        "question": "Do you provide ambulance services?",
+        "answer": "Yes, we have a fleet of fully equipped ambulances with trained paramedics to provide rapid transport and emergency care en route to the hospital."
       },
       {
-        "question": "Can parents visit their baby in the NICU?",
-        "answer": "Yes, parents are encouraged to visit their baby. Many NICUs have policies that allow parents to stay with their infant for extended periods. Parental involvement, including skin-to-skin contact, can improve a baby’s recovery and development."
+        "question": "How do you prioritize patients in emergency?",
+        "answer": "We follow a triage system, which means patients are treated based on the severity and urgency of their condition rather than order of arrival."
       },
       {
-        "question": "What are the common medical conditions treated in the NICU?",
-        "answer": "Common conditions include respiratory distress syndrome (RDS), neonatal jaundice, infections such as sepsis, low blood sugar (hypoglycemia), anemia, feeding difficulties, and congenital abnormalities requiring medical intervention."
-      },
-      
-      
-      {
-        "question": "What is Kangaroo Care, and why is it important?",
-        "answer": "Kangaroo Care is a method where parents hold their baby skin-to-skin on their chest. This technique helps regulate the baby’s temperature, heart rate, and breathing while promoting bonding and reducing stress."
+        "question": "Do you handle pediatric emergencies?",
+        "answer": "Yes, our emergency unit is equipped to handle pediatric emergencies, including trauma, respiratory distress, high fever, seizures, and accidental injuries."
       },
       {
-        "question": "Do all premature babies need NICU care?",
-        "answer": "Not all premature babies require NICU care. Some late preterm babies (born between 34-37 weeks) may only need minimal support and monitoring, while others born earlier may require intensive care and specialized treatments."
-      },
-      {
-        "question": "What role do neonatologists play in the NICU?",
-        "answer": "Neonatologists are doctors who specialize in the care of newborns, particularly those who are premature or critically ill. They lead the NICU team, diagnose conditions, and develop treatment plans tailored to each baby's needs."
-      },
-      {
-        "question": "How can parents prepare for their baby’s discharge from the NICU?",
-        "answer": "Parents receive detailed instructions on feeding, hygiene, medication, and recognizing warning signs that may require medical attention. Many NICUs also provide training sessions on newborn care, CPR, and home monitoring if needed."
-      },
-      {
-        "question": "What kind of follow-up care is required after a baby is discharged from the NICU?",
-        "answer": "NICU graduates often require follow-up visits with neonatologists, pediatricians, or specialists to monitor their growth, development, and health. Some may need vision or hearing tests, therapy for motor skills, or nutritional guidance."
-      },
+        "question": "What should I do in case of a medical emergency?",
+        "answer": "Call our emergency helpline immediately or use our ambulance service. While waiting, ensure the patient is safe, avoid giving food or drink, and follow basic first aid measures if trained."
+      }
     ]
   },
+
   
   {
     "id": 2,

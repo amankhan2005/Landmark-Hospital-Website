@@ -12,32 +12,35 @@ export default function WhyChooseDrRahul() {
       id: 1,
       title: "Expert Neurosurgeon in Lucknow",
       subtitle: "4 Years Specialized Experience",
-      description: "With 4 years of specialized experience in neurospine surgery, Dr. Rahul Singh excels in brain, spine, and peripheral nerve treatments.",
+      description:
+        "With 4 years of specialized experience in neurospine surgery, Dr. Rahul Singh excels in brain, spine, and peripheral nerve treatments.",
       icon: <FaUserMd className="w-12 h-12" />,
-      iconColor: "text-white",
-      iconBg: "bg-primary",
-      link: "#"
+      iconColor: "text-[#ff6b6b]", // Vibrant red for doctor
+      iconBg: "bg-gradient-to-br from-red-100 to-red-200",
+      link: "#",
     },
     {
       id: 2,
       title: "Consultant Expertise",
       subtitle: "Personalized Neurospine Consultation",
-      description: "Provides personalized neurospine consultation, ensuring precise and effective treatment for a healthier life.",
-      icon: <FaStethoscope  className="w-12 h-12  " />,
-      iconColor: "text-white",
-      iconBg: "bg-primary",
-      link: "#"
+      description:
+        "Provides personalized neurospine consultation, ensuring precise and effective treatment for a healthier life.",
+      icon: <FaStethoscope className="w-12 h-12" />,
+      iconColor: "text-[#4dabf7]", // Bright blue for stethoscope
+      iconBg: "bg-gradient-to-br from-blue-100 to-blue-200",
+      link: "#",
     },
     {
       id: 3,
       title: "Trusted by Thousands",
       subtitle: "Over 6000 Satisfied Patients",
-      description: "Over 6000 patients have trusted Dr. Rahul Singh for pain-free recovery and holistic neurocare.",
+      description:
+        "Over 6000 patients have trusted Dr. Rahul Singh for pain-free recovery and holistic neurocare.",
       icon: <FaThumbsUp className="w-12 h-12" />,
-      iconColor: "text-white",
-      iconBg: "bg-primary",
-      link: "#"
-    }
+      iconColor: "text-[#51cf66]", // Green for trust
+      iconBg: "bg-gradient-to-br from-green-100 to-green-200",
+      link: "#",
+    },
   ];
 
   return (
@@ -45,7 +48,7 @@ export default function WhyChooseDrRahul() {
       <div className="container mx-auto relative z-10">
         {/* Header Section */}
         <div className="text-center lg:mb-12 mb-6">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold  text-gray-800 mb-2 leading-tight">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-2 leading-tight">
             Why Choose Dr. Rahul Singh
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -69,21 +72,27 @@ export default function WhyChooseDrRahul() {
               <div className="relative z-10 lg:p-6 p-4 h-full">
                 {/* Icon Section */}
                 <div className="flex items-center justify-center mb-4">
-                  <div className={`p-3 ${feature.iconBg} rounded-2xl transition-all duration-300 ${
-                    hoveredCard === feature.id ? 'scale-110 rotate-6' : ''
-                  }`}>
+                  <div
+                    className={`p-4 ${feature.iconBg} rounded-2xl transition-all duration-300 ${
+                      hoveredCard === feature.id ? 'scale-110 rotate-6' : ''
+                    }`}
+                  >
                     <div className={feature.iconColor}>{feature.icon}</div>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="mb-4 text-center">
-                  <h3 className="text-xl font-bold mb-1 text-[#13335b]">{feature.title}</h3>
-                  <p className="text-sm font-medium text-[#3b628b] mb-2">{feature.subtitle}</p>
-                  <p className="text-gray-600 leading-relaxed text-sm">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-1 text-[#13335b]">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm font-medium text-[#3b628b] mb-2">
+                    {feature.subtitle}
+                  </p>
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    {feature.description}
+                  </p>
                 </div>
-
-              
               </div>
 
               {/* Hover overlay */}

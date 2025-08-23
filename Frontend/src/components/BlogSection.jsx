@@ -1,4 +1,4 @@
- import React, { useEffect, memo } from "react";
+import React, { useEffect, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
@@ -69,7 +69,7 @@ const BlogComponent = () => {
   return (
     <div className="lg:py-14 bg-gray-100 md:py-12 py-10">
       <div className=" container mx-auto px-4 relative">
-        <h1 className="md:text-4xl text-2xl mb-2  font-bold  text-gray-800 text-center">
+        <h1 className="md:text-4xl text-2xl mb-2  font-bold  text-primary text-center">
           Our Recent Blog
         </h1>
         <p className="text-gray-600 md:mb-6 mb-2 text-center text-sm md:text-base">
@@ -94,8 +94,9 @@ const BlogComponent = () => {
                     src={blog.imageUrl}
                     alt={blog.title}
                     loading="lazy"
-                    className="w-full h-40 object-cover rounded-lg mb-4"
+                    className="w-full h-56 object-cover rounded-lg mb-4"  
                   />
+
                   <p className="text-sm text-gray-500 mb-4 underline underline-offset-4">
                     Published by <span className="text-gray-900">{blog.postedBy}</span> ||
                     <span> on {formatDate(blog.createdAt)}</span>

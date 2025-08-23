@@ -11,19 +11,19 @@ function FacilitiesComponent({ props }) {
         <motion.div
           key={specialty.id}
           data-aos="fade-up"
-          data-aos-delay={index * 200} 
+          data-aos-delay={index * 200}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className={`relative overflow-hidden md:rounded-lg rounded shadow-lg transition-all duration-500 ease-in-out ${
-            props?.title === specialty?.title ? 'border-t-6 border-primary' : ''
-          } bg-white`}
+          className={`relative overflow-hidden md:rounded-lg rounded shadow-lg transition-all duration-500 ease-in-out ${props?.title === specialty?.title ? 'border-t-6 border-primary' : ''
+            } bg-white`}
         >
           <img
             src={specialty.image}
             alt={specialty.title}
             loading='lazy'
-            className="w-full md:h-48 h-20 object-cover transition-transform duration-300 hover:scale-110"
+            className="w-full md:h-56 h-28 object-cover transition-transform duration-300 hover:scale-110"
           />
+
           <div className="md:p-5 px-2">
             <div className="md:text-xl text-lg font-semibold md:mb-2 text-gray-800">{specialty.title}</div>
             <div className="border-b border-gray-300 mb-2"></div>

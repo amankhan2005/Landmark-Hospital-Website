@@ -1,4 +1,4 @@
- import React from "react";
+import React from "react";
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,7 +17,7 @@ const Footer = () => {
       <footer className="bg-primary text-white py-8 border-b">
         <div className=" container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-2 gap-8">
-            
+
             {/* Contact Section */}
             <address className="not-italic">
               <div className="text-2xl font-semibold md:mb-4 mb-2 messiri">
@@ -26,21 +26,33 @@ const Footer = () => {
               <ul>
                 <li className="flex items-center mb-2">
                   <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-                  <a href="mailto:info@drrahulneurosurgeon.com" className="hover:underline" aria-label="Email us at info@drrahulneurosurgeon.com">
+                  <a
+                    href="mailto:info@drrahulneurosurgeon.com"
+                    className="hover:underline"
+                    aria-label="Email us at info@drrahulneurosurgeon.com"
+                  >
                     info@drrahulneurosurgeon.com
                   </a>
                 </li>
                 <li className="flex items-center mb-2">
                   <FontAwesomeIcon icon={faPhone} className="mr-2" />
-                  <a href="tel:987654321" className="hover:underline" aria-label="Call us at 987654321">
-                    +91 987654321
+                  <a
+                    href="tel:987654321"
+                    className="hover:underline"
+                    aria-label="Call us at 987654321"
+                  >
+                    +91 84001-36465
                   </a>
                 </li>
                 <li className="flex items-center">
-                  <a href="https://maps.app.goo.gl/nt8BVHTHFHfzuJL77" className="flex items-center hover:underline" aria-label="Find us on Google Maps">
+                  <a
+                    href="https://maps.app.goo.gl/nt8BVHTHFHfzuJL77"
+                    className="flex items-center hover:underline"
+                    aria-label="Find us on Google Maps"
+                  >
                     <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
                     <span className="text-left">
-                      Landmark Advance Neurospine Care, M-II/016, CC, Prabhat Chauraha, Sector I, Janki Vihar Colony, Lucknow, UP 226021
+                      M-II/016, Prabhat Chauraha, Janki Vihar, Lucknow, UP 226021
                     </span>
                   </a>
                 </li>
@@ -50,36 +62,52 @@ const Footer = () => {
               <nav className="mt-4">
                 <ul className="flex space-x-4">
                   <li>
-                    <a href="#" className="hover:text-gray-200 text-xl hover:scale-125" aria-label="Facebook">
+                    <a
+                      href="#"
+                      className="hover:text-gray-200 text-xl hover:scale-125"
+                      aria-label="Facebook"
+                    >
                       <FaFacebookF />
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-gray-200 text-xl hover:scale-125" aria-label="Twitter">
+                    <a
+                      href="#"
+                      className="hover:text-gray-200 text-xl hover:scale-125"
+                      aria-label="Twitter"
+                    >
                       <FaXTwitter />
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-gray-200 text-xl hover:scale-125" aria-label="Instagram">
+                    <a
+                      href="#"
+                      className="hover:text-gray-200 text-xl hover:scale-125"
+                      aria-label="Instagram"
+                    >
                       <FaInstagram />
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-gray-200 text-xl hover:scale-125" aria-label="YouTube">
+                    <a
+                      href="#"
+                      className="hover:text-gray-200 text-xl hover:scale-125"
+                      aria-label="YouTube"
+                    >
                       <FaYoutube />
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-gray-200 text-xl hover:scale-125" aria-label="LinkedIn">
+                    <a
+                      href="#"
+                      className="hover:text-gray-200 text-xl hover:scale-125"
+                      aria-label="LinkedIn"
+                    >
                       <FaLinkedinIn />
                     </a>
                   </li>
                 </ul>
               </nav>
-
-              <a href="https://hope-adminpannel.netlify.app/" target="_blank" rel="noopener noreferrer" className="border inline-block border-white my-4 py-1 px-3 rounded hover:bg-white hover:text-blue-900 cursor-pointer">
-                Admin Login
-              </a>
             </address>
 
             {/* Specialities */}
@@ -90,17 +118,35 @@ const Footer = () => {
               <ul className="space-y-1">
                 <li>
                   <FaChevronCircleRight className="inline-block mr-2" />
-                  <Link to="/brain" className="hover:underline">Brain Surgery</Link>
+                  <Link to="/brain" className="hover:underline">
+                    Brain Surgery
+                  </Link>
                 </li>
                 <li>
                   <FaChevronCircleRight className="inline-block mr-2" />
-                  <Link to="/spine" className="hover:underline">Spine Surgery</Link>
+                  <Link to="/spine" className="hover:underline">
+                    Spine Surgery
+                  </Link>
                 </li>
                 <li>
                   <FaChevronCircleRight className="inline-block mr-2" />
-                  <Link to="/peripheral-nerve-surgery" className="hover:underline">Peripheral Nerve Surgery</Link>
+                  <Link to="/peripheral-nerve-surgery" className="hover:underline">
+                    Peripheral Nerve Surgery
+                  </Link>
                 </li>
               </ul>
+
+              {/* Admin Login Button under Specialities */}
+              <div className="mt-4">
+                <a
+                  href="https://hope-adminpannel.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border inline-block border-white py-1 px-4 rounded hover:bg-white hover:text-blue-900 transition duration-200"
+                >
+                  Admin Login
+                </a>
+              </div>
             </div>
 
             {/* Quick Links */}
@@ -109,10 +155,22 @@ const Footer = () => {
                 Quick Links
               </h4>
               <ul className="space-y-1">
-                {[{ name: "Home", path: "/" }, { name: "About Us", path: "/about" }, { name: "Cases", path: "/cases" }, { name: "Testimonials", path: "/testimonials" }, { name: "Blog", path: "/blog" }, { name: "Gallery", path: "/gallery" }, { name: "Contact Us", path: "/contact" }].map((link, index) => (
+                {[
+                  { name: "Home", path: "/" },
+                  { name: "About Us", path: "/about" },
+                  { name: "Cases", path: "/cases" },
+                  { name: "Testimonials", path: "/testimonials" },
+                  { name: "Blog", path: "/blog" },
+                  { name: "Gallery", path: "/gallery" },
+                  { name: "Contact Us", path: "/contact" },
+                ].map((link, index) => (
                   <li key={index}>
                     <FaChevronCircleRight className="inline-block mr-2" />
-                    <Link to={link.path} className="hover:underline" onClick={handletop}>
+                    <Link
+                      to={link.path}
+                      className="hover:underline"
+                      onClick={handletop}
+                    >
                       {link.name}
                     </Link>
                   </li>
@@ -135,7 +193,6 @@ const Footer = () => {
                 title="Landmark Advance Neurospine Care Superspeciality Hospital"
               />
             </div>
-
           </div>
         </div>
       </footer>

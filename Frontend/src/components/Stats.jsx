@@ -1,20 +1,18 @@
  import React, { useEffect, useState } from "react";
-import { Hospital, Clock, Microscope, Baby, Activity } from "lucide-react";
+import { User, Activity, HeartPulse } from "lucide-react"; // professional SVG icons
 
 const statsData = [
-  { icon: Hospital, label: "HAPPY PATIENTS", target: 10000 },
-  { icon: Clock, label: "YEARS EXPERIENCE", target: 4 },
-  { icon: Microscope, label: "TOTAL CASES SOLVED", target: 10000 },
-  { icon: Activity, label: "SUCCESSFUL SURGERIES", target: 5000 },
-  { icon: Baby, label: "DELIVERIES", target: 7000, hideOnMobile: true },
+  { label: "HAPPY PATIENTS", target: 10000, icon: User, iconBg: "bg-green-100 text-green-600" },
+  { label: "TOTAL CASES SOLVED", target: 12000, icon: Activity, iconBg: "bg-yellow-100 text-yellow-600" },
+  { label: "SUCCESSFUL SURGERIES", target: 5000, icon: HeartPulse, iconBg: "bg-pink-100 text-pink-600" },
 ];
 
 const ClinicStats = () => {
   const [counts, setCounts] = useState(statsData.map(() => 0));
 
   useEffect(() => {
-    const duration = 2000; // total animation duration in ms
-    const intervalTime = 20; // update interval in ms
+    const duration = 2000;
+    const intervalTime = 20;
     const steps = duration / intervalTime;
 
     const intervals = statsData.map((stat, index) => {
@@ -34,28 +32,30 @@ const ClinicStats = () => {
   }, []);
 
   return (
-    <section className="bg-primary">
-      <div className="mx-auto px-4 flex items-center justify-center flex-col">
-        <div className="grid container grid-cols-2 md:grid-cols-5 gap-8 text-center mx-auto">
+    <section className="py-16 bg-gradient-to-r from-[#13335b] to-[#3b628b]">
+      <div className="container mx-auto px-4">
+        
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {statsData.map((stat, index) => {
             const Icon = stat.icon;
             return (
               <div
                 key={index}
-                className={`p-4 group hover:transform hover:scale-105 transition-all duration-300 ${
-                  stat.hideOnMobile ? "hidden md:block" : ""
-                }`}
+                className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300"
               >
-                <div className="mb-4 flex justify-center">
-                  <div className="p-3 bg-white bg-opacity-20 rounded-full backdrop-blur-sm group-hover:bg-opacity-30 transition-all duration-300">
-                    <Icon className="text-[#13335b] h-8 w-8" />
-                  </div>
+                {/* Icon Circle */}
+                <div className={`mb-4 p-5 rounded-full ${stat.iconBg} flex items-center justify-center shadow-md`}>
+                  <Icon className="h-12 w-12" />
                 </div>
-                <div className="text-white lg:text-5xl text-4xl font-bold mb-2 group-hover:text-yellow-200 transition-colors duration-300">
-                  {Math.floor(counts[index])}
-                  {stat.label === "YEARS EXPERIENCE" ? "+" : "+"}
+
+                {/* Number */}
+                <div className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">
+                  {Math.floor(counts[index])}+
                 </div>
-                <div className="text-white font-semibold text-sm lg:text-base opacity-90 whitespace-nowrap">
+
+                {/* Label */}
+                <div className="text-gray-600 font-semibold text-center text-sm md:text-lg tracking-wide uppercase">
                   {stat.label}
                 </div>
               </div>
@@ -66,13 +66,5 @@ const ClinicStats = () => {
     </section>
   );
 };
-
-// Helper function to convert hex to rgba for gradient backgrounds
-function hexToRgba(hex, alpha) {
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-}
 
 export default ClinicStats;

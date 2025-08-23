@@ -48,7 +48,7 @@ const AboutDoctor = () => {
 
           {/* Right Side - Content */}
           <div className="w-full md:w-1/2">
-            <h2 className="lg:text-4xl text-2xl font-bold mb-2  text-gray-800"  >
+            <h2 className="lg:text-4xl text-2xl font-bold mb-2  text-primary"  >
               About Dr. Rahul Singh
             </h2>
 

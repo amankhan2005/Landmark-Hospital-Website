@@ -66,7 +66,7 @@ export default function HowWeWork() {
         {/* Header */}
         <div className="lg:mb-16 mb-10 text-center">
           <h2
-            className="text-3xl md:text-4xl  text-gray-800 font-bold mb-4"
+            className="text-3xl md:text-4xl  text-primary font-bold mb-4"
              
           >
             Your Journey to Better Health

@@ -22,7 +22,7 @@ const AboutHospital = () => {
 
           {/* Right Side - Content */}
           <div className="w-full md:w-1/2 flex flex-col justify-center">
-            <h2 className="lg:text-4xl text-2xl  text-gray-800 font-bold mb-4"  >
+            <h2 className="lg:text-4xl text-2xl  text-primary font-bold mb-4"  >
               Welcome to LandMark Hospital
             </h2>
             <h3 className="text-xl font-semibold mb-6  text-gray-600" >

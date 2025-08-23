@@ -1,43 +1,27 @@
- import React, { useState, useEffect } from "react";
+import React from "react";
 
-export default function TestimonialSection() {
-  const [currentTime, setCurrentTime] = useState(new Date());
-
-  useEffect(() => {
-    const timer = setInterval(() => setCurrentTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
-
+export default function GoogleReviews() {
   return (
-    <section className="py-12 bg-gray-100">
-      <div className="mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-4 ">
+    <section className="py-12 bg-gray-50">
+      <div className="container mx-auto px-4 text-center">
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
           What Our Patients Say
         </h2>
- <p className="text-gray-600 md:mb-6 mb-3 text-center text-sm md:text-base">
-See why so many families choose us for their healthcare needs.        </p>
-        {/* Laptop-style Frame without border/shadow */}
-        <div className="mx-auto container bg-gray-900  overflow-hidden">
-          {/* Top Bar */}
-        
+        <p className="text-gray-600 mb-6 text-sm md:text-base">
+          See why so many families choose us for their healthcare needs.        </p>
 
-          {/* Laptop Screen */}
-             {/* Google Search Bar */}
-            
-
-            {/* Google Reviews & Map */}
-            <div className="bg-gray-100  overflow-hidden">
-              <iframe
-                src="https://widgets.sociablekit.com/google-reviews/iframe/25558445"
-                frameBorder="0"
-                width="100%"
-                height="500"
-                title="Customer Testimonials"
-                className="w-full h-[500px]"
-              ></iframe>
-            </div>
-          </div>
-       
+        {/* Reviews iframe inside professional frame */}
+        <div className="w-full h-80 md:h-[500px] overflow-hidden rounded-lg shadow-md border border-gray-300 bg-white">
+          <iframe
+            src="https://widgets.sociablekit.com/google-reviews/iframe/25591444"
+            frameBorder="0"
+            width="100%"
+            height="100%"
+            title="Google Reviews"
+            className="w-full h-full"
+          ></iframe>
+        </div>
       </div>
     </section>
   );

@@ -27,22 +27,22 @@ function Home() {
     <div className="animate-spin rounded-full h-8 w-8 border-t-4  border-blue-800"></div>
   </div>}>
         <AboutSection />
-
+        <Stats />
         <SpecialitiesSection />
         <AboutDrRahul />
-        <Stats />
-        <WhyRahulSingh />
-         
+   <WhyRahulSingh />
+           <HowWeWork />
         <FacilitiesSection />
-        <HowWeWork />
+         <ContactUs />
+         <Gallery />
         {/* <OurTeam /> */}
         {/* <WhyChooseUs /> */}
-        <ContactUs />
+         <YouTubeGallery />
          
         <Testimonial />
-        <YouTubeGallery />
+        
         <BlogComponent />
-         <Gallery />
+         
       </Suspense>
     </>
   );

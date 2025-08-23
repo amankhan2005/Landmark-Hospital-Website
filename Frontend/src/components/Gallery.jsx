@@ -78,10 +78,9 @@ const Gallery = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-10">
-          <h1 className="md:text-4xl mb-4 text-2xl font-bold text-gray-800">
+          <h1 className="md:text-4xl mb-4 text-2xl font-bold text-primary">
             Our Recent Photos
           </h1>
-          {/* <div className="w-20 h-1 bg-primary mx-auto mt-3 rounded-full"></div> */}
           <p className="text-gray-600 mt-4">
             A glimpse into our recent work and accomplishments.
           </p>
@@ -100,17 +99,20 @@ const Gallery = () => {
             {[...galleryData].reverse().map((image, idx) => (
               <div
                 key={idx}
-                className="p-3 relative group cursor-pointer"
+                className="p-3 relative cursor-pointer group"
                 onClick={() => openModal(idx)}
               >
-                <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition bg-black/40 rounded-xl">
-                  <FaPlus className="text-white bg-primary rounded-full p-3 w-12 h-12 shadow-lg" />
-                </div>
+                {/* Image */}
                 <img
                   src={image?.imageUrl}
                   alt={image.title || `Gallery Image ${idx}`}
-                  className="w-full h-64 object-cover rounded-xl shadow-md transform group-hover:scale-105 transition duration-300"
+                  className="w-full h-64 object-cover rounded-xl shadow-md"
                 />
+
+                {/* Plus Icon */}
+                <div className="absolute inset-0 flex justify-center items-center rounded-xl">
+                  <FaPlus className="text-white opacity-50 group-hover:opacity-100 transition w-12 h-12" />
+                </div>
               </div>
             ))}
           </Slider>
