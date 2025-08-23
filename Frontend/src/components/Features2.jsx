@@ -61,7 +61,7 @@ const Features = () => {
         <h3 className="text-lg font-semibold">Emergency Cases</h3>
         <a href="tel:7840060096" className="md:mt-4 mt-2 flex items-center gap-2 md:text-xl text-base font-semibold">
           <FaPhoneAlt />
-          <span>+91 84001-36465</span>
+          <span> +91 84001-36465</span>
         </a>
         <p className="text-sm mt-2">
           In case of a medical emergency, call us immediately. Our emergency team is available 24/7 to provide urgent care and assistance.
