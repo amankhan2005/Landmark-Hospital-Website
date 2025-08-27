@@ -1,45 +1,46 @@
-import { useState, useEffect } from "react";
+ import { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const CaseModal = ({ caseData, onClose }) => {
+const GalleryModal = ({ galleryData, onClose }) => {
   const api = import.meta.env.VITE_API_URL;
   const [formData, setFormData] = useState({
-    title: "",
+    postedBy: "",
     imageUrl: "",
+    category: "photo",
   });
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (caseData) {
+    if (galleryData) {
       setFormData({
-        title: caseData.title || "",
-        imageUrl: caseData.imageUrl || "",
+        postedBy: galleryData.postedBy || "",
+        imageUrl: galleryData.imageUrl || "",
+        category: galleryData.category || "photo",
       });
     }
-  }, [caseData]);
+  }, [galleryData]);
 
-  const uploadImage = async (e) => {
+  const uploadFile = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
-
     setLoading(true);
 
-    const uploadData = new FormData();
-    uploadData.append("file", file);
-    uploadData.append("upload_preset", "hope-hospital");
-    uploadData.append("folder", "hope-hospital/case");
+    const data = new FormData();
+    data.append("file", file);
+    data.append("upload_preset", "hope-hospital");
+    data.append("folder", `hope-hospital/${formData.category}`);
 
     try {
-      const response = await axios.post(
+      const res = await axios.post(
         `https://api.cloudinary.com/v1_1/diz0v7rws/image/upload`,
-        uploadData
+        data
       );
-      setFormData((prev) => ({ ...prev, imageUrl: response.data.secure_url }));
-      Swal.fire("Success", "Image Uploaded Successfully!", "success");
-    } catch (error) {
-      console.error("Error uploading image:", error);
-      Swal.fire("Error", "Image Upload Failed!", "error");
+      setFormData((prev) => ({ ...prev, imageUrl: res.data.secure_url }));
+      Swal.fire("Success", "File uploaded successfully!", "success");
+    } catch (err) {
+      console.error(err);
+      Swal.fire("Error", "File upload failed!", "error");
     } finally {
       setLoading(false);
     }
@@ -47,51 +48,88 @@ const CaseModal = ({ caseData, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!formData.title || !formData.imageUrl) {
+    if (!formData.postedBy || !formData.imageUrl || !formData.category) {
       Swal.fire("Warning", "All fields are required!", "warning");
       return;
     }
 
     try {
-      const response = caseData
-        ? await axios.put(`${api}/case/update/${caseData._id}`, formData)
-        : await axios.post(`${api}/case/save`, formData);
-
-      Swal.fire("Success", response.data.message, "success");
+      if (galleryData) {
+        await axios.put(`${api}/gallery/update/${galleryData._id}`, formData);
+        Swal.fire("Success", "Gallery updated successfully!", "success");
+      } else {
+        await axios.post(`${api}/gallery/save`, formData);
+        Swal.fire("Success", "Gallery added successfully!", "success");
+      }
       onClose();
-    } catch (error) {
-      console.error("Error saving case:", error);
-      Swal.fire("Error", "Failed to save case!", "error");
+    } catch (err) {
+      console.error(err);
+      Swal.fire("Error", "Something went wrong!", "error");
     }
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
-      <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-4">{caseData ? "Update" : "Add"} Case</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium">Title</label>
-            <input
-              type="text"
-              value={formData.title}
-              className="w-full p-2 border border-gray-300 rounded mt-1"
-              onChange={(e) => setFormData((prev) => ({ ...prev, title: e.target.value }))}
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium">Upload Image</label>
-            <input type="file" className="mt-2" onChange={uploadImage} />
-            {loading && <p className="text-blue-500 text-sm">Uploading...</p>}
-            {formData.imageUrl && <img src={formData.imageUrl} alt="Uploaded" className="mt-2 w-20 h-20 object-cover" />}
-          </div>
-          <div className="flex justify-between">
-            <button disabled={loading} type="submit" className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
-              {caseData ? "Update" : "Save"} Case
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div className="bg-white w-full max-w-md p-6 rounded-lg shadow-lg">
+        <h2 className="text-xl font-bold mb-4">
+          {galleryData ? "Update" : "Add"} Gallery
+        </h2>
+
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Posted By"
+            value={formData.postedBy}
+            onChange={(e) =>
+              setFormData({ ...formData, postedBy: e.target.value })
+            }
+            className="border p-2 rounded w-full"
+            required
+          />
+
+          <select
+            value={formData.category}
+            onChange={(e) =>
+              setFormData({ ...formData, category: e.target.value })
+            }
+            className="border p-2 rounded w-full"
+            required
+          >
+            <option value="photo">Photo</option>
+            <option value="video">Video</option>
+            <option value="news">News</option>
+            <option value="rewards">Rewards</option>
+          </select>
+
+          <input type="file" onChange={uploadFile} accept="image/*,video/*" />
+          {loading && <p className="text-blue-500">Uploading...</p>}
+          {formData.imageUrl && (
+            <div className="mt-2">
+              {formData.category === "video" ? (
+                <video src={formData.imageUrl} controls className="w-full h-48" />
+              ) : (
+                <img
+                  src={formData.imageUrl}
+                  alt="Preview"
+                  className="w-full h-48 object-cover rounded"
+                />
+              )}
+            </div>
+          )}
+
+          <div className="flex justify-between mt-4">
+            <button
+              type="submit"
+              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              disabled={loading}
+            >
+              {galleryData ? "Update" : "Add"}
             </button>
-            <button type="button" className="bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500" onClick={onClose}>
+            <button
+              type="button"
+              className="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500"
+              onClick={onClose}
+            >
               Cancel
             </button>
           </div>
@@ -101,4 +139,4 @@ const CaseModal = ({ caseData, onClose }) => {
   );
 };
 
-export default CaseModal;
+export default GalleryModal;

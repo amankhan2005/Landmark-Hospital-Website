@@ -1,12 +1,13 @@
  import React, { memo } from "react";
-import BreadCumb from "../components/Breadcumb";
+import BreadCumb from "../components/BreadCumb";
 import pattern from "../assets/home/whywechoose.png";
 import about from "../assets/home/HopeHospital-about.webp";
 import { Link } from "react-router-dom";
 import SpecialitiesSection from "../components/SpecialitiesSection";
+import FacilitiesSection from "../components/FacilitiesSection"
 import Stats from "../components/Stats";
  import  About from "../components/About";
-function AboutPage() {
+ function AboutPage() {
   return (
     <>
       <BreadCumb
@@ -21,6 +22,8 @@ function AboutPage() {
       <About />
       <Stats />
       <SpecialitiesSection />
+      <FacilitiesSection/>
+   
       
     </>
   );

@@ -20,7 +20,7 @@ const Footer = () => {
 
             {/* Contact Section */}
             <address className="not-italic">
-              <div className="text-2xl font-semibold md:mb-4 mb-2 messiri">
+              <div className="text-2xl font-semibold md:mb-4 mb-2 ">
                 Contact Us
               </div>
               <ul>
@@ -185,7 +185,7 @@ const Footer = () => {
               </h4>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.3951569818246!2d80.94437887522474!3d26.92268447664127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3999570b190f211f%3A0x574e3bb68777d9c2!2sLandmark%20Advance%20Neurospine%20Care%20Superspeciality%20Hospital!5e0!3m2!1sen!2sin!4v1755161401856!5m2!1sen!2sin"
-                className="w-full h-60 rounded-lg"
+                className="w-full h-45 rounded-lg"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"

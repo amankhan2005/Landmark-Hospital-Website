@@ -15,6 +15,7 @@ const HowWeWork = lazy(() => import('../components/HowWeWork'));
 const BlogComponent = lazy(() => import('../components/BlogSection'));
  const SpecialitiesSection = lazy(() => import('../components/SpecialitiesSection'));
 const FacilitiesSection = lazy(() => import('../components/FacilitiesSection'));
+ 
 
 function Home() {
   return (
@@ -27,13 +28,16 @@ function Home() {
     <div className="animate-spin rounded-full h-8 w-8 border-t-4  border-blue-800"></div>
   </div>}>
         <AboutSection />
-        <Stats />
+ 
+        
         <SpecialitiesSection />
+         <Stats />
         <AboutDrRahul />
    <WhyRahulSingh />
            <HowWeWork />
+           <ContactUs />
         <FacilitiesSection />
-         <ContactUs />
+          
          <Gallery />
         {/* <OurTeam /> */}
         {/* <WhyChooseUs /> */}

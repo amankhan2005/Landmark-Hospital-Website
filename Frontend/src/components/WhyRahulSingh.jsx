@@ -44,10 +44,10 @@ export default function WhyChooseDrRahul() {
   ];
 
   return (
-    <section className="w-full bg-gray-50 lg:py-16 md:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="w-full bg-gray-50 lg:py-8 md:py-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="container mx-auto relative z-10">
         {/* Header Section */}
-        <div className="text-center lg:mb-12 mb-6">
+        <div className="text-center lg:mb-4 mb-6">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-2 leading-tight">
             Why Choose Dr. Rahul Singh
           </h2>

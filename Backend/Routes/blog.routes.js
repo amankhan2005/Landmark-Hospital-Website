@@ -1,4 +1,4 @@
-import express from "express";
+ import express from "express";
 import { createBlog, getAllBlogs, getBlogById, updateBlog, deleteBlog } from "../controller/blog.controller.js";
 
 const router = express.Router();

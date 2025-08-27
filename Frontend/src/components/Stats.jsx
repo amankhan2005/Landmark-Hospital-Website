@@ -1,5 +1,5 @@
  import React, { useEffect, useState } from "react";
-import { User, Activity, HeartPulse } from "lucide-react"; // professional SVG icons
+import { User, Activity, HeartPulse } from "lucide-react";
 
 const statsData = [
   { label: "HAPPY PATIENTS", target: 10000, icon: User, iconBg: "bg-green-100 text-green-600" },
@@ -32,30 +32,30 @@ const ClinicStats = () => {
   }, []);
 
   return (
-    <section className="py-16  bg-gradient-to-r from-[#7da4c4] via-[#2e6294] to-[#1e4a73]">
+    <section className="py-8 mt-8 mb-8 bg-gradient-to-r from-[#7da4c4] via-[#2e6294] to-[#588dc0]">
       <div className="container mx-auto px-4">
-        
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
           {statsData.map((stat, index) => {
             const Icon = stat.icon;
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300"
+                className="bg-white rounded-xl shadow-md py-8 flex flex-col items-center hover:scale-105 transition-transform duration-300 max-w-xs w-full"
               >
                 {/* Icon Circle */}
-                <div className={`mb-4 p-5 rounded-full ${stat.iconBg} flex items-center justify-center shadow-md`}>
-                  <Icon className="h-12 w-12" />
+                <div
+                  className={` p-2 rounded-full ${stat.iconBg} flex items-center justify-center shadow-sm`}
+                >
+                  <Icon className="h-8 w-8" />
                 </div>
 
                 {/* Number */}
-                <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+                <div className="text-2xl md:text-3xl font-bold text-gray-900 ">
                   {Math.floor(counts[index])}+
                 </div>
 
                 {/* Label */}
-                <div className="text-gray-600 font-semibold text-center text-sm md:text-lg tracking-wide uppercase">
+                <div className="text-gray-600 font-semibold text-center text-xs md:text-sm tracking-wide uppercase">
                   {stat.label}
                 </div>
               </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function GoogleReviews() {
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-8 bg-white">
       <div className="container mx-auto px-4 text-center">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">

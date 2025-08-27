@@ -1,21 +1,18 @@
  import React from 'react';
-import { CheckCircle, Phone, Award, Stethoscope } from 'lucide-react';
+import { CheckCircle, Phone } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const AboutDoctor = () => {
   const primaryColor = '#13335b'; // Dark Blue
   const secondaryColor = '#3b628b'; // Light Blue
+  const navigate = useNavigate();
 
-  const navigate=useNavigate()
-
-  // Professional memberships
   const memberships = [
     "American Association of Neurological Surgeon (USA)",
     "Member of Neuroendoscopy Society of India",
     "Neurological Surgeons' Society of India"
   ];
 
-  // Educational qualifications
   const education = [
     "MCh Neurosurgery from prestigious Institute of Medical Sciences – Banaras Hindu University, Varanasi, Uttar Pradesh",
     "MS General Surgery from King Georges' Medical University, Lucknow, Uttar Pradesh",
@@ -24,18 +21,11 @@ const AboutDoctor = () => {
   ];
 
   return (
-    <div className="w-full py-10 px-4 sm:px-6 lg:px-8 bg-gray-100">
-      <div className=" container mx-auto">
-        {/* About Doctor Navigation Header */}
-        {/* <div className="flex justify-center mb-8">
-          <div className="px-6 py-2 bg-white shadow-md rounded-lg">
-            <p style={{ color: primaryColor }} className="font-medium uppercase">ABOUT DOCTOR </p>
-          </div>
-        </div> */}
-
+    <div className="w-full bg-slate-50 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto">
         {/* Main Content Container */}
         <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
-          {/* Left Side - Single Image */}
+          {/* Left Side - Image */}
           <div className="w-full md:w-1/2">
             <div className="w-full h-96 md:h-full">
               <img
@@ -48,11 +38,11 @@ const AboutDoctor = () => {
 
           {/* Right Side - Content */}
           <div className="w-full md:w-1/2">
-            <h2 className="lg:text-4xl text-2xl font-bold mb-2  text-primary"  >
+            <h2 className="lg:text-4xl text-2xl font-bold mb-2 text-primary">
               About Dr. Rahul Singh
             </h2>
 
-            <h3 className="text-xl font-semibold mb-6  text-gray-600"  >
+            <h3 className="text-xl font-semibold mb-6 text-gray-600">
               Experienced Neurosurgeon in Lucknow
             </h3>
 
@@ -95,17 +85,14 @@ const AboutDoctor = () => {
               <button
                 className="px-6 py-3 text-white font-medium rounded-md shadow-md bg-gradient-to-r from-[#13335b] to-[#3b628b]"
                 onClick={()=>navigate("/contact")}
-
               >
                 BOOK APPOINTMENT
               </button>
 
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: secondaryColor }}>
-                <a href="tel:+918400136465">
-
-
-                  <Phone size={20} className="text-white" />
+                  <a href="tel:+918400136465">
+                    <Phone size={20} className="text-white" />
                   </a>
                 </div>
                 <div className="ml-3">

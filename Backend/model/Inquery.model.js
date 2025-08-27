@@ -1,12 +1,8 @@
-import mongoose from 'mongoose'
+ import mongoose from 'mongoose';
 
 const appointmentSchema = new mongoose.Schema(
   {
     department: {
-      type: String,
-      required: true,
-    },
-    requestedDoctor: {
       type: String,
       required: true,
     },
@@ -26,12 +22,12 @@ const appointmentSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    time:{
-        type:String,
-        required:true,
-    }
+    time: {
+      type: String,
+      required: true,
+    },
   },
-  { timestamps: true } 
+  { timestamps: true }
 );
 
 const Appointment = mongoose.model('Appointment', appointmentSchema);

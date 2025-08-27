@@ -1,17 +1,16 @@
 
-import BreadCumb from "../components/Breadcumb";
-import AppointmentForm from "../components/AppointmentForm";
+ import AppointmentForm from "../components/AppointmentForm";
 import image from "../assets/Book-Appointment.webp";
 const Appoinment = () => {
   return (
     <div className="">
-      <BreadCumb
+      {/* <BreadCumb
         items={[
           { label: "Home", link: `/` },
           { label: `Book Appointment`, link: `/apppintment` },
         ]}
         title="Book Appointment"
-      />
+      /> */}
 
       <div className="flex   md:py-12 py-8 md:px-14 px-4">
         <div className="flex-1  ">

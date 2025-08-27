@@ -6,7 +6,7 @@ import genral from "./assets/Facilities/General-care.jpg";
 export const facilities = [
  {
     "id": 1,
-    "title": "Emergency & Trauma Care",
+    "title": "Emergency Care",
     "link": "emergency",
     "description": "Our Emergency & Trauma Care Department provides immediate, life-saving treatment for patients facing critical medical or surgical emergencies. Available 24/7, our unit is equipped with advanced resuscitation systems, trauma bays, and rapid diagnostic support to ensure the fastest possible response. We specialize in managing cardiac arrests, strokes, road accidents, fractures, burns, poisoning, and other critical conditions. With a dedicated team of emergency physicians, trauma surgeons, and paramedics, we deliver world-class emergency care when every second matters.",
     "image": `${emergency}`,  

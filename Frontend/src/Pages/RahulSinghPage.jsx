@@ -2,7 +2,7 @@ import { Mail, Phone, Award, Briefcase, FileText, User, MapPin, BookOpen, Calend
 import { useState } from "react";
 import drRahulImg from "../assets/home/dr-rahul.webp";  
 
- import BreadCumb from "../components/Breadcumb";
+ import BreadCumb from "../components/BreadCumb";
 
 export default function RahulSinghPage() {
   const [expandedSection, setExpandedSection] = useState(null);
@@ -102,7 +102,7 @@ export default function RahulSinghPage() {
               </div>
               
               {/* Specialties */}
-              <div className="mb-6">
+              {/* <div className="mb-6">
                 <p className="text-sm font-medium text-gray-500 mb-3">SPECIALTIES</p>
                 <div className="flex flex-wrap gap-2">
                   {["Brain Surgery", "Spine Surgery", "Peripheral Nerve", "Neurosurgery", "Neuroendoscopy", "Neurotrauma"].map((specialty, index) => (
@@ -111,10 +111,10 @@ export default function RahulSinghPage() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </div> */}
               
               {/* Action Buttons */}
-              <div className="flex flex-wrap gap-3">
+              {/* <div className="flex flex-wrap gap-3">
                 <button className="text-white px-6 py-3 rounded-xl flex items-center transition-all shadow-lg hover:shadow-xl" style={{backgroundColor: '#3b628b', ':hover': {backgroundColor: '#13335b'}}}>
                   <Phone size={18} className="mr-2" />
                   Contact Now
@@ -123,7 +123,7 @@ export default function RahulSinghPage() {
                   <Download size={18} className="mr-2" />
                   Download Profile
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

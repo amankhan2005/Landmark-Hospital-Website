@@ -61,12 +61,12 @@ export default function HowWeWork() {
   const secondaryColor = '#3b628b'; // Light Blue
 
   return (
-    <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-white pt-8 pb-8 px-4 sm:px-6 lg:px-8">
       <div className=" container mx-auto">
         {/* Header */}
         <div className="lg:mb-16 mb-10 text-center">
           <h2
-            className="text-3xl md:text-4xl  text-primary font-bold mb-4"
+            className="text-3xl md:text-4xl  text-primary font-bold mb-2"
              
           >
             Your Journey to Better Health
@@ -75,7 +75,7 @@ export default function HowWeWork() {
             Dr. Rahul's patient-centered approach ensures a seamless experience from your first call to ongoing care
           </p>
           <div
-            className="mt-6 w-24 h-1 mx-auto rounded-full"
+            className="mt-4 w-24 h-1 mx-auto rounded-full"
             style={{
               background: `linear-gradient(to right, ${primaryColor}, ${secondaryColor})`,
             }}

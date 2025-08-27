@@ -3,7 +3,7 @@ import FacilitiesComponent from "./FacilitiesComponent";
 
 const FacilitiesSection = () => {
   return (
-    <section className="md:py-12 lg:py-14 py-10 bg-gray-100">
+    <section className="md:py-12 lg:py-8 py-10 bg-gray-100">
       <div className=" container mx-auto px-4 text-center">
         <h1 className="md:text-4xl text-2xl font-bold  text-primary  mb-4">
           Our Facilities

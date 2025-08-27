@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { specialities } from "../SpecilitesData.jsx";
@@ -13,24 +13,19 @@ function ContactUsForm() {
     email: "",
     message: "",
   });
-
   const [formErrors, setFormErrors] = useState({});
-
   const backendUrl = import.meta.env.VITE_BACKENDURL;
 
-  // Handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle department selection
   const handleDepartmentChange = (e) => {
     const selectedDept = e.target.value;
     setSelectedDepartment(selectedDept);
     setFormData({ ...formData, department: selectedDept });
   };
 
-  // Validate form fields
   const validateForm = () => {
     const errors = {};
     if (!formData.name.trim()) errors.name = "Name is required.";
@@ -41,10 +36,8 @@ function ContactUsForm() {
     return errors;
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
@@ -53,7 +46,6 @@ function ContactUsForm() {
 
     try {
       setLoading(true);
-
       const formattedData = {
         department: formData.department,
         patientName: formData.name,
@@ -62,12 +54,7 @@ function ContactUsForm() {
         message: formData.message,
       };
 
-      const res = await axios.post(
-        `${backendUrl}/inquiry-msg/save`,
-        formattedData
-      );
-
-      console.log(res.data);
+      await axios.post(`${backendUrl}/inquiry-msg/save`, formattedData);
 
       Swal.fire({
         title: "Success!",
@@ -76,7 +63,6 @@ function ContactUsForm() {
         confirmButtonText: "OK",
       });
 
-      // Reset form after submission
       setFormData({
         department: "",
         name: "",
@@ -102,90 +88,107 @@ function ContactUsForm() {
   };
 
   return (
-    <div className="w-full bg-white md:p-8 px-3 py-4 pt-6 shadow-lg rounded-lg border border-gray-200">
-      <h3 className="md:text-3xl text-2xl text-primary messiri font-bold md:text-gray-800">
+    <div className="max-w-lg mx-auto bg-white p-4 rounded-xl shadow-lg border border-gray-200">
+      <h3 className="text-2xl font-bold text-gray-800 mb-5 text-center">
         General Query
       </h3>
-      {loading && <p className="text-blue-500">Processing your request...</p>}
 
-      <form className="mt-4 flex flex-col gap-4" onSubmit={handleSubmit}>
-        {/* Name Field */}
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          className="border w-full border-gray-300 p-3 rounded-lg"
-          onChange={handleChange}
-          value={formData.name}
-          required
-        />
-        {formErrors.name && <p className="text-red-500">{formErrors.name}</p>}
+      {loading && (
+        <p className="text-primary text-center mb-3 font-medium">
+          Processing...
+        </p>
+      )}
 
-        {/* Phone Field */}
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Enter 10-digit phone number"
-          pattern="[0-9]{10}"
-          maxlength="10"
-          className="border w-full border-gray-300 p-3 rounded-lg"
-          onChange={handleChange}
-          value={formData.phone}
-          required
-        />
-        {formErrors.phone && <p className="text-red-500">{formErrors.phone}</p>}
+      <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
+        {/* Name */}
+        <div className="flex flex-col">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            className="w-full p-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+            onChange={handleChange}
+            value={formData.name}
+          />
+          {formErrors.name && (
+            <span className="text-red-500 text-sm mt-1">{formErrors.name}</span>
+          )}
+        </div>
 
-        {/* Email Field */}
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          className="border w-full border-gray-300 p-3 rounded-lg"
-          onChange={handleChange}
-          value={formData.email}
-          required
-        />
-        {formErrors.email && <p className="text-red-500">{formErrors.email}</p>}
+        {/* Phone */}
+        <div className="flex flex-col">
+          <input
+            type="tel"
+            name="phone"
+            placeholder="10-digit Phone Number"
+            pattern="[0-9]{10}"
+            maxLength="10"
+            className="w-full p-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+            onChange={handleChange}
+            value={formData.phone}
+          />
+          {formErrors.phone && (
+            <span className="text-red-500 text-sm mt-1">{formErrors.phone}</span>
+          )}
+        </div>
 
-        {/* Department Dropdown */}
-        <select
-          name="department"
-          className="border border-gray-300 p-3 rounded-lg"
-          onChange={handleDepartmentChange}
-          value={formData.department}
-          required
-        >
-          <option value="">Select Department</option>
-          {specialities.map((speciality, index) => (
-            <option key={index} value={speciality.title}>
-              {speciality.title}
+        {/* Email */}
+        <div className="flex flex-col">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            className="w-full p-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+            onChange={handleChange}
+            value={formData.email}
+          />
+          {formErrors.email && (
+            <span className="text-red-500 text-sm mt-1">{formErrors.email}</span>
+          )}
+        </div>
+
+        {/* Department */}
+        <div className="flex flex-col">
+          <select
+            name="department"
+            value={formData.department}
+            onChange={handleDepartmentChange}
+            className="w-full p-3 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition bg-white"
+          >
+            <option value="" disabled>
+              Select Department
             </option>
-          ))}
-        </select>
-        {formErrors.department && (
-          <p className="text-red-500">{formErrors.department}</p>
-        )}
+            {specialities.map((s, idx) => (
+              <option key={idx} value={s.title}>
+                {s.title}
+              </option>
+            ))}
+          </select>
+          {formErrors.department && (
+            <span className="text-red-500 text-sm mt-1">{formErrors.department}</span>
+          )}
+        </div>
 
-        {/* Message Field */}
-        <textarea
-          name="message"
-          placeholder="Enter Your Message"
-          className="border border-gray-300 w-full p-3 rounded-lg"
-          onChange={handleChange}
-          value={formData.message}
-          required
-        />
-        {formErrors.message && (
-          <p className="text-red-500">{formErrors.message}</p>
-        )}
+        {/* Message */}
+        <div className="flex flex-col">
+          <textarea
+            name="message"
+            placeholder="Enter Your Message"
+            className="w-full p-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition resize-none"
+            onChange={handleChange}
+            value={formData.message}
+            rows={3}
+          />
+          {formErrors.message && (
+            <span className="text-red-500 text-sm mt-1">{formErrors.message}</span>
+          )}
+        </div>
 
-        {/* Submit Button */}
+        {/* Submit */}
         <button
-          aria-label="Submit"
-          title="Submit"
           type="submit"
           disabled={loading}
-          className="bg-primary text-white font-semibold py-3 rounded-lg hover:bg-blue-800 cursor-pointer transition duration-300"
+          className="w-full bg-primary text-white font-semibold py-3 rounded-lg hover:opacity-90 transition duration-300"
         >
           {loading ? "Processing..." : "Send Query"}
         </button>

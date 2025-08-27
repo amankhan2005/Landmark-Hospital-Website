@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import BreadCumb from "../components/Breadcumb";
+import BreadCumb from "../components/BreadCumb";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogData } from "../redux/slices/dataslice";
 
@@ -8,20 +8,13 @@ const BlogPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Redux State
-  const { blogData, status, error } = useSelector((state) => state.data);
-  const [blogsData, setBlogsData] = useState([]);
+  // Redux State (blogs instead of blogData ✅)
+  const { blogs, status, error } = useSelector((state) => state.data);
 
   // Fetch Blogs
   useEffect(() => {
     dispatch(fetchBlogData());
   }, [dispatch]);
-
-  useEffect(() => {
-    if (blogData.length > 0) {
-      setBlogsData(blogData);
-    }
-  }, [blogData]);
 
   return (
     <>
@@ -32,51 +25,74 @@ const BlogPage = () => {
         ]}
         title="Our Recent Blog"
       />
+
       <div className="py-6 md:px-10 px-4">
-        <div className="col-span-12 grid md:grid-cols-3 grid-cols-1 gap-2 ">
-          {status === "loading" && <p>Loading Blog Data...</p>}
-          {error && <p className="text-red-500">{error}</p>}
-          {blogsData.length === 0 && status !== "loading" && (
-            <p className="text-red-500">No Data Found</p>
+        <div className="col-span-12 grid md:grid-cols-3 grid-cols-1 gap-4">
+          {/* Loading State */}
+          {status === "loading" && (
+            <p className="text-center col-span-3">Loading Blog Data...</p>
           )}
 
-          {blogsData?.map((blog,i) => {
+          {/* Error State */}
+          {error && (
+            <p className="text-center col-span-3 text-red-500">{error}</p>
+          )}
 
-            const formattedDate = new Date(blog.createdAt).toLocaleDateString(
-              "en-GB",
-              { day: "2-digit", month: "short", year: "numeric" }
-            );
+          {/* No Data */}
+          {blogs?.length === 0 && status !== "loading" && (
+            <p className="text-center col-span-3 text-red-500">
+              No Data Found
+            </p>
+          )}
+
+          {/* Blog List */}
+          {blogs?.map((blog) => {
+            const formattedDate = blog.createdAt
+              ? new Date(blog.createdAt).toLocaleDateString("en-GB", {
+                  day: "2-digit",
+                  month: "short",
+                  year: "numeric",
+                })
+              : "";
 
             return (
               <div
-                key={i}
-                className=" container rounded-lg p-4 mb-4 shadow-2xl hover:shadow-none transition cursor-pointer"
+                key={blog._id}
+                className="rounded-lg p-4 mb-4 shadow-2xl hover:shadow-none transition cursor-pointer bg-white"
                 onClick={() => navigate(`/blog/${blog._id}`)}
               >
                 <img
                   src={blog.imageUrl}
                   alt={blog.title}
+                  loading="lazy"
                   className="w-full h-40 object-cover rounded-lg mb-4"
                 />
+
                 <p className="text-sm text-gray-500 mb-1 underline underline-offset-4">
                   Published by{" "}
-                  <span className="text-gray-900 mb-2">{blog.postedBy}</span> ||
+                  <span className="text-gray-900">{blog.postedBy}</span> ||
                   <span> on {formattedDate}</span>
                 </p>
+
                 <h3 className="text-xl font-medium line-clamp-1 mb-2">
                   {blog.title}
                 </h3>
+
                 <p className="text-gray-700 mb-2 line-clamp-2">
-                  {blog.description.replace(/<\/?[^>]+(>|$)/g, "")}
+                  {blog.description?.replace(/<\/?[^>]+(>|$)/g, "")}
                 </p>
-                <p className="text-sm text-gray-500 flex justify-between items-center">
+
+                <div className="text-sm text-gray-500 flex justify-between items-center">
                   <button
-                    onClick={() => navigate(`/blog/${blog._id}`)}
-                    className="text-white hover:text-blue-100 border bg-primary border-blue-800 cursor-pointer btn px-2 py-1 rounded"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/blog/${blog._id}`);
+                    }}
+                    className="text-white bg-primary hover:bg-blue-600 cursor-pointer px-3 py-1 rounded"
                   >
                     Read More
                   </button>
-                </p>
+                </div>
               </div>
             );
           })}

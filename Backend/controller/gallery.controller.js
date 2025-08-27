@@ -1,15 +1,15 @@
-import Gallery from "../model/gallery.model.js";
+ import Gallery from "../model/gallery.model.js";
 
-//    Create a new gallery entry
+// Create a new gallery entry
 export const createGallery = async (req, res) => {
     try {
-        const { postedBy, imageUrl } = req.body;
+        const { postedBy, imageUrl, category } = req.body;
 
-        if (!postedBy || !imageUrl) {
+        if (!postedBy || !imageUrl || !category) {
             return res.status(400).json({ message: "All fields are required." });
         }
 
-        const newGallery = new Gallery({ postedBy, imageUrl });
+        const newGallery = new Gallery({ postedBy, imageUrl, category });
         await newGallery.save();
 
         res.status(201).json({ message: "Gallery item added successfully!", gallery: newGallery });
@@ -18,7 +18,7 @@ export const createGallery = async (req, res) => {
     }
 };
 
-//    Get all gallery images
+// Get all gallery images
 export const getAllGallery = async (req, res) => {
     try {
         const gallery = await Gallery.find().sort({ createdAt: -1 });
@@ -28,7 +28,7 @@ export const getAllGallery = async (req, res) => {
     }
 };
 
-//    Get a single gallery item by ID
+// Get a single gallery item by ID
 export const getGalleryById = async (req, res) => {
     try {
         const galleryItem = await Gallery.findById(req.params.id);
@@ -41,18 +41,18 @@ export const getGalleryById = async (req, res) => {
     }
 };
 
-//    Update a gallery item
+// Update a gallery item
 export const updateGallery = async (req, res) => {
     try {
-        const { postedBy, imageUrl } = req.body;
+        const { postedBy, imageUrl, category } = req.body;
 
-        if (!postedBy || !imageUrl) {
+        if (!postedBy || !imageUrl || !category) {
             return res.status(400).json({ message: "All fields are required." });
         }
 
         const updatedGallery = await Gallery.findByIdAndUpdate(
             req.params.id,
-            { postedBy, imageUrl },
+            { postedBy, imageUrl, category },
             { new: true }
         );
 
@@ -66,7 +66,7 @@ export const updateGallery = async (req, res) => {
     }
 };
 
-//    Delete a gallery item
+// Delete a gallery item
 export const deleteGallery = async (req, res) => {
     try {
         const deletedGallery = await Gallery.findByIdAndDelete(req.params.id);

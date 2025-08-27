@@ -85,7 +85,7 @@ export default function HeroSlider() {
           ))}
         </Slider>
       </div>
-      <Features />
+      {/* <Features /> */}
     </>
   );
 }

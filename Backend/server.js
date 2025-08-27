@@ -14,8 +14,9 @@ app.use(cors())
 import teamRoutes from './Routes/team.js'
 app.use('/team',teamRoutes)
 
-import blogRoutes from './Routes/blog.routes.js'
-app.use('/blog',blogRoutes)
+import blogRoutes from "./Routes/blog.routes.js";
+app.use("/blog", blogRoutes);
+
 
 import galleryRoutes from './Routes/gallery.routes.js'
 app.use('/gallery',galleryRoutes)

@@ -4,15 +4,15 @@ import ScrollToTop from "./components/ScrollToTop";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
- import StickyNavbar from "./components/StickyNavbar";
+import StickyNavbar from "./components/StickyNavbar";
 import Footer from "./components/Footer";
 
 // ✅ Pages
-import Home from "./Pages/Home";  
+import Home from "./Pages/Home";
 import Testimonial from "./components/Testimonial"; // Component, not lazy
 
 // ✅ Lazy-loaded pages
-const Appointment  = lazy(() => import("./Pages/Appointment"));
+const Appointment = lazy(() => import("./Pages/Appointment"));
 const OurTeam = lazy(() => import("./Pages/RahulSinghPage"));
 const GalleryPage = lazy(() => import("./Pages/GalleryPage"));
 const ContactUs = lazy(() => import("./Pages/ContactUs"));
@@ -28,7 +28,9 @@ const AboutPage = lazy(() => import("./Pages/AboutPage"));
 // ✅ New Speciality Pages
 const Brain = lazy(() => import("./Pages/Brain"));
 const Spine = lazy(() => import("./Pages/Spine"));
-const PeripheralNerveSurgery = lazy(() => import("./Pages/PeripheralNerveSurgery"));
+const PeripheralNerveSurgery = lazy(() =>
+  import("./Pages/PeripheralNerveSurgery")
+);
 
 // ✅ Loading fallback for lazy pages
 const LoadingSpinner = () => (
@@ -50,7 +52,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
- 
+
       {/* Global styles */}
       <StickyNavbar />
 
@@ -60,61 +62,112 @@ const App = () => {
         {/* Lazy-loaded pages */}
         <Route
           path="/our-team"
-          element={<Suspense fallback={<LoadingSpinner />}><OurTeam /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <OurTeam />
+            </Suspense>
+          }
         />
         <Route
           path="/gallery"
-          element={<Suspense fallback={<LoadingSpinner />}><GalleryPage /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <GalleryPage />
+            </Suspense>
+          }
         />
         <Route
           path="/contact"
-          element={<Suspense fallback={<LoadingSpinner />}><ContactUs /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <ContactUs />
+            </Suspense>
+          }
         />
         <Route
           path="/about"
-          element={<Suspense fallback={<LoadingSpinner />}><AboutPage /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <AboutPage />
+            </Suspense>
+          }
         />
         <Route
           path="/cases"
-          element={<Suspense fallback={<LoadingSpinner />}><Cases /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <Cases />
+            </Suspense>
+          }
         />
+
         <Route
           path="/blog"
-          element={<Suspense fallback={<LoadingSpinner />}><BlogPage /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <BlogPage />
+            </Suspense>
+          }
         />
+
+        {/* Blog detail */}
         <Route
           path="/blog/:id"
-          element={<Suspense fallback={<LoadingSpinner />}><BlogDetailPage /></Suspense>}
-        />
-        <Route
-          path="/specialities"
-          element={<Suspense fallback={<LoadingSpinner />}><Specialities /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <BlogDetailPage />
+            </Suspense>
+          }
         />
         <Route
           path="/specialities/:specialtyName"
-          element={<Suspense fallback={<LoadingSpinner />}><SpecialtyDetail /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <SpecialtyDetail />
+            </Suspense>
+          }
         />
         <Route
           path="/facilities"
-          element={<Suspense fallback={<LoadingSpinner />}><FacilitiesPage /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <FacilitiesPage />
+            </Suspense>
+          }
         />
         <Route
           path="/facilities/:facilitiesName"
-          element={<Suspense fallback={<LoadingSpinner />}><FacilitiesDetail /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <FacilitiesDetail />
+            </Suspense>
+          }
         />
 
         {/* New Specialities Pages */}
         <Route
           path="/brain"
-          element={<Suspense fallback={<LoadingSpinner />}><Brain /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <Brain />
+            </Suspense>
+          }
         />
         <Route
           path="/spine"
-          element={<Suspense fallback={<LoadingSpinner />}><Spine /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <Spine />
+            </Suspense>
+          }
         />
         <Route
           path="/peripheral-nerve-surgery"
-          element={<Suspense fallback={<LoadingSpinner />}><PeripheralNerveSurgery /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <PeripheralNerveSurgery />
+            </Suspense>
+          }
         />
 
         {/* Component, not lazy */}
@@ -122,7 +175,11 @@ const App = () => {
 
         <Route
           path="/appointment"
-          element={<Suspense fallback={<LoadingSpinner />}><Appointment /></Suspense>}
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <Appointment />
+            </Suspense>
+          }
         />
 
         <Route path="*" element={<Navigate to="/" />} />

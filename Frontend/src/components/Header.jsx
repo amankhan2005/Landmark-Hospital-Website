@@ -48,8 +48,8 @@ export default function Header() {
           {/* Mobile Menu */}
           <div
             className={`fixed top-0 right-0 h-full w-60  bg-white shadow-2xl transform ${isMobileMenuOpen
-                ? "translate-x-0 overflow-hidden"
-                : "translate-x-full overflow-hidden"
+              ? "translate-x-0 overflow-hidden"
+              : "translate-x-full overflow-hidden"
               } transition-transform duration-300 ease-in-out lg:hidden shadow-2xl`}
           >
             <div className="flex text-gray-100 justify-around items-center py-2  bg-primary md:text-lg text-sm px-2">
@@ -281,148 +281,149 @@ export default function Header() {
         </div>
 
         {/* Navigation Items for Desktop */}
-         {/* Navigation Items for Desktop */}
-<ul className="hidden lg:flex  text-gray-800 font-semibold">
-  <li
-    className={`px-4 hover-text-primary ${location.pathname === "/" ? " text-primary" : ""}`}
-  >
-    <Link to="/" title="Home">
-      Home
-    </Link>
-  </li>
+        {/* Navigation Items for Desktop */}
+        <ul className="hidden lg:flex  text-gray-800 font-semibold">
+          <li
+            className={`px-4 hover-text-primary ${location.pathname === "/" ? " text-primary" : ""}`}
+          >
+            <Link to="/" title="Home">
+              Home
+            </Link>
+          </li>
 
-  <li
-    className="relative cursor-pointer px-4"
-    onMouseEnter={() => handleDropdown("about")}
-    onMouseLeave={() => handleDropdown(null)}
-  >
-    <Link to="/about" title="About Us" className="hover-text-primary">
-      About Us ▾
-    </Link>
-    {openDropdown === "about" && (
-      <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-64 transition-all duration-300 text-sm divide-y divide-gray-200">
-        <li>
-          <Link to="/about" className="block px-4 py-2 hover:bg-blue-100">
-            About LandMark Hospital
-          </Link>
-        </li>
-        <li>
-          <Link to="/our-team" className="block px-4 py-2 hover:bg-blue-100">
-            About Dr. Rahul Singh
-          </Link>
-        </li>
-      </ul>
-    )}
-  </li>
+          <li
+            className="relative cursor-pointer px-4"
+            onMouseEnter={() => handleDropdown("about")}
+            onMouseLeave={() => handleDropdown(null)}
+          >
+            <Link to="/about" title="About Us" className="hover-text-primary">
+              About Us ▾
+            </Link>
+            {openDropdown === "about" && (
+              <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-64 transition-all duration-300 text-sm divide-y divide-gray-200">
+                <li>
+                  <Link to="/about" className="block px-4 py-2 hover:bg-blue-100">
+                    About LandMark Hospital
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/our-team" className="block px-4 py-2 hover:bg-blue-100">
+                    About Dr. Rahul Singh
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
 
- <li
-  className="relative cursor-pointer px-4"
-  onMouseEnter={() => handleDropdown("specialities")}
-  onMouseLeave={() => handleDropdown(null)}
->
-  <Link to="/brain" title="Our Specialities" className="hover-text-primary">
-    Our Specialities ▾
-  </Link>
-  {openDropdown === "specialities" && (
-    <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-64 transition-all duration-300 text-sm divide-y divide-gray-200">
-      <li>
-        <Link to="/brain" className="block px-4 py-2 hover:bg-blue-100">
-          Brain Surgery
-        </Link>
-      </li>
-      <li>
-        <Link to="/spine" className="block px-4 py-2 hover:bg-blue-100">
-          Spine Surgery
-        </Link>
-      </li>
-      <li>
-        <Link to="/peripheral-nerve-surgery" className="block px-4 py-2 hover:bg-blue-100">
-          Peripheral Nerve Surgery
-        </Link>
-      </li>
-    </ul>
-  )}
-</li>
-
-
-  <li
-    className={`px-4 hover-text-primary ${location.pathname === "/facilities" ? "text-primary" : ""}`}
-  >
-    <Link to="/facilities">Facilities</Link>
-  </li>
-
-  <li
-    className={`px-4 hover-text-primary ${location.pathname === "/cases" ? "text-primary" : ""}`}
-  >
-    <Link to="/cases">Cases</Link>
-  </li>
-
-  <li
-    className={`px-4 hover-text-primary ${location.pathname === "/blog" ? "text-primary" : ""}`}
-  >
-    <Link to="/blog">Blog</Link>
-  </li>
-
- <li
-  className="relative cursor-pointer px-4"
-  onMouseEnter={() => handleDropdown("gallery")}
-  onMouseLeave={() => handleDropdown(null)}
->
-  <Link to="/gallery" title="Gallery" className="hover-text-primary">
-    Gallery ▾
-  </Link>
-
-  {openDropdown === "gallery" && (
-    <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-52 transition-all duration-300 text-sm divide-y divide-gray-200">
-      <li>
-        <Link
-          to="/gallery?tab=photo"
-          className="block px-4 py-2 hover:bg-blue-100"
-        >
-          Photo Gallery
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/gallery?tab=video"
-          className="block px-4 py-2 hover:bg-blue-100"
-        >
-          Video Gallery
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/gallery?tab=news"
-          className="block px-4 py-2 hover:bg-blue-100"
-        >
-          News & Media
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/gallery?tab=rewards"
-          className="block px-4 py-2 hover:bg-blue-100"
-        >
-          Rewards & Recognition
-        </Link>
-      </li>
-    </ul>
-  )}
-</li>
+          <li
+            className="relative cursor-pointer px-4"
+            onMouseEnter={() => handleDropdown("specialities")}
+            onMouseLeave={() => handleDropdown(null)}
+          >
+            <Link to="/brain" title="Our Specialities" className="hover-text-primary">
+              Our Specialities ▾
+            </Link>
+            {openDropdown === "specialities" && (
+              <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-64 transition-all duration-300 text-sm divide-y divide-gray-200">
+                <li>
+                  <Link to="/brain" className="block px-4 py-2 hover:bg-blue-100">
+                    Brain Surgery
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/spine" className="block px-4 py-2 hover:bg-blue-100">
+                    Spine Surgery
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/peripheral-nerve-surgery" className="block px-4 py-2 hover:bg-blue-100">
+                    Peripheral Nerve Surgery
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
 
 
-  <li
-    className={`px-4 hover-text-primary ${location.pathname === "/testimonials" ? "text-primary" : ""}`}
-  >
-    <Link to="/testimonials">Testimonials</Link>
-  </li>
+          <li
+            className={`px-4 hover-text-primary ${location.pathname === "/facilities" ? "text-primary" : ""}`}
+          >
+            <Link to="/facilities">Facilities</Link>
+          </li>
 
-  <li
-    className={`px-4 hover-text-primary ${location.pathname === "/contact" ? "text-primary" : ""}`}
-  >
-    <Link to="/contact">Contact Us</Link>
-  </li>
-</ul>
+          <li
+            className={`px-4 hover-text-primary ${location.pathname === "/cases" ? "text-primary" : ""}`}
+          >
+            <Link to="/cases">Cases</Link>
+          </li>
+
+          <li
+            className={`px-4 hover:text-primary ${location.pathname.startsWith("/blog") ? "text-primary font-semibold" : ""
+              }`}
+          >
+            <Link to="/blog">Blog</Link>
+          </li>
+
+          <li
+            className="relative cursor-pointer px-4"
+            onMouseEnter={() => handleDropdown("gallery")}
+            onMouseLeave={() => handleDropdown(null)}
+          >
+            <Link to="/gallery" title="Gallery" className="hover-text-primary">
+              Gallery ▾
+            </Link>
+
+            {openDropdown === "gallery" && (
+              <ul className="absolute z-50 left-0 bg-white shadow-md rounded-md py-2 w-52 transition-all duration-300 text-sm divide-y divide-gray-200">
+                <li>
+                  <Link
+                    to="/gallery?tab=photo"
+                    className="block px-4 py-2 hover:bg-blue-100"
+                  >
+                    Photo Gallery
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/gallery?tab=video"
+                    className="block px-4 py-2 hover:bg-blue-100"
+                  >
+                    Video Gallery
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/gallery?tab=news"
+                    className="block px-4 py-2 hover:bg-blue-100"
+                  >
+                    News & Media
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/gallery?tab=rewards"
+                    className="block px-4 py-2 hover:bg-blue-100"
+                  >
+                    Rewards & Recognition
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
+
+
+          <li
+            className={`px-4 hover-text-primary ${location.pathname === "/testimonials" ? "text-primary" : ""}`}
+          >
+            <Link to="/testimonials">Testimonials</Link>
+          </li>
+
+          <li
+            className={`px-4 hover-text-primary ${location.pathname === "/contact" ? "text-primary" : ""}`}
+          >
+            <Link to="/contact">Contact Us</Link>
+          </li>
+        </ul>
 
       </div>
     </nav>

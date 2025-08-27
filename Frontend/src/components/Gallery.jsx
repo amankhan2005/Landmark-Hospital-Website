@@ -3,18 +3,20 @@ import { FaChevronLeft, FaChevronRight, FaPlus, FaTimes } from "react-icons/fa";
 import Slider from "react-slick";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGalleryData } from "../redux/slices/dataslice";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Gallery = () => {
   const dispatch = useDispatch();
-  const { galleryData, status, error } = useSelector((state) => state.data);
-
-  useEffect(() => {
-    dispatch(fetchGalleryData());
-  }, [dispatch]);
+  const { galleryData = [], status, error } = useSelector((state) => state.data);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    dispatch(fetchGalleryData());
+  }, [dispatch]);
 
   const openModal = (index) => {
     setCurrentIndex(index);
@@ -22,49 +24,29 @@ const Gallery = () => {
     setModalOpen(true);
   };
 
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+  const closeModal = () => setModalOpen(false);
 
-  const nextImage = () => {
+  const nextItem = () => {
     setCurrentIndex((prev) => (prev + 1) % galleryData.length);
     setScale(1);
   };
 
-  const prevImage = () => {
+  const prevItem = () => {
     setCurrentIndex((prev) => (prev - 1 + galleryData.length) % galleryData.length);
     setScale(1);
   };
 
   const handleWheel = (e) => {
-    setScale((prevScale) =>
-      Math.min(Math.max(prevScale + e.deltaY * -0.001, 1), 3)
-    );
+    setScale((prev) => Math.min(Math.max(prev + e.deltaY * -0.001, 1), 3));
   };
 
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") closeModal();
-    };
-    if (modalOpen) {
-      document.body.style.overflow = "hidden";
-      window.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [modalOpen]);
-
-  // Slick slider settings
+  // Slider settings
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: galleryData.length > 3, // agar 3 se zyada photos hain tabhi infinite
     speed: 600,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 1, // ek-ek karke slide hoga
     autoplay: true,
     autoplaySpeed: 2500,
     responsive: [
@@ -74,45 +56,52 @@ const Gallery = () => {
   };
 
   return (
-    <div className="bg-white md:py-16 py-10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <div className="text-center mb-10">
-          <h1 className="md:text-4xl mb-4 text-2xl font-bold text-primary">
-            Our Recent Photos
+    <div className="bg-gray-50 py-8">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h1 className="md:text-4xl text-2xl font-bold text-primary mb-2">
+            Our Recent Memories
           </h1>
-          <p className="text-gray-600 mt-4">
+          <p className="text-gray-600">
             A glimpse into our recent work and accomplishments.
           </p>
         </div>
 
-        {/* Loader & Error */}
+        {/* Loading/Error Messages */}
         {status === "loading" && <p className="text-center">Loading Gallery...</p>}
         {error && <p className="text-center text-red-500">{error}</p>}
-        {galleryData.length === 0 && status === "success" && (
-          <p className="text-center text-red-500">No images available</p>
+        {galleryData?.length === 0 && status === "success" && (
+          <p className="text-center text-red-500">No data available</p>
         )}
 
-        {/* Gallery Slider */}
-        {galleryData.length > 0 && (
+        {/* Slider */}
+        {galleryData?.length > 0 && (
           <Slider {...settings}>
-            {[...galleryData].reverse().map((image, idx) => (
+            {[...galleryData].reverse().map((item, idx) => (
               <div
                 key={idx}
                 className="p-3 relative cursor-pointer group"
-                onClick={() => openModal(idx)}
+                onClick={() => item.category === "photo" && openModal(idx)}
               >
-                {/* Image */}
-                <img
-                  src={image?.imageUrl}
-                  alt={image.title || `Gallery Image ${idx}`}
-                  className="w-full h-64 object-cover rounded-xl shadow-md"
-                />
-
-                {/* Plus Icon */}
-                <div className="absolute inset-0 flex justify-center items-center rounded-xl">
-                  <FaPlus className="text-white opacity-50 group-hover:opacity-100 transition w-12 h-12" />
-                </div>
+                {item.category === "photo" ? (
+                  <>
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title || `Gallery Image ${idx}`}
+                      className="w-full h-64 object-cover rounded-xl shadow-md"
+                    />
+                    <div className="absolute inset-0 flex justify-center items-center rounded-xl">
+                      <FaPlus className="text-white opacity-50 group-hover:opacity-100 transition w-12 h-12" />
+                    </div>
+                  </>
+                ) : item.category === "video" ? (
+                  <video
+                    src={item.videoUrl || item.imageUrl}
+                    controls
+                    className="w-full h-64 object-cover rounded-xl shadow-md"
+                  />
+                ) : null}
               </div>
             ))}
           </Slider>
@@ -120,24 +109,20 @@ const Gallery = () => {
       </div>
 
       {/* Modal */}
-      {modalOpen && (
+      {modalOpen && galleryData[currentIndex] && (
         <div className="fixed inset-0 flex h-screen overflow-hidden items-center justify-center bg-black bg-opacity-90 z-50">
-          {/* Close Button */}
           <button
             className="absolute top-6 right-6 text-white text-3xl hover:text-primary transition"
             onClick={closeModal}
           >
             <FaTimes />
           </button>
-
-          {/* Prev */}
           <button
             className="absolute left-6 text-white text-4xl hover:text-primary transition"
-            onClick={prevImage}
+            onClick={prevItem}
           >
             <FaChevronLeft />
           </button>
-
           <div className="relative">
             <img
               src={galleryData[currentIndex]?.imageUrl}
@@ -147,11 +132,9 @@ const Gallery = () => {
               onWheel={handleWheel}
             />
           </div>
-
-          {/* Next */}
           <button
             className="absolute right-6 text-white text-4xl hover:text-primary transition"
-            onClick={nextImage}
+            onClick={nextItem}
           >
             <FaChevronRight />
           </button>
