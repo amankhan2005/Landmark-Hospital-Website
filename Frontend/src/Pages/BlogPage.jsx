@@ -9,7 +9,7 @@ const BlogPage = () => {
   const dispatch = useDispatch();
 
   // Redux State (blogs instead of blogData ✅)
-  const { blogs, status, error } = useSelector((state) => state.data);
+  const { blogData, status, error } = useSelector((state) => state.data);
 
   // Fetch Blogs
   useEffect(() => {
@@ -39,14 +39,14 @@ const BlogPage = () => {
           )}
 
           {/* No Data */}
-          {blogs?.length === 0 && status !== "loading" && (
+          {blogData?.length === 0 && status !== "loading" && (
             <p className="text-center col-span-3 text-red-500">
               No Data Found
             </p>
           )}
 
           {/* Blog List */}
-          {blogs?.map((blog) => {
+          {blogData?.map((blog) => {
             const formattedDate = blog.createdAt
               ? new Date(blog.createdAt).toLocaleDateString("en-GB", {
                   day: "2-digit",

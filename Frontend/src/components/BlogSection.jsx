@@ -39,7 +39,7 @@ const BlogComponent = () => {
   };
 
   return (
-    <div className="lg:py-8 md:py-10 py-10 relative">
+    <div className="lg:py-10 md:py-10 py-10 relative">
       <h1 className="md:text-4xl text-2xl font-bold text-primary text-center">
         Our Recent Blog
       </h1>

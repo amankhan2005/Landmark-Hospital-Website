@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Plus, Edit, Trash2 } from "lucide-react"; // Modern icons
 import NewsModal from "./NewsModal";
 
 const NewsDashboard = () => {
@@ -26,9 +27,11 @@ const NewsDashboard = () => {
   const handleDelete = async (id) => {
     const result = await Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "This news will be permanently deleted!",
       icon: "warning",
       showCancelButton: true,
+      confirmButtonColor: "#ef4444",
+      cancelButtonColor: "#6b7280",
       confirmButtonText: "Yes, delete it!",
     });
     if (!result.isConfirmed) return;
@@ -59,64 +62,78 @@ const NewsDashboard = () => {
 
   return (
     <div className="p-6">
-      <div className="flex justify-between mb-4">
-        <h2 className="text-2xl font-semibold">News Management</h2>
+      {/* Header */}
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-bold text-gray-800">📰 News Management</h2>
         <button
           onClick={handleAdd}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 transition text-white px-4 py-2 rounded-full shadow"
         >
-          Add News
+          <Plus size={18} /> Add News
         </button>
       </div>
 
+      {/* Modal */}
       {isFormOpen && <NewsModal newsData={selectedItem} onClose={handleClose} />}
 
-      <table className="w-full border-collapse border border-gray-300">
-        <thead>
-          <tr className="bg-gray-100">
-            <th className="border p-2">Thumbnail</th>
-            <th className="border p-2">Title</th>
-            <th className="border p-2">Posted By</th>
-            <th className="border p-2">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {news.map((n) => (
-            <tr key={n._id}>
-              <td className="border p-2">
-                <img
-                  src={n.imageUrl}
-                  className="w-24 h-24 object-cover mx-auto"
-                  alt="news"
-                />
-              </td>
-              <td className="border p-2">{n.title}</td>
-              <td className="border p-2">{n.postedBy}</td>
-              <td className="border p-2 flex gap-2">
-                <button
-                  className="bg-yellow-500 text-white px-2 py-1 rounded"
-                  onClick={() => handleEdit(n)}
-                >
-                  Edit
-                </button>
-                <button
-                  className="bg-red-500 text-white px-2 py-1 rounded"
-                  onClick={() => handleDelete(n._id)}
-                >
-                  Delete
-                </button>
-              </td>
+      {/* Table */}
+      <div className="overflow-x-auto bg-white rounded-xl shadow border border-gray-200">
+        <table className="w-full text-left">
+          <thead>
+            <tr className="bg-gray-50 text-gray-700 text-sm uppercase tracking-wide">
+              <th className="px-4 py-3">Thumbnail</th>
+              <th className="px-4 py-3">Title</th>
+              <th className="px-4 py-3">Posted By</th>
+              <th className="px-4 py-3 text-center">Actions</th>
             </tr>
-          ))}
-          {news.length === 0 && (
-            <tr>
-              <td colSpan={4} className="text-center text-red-500 p-4">
-                No news uploaded yet!
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {news.map((n, index) => (
+              <tr
+                key={n._id}
+                className={`hover:bg-gray-50 transition ${
+                  index % 2 === 0 ? "bg-white" : "bg-gray-50"
+                }`}
+              >
+                <td className="px-4 py-3">
+                  <img
+                    src={n.imageUrl}
+                    className="w-20 h-20 rounded-lg object-cover border"
+                    alt="news"
+                  />
+                </td>
+                <td className="px-4 py-3 font-medium text-gray-800">{n.title}</td>
+                <td className="px-4 py-3 text-gray-600">{n.postedBy}</td>
+                <td className="px-4 py-3 flex justify-center gap-2">
+                  <button
+                    className="flex items-center gap-1 bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md transition"
+                    onClick={() => handleEdit(n)}
+                  >
+                    <Edit size={16} /> Edit
+                  </button>
+                  <button
+                    className="flex items-center gap-1 bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md transition"
+                    onClick={() => handleDelete(n._id)}
+                  >
+                    <Trash2 size={16} /> Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+
+            {news.length === 0 && (
+              <tr>
+                <td
+                  colSpan={4}
+                  className="text-center text-gray-500 py-6 italic"
+                >
+                  No news uploaded yet 📭
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

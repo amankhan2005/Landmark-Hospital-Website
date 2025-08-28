@@ -22,7 +22,7 @@ export default function YouTubePage() {
   ];
 
   return (
-    <div className="bg-white py-8">
+    <div className="bg-white py-10">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl text-primary font-bold mb-4 text-center">
           Watch Us on YouTube

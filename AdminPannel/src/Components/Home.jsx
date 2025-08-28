@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+ import { useState, useEffect } from "react";
 import axios from "axios";
-import { FaBlog, FaUsers, FaImage, FaClipboardList } from "react-icons/fa"; // Importing React Icons
+import { FaBlog, FaUsers, FaImage, FaClipboardList, FaHospitalUser } from "react-icons/fa";
 import InquiryData from "./InquiryData";
 
 const Home = () => {
@@ -12,22 +12,18 @@ const Home = () => {
 
   const fetchData = async () => {
     try {
-      // Fetch total blogs
       const inquiryResponse = await axios.get(`${import.meta.env.VITE_API_URL}/inquiry/getall`);
       setInquiryCount(inquiryResponse.data.length);
 
       const blogResponse = await axios.get(`${import.meta.env.VITE_API_URL}/blog/getall`);
       setBlogCount(blogResponse.data.length);
 
-      // Fetch total team members
       const teamResponse = await axios.get(`${import.meta.env.VITE_API_URL}/team/getall`);
       setTeamCount(teamResponse.data.payload.length);
 
-      // Fetch total gallery images
       const galleryResponse = await axios.get(`${import.meta.env.VITE_API_URL}/gallery/getall`);
       setGalleryCount(galleryResponse.data.length);
 
-      // Fetch total cases
       const caseResponse = await axios.get(`${import.meta.env.VITE_API_URL}/case/getall`);
       setCaseCount(caseResponse.data?.length);
     } catch (error) {
@@ -39,54 +35,48 @@ const Home = () => {
     fetchData();
   }, []);
 
+  const stats = [
+    { title: "Total Inquiries", count: inquiryCount, icon: <FaHospitalUser />, color: "bg-blue-100 text-blue-600" },
+    { title: "Total Blogs", count: blogCount, icon: <FaBlog />, color: "bg-red-100 text-red-600" },
+    { title: "Total Gallery Images", count: galleryCount, icon: <FaImage />, color: "bg-teal-100 text-teal-600" },
+    { title: "Total Cases", count: caseCount, icon: <FaClipboardList />, color: "bg-purple-100 text-purple-600" },
+    // { title: "Team Members", count: teamCount, icon: <FaUsers />, color: "bg-green-100 text-green-600" },
+  ];
+
   return (
-    <>
-        {/* <h1 className="text-3xl font-semibold text-center text-gray-900 mb-4">Hello Admin</h1> */}
-    <div className="bg-gray-100   py-6 px-4 sm:px-6 lg:px-8">
-      <div className="">
-        {/* Greeting */}
+    <div className="bg-white min-h-screen p-6">
+      {/* Top Section */}
+      <h1 className="text-3xl font-bold mb-2 text-gray-800 text-center">Admin Dashboard</h1>
+      <p className="text-gray-500 mb-10 text-center">
+        Overview of hospital activities and performance metrics
+      </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          {/* Blog Card */}
-          <div className="bg-purple-600 p-6 rounded-lg shadow-lg text-white">
-            <FaBlog className="text-4xl mb-4" />
-            <h2 className="text-xl font-semibold">Total Inquiry</h2>
-            <p className="text-2xl">{inquiryCount}</p>
-          </div>
-
-          <div className="bg-blue-500 p-6 rounded-lg shadow-lg text-white">
-            <FaBlog className="text-4xl mb-4" />
-            <h2 className="text-xl font-semibold">Total Blogs</h2>
-            <p className="text-2xl">{blogCount}</p>
-          </div>
-
-          {/* Team Member Card */}
-          <div className="bg-green-500 p-6 rounded-lg shadow-lg text-white">
-            <FaUsers className="text-4xl mb-4" />
-            <h2 className="text-xl font-semibold">Total Team Members</h2>
-            <p className="text-2xl">{teamCount}</p>
-          </div>
-
-          {/* Gallery Card */}
-          <div className="bg-pink-500 p-6 rounded-lg shadow-lg text-white">
-            <FaImage className="text-4xl mb-4" />
-            <h2 className="text-xl font-semibold">Total Gallery Images</h2>
-            <p className="text-2xl">{galleryCount}</p>
-          </div>
-
-          {/* Cases Card */}
-          <div className="bg-orange-500 p-6 rounded-lg shadow-lg text-white">
-            <FaClipboardList className="text-4xl mb-4" />
-            <h2 className="text-xl font-semibold">Total Cases</h2>
-            <p className="text-2xl">{caseCount}</p>
-          </div>
+      {/* Cards Grid - Centered */}
+      <div className="flex justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl">
+          {stats.map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-white w-56 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex flex-col items-center text-center"
+            >
+              <div className={`w-16 h-16 flex items-center justify-center rounded-full mb-4 ${item.color}`}>
+                <span className="text-2xl">{item.icon}</span>
+              </div>
+              <h2 className="text-sm font-medium text-gray-600">{item.title}</h2>
+              <p className="text-2xl font-bold text-gray-800 mt-1">{item.count}</p>
+            </div>
+          ))}
         </div>
       </div>
-      <div className="my-10">
-        <InquiryData/>
+
+      {/* Inquiry Section */}
+      <div className="mt-12">
+        <h2 className="text-xl font-semibold mb-4 text-gray-800">Recent Inquiries</h2>
+        <div className="bg-white rounded-xl shadow-md p-4 text-gray-800">
+          <InquiryData />
+        </div>
       </div>
     </div>
-    </>
   );
 };
 

@@ -63,7 +63,7 @@ const Footer = () => {
                 <ul className="flex space-x-4">
                   <li>
                     <a
-                      href="#"
+                      href="https://www.facebook.com/share/r/19gTTL6WAb/"
                       className="hover:text-gray-200 text-xl hover:scale-125"
                       aria-label="Facebook"
                     >
@@ -72,7 +72,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="https://x.com/"
                       className="hover:text-gray-200 text-xl hover:scale-125"
                       aria-label="Twitter"
                     >
@@ -81,7 +81,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="https://www.instagram.com/p/DNxe8nHxMqx/"
                       className="hover:text-gray-200 text-xl hover:scale-125"
                       aria-label="Instagram"
                     >
@@ -90,7 +90,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="https://youtube.com/shorts/c5pUr78NOng?feature=share"
                       className="hover:text-gray-200 text-xl hover:scale-125"
                       aria-label="YouTube"
                     >
@@ -99,7 +99,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/feed/update/urn:li:activity:7365679710237839360"
                       className="hover:text-gray-200 text-xl hover:scale-125"
                       aria-label="LinkedIn"
                     >

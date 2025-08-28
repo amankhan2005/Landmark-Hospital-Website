@@ -2,7 +2,7 @@
 
 export default function ContactUs() {
   return (
-    <div className="px-4 pt-8 pb-8 " data-aos="fade-up">
+    <div className="px-4 py-10" data-aos="fade-up">
       <div className="container relative mx-auto h-80 flex flex-col items-center justify-center rounded-3xl overflow-hidden shadow-xl text-center px-6 md:px-12 bg-primary">
         {/* Center Text */}
         <div className="relative z-10 text-center">

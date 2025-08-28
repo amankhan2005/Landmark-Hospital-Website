@@ -40,12 +40,44 @@ export const deleteBlogData = createAsyncThunk(
   }
 );
 
-// -------------------- Other Thunks --------------------
+// -------------------- Cases Thunks --------------------
 export const fetchCasesData = createAsyncThunk("data/fetchCases", async () => {
   const response = await axios.get(`${backendUrl}/case/getall`);
   return response.data;
 });
 
+export const addOrUpdateCase = createAsyncThunk(
+  "data/addOrUpdateCase",
+  async (caseItem) => {
+    if (caseItem._id) {
+      // Update
+      const res = await axios.put(`${backendUrl}/case/update/${caseItem._id}`, {
+        title: caseItem.title,
+        description: caseItem.description,
+        imageUrl: caseItem.imageUrl,
+      });
+      return res.data.case;
+    } else {
+      // Add
+      const res = await axios.post(`${backendUrl}/case/save`, {
+        title: caseItem.title,
+        description: caseItem.description,
+        imageUrl: caseItem.imageUrl,
+      });
+      return res.data.case;
+    }
+  }
+);
+
+export const deleteCaseData = createAsyncThunk(
+  "data/deleteCase",
+  async (id) => {
+    await axios.delete(`${backendUrl}/case/delete/${id}`);
+    return id;
+  }
+);
+
+// -------------------- Other Thunks --------------------
 export const fetchTeamData = createAsyncThunk("data/fetchTeam", async () => {
   const response = await axios.get(`${backendUrl}/team/getall`);
   return response.data?.payload;
@@ -111,20 +143,59 @@ const dataSlice = createSlice({
     // Cases
     builder
       .addCase(fetchCasesData.pending, (state) => { state.status = "loading"; })
-      .addCase(fetchCasesData.fulfilled, (state, action) => { state.status = "success"; state.casesData = action.payload; })
-      .addCase(fetchCasesData.rejected, (state, action) => { state.status = "failed"; state.error = action.error.message; });
+      .addCase(fetchCasesData.fulfilled, (state, action) => {
+        state.status = "success";
+        state.casesData = action.payload;
+      })
+      .addCase(fetchCasesData.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(addOrUpdateCase.pending, (state) => { state.status = "loading"; })
+      .addCase(addOrUpdateCase.fulfilled, (state, action) => {
+        state.status = "success";
+        const updatedCase = action.payload;
+        const index = state.casesData.findIndex((c) => c._id === updatedCase._id);
+        if (index !== -1) state.casesData[index] = updatedCase;
+        else state.casesData.unshift(updatedCase);
+      })
+      .addCase(addOrUpdateCase.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(deleteCaseData.pending, (state) => { state.status = "loading"; })
+      .addCase(deleteCaseData.fulfilled, (state, action) => {
+        state.status = "success";
+        state.casesData = state.casesData.filter((c) => c._id !== action.payload);
+      })
+      .addCase(deleteCaseData.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      });
 
     // Team
     builder
       .addCase(fetchTeamData.pending, (state) => { state.status = "loading"; })
-      .addCase(fetchTeamData.fulfilled, (state, action) => { state.status = "success"; state.teamData = action.payload; })
-      .addCase(fetchTeamData.rejected, (state, action) => { state.status = "failed"; state.error = action.error.message; });
+      .addCase(fetchTeamData.fulfilled, (state, action) => {
+        state.status = "success";
+        state.teamData = action.payload;
+      })
+      .addCase(fetchTeamData.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      });
 
     // Gallery
     builder
       .addCase(fetchGalleryData.pending, (state) => { state.status = "loading"; })
-      .addCase(fetchGalleryData.fulfilled, (state, action) => { state.status = "success"; state.galleryData = action.payload; })
-      .addCase(fetchGalleryData.rejected, (state, action) => { state.status = "failed"; state.error = action.error.message; });
+      .addCase(fetchGalleryData.fulfilled, (state, action) => {
+        state.status = "success";
+        state.galleryData = action.payload;
+      })
+      .addCase(fetchGalleryData.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      });
   },
 });
 

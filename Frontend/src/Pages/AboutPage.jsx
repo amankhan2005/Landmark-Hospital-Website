@@ -3,8 +3,7 @@ import BreadCumb from "../components/BreadCumb";
 import pattern from "../assets/home/whywechoose.png";
 import about from "../assets/home/HopeHospital-about.webp";
 import { Link } from "react-router-dom";
-import SpecialitiesSection from "../components/SpecialitiesSection";
-import FacilitiesSection from "../components/FacilitiesSection"
+ import FacilitiesSection from "../components/FacilitiesSection"
 import Stats from "../components/Stats";
  import  About from "../components/About";
  function AboutPage() {
@@ -21,7 +20,7 @@ import Stats from "../components/Stats";
 
       <About />
       <Stats />
-      <SpecialitiesSection />
+      
       <FacilitiesSection/>
    
       

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Features = () => {
   return (
-    <section className="container mx-auto px-2 py-8 md:grid grid-cols-1 md:grid-cols-4 gap-4">
+    <section className="container mx-auto px-2  md:grid grid-cols-1 md:grid-cols-4 gap-4">
       
       {/* Working Time */}
       <div className="bg-primary text-white md:p-6 p-4 mb-4 md:mb-0 rounded-lg border border-gray-200 shadow-md">

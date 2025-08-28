@@ -25,24 +25,24 @@ export default function TopNavBar() {
           </Link>
 
           <div aria-label="Social Media Links" className="flex md:space-x-5 space-x-3 md:text-lg text-sm justify-center items-center">
-          <a href="#" aria-label="Facebook" title="Facebook" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
+          <a href="https://www.facebook.com/share/r/19gTTL6WAb/" aria-label="Facebook" title="Facebook" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
           <FaFacebookF />
         </a>
         {/* <a href="#" aria-label="Twitter" title="Twitter" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
           <FaXTwitter />
         </a> */}
-        <a href="#" aria-label="Instagram" title="Instagram" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
+        <a href="https://www.instagram.com/p/DNxe8nHxMqx/" aria-label="Instagram" title="Instagram" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
           <FaInstagram />
         </a>
-        <a href="#" aria-label="YouTube" title="YouTube" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
+        <a href="https://youtube.com/shorts/c5pUr78NOng?feature=share" aria-label="YouTube" title="YouTube" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
           <FaYoutube />
         </a>
-        <a href="#" aria-label="LinkedIn" title="LinkedIn" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7365679710237839360" aria-label="LinkedIn" title="LinkedIn" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
           <FaLinkedinIn />
         </a>
-        <a href="#" aria-label="Whatsapp" title="Whatsapp" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
+        {/* <a href="#" aria-label="Whatsapp" title="Whatsapp" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
           <FaWhatsapp />
-        </a>
+        </a> */}
 
         {/* <a href="#" aria-label="Google Plus" title="Google Plus" className="hover:text-gray-200 hover:scale-110 transition-all ease-in-out duration-300">
           <FaGooglePlusG />

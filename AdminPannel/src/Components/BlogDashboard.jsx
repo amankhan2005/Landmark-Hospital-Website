@@ -60,16 +60,18 @@ const BlogDashboard = () => {
     fetchBlogs();
   };
 
-  const removeHTMLTags = (text) => {
-    return text.replace(/<[^>]*>/g, "");
-  };
+  const removeHTMLTags = (text) => text.replace(/<[^>]*>/g, "");
+
   return (
-    <div className="p-6">
-      <div className="flex justify-between mb-4">
-        <h2 className="text-2xl font-semibold">Blog Management</h2>
+    <div className="p-6 bg-white min-h-screen">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-bold text-gray-800">
+          Blog Management
+        </h2>
         <button
           onClick={handleAdd}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 transition text-white px-5 py-2 rounded-full shadow-md"
         >
           Add New Blog
         </button>
@@ -80,52 +82,71 @@ const BlogDashboard = () => {
           <BlogModal blogData={selectedBlog} onClose={handleCloseForm} />
         </div>
       ) : (
-        <table className="w-full border-collapse border border-gray-300">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="border p-2">Photo</th>
-              <th className="border p-2">Title</th>
-              <th className="border p-2">Description</th>
-              <th className="border p-2">Posted By</th>
-              <th className="border p-2">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-          {blogs?.length == 0 && (<div className="text-red-500 text-2xl text-center">No Data Yet!</div>)}
-            {blogs.map((b) => (
-              <tr key={b._id} className="text-left">
-                <td className="border p-2">
-                  <img
-                    src={b.imageUrl}
-                    alt={b.title}
-                    className="w-12 h-12 rounded-full mx-auto"
-                  />
-                </td>
-                <td className="border p-2 text-base font-medium">{b.title}</td>
-
-                <td className="border p-2 text-base">
-                  <div className="overflow-y-scroll h-[20vh]">{removeHTMLTags(b.description)}</div> 
-                </td>
-
-                <td className="border p-2 w-32 text-base font-medium">{b.postedBy}</td>
-                <td className="border p-2 flex flex-row ">
-                  <button
-                    className="mr-2 bg-yellow-500 text-white px-2 py-1 rounded"
-                    onClick={() => handleEdit(b)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="bg-red-500 text-white px-2 py-1 rounded"
-                    onClick={() => handleDelete(b._id)}
-                  >
-                    Delete
-                  </button>
-                </td>
+        <div className="overflow-x-auto bg-white rounded-xl shadow-md">
+          <table className="w-full text-left text-gray-700">
+            <thead>
+              <tr className="bg-gray-50">
+                <th className="p-3 font-medium">Photo</th>
+                <th className="p-3 font-medium">Title</th>
+                <th className="p-3 font-medium">Description</th>
+                <th className="p-3 font-medium">Posted By</th>
+                <th className="p-3 font-medium">Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {blogs.length === 0 ? (
+                <tr>
+                  <td
+                    colSpan={5}
+                    className="text-center text-red-500 p-6 font-medium"
+                  >
+                    No blogs uploaded yet!
+                  </td>
+                </tr>
+              ) : (
+                blogs.map((b) => (
+                  <tr
+                    key={b._id}
+                    className="hover:bg-gray-50 transition border-b last:border-0"
+                  >
+                    <td className="p-3">
+                      <img
+                        src={b.imageUrl}
+                        alt={b.title}
+                        className="w-12 h-12 rounded-full object-cover"
+                      />
+                    </td>
+                    <td className="p-3 font-medium text-gray-800">
+                      {b.title}
+                    </td>
+                    <td className="p-3 text-sm text-gray-600 max-w-xs">
+                      <p className="line-clamp-3">
+                        {removeHTMLTags(b.description)}
+                      </p>
+                    </td>
+                    <td className="p-3 font-medium text-gray-800">
+                      {b.postedBy}
+                    </td>
+                    <td className="p-3 flex gap-2">
+                      <button
+                        className="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md shadow-sm"
+                        onClick={() => handleEdit(b)}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md shadow-sm"
+                        onClick={() => handleDelete(b._id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

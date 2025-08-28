@@ -25,9 +25,10 @@ const GalleryDashboard = ({ showCategoryDropdown = false }) => {
   const handleDelete = async (id) => {
     const result = await Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "This action cannot be undone!",
       icon: "warning",
       showCancelButton: true,
+      confirmButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     });
     if (!result.isConfirmed) return;
@@ -35,9 +36,9 @@ const GalleryDashboard = ({ showCategoryDropdown = false }) => {
     try {
       await axios.delete(`${api}/gallery/delete/${id}`);
       setGallery(gallery.filter((item) => item._id !== id));
-      Swal.fire("Deleted!", "Item has been deleted.", "success");
+      Swal.fire("Deleted!", "Photo has been removed.", "success");
     } catch (error) {
-      Swal.fire("Error!", "Failed to delete item.", "error");
+      Swal.fire("Error!", "Failed to delete photo.", "error");
     }
   };
 
@@ -57,69 +58,74 @@ const GalleryDashboard = ({ showCategoryDropdown = false }) => {
   };
 
   return (
-    <div className="p-6">
-      <div className="flex justify-between mb-4">
-        <h2 className="text-2xl font-semibold">Gallery Management</h2>
+    <div className="p-6 bg-gray-50 min-h-screen">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-3xl font-bold text-gray-800">Gallery Management</h2>
         <button
           onClick={handleAdd}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 transition text-white px-4 py-2 rounded-full shadown"
         >
-          Add Photo
+          + Add Photo
         </button>
       </div>
 
-      {isFormOpen && (
+      {/* Form Modal */}
+      {isFormOpen ? (
         <GalleryModal galleryData={selectedItem} onClose={handleClose} />
-      )}
+      ) : (
+        <>
+          {gallery.filter((item) => item.category === "photo").length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {gallery
+                .filter((item) => item.category === "photo")
+                .map((item) => (
+                  <div
+                    key={item._id}
+                    className="bg-white rounded-xl shadow hover:shadow-lg transition flex flex-col overflow-hidden"
+                  >
+                    {/* Image */}
+                    <img
+                      src={item.imageUrl}
+                      alt="gallery"
+                      className="w-full h-56 object-cover"
+                    />
 
-      <table className="w-full border-collapse border border-gray-300">
-        <thead>
-          <tr className="bg-gray-100">
-            <th className="border p-2">Image</th>
-            <th className="border p-2">Posted By</th>
-            <th className="border p-2">Category</th>
-            <th className="border p-2">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {gallery
-            .filter((item) => item.category === "photo")
-            .map((item) => (
-              <tr key={item._id}>
-                <td className="border p-2">
-                  <img
-                    src={item.imageUrl}
-                    className="w-24 h-24 object-cover"
-                    alt="gallery"
-                  />
-                </td>
-                <td className="border p-2">{item.postedBy}</td>
-                <td className="border p-2">{item.category}</td>
-                <td className="border p-2 flex gap-2">
-                  <button
-                    className="bg-yellow-500 text-white px-2 py-1 rounded"
-                    onClick={() => handleEdit(item)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="bg-red-500 text-white px-2 py-1 rounded"
-                    onClick={() => handleDelete(item._id)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          {gallery.length === 0 && (
-            <tr>
-              <td colSpan={4} className="text-center text-red-500 p-4">
-                No photos uploaded yet!
-              </td>
-            </tr>
+                    {/* Info */}
+                    <div className="p-4 flex flex-col flex-grow">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-1">
+                        {item.postedBy}
+                      </h3>
+                      <p className="text-sm text-gray-500 mb-3">
+                        Category: {item.category}
+                      </p>
+
+                      {/* Actions */}
+                      <div className="mt-auto flex gap-2">
+                        <button
+                          className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-lg text-sm font-medium transition"
+                          onClick={() => handleEdit(item)}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          className="flex-1 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg text-sm font-medium transition"
+                          onClick={() => handleDelete(item._id)}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          ) : (
+            <div className="text-center py-10 text-gray-500 text-lg bg-white rounded-xl shadow">
+              No photos uploaded yet 📷
+            </div>
           )}
-        </tbody>
-      </table>
+        </>
+      )}
     </div>
   );
 };

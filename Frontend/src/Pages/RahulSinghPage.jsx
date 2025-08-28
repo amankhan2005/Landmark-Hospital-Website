@@ -12,7 +12,7 @@ export default function RahulSinghPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50" style={{background: 'linear-gradient(to bottom right, #f8fafc, #e0f2fe)'}}>
+    <div className="min-h-screen bg-slate-50"  >
 
             <BreadCumb
         title="About Dr. Rahul Singh"
@@ -247,7 +247,7 @@ export default function RahulSinghPage() {
         </section>
 
         {/* Experience Section */}
-        <section className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8 border border-gray-100">
+        {/* <section className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8 border border-gray-100">
           <div className="lg:p-8 p-4">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
@@ -281,7 +281,7 @@ export default function RahulSinghPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Publications Section */}
         <section className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8 border border-gray-100">

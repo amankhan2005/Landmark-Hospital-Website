@@ -40,7 +40,7 @@ export default function ServiceSection() {
   ];
 
   return (
-    <div className="w-ful bg-slate-50 px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-8">
+    <section className="w-full bg-slate-50 px-4 sm:px-6 lg:px-8 relative overflow-hidden py-10">
       <div className="container mx-auto relative z-10">
         {/* Header Section */}
         <div className="text-center mb-8">
@@ -117,6 +117,6 @@ export default function ServiceSection() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

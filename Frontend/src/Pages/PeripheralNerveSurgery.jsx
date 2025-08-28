@@ -1,12 +1,17 @@
-// src/pages/BrainPage.jsx
+ // src/pages/NervePage.jsx
 
 // -- keep your actual image imports / paths here --
-
 import ImgBrachialPlexus from "../assets/home/brachial-plexus.jpg";
 import ImgCarpalTunnel from "../assets/home/carpal-tunnel.jpg";
 import ImgEntrapmentNeuropathy from "../assets/home/entrapment-neuropathy.jpg";
 import Nervesurgery from "../components/NerveSurgery";
 
+import { useState, useEffect } from "react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
+import { Link } from "react-router-dom";
+import BreadCumb from "../components/BreadCumb"; // adjust path
+
+// Topics list
 const topics = [
   {
     id: "brachial-plexus-injury",
@@ -94,11 +99,6 @@ const topics = [
   },
 ];
 
-import { useState, useEffect } from "react";
-import { ChevronRight, ChevronLeft } from "lucide-react";
-import { Link } from "react-router-dom";
-import BreadCumb from "../components/BreadCumb"; // adjust path
-
 // Shorts list
 const shortsVideos = [
   "https://www.youtube.com/embed/-nOLqRZLJCA?si=kwWXoJ8tGo7Gm24c",
@@ -125,7 +125,7 @@ export default function NervePage() {
   }, []);
 
   return (
-    <section className=" bg-white min-h-screen">
+    <section className="bg-white min-h-screen">
       {/* Breadcrumb */}
       <BreadCumb
         title="Peripheral Nerve Surgery"
@@ -139,7 +139,7 @@ export default function NervePage() {
 
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center ">
+        <div className="text-center">
           <h2 className="text-3xl font-bold text-primary">
             Peripheral Nerve Conditions
           </h2>
@@ -159,15 +159,15 @@ export default function NervePage() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-6">
-          {/* Sidebar */}
-          <div className="flex flex-col gap-4 w-full md:w-1/4">
+          {/* Sidebar - fixed width */}
+          <div className="flex flex-col gap-4 w-full md:w-80">
             {/* Topics Aside */}
             <aside
               className={`bg-slate-100 rounded-lg shadow transition-all ${
                 sidebarOpen ? "block" : "hidden md:block"
               } sticky top-24 self-start`}
             >
-              <div className="p-10">
+              <div className="p-8">
                 <ul className="space-y-2">
                   {topics.map((topic) => (
                     <li
@@ -175,7 +175,6 @@ export default function NervePage() {
                       onClick={() => {
                         setActiveTopic(topic);
                         setSidebarOpen(false);
-                        // window.scrollTo({ top: 20, behavior: "smooth" });
                       }}
                       className={`flex items-center justify-between cursor-pointer px-4 py-3 rounded-lg border transition-colors ${
                         activeTopic.id === topic.id
@@ -198,7 +197,7 @@ export default function NervePage() {
             </aside>
 
             {/* Second Aside */}
-            <aside className="bg-[#285f91] text-white rounded-lg shadow p-10 text-center">
+            <aside className="bg-[#285f91] text-white rounded-lg shadow p-15 text-center">
               <h4 className="text-sm font-semibold uppercase mb-2">
                 Need Emergency?
               </h4>
@@ -217,7 +216,6 @@ export default function NervePage() {
               </Link>
             </aside>
 
-            {/* Third Aside - Shorts Slideshow */}
             {/* Third Aside - Shorts Slideshow */}
             <aside className="bg-slate-100 rounded-lg shadow-lg p-3">
               <h3 className="text-lg font-bold text-gray-700 text-center mb-2">

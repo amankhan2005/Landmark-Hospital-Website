@@ -15,7 +15,7 @@ export default function WhyChooseDrRahul() {
       description:
         "With 4 years of specialized experience in neurospine surgery, Dr. Rahul Singh excels in brain, spine, and peripheral nerve treatments.",
       icon: <FaUserMd className="w-12 h-12" />,
-      iconColor: "text-[#ff6b6b]", // Vibrant red for doctor
+      iconColor: "text-[#ff6b6b]",
       iconBg: "bg-gradient-to-br from-red-100 to-red-200",
       link: "#",
     },
@@ -26,7 +26,7 @@ export default function WhyChooseDrRahul() {
       description:
         "Provides personalized neurospine consultation, ensuring precise and effective treatment for a healthier life.",
       icon: <FaStethoscope className="w-12 h-12" />,
-      iconColor: "text-[#4dabf7]", // Bright blue for stethoscope
+      iconColor: "text-[#4dabf7]",
       iconBg: "bg-gradient-to-br from-blue-100 to-blue-200",
       link: "#",
     },
@@ -37,14 +37,14 @@ export default function WhyChooseDrRahul() {
       description:
         "Over 6000 patients have trusted Dr. Rahul Singh for pain-free recovery and holistic neurocare.",
       icon: <FaThumbsUp className="w-12 h-12" />,
-      iconColor: "text-[#51cf66]", // Green for trust
+      iconColor: "text-[#51cf66]",
       iconBg: "bg-gradient-to-br from-green-100 to-green-200",
       link: "#",
     },
   ];
 
   return (
-    <section className="w-full bg-gray-50 lg:py-8 md:py-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="w-full bg-gray-50 py-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="container mx-auto relative z-10">
         {/* Header Section */}
         <div className="text-center lg:mb-4 mb-6">

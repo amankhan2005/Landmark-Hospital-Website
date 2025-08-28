@@ -32,7 +32,7 @@ const ClinicStats = () => {
   }, []);
 
   return (
-    <section className="py-8 mt-8 mb-8 bg-gradient-to-r from-[#7da4c4] via-[#2e6294] to-[#588dc0]">
+    <section className=" py-10  mb-8 bg-gradient-to-r from-[#7da4c4] via-[#2e6294] to-[#588dc0]">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
           {statsData.map((stat, index) => {
@@ -44,7 +44,7 @@ const ClinicStats = () => {
               >
                 {/* Icon Circle */}
                 <div
-                  className={` p-2 rounded-full ${stat.iconBg} flex items-center justify-center shadow-sm`}
+                  className={`p-2 rounded-full ${stat.iconBg} flex items-center justify-center shadow-sm`}
                 >
                   <Icon className="h-8 w-8" />
                 </div>

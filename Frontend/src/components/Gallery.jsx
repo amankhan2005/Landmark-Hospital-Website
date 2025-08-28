@@ -8,7 +8,9 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Gallery = () => {
   const dispatch = useDispatch();
-  const { galleryData = [], status, error } = useSelector((state) => state.data);
+  const { galleryData = [], status, error } = useSelector(
+    (state) => state.data
+  );
 
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,10 +45,10 @@ const Gallery = () => {
   // Slider settings
   const settings = {
     dots: true,
-    infinite: galleryData.length > 3, // agar 3 se zyada photos hain tabhi infinite
+    infinite: galleryData.length > 3,
     speed: 600,
     slidesToShow: 3,
-    slidesToScroll: 1, // ek-ek karke slide hoga
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,
     responsive: [
@@ -56,20 +58,22 @@ const Gallery = () => {
   };
 
   return (
-    <div className="bg-gray-50 py-8">
+    <div className="bg-gray-50 py-10">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="md:text-4xl text-2xl font-bold text-primary mb-2">
+        <div className="text-center mb-10">
+          <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">
             Our Recent Memories
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-sm md:text-base">
             A glimpse into our recent work and accomplishments.
           </p>
         </div>
 
-        {/* Loading/Error Messages */}
-        {status === "loading" && <p className="text-center">Loading Gallery...</p>}
+        {/* Loading/Error States */}
+        {status === "loading" && (
+          <p className="text-center text-gray-500">Loading Gallery...</p>
+        )}
         {error && <p className="text-center text-red-500">{error}</p>}
         {galleryData?.length === 0 && status === "success" && (
           <p className="text-center text-red-500">No data available</p>
@@ -110,19 +114,24 @@ const Gallery = () => {
 
       {/* Modal */}
       {modalOpen && galleryData[currentIndex] && (
-        <div className="fixed inset-0 flex h-screen overflow-hidden items-center justify-center bg-black bg-opacity-90 z-50">
+        <div className="fixed inset-0 flex h-screen items-center justify-center bg-black bg-opacity-90 z-50">
+          {/* Close */}
           <button
             className="absolute top-6 right-6 text-white text-3xl hover:text-primary transition"
             onClick={closeModal}
           >
             <FaTimes />
           </button>
+
+          {/* Prev */}
           <button
             className="absolute left-6 text-white text-4xl hover:text-primary transition"
             onClick={prevItem}
           >
             <FaChevronLeft />
           </button>
+
+          {/* Image */}
           <div className="relative">
             <img
               src={galleryData[currentIndex]?.imageUrl}
@@ -132,6 +141,8 @@ const Gallery = () => {
               onWheel={handleWheel}
             />
           </div>
+
+          {/* Next */}
           <button
             className="absolute right-6 text-white text-4xl hover:text-primary transition"
             onClick={nextItem}

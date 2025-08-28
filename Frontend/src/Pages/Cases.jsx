@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
-import BreadCumb from "../components/Breadcumb";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCasesData } from "../redux/slices/dataslice";
+import BreadCumb from "../components/BreadCumb";
 
 const Cases = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -121,7 +121,7 @@ const Cases = () => {
               </button>
             </div>
 
-            <h3 className="text-center text-2xl font-semibold mt-1">
+            <h3 className="text-center text-2xl font-normal mt-1">
               {casesData[currentImageIndex]?.title}
             </h3>
 
